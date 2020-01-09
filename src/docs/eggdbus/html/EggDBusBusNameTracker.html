@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusBusNameTracker</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="eggdbus-eggdbuserror.html" title="EggDBusError">
+<link rel="next" href="EggDBusMessage.html" title="EggDBusMessage">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-eggdbuserror.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusMessage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusBusNameTracker.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusBusNameTracker.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusBusNameTracker.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#EggDBusBusNameTracker.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#EggDBusBusNameTracker.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusBusNameTracker">
+<a name="EggDBusBusNameTracker"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusBusNameTracker.top_of_page"></a>EggDBusBusNameTracker</span></h2>
+<p>EggDBusBusNameTracker — Track bus names</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusBusNameTracker.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-struct" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a>;
+<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> * <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-new" title="egg_dbus_bus_name_tracker_new ()">egg_dbus_bus_name_tracker_new</a>   (<a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a> *bus);
+void                <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-watch-bus-name" title="egg_dbus_bus_name_tracker_watch_bus_name ()">egg_dbus_bus_name_tracker_watch_bus_name</a>
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);
+void                <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-stop-watching-bus-name" title="egg_dbus_bus_name_tracker_stop_watching_bus_name ()">egg_dbus_bus_name_tracker_stop_watching_bus_name</a>
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-has-info-for-bus-name" title="egg_dbus_bus_name_tracker_has_info_for_bus_name ()">egg_dbus_bus_name_tracker_has_info_for_bus_name</a>
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-get-owner-for-bus-name" title="egg_dbus_bus_name_tracker_get_owner_for_bus_name ()">egg_dbus_bus_name_tracker_get_owner_for_bus_name</a>
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-get-known-well-known-bus-names-for-unique-bus-name" title="egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name ()">egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name</a>
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *unique_bus_name);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusBusNameTracker.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusBusNameTracker
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EggDBusBusNameTracker.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker--bus" title='The "bus" property'>bus</a>"                      <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a>*           : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="EggDBusBusNameTracker.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-gained-owner" title='The "bus-name-gained-owner" signal'>bus-name-gained-owner</a>"                          : Run Last
+  "<a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-has-info" title='The "bus-name-has-info" signal'>bus-name-has-info</a>"                              : Run Last
+  "<a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-lost-owner" title='The "bus-name-lost-owner" signal'>bus-name-lost-owner</a>"                            : Run Last
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusBusNameTracker.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a> class is used for tracking bus names on a
+message bus.
+</p>
+<p>
+If you are writing a D-Bus client there's no need to use this class as it's used
+internally by <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a> to maintain the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a> property
+on object proxies.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusBusNameTracker.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusBusNameTracker">
+<a name="EggDBusBusNameTracker-struct"></a><h3>EggDBusBusNameTracker</h3>
+<pre class="programlisting">typedef struct _EggDBusBusNameTracker EggDBusBusNameTracker;</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_new ()">
+<a name="egg-dbus-bus-name-tracker-new"></a><h3>egg_dbus_bus_name_tracker_new ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> * egg_dbus_bus_name_tracker_new   (<a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a> *bus);</pre>
+<p>
+Creates a new bus name tracker for <em class="parameter"><code>bus</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus"><span class="type">EggDBusBus</span></a> object that represents a message bus daemon.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_watch_bus_name ()">
+<a name="egg-dbus-bus-name-tracker-watch-bus-name"></a><h3>egg_dbus_bus_name_tracker_watch_bus_name ()</h3>
+<pre class="programlisting">void                egg_dbus_bus_name_tracker_watch_bus_name
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);</pre>
+<p>
+Starts watching <em class="parameter"><code>bus_name</code></em>.
+</p>
+<p>
+This function can be called multiple times for the same name;
+<em class="parameter"><code>bus_name_tracker</code></em> internally maintains a count of watchers for each
+watched name.
+</p>
+<p>
+TODO: it would be useful to pass callback functions as well.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A unique or well-known name.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_stop_watching_bus_name ()">
+<a name="egg-dbus-bus-name-tracker-stop-watching-bus-name"></a><h3>egg_dbus_bus_name_tracker_stop_watching_bus_name ()</h3>
+<pre class="programlisting">void                egg_dbus_bus_name_tracker_stop_watching_bus_name
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);</pre>
+<p>
+Stops watching <em class="parameter"><code>bus_name</code></em>.
+</p>
+<p>
+This function can be called multiple times for the same name;
+<em class="parameter"><code>bus_name_tracker</code></em> internally maintains a count of watchers for each
+watched name.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A name being watched.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_has_info_for_bus_name ()">
+<a name="egg-dbus-bus-name-tracker-has-info-for-bus-name"></a><h3>egg_dbus_bus_name_tracker_has_info_for_bus_name ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_bus_name_tracker_has_info_for_bus_name
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);</pre>
+<p>
+Checks if information has been retrieved for <em class="parameter"><code>bus_name</code></em>. If this function returns <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a>, you can
+connect to the <a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-has-info" title='The "bus-name-has-info" signal'><span class="type">"bus-name-has-info"</span></a> signal and use
+<a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-get-owner-for-bus-name" title="egg_dbus_bus_name_tracker_get_owner_for_bus_name ()"><code class="function">egg_dbus_bus_name_tracker_get_owner_for_bus_name()</code></a> to retrieve the owner when information is
+available.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A name being watched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>bus_name_tracker</code></em> has information about <em class="parameter"><code>bus_name</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_get_owner_for_bus_name ()">
+<a name="egg-dbus-bus-name-tracker-get-owner-for-bus-name"></a><h3>egg_dbus_bus_name_tracker_get_owner_for_bus_name ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             egg_dbus_bus_name_tracker_get_owner_for_bus_name
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *bus_name);</pre>
+<p>
+Gets owner of <em class="parameter"><code>bus_name</code></em>.
+</p>
+<p>
+If <em class="parameter"><code>bus_name_tracker</code></em> recently started watching <em class="parameter"><code>bus_name</code></em>, a call to <a class="link" href="eggdbus-eggdbusbus.html#egg-dbus-bus-get-name-owner" title="egg_dbus_bus_get_name_owner ()"><code class="function">egg_dbus_bus_get_name_owner()</code></a>
+call may be still be pending. This function will block in a main loop until the owner is resolved.
+</p>
+<p>
+If this synchronous behavior is not desired, use call <a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-has-info-for-bus-name" title="egg_dbus_bus_name_tracker_has_info_for_bus_name ()"><code class="function">egg_dbus_bus_name_tracker_has_info_for_bus_name()</code></a>
+and connect to the <a class="link" href="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-has-info" title='The "bus-name-has-info" signal'><span class="type">"bus-name-has-info"</span></a> signal to get informed when
+owner information is available.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A name being watched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The owner of <em class="parameter"><code>bus_name</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there is no owner. Free
+with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name ()">
+<a name="egg-dbus-bus-name-tracker-get-known-well-known-bus-names-for-unique-bus-name"></a><h3>egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name
+                                                        (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *unique_bus_name);</pre>
+<p>
+Returns the known set (e.g. only the set of well-known bus names
+currently being watched) of well-known bus names that
+<em class="parameter"><code>unique_bus_name</code></em> owns.
+</p>
+<p>
+This function is used to dispatch signals to proxies in
+<a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>; it is probably not of much general use.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unique_bus_name</code></em> :</span></p></td>
+<td> A unique or well-known bus name earlier passed to
+<a class="link" href="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-watch-bus-name" title="egg_dbus_bus_name_tracker_watch_bus_name ()"><code class="function">egg_dbus_bus_name_tracker_watch_bus_name()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> An <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> terminated array of well-known bus names or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>
+if there are no known well-known bus names owned by
+<em class="parameter"><code>unique_bus_name</code></em>. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"
+><code class="function">g_strfreev()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EggDBusBusNameTracker.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "bus" property'>
+<a name="EggDBusBusNameTracker--bus"></a><h3>The <code class="literal">"bus"</code> property</h3>
+<pre class="programlisting">  "bus"                      <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a>*           : Read / Write / Construct Only</pre>
+<p>The bus we're tracking names for.</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="EggDBusBusNameTracker.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "bus-name-gained-owner" signal'>
+<a name="EggDBusBusNameTracker-bus-name-gained-owner"></a><h3>The <code class="literal">"bus-name-gained-owner"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>                 *bus_name,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>                 *new_owner,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>               user_data)             : Run Last</pre>
+<p>
+Emitted when <em class="parameter"><code>new_owner</code></em> gains ownership of <em class="parameter"><code>bus_name</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A bus name being watched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_owner</code></em> :</span></p></td>
+<td> A unique bus name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "bus-name-has-info" signal'>
+<a name="EggDBusBusNameTracker-bus-name-has-info"></a><h3>The <code class="literal">"bus-name-has-info"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>                 *bus_name,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>               user_data)             : Run Last</pre>
+<p>
+Emitted when <em class="parameter"><code>bus_name_tracker</code></em> has information about <em class="parameter"><code>bus_name</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A bus name being watched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "bus-name-lost-owner" signal'>
+<a name="EggDBusBusNameTracker-bus-name-lost-owner"></a><h3>The <code class="literal">"bus-name-lost-owner"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">EggDBusBusNameTracker</a> *bus_name_tracker,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>                 *bus_name,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>                 *old_owner,
+                                                        <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>               user_data)             : Run Last</pre>
+<p>
+Emitted when <em class="parameter"><code>old_owner</code></em> loses ownership of <em class="parameter"><code>bus_name</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name_tracker</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker"><span class="type">EggDBusBusNameTracker</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_name</code></em> :</span></p></td>
+<td> A bus name being watched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_owner</code></em> :</span></p></td>
+<td> A unique bus name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

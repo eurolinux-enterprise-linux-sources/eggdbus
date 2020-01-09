@@ -1,0 +1,62 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/">
+
+  <interface name="org.freedesktop.DBus.Properties">
+    <annotation name="org.gtk.EggDBus.DocString" value="Many native APIs will have a concept of object <emphasis>properties</emphasis> or <emphasis>attributes</emphasis>. These can be exposed via the #org.freedesktop.DBus.Properties interface. The available properties and whether they are writable can be determined by using the #org.freedesktop.DBus.Introspectable interface."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Properties interface"/>
+
+    <method name="Get">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets the value of the property with name @property_name on the interface with name @interface_name."/>
+
+      <arg direction="in"  type="s" name="interface_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the D-Bus interface."/>
+      </arg>
+      <arg direction="in"  type="s" name="property_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the property."/>
+      </arg>
+      <arg direction="out" type="v" name="value">
+        <annotation name="org.gtk.EggDBus.DocString" value="The value of the property."/>
+      </arg>
+    </method>
+
+    <method name="GetAll">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets all properties on the interface with the name @interface_name."/>
+
+      <arg direction="in"  type="s" name="interface_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the D-Bus interface."/>
+      </arg>
+      <arg direction="out" type="a{sv}" name="properties">
+        <annotation name="org.gtk.EggDBus.DocString" value="A dictionary containing all the properties."/>
+      </arg>
+    </method>
+
+    <method name="Set">
+      <annotation name="org.gtk.EggDBus.DocString" value="Sets the value of the property with name @property_name on the interface with name @interface_name to @value."/>
+
+      <arg direction="in"  type="s" name="interface_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the D-Bus interface."/>
+      </arg>
+      <arg direction="in"  type="s" name="property_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the property."/>
+      </arg>
+      <arg direction="in"  type="v" name="value">
+        <annotation name="org.gtk.EggDBus.DocString" value="The value to set."/>
+      </arg>
+    </method>
+
+    <!-- Changed() is not yet in the D-Bus spec so prefix it -->
+    <signal name="EggDBusChanged">
+      <annotation name="org.gtk.EggDBus.DocString" value="Emitted when one or more properties change on an interface. Note: this signal is proprietary to EggDBus; no other D-Bus implementation will emit it."/>
+
+      <arg type="s" name="interface_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The name of the D-Bus interface."/>
+      </arg>
+      <arg type="a{sv}" name="changed_properties">
+        <annotation name="org.gtk.EggDBus.DocString" value="A dictionary containing the changed properties."/>
+      </arg>
+    </signal>
+
+  </interface>
+</node>
+

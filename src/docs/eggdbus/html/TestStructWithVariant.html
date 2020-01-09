@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TestStructWithVariant</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example.html" title="Example of Generated Code">
+<link rel="prev" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">
+<link rel="next" href="TestSubject.html" title="TestSubject">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="TestExtendedDescribedPoint.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="TestSubject.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#TestStructWithVariant.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#TestStructWithVariant.description" class="shortcut">Description</a>
+                 | 
+                <a href="#TestStructWithVariant.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="TestStructWithVariant">
+<a name="TestStructWithVariant"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="TestStructWithVariant.top_of_page"></a>TestStructWithVariant</span></h2>
+<p>TestStructWithVariant — Complex structure</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="TestStructWithVariant.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="TestStructWithVariant.html#TestStructWithVariant-struct" title="TestStructWithVariant">TestStructWithVariant</a>;
+<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> * <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-new" title="test_struct_with_variant_new ()">test_struct_with_variant_new</a>    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> anger_level,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> threat_level,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *a_variant,
+                                                         TestSomeExampleCType override_c_type);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-get-name" title="test_struct_with_variant_get_name ()">test_struct_with_variant_get_name</a>   (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-get-anger-level" title="test_struct_with_variant_get_anger_level ()">test_struct_with_variant_get_anger_level</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-get-threat-level" title="test_struct_with_variant_get_threat_level ()">test_struct_with_variant_get_threat_level</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-get-a-variant" title="test_struct_with_variant_get_a_variant ()">test_struct_with_variant_get_a_variant</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);
+TestSomeExampleCType  <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-get-override-c-type" title="test_struct_with_variant_get_override_c_type ()">test_struct_with_variant_get_override_c_type</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);
+void                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-set-name" title="test_struct_with_variant_set_name ()">test_struct_with_variant_set_name</a>   (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+void                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-set-anger-level" title="test_struct_with_variant_set_anger_level ()">test_struct_with_variant_set_anger_level</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+void                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-set-threat-level" title="test_struct_with_variant_set_threat_level ()">test_struct_with_variant_set_threat_level</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+void                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-set-a-variant" title="test_struct_with_variant_set_a_variant ()">test_struct_with_variant_set_a_variant</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *value);
+void                <a class="link" href="TestStructWithVariant.html#test-struct-with-variant-set-override-c-type" title="test_struct_with_variant_set_override_c_type ()">test_struct_with_variant_set_override_c_type</a>
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         TestSomeExampleCType value);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="TestStructWithVariant.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a>
+         +----TestStructWithVariant
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="TestStructWithVariant.description"></a><h2>Description</h2>
+<p>
+Test type for a complex structure (siivi).</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="TestStructWithVariant.details"></a><h2>Details</h2>
+<div class="refsect2" title="TestStructWithVariant">
+<a name="TestStructWithVariant-struct"></a><h3>TestStructWithVariant</h3>
+<pre class="programlisting">typedef struct _TestStructWithVariant TestStructWithVariant;</pre>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_new ()">
+<a name="test-struct-with-variant-new"></a><h3>test_struct_with_variant_new ()</h3>
+<pre class="programlisting"><a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> * test_struct_with_variant_new    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> anger_level,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> threat_level,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *a_variant,
+                                                         TestSomeExampleCType override_c_type);</pre>
+<p>
+Constructs a new <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A name
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>anger_level</code></em> :</span></p></td>
+<td> The level of anger
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>threat_level</code></em> :</span></p></td>
+<td> The level of threat
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a_variant</code></em> :</span></p></td>
+<td> Some variant
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>override_c_type</code></em> :</span></p></td>
+<td> Some primitive type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_get_name ()">
+<a name="test-struct-with-variant-get-name"></a><h3>test_struct_with_variant_get_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       test_struct_with_variant_get_name   (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);</pre>
+<p>
+Gets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A name
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_get_anger_level ()">
+<a name="test-struct-with-variant-get-anger-level"></a><h3>test_struct_with_variant_get_anger_level ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                test_struct_with_variant_get_anger_level
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);</pre>
+<p>
+Gets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The level of anger
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_get_threat_level ()">
+<a name="test-struct-with-variant-get-threat-level"></a><h3>test_struct_with_variant_get_threat_level ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                test_struct_with_variant_get_threat_level
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);</pre>
+<p>
+Gets element 2 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The level of threat
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_get_a_variant ()">
+<a name="test-struct-with-variant-get-a-variant"></a><h3>test_struct_with_variant_get_a_variant ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    test_struct_with_variant_get_a_variant
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);</pre>
+<p>
+Gets element 3 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Some variant
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_get_override_c_type ()">
+<a name="test-struct-with-variant-get-override-c-type"></a><h3>test_struct_with_variant_get_override_c_type ()</h3>
+<pre class="programlisting">TestSomeExampleCType  test_struct_with_variant_get_override_c_type
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance);</pre>
+<p>
+Gets element 4 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Some primitive type
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_set_name ()">
+<a name="test-struct-with-variant-set-name"></a><h3>test_struct_with_variant_set_name ()</h3>
+<pre class="programlisting">void                test_struct_with_variant_set_name   (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Sets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A name
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_set_anger_level ()">
+<a name="test-struct-with-variant-set-anger-level"></a><h3>test_struct_with_variant_set_anger_level ()</h3>
+<pre class="programlisting">void                test_struct_with_variant_set_anger_level
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Sets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The level of anger
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_set_threat_level ()">
+<a name="test-struct-with-variant-set-threat-level"></a><h3>test_struct_with_variant_set_threat_level ()</h3>
+<pre class="programlisting">void                test_struct_with_variant_set_threat_level
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Sets element 2 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The level of threat
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_set_a_variant ()">
+<a name="test-struct-with-variant-set-a-variant"></a><h3>test_struct_with_variant_set_a_variant ()</h3>
+<pre class="programlisting">void                test_struct_with_variant_set_a_variant
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *value);</pre>
+<p>
+Sets element 3 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Some variant
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_struct_with_variant_set_override_c_type ()">
+<a name="test-struct-with-variant-set-override-c-type"></a><h3>test_struct_with_variant_set_override_c_type ()</h3>
+<pre class="programlisting">void                test_struct_with_variant_set_override_c_type
+                                                        (<a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant">TestStructWithVariant</a> *instance,
+                                                         TestSomeExampleCType value);</pre>
+<p>
+Sets element 4 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestStructWithVariant.html" title="TestStructWithVariant"><span class="type">TestStructWithVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Some primitive type
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

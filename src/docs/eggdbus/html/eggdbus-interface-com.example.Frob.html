@@ -1,0 +1,1849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>com.example.Frob Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="eggdbus-structmain-ExtendedDescribedPoint.html" title="ExtendedDescribedPoint Structure">
+<link rel="next" href="eggdbus-interface-com.example.Tweak.html" title="com.example.Tweak Interface">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-structmain-ExtendedDescribedPoint.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-interface-com.example.Tweak.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-com.example.Frob.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Frob.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Frob.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Frob.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="com.example.Frob Interface">
+<a name="eggdbus-interface-com.example.Frob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">com.example.Frob Interface</span></h2>
+<p>com.example.Frob Interface — Frob interface used for testing</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.HelloWorld" title="HelloWorld ()">HelloWorld</a>                            (IN  String                           hello_message,
+                                       OUT String                           arg_1)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestPrimitiveTypes" title="TestPrimitiveTypes ()">TestPrimitiveTypes</a>                    (IN  Byte                             val_byte,
+                                       IN  Boolean                          val_boolean,
+                                       IN  Int16                            val_int16,
+                                       IN  UInt16                           val_uint16,
+                                       IN  Int32                            val_int32,
+                                       IN  UInt32                           val_uint32,
+                                       IN  Int64                            val_int64,
+                                       IN  UInt64                           val_uint64,
+                                       IN  Double                           val_double,
+                                       IN  String                           val_string,
+                                       IN  ObjectPath                       val_objpath,
+                                       IN  Signature                        val_signature,
+                                       OUT Byte                             arg_12,
+                                       OUT Boolean                          arg_13,
+                                       OUT Int16                            arg_14,
+                                       OUT UInt16                           arg_15,
+                                       OUT Int32                            arg_16,
+                                       OUT UInt32                           arg_17,
+                                       OUT Int64                            arg_18,
+                                       OUT UInt64                           arg_19,
+                                       OUT Double                           arg_20,
+                                       OUT String                           arg_21,
+                                       OUT ObjectPath                       arg_22,
+                                       OUT Signature                        arg_23)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfPrimitiveTypes" title="TestArrayOfPrimitiveTypes ()">TestArrayOfPrimitiveTypes</a>             (IN  Array&lt;Byte&gt;                      val_byte,
+                                       IN  Array&lt;Boolean&gt;                   val_boolean,
+                                       IN  Array&lt;Int16&gt;                     val_int16,
+                                       IN  Array&lt;UInt16&gt;                    val_uint16,
+                                       IN  Array&lt;Int32&gt;                     val_int32,
+                                       IN  Array&lt;UInt32&gt;                    val_uint32,
+                                       IN  Array&lt;Int64&gt;                     val_int64,
+                                       IN  Array&lt;UInt64&gt;                    val_uint64,
+                                       IN  Array&lt;Double&gt;                    val_double,
+                                       IN  Array&lt;String&gt;                    val_string,
+                                       IN  Array&lt;ObjectPath&gt;                val_objpath,
+                                       IN  Array&lt;Signature&gt;                 val_signature,
+                                       OUT Array&lt;Byte&gt;                      arg_12,
+                                       OUT Array&lt;Boolean&gt;                   arg_13,
+                                       OUT Array&lt;Int16&gt;                     arg_14,
+                                       OUT Array&lt;UInt16&gt;                    arg_15,
+                                       OUT Array&lt;Int32&gt;                     arg_16,
+                                       OUT Array&lt;UInt32&gt;                    arg_17,
+                                       OUT Array&lt;Int64&gt;                     arg_18,
+                                       OUT Array&lt;UInt64&gt;                    arg_19,
+                                       OUT Array&lt;Double&gt;                    arg_20,
+                                       OUT Array&lt;String&gt;                    arg_21,
+                                       OUT Array&lt;ObjectPath&gt;                arg_22,
+                                       OUT Array&lt;Signature&gt;                 arg_23)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestStructureTypes" title="TestStructureTypes ()">TestStructureTypes</a>                    (IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>                            s1,
+                                       IN  <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>                   s2,
+                                       OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>                            arg_2,
+                                       OUT <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>                   arg_3)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfStructureTypes" title="TestArrayOfStructureTypes ()">TestArrayOfStructureTypes</a>             (IN  Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt;    list,
+                                       OUT Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt;    arg_1)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTables" title="TestHashTables ()">TestHashTables</a>                        (IN  Dict&lt;String,String&gt;              hss,
+                                       IN  Dict&lt;ObjectPath,ObjectPath&gt;      hoo,
+                                       IN  Dict&lt;Int32,Int32&gt;                hii,
+                                       IN  Dict&lt;Byte,Byte&gt;                  hyy,
+                                       IN  Dict&lt;Int16,Int16&gt;                hnn,
+                                       IN  Dict&lt;UInt16,UInt16&gt;              hqq,
+                                       IN  Dict&lt;UInt32,UInt32&gt;              huu,
+                                       IN  Dict&lt;Boolean,Boolean&gt;            hbb,
+                                       IN  Dict&lt;Int64,Int64&gt;                hxx,
+                                       IN  Dict&lt;UInt64,UInt64&gt;              htt,
+                                       IN  Dict&lt;Double,Double&gt;              hdd,
+                                       OUT Dict&lt;String,String&gt;              arg_1,
+                                       OUT Dict&lt;ObjectPath,ObjectPath&gt;      arg_3,
+                                       OUT Dict&lt;Int32,Int32&gt;                arg_5,
+                                       OUT Dict&lt;Byte,Byte&gt;                  arg_7,
+                                       OUT Dict&lt;Int16,Int16&gt;                arg_9,
+                                       OUT Dict&lt;UInt16,UInt16&gt;              arg_11,
+                                       OUT Dict&lt;UInt32,UInt32&gt;              arg_13,
+                                       OUT Dict&lt;Boolean,Boolean&gt;            arg_15,
+                                       OUT Dict&lt;Int64,Int64&gt;                arg_17,
+                                       OUT Dict&lt;UInt64,UInt64&gt;              arg_19,
+                                       OUT Dict&lt;Double,Double&gt;              arg_21)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTablesOfArrays" title="TestHashTablesOfArrays ()">TestHashTablesOfArrays</a>                (IN  Dict&lt;String,Array&lt;String&gt;&gt;       hsas,
+                                       IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt;   hsao,
+                                       IN  Dict&lt;String,Array&lt;Int32&gt;&gt;        hsai,
+                                       IN  Dict&lt;String,Array&lt;Byte&gt;&gt;         hsay,
+                                       IN  Dict&lt;String,Array&lt;Int16&gt;&gt;        hsan,
+                                       IN  Dict&lt;String,Array&lt;UInt16&gt;&gt;       hsaq,
+                                       IN  Dict&lt;String,Array&lt;UInt32&gt;&gt;       hsau,
+                                       IN  Dict&lt;String,Array&lt;Boolean&gt;&gt;      hsab,
+                                       IN  Dict&lt;String,Array&lt;Int64&gt;&gt;        hsax,
+                                       IN  Dict&lt;String,Array&lt;UInt64&gt;&gt;       hsat,
+                                       IN  Dict&lt;String,Array&lt;Double&gt;&gt;       hsad,
+                                       IN  Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;        hash_of_point_arrays,
+                                       OUT Dict&lt;String,Array&lt;String&gt;&gt;       arg_1,
+                                       OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt;   arg_3,
+                                       OUT Dict&lt;String,Array&lt;Int32&gt;&gt;        arg_5,
+                                       OUT Dict&lt;String,Array&lt;Byte&gt;&gt;         arg_7,
+                                       OUT Dict&lt;String,Array&lt;Int16&gt;&gt;        arg_9,
+                                       OUT Dict&lt;String,Array&lt;UInt16&gt;&gt;       arg_11,
+                                       OUT Dict&lt;String,Array&lt;UInt32&gt;&gt;       arg_13,
+                                       OUT Dict&lt;String,Array&lt;Boolean&gt;&gt;      arg_15,
+                                       OUT Dict&lt;String,Array&lt;Int64&gt;&gt;        arg_17,
+                                       OUT Dict&lt;String,Array&lt;UInt64&gt;&gt;       arg_19,
+                                       OUT Dict&lt;String,Array&lt;Double&gt;&gt;       arg_21,
+                                       OUT Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;        new_hash_of_point_arrays)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTableOfStructures" title="TestHashTableOfStructures ()">TestHashTableOfStructures</a>             (IN  Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;               hash_of_points,
+                                       OUT Dict&lt;String,<a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>&gt;      hash_of_described_points)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTableOfHashTablesOfStructures" title="TestHashTableOfHashTablesOfStructures ()">TestHashTableOfHashTablesOfStructures</a> (IN  Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  hash_of_hash_of_points,
+                                       OUT Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  new_hash_of_hash_of_points)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfHashTablesOfStructures" title="TestArrayOfHashTablesOfStructures ()">TestArrayOfHashTablesOfStructures</a>     (IN  Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;        array_of_hash_of_points,
+                                       OUT Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;        new_array_of_hash_of_points)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfArrays" title="TestArrayOfArrays ()">TestArrayOfArrays</a>                     (IN  Array&lt;Array&lt;String&gt;&gt;             aas,
+                                       IN  Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;              aastruct,
+                                       IN  Array&lt;Array&lt;ObjectPath&gt;&gt;         aao,
+                                       IN  Array&lt;Array&lt;Int32&gt;&gt;              aai,
+                                       IN  Array&lt;Array&lt;Byte&gt;&gt;               aay,
+                                       IN  Array&lt;Array&lt;Int16&gt;&gt;              aan,
+                                       IN  Array&lt;Array&lt;UInt16&gt;&gt;             aaq,
+                                       IN  Array&lt;Array&lt;UInt32&gt;&gt;             aau,
+                                       IN  Array&lt;Array&lt;Boolean&gt;&gt;            aab,
+                                       IN  Array&lt;Array&lt;Int64&gt;&gt;              aax,
+                                       IN  Array&lt;Array&lt;UInt64&gt;&gt;             aat,
+                                       IN  Array&lt;Array&lt;Double&gt;&gt;             aad,
+                                       IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;      aaas,
+                                       OUT Array&lt;Array&lt;String&gt;&gt;             ret_aas,
+                                       OUT Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;              ret_aastruct,
+                                       OUT Array&lt;Array&lt;ObjectPath&gt;&gt;         ret_aao,
+                                       OUT Array&lt;Array&lt;Int32&gt;&gt;              ret_aai,
+                                       OUT Array&lt;Array&lt;Byte&gt;&gt;               ret_aay,
+                                       OUT Array&lt;Array&lt;Int16&gt;&gt;              ret_aan,
+                                       OUT Array&lt;Array&lt;UInt16&gt;&gt;             ret_aaq,
+                                       OUT Array&lt;Array&lt;UInt32&gt;&gt;             ret_aau,
+                                       OUT Array&lt;Array&lt;Boolean&gt;&gt;            ret_aab,
+                                       OUT Array&lt;Array&lt;Int64&gt;&gt;              ret_aax,
+                                       OUT Array&lt;Array&lt;UInt64&gt;&gt;             ret_aat,
+                                       OUT Array&lt;Array&lt;Double&gt;&gt;             ret_aad,
+                                       OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;      ret_aaas)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestVariantReturn" title="TestVariantReturn ()">TestVariantReturn</a>                     (IN  String                           desired_variant,
+                                       OUT Variant                          variant)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.EmitTestSignals" title="EmitTestSignals ()">EmitTestSignals</a>                       ()
+    </pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eggdbus-if-signals-com.example.Frob"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes" title='The "SignalWithPrimitiveTypes" signal'>SignalWithPrimitiveTypes</a>        (Byte                 val_byte,
+                                 Boolean              val_boolean,
+                                 Int16                val_int16,
+                                 UInt16               val_uint16,
+                                 Int32                val_int32,
+                                 UInt32               val_uint32,
+                                 Int64                val_int64,
+                                 UInt64               val_uint64,
+                                 Double               val_double,
+                                 String               val_string,
+                                 ObjectPath           val_objpath,
+                                 Signature            val_sig)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithArrayOfPrimitiveTypes" title='The "SignalWithArrayOfPrimitiveTypes" signal'>SignalWithArrayOfPrimitiveTypes</a> (Array&lt;Byte&gt;          array_byte,
+                                 Array&lt;Int32&gt;         array_int32,
+                                 Array&lt;String&gt;        array_string,
+                                 Array&lt;ObjectPath&gt;    array_objpath,
+                                 Array&lt;Signature&gt;     array_sig)
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithStructureAndHash" title='The "SignalWithStructureAndHash" signal'>SignalWithStructureAndHash</a>      (<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>                point,
+                                 <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>       described-point,
+                                 Dict&lt;String,String&gt;  hash_of_string_to_string,
+                                 Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;   hash_of_string_to_point)
+    </pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="eggdbus-if-properties-com.example.Frob"></a><h2>Properties</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:y" title='The "y" property'>y</a>       readable     Byte
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:b" title='The "b" property'>b</a>       readable     Boolean
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:n" title='The "n" property'>n</a>       readable     Int16
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:q" title='The "q" property'>q</a>       readable     UInt16
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:i" title='The "i" property'>i</a>       readable     Int32
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:u" title='The "u" property'>u</a>       readable     UInt32
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:x" title='The "x" property'>x</a>       readable     Int64
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:t" title='The "t" property'>t</a>       readable     UInt64
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:d" title='The "d" property'>d</a>       readable     Double
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:s" title='The "s" property'>s</a>       readable     String
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:o" title='The "o" property'>o</a>       readable     ObjectPath
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:g" title='The "g" property'>g</a>       readable     Signature
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ay" title='The "ay" property'>ay</a>      readable     Array&lt;Byte&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ab" title='The "ab" property'>ab</a>      readable     Array&lt;Boolean&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:an" title='The "an" property'>an</a>      readable     Array&lt;Int16&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:aq" title='The "aq" property'>aq</a>      readable     Array&lt;UInt16&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ai" title='The "ai" property'>ai</a>      readable     Array&lt;Int32&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:au" title='The "au" property'>au</a>      readable     Array&lt;UInt32&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ax" title='The "ax" property'>ax</a>      readable     Array&lt;Int64&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:at" title='The "at" property'>at</a>      readable     Array&lt;UInt64&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ad" title='The "ad" property'>ad</a>      readable     Array&lt;Double&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:as" title='The "as" property'>as</a>      readable     Array&lt;String&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ao" title='The "ao" property'>ao</a>      readable     Array&lt;ObjectPath&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ag" title='The "ag" property'>ag</a>      readable     Array&lt;Signature&gt;
+<a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:foo" title='The "foo" property'>foo</a>     readable     String
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-com.example.Frob"></a><h2>Description</h2>
+<p>
+</p>
+<p>The <a class="link" href="eggdbus-interface-com.example.Frob.html" title="com.example.Frob Interface">com.example.Frob</a> interface is used in the EggDBus test suite.</p>
+<p>Test of symbol/constant/method/signal/property resolution: Link to method <a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.HelloWorld" title="HelloWorld ()">HelloWorld()</a>. And a link to a signal <a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes" title='The "SignalWithPrimitiveTypes" signal'><span class="type">"SignalWithPrimitiveTypes"</span></a>. And a property <a class="link" href="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:foo" title='The "foo" property'><span class="type">"foo"</span></a>. And also a struct <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>. And an error <a class="link" href="eggdbus-enummain-Error.html#eggdbus-constant-Error.com.example.Error.FluxCapacitorFailure">com.example.Error.FluxCapacitorFailure</a>. And a flag value <a class="link" href="eggdbus-enummain-CreateFlags.html#eggdbus-constant-CreateFlags.LogAttempt">CreateFlags.LogAttempt</a>. And an enum <a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-constant-Vehicle.Truck">Vehicle.Truck</a>. Link to an enumeration <a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a>. Link to a collection of errors <a class="link" href="eggdbus-enummain-Error.html#eggdbus-errordomain-com.example.Error." title="The com.example.Error.* Error Domain">com.example.Error.* Error Domain</a>. And a collection of flags <a class="link" href="eggdbus-enummain-DeleteFlags.html#eggdbus-enum-DeleteFlags" title="The DeleteFlags Flags">DeleteFlags</a>. <code class="literal">TRUE</code>. <code class="literal">FALSE</code>. That's it.</p>
+<p>
+      </p>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-com.example.Frob"></a><h2>Method Details</h2>
+<div class="refsect2" title="HelloWorld ()">
+<a name="eggdbus-method-com.example.Frob.HelloWorld"></a><h3>HelloWorld ()</h3>
+<pre class="programlisting">
+HelloWorld (IN  String  hello_message,
+            OUT String  arg_1)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>hello_message</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>arg_1</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestPrimitiveTypes ()">
+<a name="eggdbus-method-com.example.Frob.TestPrimitiveTypes"></a><h3>TestPrimitiveTypes ()</h3>
+<pre class="programlisting">
+TestPrimitiveTypes (IN  Byte        val_byte,
+                    IN  Boolean     val_boolean,
+                    IN  Int16       val_int16,
+                    IN  UInt16      val_uint16,
+                    IN  Int32       val_int32,
+                    IN  UInt32      val_uint32,
+                    IN  Int64       val_int64,
+                    IN  UInt64      val_uint64,
+                    IN  Double      val_double,
+                    IN  String      val_string,
+                    IN  ObjectPath  val_objpath,
+                    IN  Signature   val_signature,
+                    OUT Byte        arg_12,
+                    OUT Boolean     arg_13,
+                    OUT Int16       arg_14,
+                    OUT UInt16      arg_15,
+                    OUT Int32       arg_16,
+                    OUT UInt32      arg_17,
+                    OUT Int64       arg_18,
+                    OUT UInt64      arg_19,
+                    OUT Double      arg_20,
+                    OUT String      arg_21,
+                    OUT ObjectPath  arg_22,
+                    OUT Signature   arg_23)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Byte <em class="parameter"><code>val_byte</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>val_boolean</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Int16 <em class="parameter"><code>val_int16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  UInt16 <em class="parameter"><code>val_uint16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Int32 <em class="parameter"><code>val_int32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  UInt32 <em class="parameter"><code>val_uint32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Int64 <em class="parameter"><code>val_int64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  UInt64 <em class="parameter"><code>val_uint64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Double <em class="parameter"><code>val_double</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>val_string</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  ObjectPath <em class="parameter"><code>val_objpath</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Signature <em class="parameter"><code>val_signature</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Byte <em class="parameter"><code>arg_12</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Boolean <em class="parameter"><code>arg_13</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Int16 <em class="parameter"><code>arg_14</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT UInt16 <em class="parameter"><code>arg_15</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Int32 <em class="parameter"><code>arg_16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT UInt32 <em class="parameter"><code>arg_17</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Int64 <em class="parameter"><code>arg_18</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT UInt64 <em class="parameter"><code>arg_19</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Double <em class="parameter"><code>arg_20</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>arg_21</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT ObjectPath <em class="parameter"><code>arg_22</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Signature <em class="parameter"><code>arg_23</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestArrayOfPrimitiveTypes ()">
+<a name="eggdbus-method-com.example.Frob.TestArrayOfPrimitiveTypes"></a><h3>TestArrayOfPrimitiveTypes ()</h3>
+<pre class="programlisting">
+TestArrayOfPrimitiveTypes (IN  Array&lt;Byte&gt;        val_byte,
+                           IN  Array&lt;Boolean&gt;     val_boolean,
+                           IN  Array&lt;Int16&gt;       val_int16,
+                           IN  Array&lt;UInt16&gt;      val_uint16,
+                           IN  Array&lt;Int32&gt;       val_int32,
+                           IN  Array&lt;UInt32&gt;      val_uint32,
+                           IN  Array&lt;Int64&gt;       val_int64,
+                           IN  Array&lt;UInt64&gt;      val_uint64,
+                           IN  Array&lt;Double&gt;      val_double,
+                           IN  Array&lt;String&gt;      val_string,
+                           IN  Array&lt;ObjectPath&gt;  val_objpath,
+                           IN  Array&lt;Signature&gt;   val_signature,
+                           OUT Array&lt;Byte&gt;        arg_12,
+                           OUT Array&lt;Boolean&gt;     arg_13,
+                           OUT Array&lt;Int16&gt;       arg_14,
+                           OUT Array&lt;UInt16&gt;      arg_15,
+                           OUT Array&lt;Int32&gt;       arg_16,
+                           OUT Array&lt;UInt32&gt;      arg_17,
+                           OUT Array&lt;Int64&gt;       arg_18,
+                           OUT Array&lt;UInt64&gt;      arg_19,
+                           OUT Array&lt;Double&gt;      arg_20,
+                           OUT Array&lt;String&gt;      arg_21,
+                           OUT Array&lt;ObjectPath&gt;  arg_22,
+                           OUT Array&lt;Signature&gt;   arg_23)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Byte&gt; <em class="parameter"><code>val_byte</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Boolean&gt; <em class="parameter"><code>val_boolean</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Int16&gt; <em class="parameter"><code>val_int16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;UInt16&gt; <em class="parameter"><code>val_uint16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Int32&gt; <em class="parameter"><code>val_int32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;UInt32&gt; <em class="parameter"><code>val_uint32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Int64&gt; <em class="parameter"><code>val_int64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;UInt64&gt; <em class="parameter"><code>val_uint64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Double&gt; <em class="parameter"><code>val_double</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;String&gt; <em class="parameter"><code>val_string</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;ObjectPath&gt; <em class="parameter"><code>val_objpath</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Signature&gt; <em class="parameter"><code>val_signature</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Byte&gt; <em class="parameter"><code>arg_12</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Boolean&gt; <em class="parameter"><code>arg_13</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Int16&gt; <em class="parameter"><code>arg_14</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;UInt16&gt; <em class="parameter"><code>arg_15</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Int32&gt; <em class="parameter"><code>arg_16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;UInt32&gt; <em class="parameter"><code>arg_17</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Int64&gt; <em class="parameter"><code>arg_18</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;UInt64&gt; <em class="parameter"><code>arg_19</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Double&gt; <em class="parameter"><code>arg_20</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;String&gt; <em class="parameter"><code>arg_21</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;ObjectPath&gt; <em class="parameter"><code>arg_22</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Signature&gt; <em class="parameter"><code>arg_23</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestStructureTypes ()">
+<a name="eggdbus-method-com.example.Frob.TestStructureTypes"></a><h3>TestStructureTypes ()</h3>
+<pre class="programlisting">
+TestStructureTypes (IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>           s1,
+                    IN  <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>  s2,
+                    OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>           arg_2,
+                    OUT <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>  arg_3)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>s1</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a> <em class="parameter"><code>s2</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>arg_2</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a> <em class="parameter"><code>arg_3</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestArrayOfStructureTypes ()">
+<a name="eggdbus-method-com.example.Frob.TestArrayOfStructureTypes"></a><h3>TestArrayOfStructureTypes ()</h3>
+<pre class="programlisting">
+TestArrayOfStructureTypes (IN  Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt;  list,
+                           OUT Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt;  arg_1)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt; <em class="parameter"><code>list</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;<a class="link" href="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint" title="The ExtendedDescribedPoint Structure">ExtendedDescribedPoint</a>&gt; <em class="parameter"><code>arg_1</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestHashTables ()">
+<a name="eggdbus-method-com.example.Frob.TestHashTables"></a><h3>TestHashTables ()</h3>
+<pre class="programlisting">
+TestHashTables (IN  Dict&lt;String,String&gt;          hss,
+                IN  Dict&lt;ObjectPath,ObjectPath&gt;  hoo,
+                IN  Dict&lt;Int32,Int32&gt;            hii,
+                IN  Dict&lt;Byte,Byte&gt;              hyy,
+                IN  Dict&lt;Int16,Int16&gt;            hnn,
+                IN  Dict&lt;UInt16,UInt16&gt;          hqq,
+                IN  Dict&lt;UInt32,UInt32&gt;          huu,
+                IN  Dict&lt;Boolean,Boolean&gt;        hbb,
+                IN  Dict&lt;Int64,Int64&gt;            hxx,
+                IN  Dict&lt;UInt64,UInt64&gt;          htt,
+                IN  Dict&lt;Double,Double&gt;          hdd,
+                OUT Dict&lt;String,String&gt;          arg_1,
+                OUT Dict&lt;ObjectPath,ObjectPath&gt;  arg_3,
+                OUT Dict&lt;Int32,Int32&gt;            arg_5,
+                OUT Dict&lt;Byte,Byte&gt;              arg_7,
+                OUT Dict&lt;Int16,Int16&gt;            arg_9,
+                OUT Dict&lt;UInt16,UInt16&gt;          arg_11,
+                OUT Dict&lt;UInt32,UInt32&gt;          arg_13,
+                OUT Dict&lt;Boolean,Boolean&gt;        arg_15,
+                OUT Dict&lt;Int64,Int64&gt;            arg_17,
+                OUT Dict&lt;UInt64,UInt64&gt;          arg_19,
+                OUT Dict&lt;Double,Double&gt;          arg_21)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,String&gt; <em class="parameter"><code>hss</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;ObjectPath,ObjectPath&gt; <em class="parameter"><code>hoo</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Int32,Int32&gt; <em class="parameter"><code>hii</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Byte,Byte&gt; <em class="parameter"><code>hyy</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Int16,Int16&gt; <em class="parameter"><code>hnn</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;UInt16,UInt16&gt; <em class="parameter"><code>hqq</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;UInt32,UInt32&gt; <em class="parameter"><code>huu</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Boolean,Boolean&gt; <em class="parameter"><code>hbb</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Int64,Int64&gt; <em class="parameter"><code>hxx</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;UInt64,UInt64&gt; <em class="parameter"><code>htt</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;Double,Double&gt; <em class="parameter"><code>hdd</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,String&gt; <em class="parameter"><code>arg_1</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;ObjectPath,ObjectPath&gt; <em class="parameter"><code>arg_3</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Int32,Int32&gt; <em class="parameter"><code>arg_5</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Byte,Byte&gt; <em class="parameter"><code>arg_7</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Int16,Int16&gt; <em class="parameter"><code>arg_9</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;UInt16,UInt16&gt; <em class="parameter"><code>arg_11</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;UInt32,UInt32&gt; <em class="parameter"><code>arg_13</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Boolean,Boolean&gt; <em class="parameter"><code>arg_15</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Int64,Int64&gt; <em class="parameter"><code>arg_17</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;UInt64,UInt64&gt; <em class="parameter"><code>arg_19</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;Double,Double&gt; <em class="parameter"><code>arg_21</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestHashTablesOfArrays ()">
+<a name="eggdbus-method-com.example.Frob.TestHashTablesOfArrays"></a><h3>TestHashTablesOfArrays ()</h3>
+<pre class="programlisting">
+TestHashTablesOfArrays (IN  Dict&lt;String,Array&lt;String&gt;&gt;      hsas,
+                        IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt;  hsao,
+                        IN  Dict&lt;String,Array&lt;Int32&gt;&gt;       hsai,
+                        IN  Dict&lt;String,Array&lt;Byte&gt;&gt;        hsay,
+                        IN  Dict&lt;String,Array&lt;Int16&gt;&gt;       hsan,
+                        IN  Dict&lt;String,Array&lt;UInt16&gt;&gt;      hsaq,
+                        IN  Dict&lt;String,Array&lt;UInt32&gt;&gt;      hsau,
+                        IN  Dict&lt;String,Array&lt;Boolean&gt;&gt;     hsab,
+                        IN  Dict&lt;String,Array&lt;Int64&gt;&gt;       hsax,
+                        IN  Dict&lt;String,Array&lt;UInt64&gt;&gt;      hsat,
+                        IN  Dict&lt;String,Array&lt;Double&gt;&gt;      hsad,
+                        IN  Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;       hash_of_point_arrays,
+                        OUT Dict&lt;String,Array&lt;String&gt;&gt;      arg_1,
+                        OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt;  arg_3,
+                        OUT Dict&lt;String,Array&lt;Int32&gt;&gt;       arg_5,
+                        OUT Dict&lt;String,Array&lt;Byte&gt;&gt;        arg_7,
+                        OUT Dict&lt;String,Array&lt;Int16&gt;&gt;       arg_9,
+                        OUT Dict&lt;String,Array&lt;UInt16&gt;&gt;      arg_11,
+                        OUT Dict&lt;String,Array&lt;UInt32&gt;&gt;      arg_13,
+                        OUT Dict&lt;String,Array&lt;Boolean&gt;&gt;     arg_15,
+                        OUT Dict&lt;String,Array&lt;Int64&gt;&gt;       arg_17,
+                        OUT Dict&lt;String,Array&lt;UInt64&gt;&gt;      arg_19,
+                        OUT Dict&lt;String,Array&lt;Double&gt;&gt;      arg_21,
+                        OUT Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;       new_hash_of_point_arrays)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;String&gt;&gt; <em class="parameter"><code>hsas</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt; <em class="parameter"><code>hsao</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Int32&gt;&gt; <em class="parameter"><code>hsai</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Byte&gt;&gt; <em class="parameter"><code>hsay</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Int16&gt;&gt; <em class="parameter"><code>hsan</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;UInt16&gt;&gt; <em class="parameter"><code>hsaq</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;UInt32&gt;&gt; <em class="parameter"><code>hsau</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Boolean&gt;&gt; <em class="parameter"><code>hsab</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Int64&gt;&gt; <em class="parameter"><code>hsax</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;UInt64&gt;&gt; <em class="parameter"><code>hsat</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;Double&gt;&gt; <em class="parameter"><code>hsad</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>hash_of_point_arrays</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;String&gt;&gt; <em class="parameter"><code>arg_1</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt; <em class="parameter"><code>arg_3</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Int32&gt;&gt; <em class="parameter"><code>arg_5</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Byte&gt;&gt; <em class="parameter"><code>arg_7</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Int16&gt;&gt; <em class="parameter"><code>arg_9</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;UInt16&gt;&gt; <em class="parameter"><code>arg_11</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;UInt32&gt;&gt; <em class="parameter"><code>arg_13</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Boolean&gt;&gt; <em class="parameter"><code>arg_15</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Int64&gt;&gt; <em class="parameter"><code>arg_17</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;UInt64&gt;&gt; <em class="parameter"><code>arg_19</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;Double&gt;&gt; <em class="parameter"><code>arg_21</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>new_hash_of_point_arrays</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestHashTableOfStructures ()">
+<a name="eggdbus-method-com.example.Frob.TestHashTableOfStructures"></a><h3>TestHashTableOfStructures ()</h3>
+<pre class="programlisting">
+TestHashTableOfStructures (IN  Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;           hash_of_points,
+                           OUT Dict&lt;String,<a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>&gt;  hash_of_described_points)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt; <em class="parameter"><code>hash_of_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,<a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>&gt; <em class="parameter"><code>hash_of_described_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestHashTableOfHashTablesOfStructures ()">
+<a name="eggdbus-method-com.example.Frob.TestHashTableOfHashTablesOfStructures"></a><h3>TestHashTableOfHashTablesOfStructures ()</h3>
+<pre class="programlisting">
+TestHashTableOfHashTablesOfStructures (IN  Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  hash_of_hash_of_points,
+                                       OUT Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  new_hash_of_hash_of_points)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>hash_of_hash_of_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>new_hash_of_hash_of_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestArrayOfHashTablesOfStructures ()">
+<a name="eggdbus-method-com.example.Frob.TestArrayOfHashTablesOfStructures"></a><h3>TestArrayOfHashTablesOfStructures ()</h3>
+<pre class="programlisting">
+TestArrayOfHashTablesOfStructures (IN  Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  array_of_hash_of_points,
+                                   OUT Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;  new_array_of_hash_of_points)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>array_of_hash_of_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>new_array_of_hash_of_points</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestArrayOfArrays ()">
+<a name="eggdbus-method-com.example.Frob.TestArrayOfArrays"></a><h3>TestArrayOfArrays ()</h3>
+<pre class="programlisting">
+TestArrayOfArrays (IN  Array&lt;Array&lt;String&gt;&gt;         aas,
+                   IN  Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;          aastruct,
+                   IN  Array&lt;Array&lt;ObjectPath&gt;&gt;     aao,
+                   IN  Array&lt;Array&lt;Int32&gt;&gt;          aai,
+                   IN  Array&lt;Array&lt;Byte&gt;&gt;           aay,
+                   IN  Array&lt;Array&lt;Int16&gt;&gt;          aan,
+                   IN  Array&lt;Array&lt;UInt16&gt;&gt;         aaq,
+                   IN  Array&lt;Array&lt;UInt32&gt;&gt;         aau,
+                   IN  Array&lt;Array&lt;Boolean&gt;&gt;        aab,
+                   IN  Array&lt;Array&lt;Int64&gt;&gt;          aax,
+                   IN  Array&lt;Array&lt;UInt64&gt;&gt;         aat,
+                   IN  Array&lt;Array&lt;Double&gt;&gt;         aad,
+                   IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;  aaas,
+                   OUT Array&lt;Array&lt;String&gt;&gt;         ret_aas,
+                   OUT Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt;          ret_aastruct,
+                   OUT Array&lt;Array&lt;ObjectPath&gt;&gt;     ret_aao,
+                   OUT Array&lt;Array&lt;Int32&gt;&gt;          ret_aai,
+                   OUT Array&lt;Array&lt;Byte&gt;&gt;           ret_aay,
+                   OUT Array&lt;Array&lt;Int16&gt;&gt;          ret_aan,
+                   OUT Array&lt;Array&lt;UInt16&gt;&gt;         ret_aaq,
+                   OUT Array&lt;Array&lt;UInt32&gt;&gt;         ret_aau,
+                   OUT Array&lt;Array&lt;Boolean&gt;&gt;        ret_aab,
+                   OUT Array&lt;Array&lt;Int64&gt;&gt;          ret_aax,
+                   OUT Array&lt;Array&lt;UInt64&gt;&gt;         ret_aat,
+                   OUT Array&lt;Array&lt;Double&gt;&gt;         ret_aad,
+                   OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;  ret_aaas)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;String&gt;&gt; <em class="parameter"><code>aas</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>aastruct</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;ObjectPath&gt;&gt; <em class="parameter"><code>aao</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Int32&gt;&gt; <em class="parameter"><code>aai</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Byte&gt;&gt; <em class="parameter"><code>aay</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Int16&gt;&gt; <em class="parameter"><code>aan</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;UInt16&gt;&gt; <em class="parameter"><code>aaq</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;UInt32&gt;&gt; <em class="parameter"><code>aau</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Boolean&gt;&gt; <em class="parameter"><code>aab</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Int64&gt;&gt; <em class="parameter"><code>aax</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;UInt64&gt;&gt; <em class="parameter"><code>aat</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Double&gt;&gt; <em class="parameter"><code>aad</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt; <em class="parameter"><code>aaas</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;String&gt;&gt; <em class="parameter"><code>ret_aas</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;&gt; <em class="parameter"><code>ret_aastruct</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;ObjectPath&gt;&gt; <em class="parameter"><code>ret_aao</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Int32&gt;&gt; <em class="parameter"><code>ret_aai</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Byte&gt;&gt; <em class="parameter"><code>ret_aay</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Int16&gt;&gt; <em class="parameter"><code>ret_aan</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;UInt16&gt;&gt; <em class="parameter"><code>ret_aaq</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;UInt32&gt;&gt; <em class="parameter"><code>ret_aau</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Boolean&gt;&gt; <em class="parameter"><code>ret_aab</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Int64&gt;&gt; <em class="parameter"><code>ret_aax</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;UInt64&gt;&gt; <em class="parameter"><code>ret_aat</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Double&gt;&gt; <em class="parameter"><code>ret_aad</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt; <em class="parameter"><code>ret_aaas</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="TestVariantReturn ()">
+<a name="eggdbus-method-com.example.Frob.TestVariantReturn"></a><h3>TestVariantReturn ()</h3>
+<pre class="programlisting">
+TestVariantReturn (IN  String   desired_variant,
+                   OUT Variant  variant)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>desired_variant</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Variant <em class="parameter"><code>variant</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EmitTestSignals ()">
+<a name="eggdbus-method-com.example.Frob.EmitTestSignals"></a><h3>EmitTestSignals ()</h3>
+<pre class="programlisting">
+EmitTestSignals ()
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eggdbus-if-signal-details-com.example.Frob"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "SignalWithPrimitiveTypes" signal'>
+<a name="eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes"></a><h3>The "SignalWithPrimitiveTypes" signal</h3>
+<pre class="programlisting">
+SignalWithPrimitiveTypes (Byte        val_byte,
+                          Boolean     val_boolean,
+                          Int16       val_int16,
+                          UInt16      val_uint16,
+                          Int32       val_int32,
+                          UInt32      val_uint32,
+                          Int64       val_int64,
+                          UInt64      val_uint64,
+                          Double      val_double,
+                          String      val_string,
+                          ObjectPath  val_objpath,
+                          Signature   val_sig)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">Byte <em class="parameter"><code>val_byte</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Boolean <em class="parameter"><code>val_boolean</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Int16 <em class="parameter"><code>val_int16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">UInt16 <em class="parameter"><code>val_uint16</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Int32 <em class="parameter"><code>val_int32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">UInt32 <em class="parameter"><code>val_uint32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Int64 <em class="parameter"><code>val_int64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">UInt64 <em class="parameter"><code>val_uint64</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Double <em class="parameter"><code>val_double</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>val_string</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">ObjectPath <em class="parameter"><code>val_objpath</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Signature <em class="parameter"><code>val_sig</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "SignalWithArrayOfPrimitiveTypes" signal'>
+<a name="eggdbus-signal-com.example.Frob::SignalWithArrayOfPrimitiveTypes"></a><h3>The "SignalWithArrayOfPrimitiveTypes" signal</h3>
+<pre class="programlisting">
+SignalWithArrayOfPrimitiveTypes (Array&lt;Byte&gt;        array_byte,
+                                 Array&lt;Int32&gt;       array_int32,
+                                 Array&lt;String&gt;      array_string,
+                                 Array&lt;ObjectPath&gt;  array_objpath,
+                                 Array&lt;Signature&gt;   array_sig)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">Array&lt;Byte&gt; <em class="parameter"><code>array_byte</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Array&lt;Int32&gt; <em class="parameter"><code>array_int32</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Array&lt;String&gt; <em class="parameter"><code>array_string</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Array&lt;ObjectPath&gt; <em class="parameter"><code>array_objpath</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Array&lt;Signature&gt; <em class="parameter"><code>array_sig</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "SignalWithStructureAndHash" signal'>
+<a name="eggdbus-signal-com.example.Frob::SignalWithStructureAndHash"></a><h3>The "SignalWithStructureAndHash" signal</h3>
+<pre class="programlisting">
+SignalWithStructureAndHash (<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>                point,
+                            <a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a>       described-point,
+                            Dict&lt;String,String&gt;  hash_of_string_to_string,
+                            Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt;   hash_of_string_to_point)
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal"><a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>point</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal"><a class="link" href="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint" title="The DescribedPoint Structure">DescribedPoint</a> <em class="parameter"><code>described-point</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Dict&lt;String,String&gt; <em class="parameter"><code>hash_of_string_to_string</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Dict&lt;String,<a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>&gt; <em class="parameter"><code>hash_of_string_to_point</code></em></code>:</span></p></td>
+<td><p>
+FIXME: not documented.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="eggdbus-if-property-details-com.example.Frob"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "y" property'>
+<a name="eggdbus-property-com.example.Frob:y"></a><h3>The "y" property</h3>
+<pre class="programlisting">
+y     readable     Byte
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "b" property'>
+<a name="eggdbus-property-com.example.Frob:b"></a><h3>The "b" property</h3>
+<pre class="programlisting">
+b     readable     Boolean
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "n" property'>
+<a name="eggdbus-property-com.example.Frob:n"></a><h3>The "n" property</h3>
+<pre class="programlisting">
+n     readable     Int16
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "q" property'>
+<a name="eggdbus-property-com.example.Frob:q"></a><h3>The "q" property</h3>
+<pre class="programlisting">
+q     readable     UInt16
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "i" property'>
+<a name="eggdbus-property-com.example.Frob:i"></a><h3>The "i" property</h3>
+<pre class="programlisting">
+i     readable     Int32
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "u" property'>
+<a name="eggdbus-property-com.example.Frob:u"></a><h3>The "u" property</h3>
+<pre class="programlisting">
+u     readable     UInt32
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "x" property'>
+<a name="eggdbus-property-com.example.Frob:x"></a><h3>The "x" property</h3>
+<pre class="programlisting">
+x     readable     Int64
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "t" property'>
+<a name="eggdbus-property-com.example.Frob:t"></a><h3>The "t" property</h3>
+<pre class="programlisting">
+t     readable     UInt64
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "d" property'>
+<a name="eggdbus-property-com.example.Frob:d"></a><h3>The "d" property</h3>
+<pre class="programlisting">
+d     readable     Double
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "s" property'>
+<a name="eggdbus-property-com.example.Frob:s"></a><h3>The "s" property</h3>
+<pre class="programlisting">
+s     readable     String
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "o" property'>
+<a name="eggdbus-property-com.example.Frob:o"></a><h3>The "o" property</h3>
+<pre class="programlisting">
+o     readable     ObjectPath
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "g" property'>
+<a name="eggdbus-property-com.example.Frob:g"></a><h3>The "g" property</h3>
+<pre class="programlisting">
+g     readable     Signature
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ay" property'>
+<a name="eggdbus-property-com.example.Frob:ay"></a><h3>The "ay" property</h3>
+<pre class="programlisting">
+ay     readable     Array&lt;Byte&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ab" property'>
+<a name="eggdbus-property-com.example.Frob:ab"></a><h3>The "ab" property</h3>
+<pre class="programlisting">
+ab     readable     Array&lt;Boolean&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "an" property'>
+<a name="eggdbus-property-com.example.Frob:an"></a><h3>The "an" property</h3>
+<pre class="programlisting">
+an     readable     Array&lt;Int16&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "aq" property'>
+<a name="eggdbus-property-com.example.Frob:aq"></a><h3>The "aq" property</h3>
+<pre class="programlisting">
+aq     readable     Array&lt;UInt16&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ai" property'>
+<a name="eggdbus-property-com.example.Frob:ai"></a><h3>The "ai" property</h3>
+<pre class="programlisting">
+ai     readable     Array&lt;Int32&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "au" property'>
+<a name="eggdbus-property-com.example.Frob:au"></a><h3>The "au" property</h3>
+<pre class="programlisting">
+au     readable     Array&lt;UInt32&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ax" property'>
+<a name="eggdbus-property-com.example.Frob:ax"></a><h3>The "ax" property</h3>
+<pre class="programlisting">
+ax     readable     Array&lt;Int64&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "at" property'>
+<a name="eggdbus-property-com.example.Frob:at"></a><h3>The "at" property</h3>
+<pre class="programlisting">
+at     readable     Array&lt;UInt64&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ad" property'>
+<a name="eggdbus-property-com.example.Frob:ad"></a><h3>The "ad" property</h3>
+<pre class="programlisting">
+ad     readable     Array&lt;Double&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "as" property'>
+<a name="eggdbus-property-com.example.Frob:as"></a><h3>The "as" property</h3>
+<pre class="programlisting">
+as     readable     Array&lt;String&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ao" property'>
+<a name="eggdbus-property-com.example.Frob:ao"></a><h3>The "ao" property</h3>
+<pre class="programlisting">
+ao     readable     Array&lt;ObjectPath&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "ag" property'>
+<a name="eggdbus-property-com.example.Frob:ag"></a><h3>The "ag" property</h3>
+<pre class="programlisting">
+ag     readable     Array&lt;Signature&gt;
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "foo" property'>
+<a name="eggdbus-property-com.example.Frob:foo"></a><h3>The "foo" property</h3>
+<pre class="programlisting">
+foo     readable     String
+    </pre>
+<p>
+FIXME: not documented.
+    </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

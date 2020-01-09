@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-enummain-Vehicle">
+  <refmeta>
+    <refentrytitle role="top_of_page">Vehicle Enumeration</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>Vehicle Enumeration</refname>
+    <refpurpose>Vehicles</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="enum" id="eggdbus-enum-Vehicle">
+      <title>The Vehicle Enumeration</title>
+        <para>
+          <programlisting>
+{
+  SportUtilityVehicle = 100,
+  Convertible         = 110,
+  Truck               = 111,
+  Patriot             = 112,
+  StationWagon        = 120
+}
+          </programlisting>
+          <para>
+A test enumeration.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-Vehicle.SportUtilityVehicle" role="constant">
+    <term><literal>SportUtilityVehicle</literal></term>
+    <listitem>
+      <para>
+A SUV
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Vehicle.Convertible" role="constant">
+    <term><literal>Convertible</literal></term>
+    <listitem>
+      <para>
+A car without a top
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Vehicle.Truck" role="constant">
+    <term><literal>Truck</literal></term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Vehicle.Patriot" role="constant">
+    <term><literal>Patriot</literal></term>
+    <listitem>
+      <para>
+As known from the GTA games
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Vehicle.StationWagon" role="constant">
+    <term><literal>StationWagon</literal></term>
+    <listitem>
+      <para>
+Old skool
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

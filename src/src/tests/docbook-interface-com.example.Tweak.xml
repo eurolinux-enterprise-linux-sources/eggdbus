@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-com.example.Tweak">
+  <refmeta>
+    <refentrytitle role="top_of_page">com.example.Tweak Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>com.example.Tweak Interface</refname>
+    <refpurpose>Tweak interface used for testing</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+<link linkend="eggdbus-method-com.example.Tweak.BlockUntilRWPropertyChanges">BlockUntilRWPropertyChanges</link> (OUT String  NewPropValue)
+<link linkend="eggdbus-method-com.example.Tweak.ChangeReadableProperty">ChangeReadableProperty</link>      (IN  String  new_value)
+<link linkend="eggdbus-method-com.example.Tweak.ICanHazGreetingz">ICanHazGreetingz</link>            (IN  String  greetz,
+                             OUT String  word)
+<link linkend="eggdbus-method-com.example.Tweak.BroadcastzNewz">BroadcastzNewz</link>              (IN  String  newz)
+<link linkend="eggdbus-method-com.example.Tweak.GetServerUniqueName">GetServerUniqueName</link>         (OUT String  server_unique_name)
+<link linkend="eggdbus-method-com.example.Tweak.LongRunningMethod">LongRunningMethod</link>           (IN  Int32   msec_to_run)
+<link linkend="eggdbus-method-com.example.Tweak.ReturnGError">ReturnGError</link>                (IN  String  error_domain,
+                             IN  Int32   error_code)
+<link linkend="eggdbus-method-com.example.Tweak.MethodStructDisambiguation">MethodStructDisambiguation</link>  (IN  <link linkend="eggdbus-struct-Pair">Pair</link>    pair,
+                             IN  <link linkend="eggdbus-struct-Point">Point</link>   point,
+                             OUT <link linkend="eggdbus-struct-Point">Point</link>   enhanced_point,
+                             OUT <link linkend="eggdbus-struct-Pair">Pair</link>    enhanced_pair)
+<link linkend="eggdbus-method-com.example.Tweak.MethodWithCTypes">MethodWithCTypes</link>            (IN  Int32   value,
+                             OUT Int32   better_value)
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="signal_proto" id="eggdbus-if-signals-com.example.Tweak">
+    <title role="signal_proto.title">Signals</title>
+    <synopsis>
+<link linkend="eggdbus-signal-com.example.Tweak::NewzNotifz">NewzNotifz</link>                 (String   newz)
+<link linkend="eggdbus-signal-com.example.Tweak::SignalStructDisambiguation">SignalStructDisambiguation</link> (<link linkend="eggdbus-struct-Pair">Pair</link>     pair,
+                            <link linkend="eggdbus-struct-Point">Point</link>    point)
+<link linkend="eggdbus-signal-com.example.Tweak::SignalWithCType">SignalWithCType</link>            (Int32    better_value)
+<link linkend="eggdbus-signal-com.example.Tweak::EscapeVehicleChanged">EscapeVehicleChanged</link>       (<link linkend="eggdbus-enum-Vehicle">Vehicle</link>  new_escape_vehicle)
+    </synopsis>
+  </refsect1>
+  <refsect1 role="properties" id="eggdbus-if-properties-com.example.Tweak">
+    <title role="properties.title">Properties</title>
+    <synopsis>
+<link linkend="eggdbus-property-com.example.Tweak:foo">foo</link>                        readable     String
+<link linkend="eggdbus-property-com.example.Tweak:bar">bar</link>                        readable     Array&lt;Int32&gt;
+<link linkend="eggdbus-property-com.example.Tweak:baz">baz</link>                        readable     <link linkend="eggdbus-struct-Point">Point</link>
+<link linkend="eggdbus-property-com.example.Tweak:baz-forced-to-use-pair">baz-forced-to-use-pair</link>     readable     <link linkend="eggdbus-struct-Pair">Pair</link>
+<link linkend="eggdbus-property-com.example.Tweak:SomeReadWriteProperty">SomeReadWriteProperty</link>      readwrite    String
+<link linkend="eggdbus-property-com.example.Tweak:PropertyWithCType">PropertyWithCType</link>          readwrite    Int32
+<link linkend="eggdbus-property-com.example.Tweak:EscapeVehicle">EscapeVehicle</link>              readwrite    <link linkend="eggdbus-enum-Vehicle">Vehicle</link>
+<link linkend="eggdbus-property-com.example.Tweak:DefaultCreateFlags">DefaultCreateFlags</link>         readwrite    <link linkend="eggdbus-enum-CreateFlags">CreateFlags</link>
+    </synopsis>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-description-com.example.Tweak">
+    <title role="desc.title">Description</title>
+      <para>
+The #Tweak interface wraps the D-Bus interface <literal>com.example.Tweak</literal>. It is used in the EggDBus test suite.
+      </para>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-com.example.Tweak">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.BlockUntilRWPropertyChanges">
+      <title>BlockUntilRWPropertyChanges ()</title>
+    <programlisting>
+BlockUntilRWPropertyChanges (OUT String  NewPropValue)
+    </programlisting>
+    <para>
+Blocks until #Tweak:SomeReadWriteProperty changes
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT String <parameter>NewPropValue</parameter></literal>:</term>
+    <listitem>
+      <para>
+The new value of #Tweak:SomeReadWriteProperty
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.ChangeReadableProperty">
+      <title>ChangeReadableProperty ()</title>
+    <programlisting>
+ChangeReadableProperty (IN  String  new_value)
+    </programlisting>
+    <para>
+Changes the #Tweak:foo property
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>new_value</parameter></literal>:</term>
+    <listitem>
+      <para>
+New value for the #Tweak:foo property
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.ICanHazGreetingz">
+      <title>ICanHazGreetingz ()</title>
+    <programlisting>
+ICanHazGreetingz (IN  String  greetz,
+                  OUT String  word)
+    </programlisting>
+    <para>
+This method will take a greeting and give a rewritten greeting back
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>greetz</parameter></literal>:</term>
+    <listitem>
+      <para>
+Greeting to pass to method
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT String <parameter>word</parameter></literal>:</term>
+    <listitem>
+      <para>
+Rewritten greeting
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.BroadcastzNewz">
+      <title>BroadcastzNewz ()</title>
+    <programlisting>
+BroadcastzNewz (IN  String  newz)
+    </programlisting>
+    <para>
+Conduit to broadcast newz. This method will make the object emit the #Tweak::NewzNotifz signal using the passed in parameter <parameter>newz</parameter> as the news to broadcast.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>newz</parameter></literal>:</term>
+    <listitem>
+      <para>
+The news to broadcast
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.GetServerUniqueName">
+      <title>GetServerUniqueName ()</title>
+    <programlisting>
+GetServerUniqueName (OUT String  server_unique_name)
+    </programlisting>
+    <para>
+Gets the unique D-Bus name of the server
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT String <parameter>server_unique_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Unique D-Bus name
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.LongRunningMethod">
+      <title>LongRunningMethod ()</title>
+    <programlisting>
+LongRunningMethod (IN  Int32  msec_to_run)
+    </programlisting>
+    <para>
+A method that takes <parameter>msec_to_run</parameter> milliseconds to reply
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Int32 <parameter>msec_to_run</parameter></literal>:</term>
+    <listitem>
+      <para>
+Number of milliseconds to wait until replying
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.ReturnGError">
+      <title>ReturnGError ()</title>
+    <programlisting>
+ReturnGError (IN  String  error_domain,
+              IN  Int32   error_code)
+    </programlisting>
+    <para>
+Throws an error identified by <parameter>error_domain</parameter> and <parameter>error_code</parameter>. This is mainly for testing that we can transparently hand #GError<!-- -->'s back and forth.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>error_domain</parameter></literal>:</term>
+    <listitem>
+      <para>
+A #GError error domain
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Int32 <parameter>error_code</parameter></literal>:</term>
+    <listitem>
+      <para>
+The error code for <parameter>error_domain</parameter>
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.MethodStructDisambiguation">
+      <title>MethodStructDisambiguation ()</title>
+    <programlisting>
+MethodStructDisambiguation (IN  <link linkend="eggdbus-struct-Pair">Pair</link>   pair,
+                            IN  <link linkend="eggdbus-struct-Point">Point</link>  point,
+                            OUT <link linkend="eggdbus-struct-Point">Point</link>  enhanced_point,
+                            OUT <link linkend="eggdbus-struct-Pair">Pair</link>   enhanced_pair)
+    </programlisting>
+    <para>
+A method to check we can properly disambiguate what structure wrapper types to use
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  <link linkend="eggdbus-struct-Pair">Pair</link> <parameter>pair</parameter></literal>:</term>
+    <listitem>
+      <para>
+A pair
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  <link linkend="eggdbus-struct-Point">Point</link> <parameter>point</parameter></literal>:</term>
+    <listitem>
+      <para>
+A point
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-struct-Point">Point</link> <parameter>enhanced_point</parameter></literal>:</term>
+    <listitem>
+      <para>
+An enhanced point
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-struct-Pair">Pair</link> <parameter>enhanced_pair</parameter></literal>:</term>
+    <listitem>
+      <para>
+An enhanced pair
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Tweak.MethodWithCTypes">
+      <title>MethodWithCTypes ()</title>
+    <programlisting>
+MethodWithCTypes (IN  Int32  value,
+                  OUT Int32  better_value)
+    </programlisting>
+    <para>
+A method to check we properly support specifying what C type to use for an integral type
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Int32 <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+Some value
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Int32 <parameter>better_value</parameter></literal>:</term>
+    <listitem>
+      <para>
+I can't believe it's a better value!
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="signals" id="eggdbus-if-signal-details-com.example.Tweak">
+    <title role="signals.title">Signal Details</title>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Tweak::NewzNotifz">
+      <title>The "NewzNotifz" signal</title>
+    <programlisting>
+NewzNotifz (String  newz)
+    </programlisting>
+    <para>
+Emitted when there are NEWZ on the #Tweak interface
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>newz</parameter></literal>:</term>
+    <listitem>
+      <para>
+The newz in the tweaked world
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Tweak::SignalStructDisambiguation">
+      <title>The "SignalStructDisambiguation" signal</title>
+    <programlisting>
+SignalStructDisambiguation (<link linkend="eggdbus-struct-Pair">Pair</link>   pair,
+                            <link linkend="eggdbus-struct-Point">Point</link>  point)
+    </programlisting>
+    <para>
+A signal to check we can properly disambiguate what structure wrapper types to use
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-Pair">Pair</link> <parameter>pair</parameter></literal>:</term>
+    <listitem>
+      <para>
+A pair
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-Point">Point</link> <parameter>point</parameter></literal>:</term>
+    <listitem>
+      <para>
+A point
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Tweak::SignalWithCType">
+      <title>The "SignalWithCType" signal</title>
+    <programlisting>
+SignalWithCType (Int32  better_value)
+    </programlisting>
+    <para>
+A signal to check we properly support specifying what C type to use for an integral type
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>Int32 <parameter>better_value</parameter></literal>:</term>
+    <listitem>
+      <para>
+Some value
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Tweak::EscapeVehicleChanged">
+      <title>The "EscapeVehicleChanged" signal</title>
+    <programlisting>
+EscapeVehicleChanged (<link linkend="eggdbus-enum-Vehicle">Vehicle</link>  new_escape_vehicle)
+    </programlisting>
+    <para>
+A signal to check we properly support emitting signals with enums
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-enum-Vehicle">Vehicle</link> <parameter>new_escape_vehicle</parameter></literal>:</term>
+    <listitem>
+      <para>
+The new escape vehicle
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="property_details" id="eggdbus-if-property-details-com.example.Tweak">
+    <title role="property_details.title">Property Details</title>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:foo">
+      <title>The "foo" property</title>
+    <programlisting>
+foo     readable     String
+    </programlisting>
+    <para>
+The Foo value
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:bar">
+      <title>The "bar" property</title>
+    <programlisting>
+bar     readable     Array&lt;Int32&gt;
+    </programlisting>
+    <para>
+The Bar factor
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:baz">
+      <title>The "baz" property</title>
+    <programlisting>
+baz     readable     <link linkend="eggdbus-struct-Point">Point</link>
+    </programlisting>
+    <para>
+The Baz indicator
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:baz-forced-to-use-pair">
+      <title>The "baz-forced-to-use-pair" property</title>
+    <programlisting>
+baz-forced-to-use-pair     readable     <link linkend="eggdbus-struct-Pair">Pair</link>
+    </programlisting>
+    <para>
+ A slightly different Baz indicator 
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:SomeReadWriteProperty">
+      <title>The "SomeReadWriteProperty" property</title>
+    <programlisting>
+SomeReadWriteProperty     readwrite    String
+    </programlisting>
+    <para>
+Hey, I'm promiscuous. I'm writeable!
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:PropertyWithCType">
+      <title>The "PropertyWithCType" property</title>
+    <programlisting>
+PropertyWithCType     readwrite    Int32
+    </programlisting>
+    <para>
+I'm a special C type
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:EscapeVehicle">
+      <title>The "EscapeVehicle" property</title>
+    <programlisting>
+EscapeVehicle     readwrite    <link linkend="eggdbus-enum-Vehicle">Vehicle</link>
+    </programlisting>
+    <para>
+The vehicle used for escaping.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Tweak:DefaultCreateFlags">
+      <title>The "DefaultCreateFlags" property</title>
+    <programlisting>
+DefaultCreateFlags     readwrite    <link linkend="eggdbus-enum-CreateFlags">CreateFlags</link>
+    </programlisting>
+    <para>
+The default create flags to use.
+    </para>
+    </refsect2>
+  </refsect1>
+</refentry>

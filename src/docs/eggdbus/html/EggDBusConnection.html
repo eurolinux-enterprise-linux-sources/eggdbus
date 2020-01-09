@@ -1,0 +1,1210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusConnection</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="core.html" title="D-Bus Operations">
+<link rel="next" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="core.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusObjectProxy.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusConnection.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusConnection.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusConnection.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#EggDBusConnection.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusConnection">
+<a name="EggDBusConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusConnection.top_of_page"></a>EggDBusConnection</span></h2>
+<p>EggDBusConnection — Connection</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusConnection.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusConnection.html#EggDBusConnection-struct" title="EggDBusConnection">EggDBusConnection</a>;
+enum                <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a>;
+enum                <a class="link" href="EggDBusConnection.html#EggDBusBusType" title="enum EggDBusBusType">EggDBusBusType</a>;
+<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * <a class="link" href="EggDBusConnection.html#egg-dbus-connection-get-for-bus" title="egg_dbus_connection_get_for_bus ()">egg_dbus_connection_get_for_bus</a>     (<a class="link" href="EggDBusConnection.html#EggDBusBusType" title="enum EggDBusBusType">EggDBusBusType</a> bus_type);
+<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> * <a class="link" href="EggDBusConnection.html#egg-dbus-connection-get-object-proxy" title="egg_dbus_connection_get_object_proxy ()">egg_dbus_connection_get_object_proxy</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path);
+<a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a> *        <a class="link" href="EggDBusConnection.html#egg-dbus-connection-get-bus" title="egg_dbus_connection_get_bus ()">egg_dbus_connection_get_bus</a>         (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusConnection.html#egg-dbus-connection-get-unique-name" title="egg_dbus_connection_get_unique_name ()">egg_dbus_connection_get_unique_name</a> (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface" title="egg_dbus_connection_register_interface ()">egg_dbus_connection_register_interface</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         ...);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface-valist" title="egg_dbus_connection_register_interface_valist ()">egg_dbus_connection_register_interface_valist</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         va_list var_args);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-unregister-interface" title="egg_dbus_connection_unregister_interface ()">egg_dbus_connection_unregister_interface</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         ...);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-unregister-interface-valist" title="egg_dbus_connection_unregister_interface_valist ()">egg_dbus_connection_unregister_interface_valist</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         va_list var_args);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="EggDBusConnection.html#egg-dbus-connection-lookup-interface" title="egg_dbus_connection_lookup_interface ()">egg_dbus_connection_lookup_interface</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> **out_interface_types,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a> ***out_interface_stubs);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusConnection.html#egg-dbus-connection-new-message-for-signal" title="egg_dbus_connection_new_message_for_signal ()">egg_dbus_connection_new_message_for_signal</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *sender,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *destination,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *interface_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signal_name);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusConnection.html#egg-dbus-connection-new-message-for-method-call" title="egg_dbus_connection_new_message_for_method_call ()">egg_dbus_connection_new_message_for_method_call</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *sender,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *destination,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *interface_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *method_name);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message" title="egg_dbus_connection_send_message ()">egg_dbus_connection_send_message</a>    (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()">egg_dbus_connection_send_message_with_reply</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *error_types,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+>GAsyncReadyCallback</a> callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply-finish" title="egg_dbus_connection_send_message_with_reply_finish ()">egg_dbus_connection_send_message_with_reply_finish</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+>GAsyncResult</a> *res,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply-sync" title="egg_dbus_connection_send_message_with_reply_sync ()">egg_dbus_connection_send_message_with_reply_sync</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *error_types,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-cancel" title="egg_dbus_connection_pending_call_cancel ()">egg_dbus_connection_pending_call_cancel</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> pending_call_id);
+void                <a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-block" title="egg_dbus_connection_pending_call_block ()">egg_dbus_connection_pending_call_block</a>
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> pending_call_id);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusConnection
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EggDBusConnection.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusConnection.html#EggDBusConnection--bus-type" title='The "bus-type" property'>bus-type</a>"                 <a class="link" href="EggDBusConnection.html#EggDBusBusType" title="enum EggDBusBusType">EggDBusBusType</a>        : Read / Write / Construct Only
+  "<a class="link" href="EggDBusConnection.html#EggDBusConnection--unique-name" title='The "unique-name" property'>unique-name</a>"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusConnection.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a> class is used to connect to other processes or message buses.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusConnection.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusConnection">
+<a name="EggDBusConnection-struct"></a><h3>EggDBusConnection</h3>
+<pre class="programlisting">typedef struct _EggDBusConnection EggDBusConnection;</pre>
+</div>
+<hr>
+<div class="refsect2" title="enum EggDBusCallFlags">
+<a name="EggDBusCallFlags"></a><h3>enum EggDBusCallFlags</h3>
+<pre class="programlisting">typedef enum {
+  EGG_DBUS_CALL_FLAGS_NONE = 0,
+  EGG_DBUS_CALL_FLAGS_BLOCK_IN_MAINLOOP = (1&lt;&lt;0),
+  EGG_DBUS_CALL_FLAGS_TIMEOUT_NONE = (1&lt;&lt;1),
+} EggDBusCallFlags;
+</pre>
+<p>
+Flags used for sending messages.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="EGG-DBUS-CALL-FLAGS-NONE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_CALL_FLAGS_NONE</code></span></p></td>
+<td> No flags set.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-CALL-FLAGS-BLOCK-IN-MAINLOOP--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_CALL_FLAGS_BLOCK_IN_MAINLOOP</code></span></p></td>
+<td> When doing a synchronous
+call, block in a main loop instead of waiting for the reply
+to arrive (which reorders and queues up other messages for delivery
+<span class="emphasis"><em>after</em></span> the reply have been processed). Be
+careful using this option, it may mean that your call site will
+have to handle reentrancy.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-CALL-FLAGS-TIMEOUT-NONE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_CALL_FLAGS_TIMEOUT_NONE</code></span></p></td>
+<td> Wait indefinitely instead of using
+the default timeout.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum EggDBusBusType">
+<a name="EggDBusBusType"></a><h3>enum EggDBusBusType</h3>
+<pre class="programlisting">typedef enum {
+  EGG_DBUS_BUS_TYPE_NONE,
+  EGG_DBUS_BUS_TYPE_SESSION,
+  EGG_DBUS_BUS_TYPE_SYSTEM,
+  EGG_DBUS_BUS_TYPE_STARTER,
+} EggDBusBusType;
+</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_get_for_bus ()">
+<a name="egg-dbus-connection-get-for-bus"></a><h3>egg_dbus_connection_get_for_bus ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * egg_dbus_connection_get_for_bus     (<a class="link" href="EggDBusConnection.html#EggDBusBusType" title="enum EggDBusBusType">EggDBusBusType</a> bus_type);</pre>
+<p>
+Gets a connection to the bus specified by <em class="parameter"><code>bus_type</code></em>. Note that this connection
+is shared with other processes; use <code class="function">TODO()</code> to get a private connection.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bus_type</code></em> :</span></p></td>
+<td> The type of bus to get a connection for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_get_object_proxy ()">
+<a name="egg-dbus-connection-get-object-proxy"></a><h3>egg_dbus_connection_get_object_proxy ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> * egg_dbus_connection_get_object_proxy
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path);</pre>
+<p>
+Gets a <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> that represents a remote object at <em class="parameter"><code>object_path</code></em>
+owned by <em class="parameter"><code>name</code></em>.
+</p>
+<p>
+The returned object proxy can be used to obtain interface proxies for calling methods, listen
+to signals and read/write properties on the D-Bus interfaces supported by the remote object.
+See the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> class for details.
+</p>
+<p>
+This method never fails. If either <em class="parameter"><code>name</code></em> doesn't exist or it doesn't export an object
+at <em class="parameter"><code>object_path</code></em>, you won't find out until you start invoking messages on it. You can
+use <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect" title="egg_dbus_object_proxy_introspect ()"><code class="function">egg_dbus_object_proxy_introspect()</code></a> to find out if the remote object exists in addition
+to what D-Bus interfaces it supports.
+</p>
+<p>
+Note that <em class="parameter"><code>connection</code></em> will track <em class="parameter"><code>name</code></em> and report changes via the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a>
+property on the returned <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> object. To track changes to <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a>,
+simply connect to the <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"
+><span class="type">"notify"</span></a> signal on the returned object.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A message bus name such as <code class="literal">:1.6</code> or <code class="literal">org.freedesktop.DeviceKit</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> An object path such as <code class="literal">/org/freedesktop/DeviceKit</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> object. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_get_bus ()">
+<a name="egg-dbus-connection-get-bus"></a><h3>egg_dbus_connection_get_bus ()</h3>
+<pre class="programlisting"><a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus">EggDBusBus</a> *        egg_dbus_connection_get_bus         (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection);</pre>
+<p>
+Gets the <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus"><span class="type">EggDBusBus</span></a> interface proxy for the <code class="literal">org.freedesktop.DBus</code> interface
+of the message bus daemon for <em class="parameter"><code>connection</code></em>.
+</p>
+<p>
+This interface proxy is typically used to claim a well-known name on the message bus or to
+listen for signals like <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus-name-acquired" title='The "name-acquired" signal'><span class="type">"name-acquired"</span></a> or <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus-name-lost" title='The "name-lost" signal'><span class="type">"name-lost"</span></a>. For example,
+to claim the well-known name <code class="literal">com.example.AwesomeProduct</code> on the session
+message bus you would do this:
+</p>
+<p>
+</p>
+<pre class="programlisting">
+EggDBusConnection *connection;
+EggDBusRequestNameReply request_name_reply;
+GError *error;
+
+connection = egg_dbus_connection_get_for_bus (EGG_DBUS_BUS_TYPE_SESSION);
+
+error = NULL;
+if (!egg_dbus_bus_request_name_sync (egg_dbus_connection_get_bus (connection),
+                                     EGG_DBUS_CALL_FLAGS_NONE,
+                                     "com.example.AwesomeProduct",
+                                     EGG_DBUS_REQUEST_NAME_FLAGS_NONE,
+                                     &amp;request_name_reply,
+                                     NULL,
+                                     &amp;error))
+  {
+    g_warning ("Error claiming com.example.AwesomeProduct on session bus: %s", error-&gt;message);
+    g_error_free (error);
+    goto error;
+  }
+
+if (request_name_reply != EGG_DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)
+  {
+    g_warning ("Could not become primary owner of com.example.AwesomeProduct");
+    goto error;
+  }
+
+/* We now own com.example.AwesomeProduct  */
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusbus.html#EggDBusBus"><span class="type">EggDBusBus</span></a>. Do not free this object, it is owned by <em class="parameter"><code>connection</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_get_unique_name ()">
+<a name="egg-dbus-connection-get-unique-name"></a><h3>egg_dbus_connection_get_unique_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_connection_get_unique_name (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection);</pre>
+<p>
+Gets the unique name (as assigned by the message bus daemon) of <em class="parameter"><code>connection</code></em>. This
+method can only be used when <em class="parameter"><code>connection</code></em> is a message bus connection.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A unique bus name such as <code class="literal">:1.42</code>. Do not free this
+string, it is owned by <em class="parameter"><code>connection</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_register_interface ()">
+<a name="egg-dbus-connection-register-interface"></a><h3>egg_dbus_connection_register_interface ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_register_interface
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         ...);</pre>
+<p>
+Registers one or more D-Bus interfaces at <em class="parameter"><code>object_path</code></em> on <em class="parameter"><code>connection</code></em>. This function
+is only useful when exporting a D-Bus service.
+</p>
+<p>
+This function may be called multiple times for the same <em class="parameter"><code>object_path</code></em>. If an existing
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for an interface is already registered, it will be replaced.
+</p>
+<p>
+Only a weak reference to the given <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> instances will be taken; if a registered object is
+finalized it will automatically be unregistered. Use <a class="link" href="EggDBusConnection.html#egg-dbus-connection-unregister-interface" title="egg_dbus_connection_unregister_interface ()"><code class="function">egg_dbus_connection_unregister_interface()</code></a> to
+manually unregister the interface.
+</p>
+<p>
+Note that the <a class="link" href="eggdbus-eggdbusproperties.html#EggDBusProperties"><span class="type">EggDBusProperties</span></a>, <a class="link" href="eggdbus-eggdbusintrospectable.html#EggDBusIntrospectable"><span class="type">EggDBusIntrospectable</span></a> and <a class="link" href="eggdbus-eggdbuspeer.html#EggDBusPeer"><span class="type">EggDBusPeer</span></a> interfaces will be
+automatically handled for <em class="parameter"><code>object_path</code></em> unless they specifically registered.
+</p>
+<p>
+For objects with relatively simple D-Bus interfaces (where there are no name clashes on property
+and signal names), a single <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived class implementing multiple <span class="type">GInterface</span>s (each
+corresponding to a D-Bus interface) can be used. For more complex objects (with name clashes),
+separate <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived classes (typically one for each D-Bus interface) must be used for
+disambiguation.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to register the interface on.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_type</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for the type of <span class="type">GInterface</span> that represents the D-Bus interface to be registered.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived instance implementing <em class="parameter"><code>interface_type</code></em>, followed by more <code class="literal">(type, instance pairs)</code>, terminated by <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_register_interface_valist ()">
+<a name="egg-dbus-connection-register-interface-valist"></a><h3>egg_dbus_connection_register_interface_valist ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_register_interface_valist
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         va_list var_args);</pre>
+<p>
+Like <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface" title="egg_dbus_connection_register_interface ()"><code class="function">egg_dbus_connection_register_interface()</code></a> but intended for
+language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to register the interface on.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_type</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for the type of <span class="type">GInterface</span> that represents the D-Bus interface to be registered.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>var_args</code></em> :</span></p></td>
+<td> A <span class="type">va_list</span> containing a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived instance implementing <em class="parameter"><code>interface_type</code></em>, followed by more <code class="literal">(type, instance pairs)</code>, terminated by <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_unregister_interface ()">
+<a name="egg-dbus-connection-unregister-interface"></a><h3>egg_dbus_connection_unregister_interface ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_unregister_interface
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         ...);</pre>
+<p>
+Unregisters one or more D-Bus interfaces at <em class="parameter"><code>object_path</code></em> on <em class="parameter"><code>connection</code></em> previously
+registered with <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface" title="egg_dbus_connection_register_interface ()"><code class="function">egg_dbus_connection_register_interface()</code></a>. This method is only useful
+when exporting a D-Bus service.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to unregister the interface from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_type</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for the type of <span class="type">GInterface</span> that represents the D-Bus interface to be unregistered.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Zero or more <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a>s (like <em class="parameter"><code>interface_type</code></em>), terminated by <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_unregister_interface_valist ()">
+<a name="egg-dbus-connection-unregister-interface-valist"></a><h3>egg_dbus_connection_unregister_interface_valist ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_unregister_interface_valist
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type,
+                                                         va_list var_args);</pre>
+<p>
+Like <a class="link" href="EggDBusConnection.html#egg-dbus-connection-unregister-interface" title="egg_dbus_connection_unregister_interface ()"><code class="function">egg_dbus_connection_unregister_interface()</code></a> but intended for
+language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to unregister the interface from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_type</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for the type of <span class="type">GInterface</span> that represents the D-Bus interface to be unregistered.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>var_args</code></em> :</span></p></td>
+<td> A <span class="type">va_list</span> with zero or more <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a>s (like <em class="parameter"><code>interface_type</code></em>), terminated by <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_lookup_interface ()">
+<a name="egg-dbus-connection-lookup-interface"></a><h3>egg_dbus_connection_lookup_interface ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               egg_dbus_connection_lookup_interface
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> **out_interface_types,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a> ***out_interface_stubs);</pre>
+<p>
+This method looks up the interfaces at <em class="parameter"><code>object_path</code></em> for <em class="parameter"><code>connection</code></em> registered
+using <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface" title="egg_dbus_connection_register_interface ()"><code class="function">egg_dbus_connection_register_interface()</code></a>. This method is only useful when
+exporting a D-Bus service.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to lookup registered interfaces for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_interface_types</code></em> :</span></p></td>
+<td> Return location for the <span class="type">GInterface</span> types registered at <em class="parameter"><code>object_path</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_interface_stubs</code></em> :</span></p></td>
+<td> Return location for the <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived instances implementing the
+corresponding <span class="type">GInterface</span> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Number of interfaces registered at <em class="parameter"><code>object_path</code></em>. If zero is
+returned <em class="parameter"><code>out_interface_types</code></em> and <em class="parameter"><code>out_interface_stubs</code></em> will be set
+to <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>. Otherwise caller must free both of these arrays using
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_new_message_for_signal ()">
+<a name="egg-dbus-connection-new-message-for-signal"></a><h3>egg_dbus_connection_new_message_for_signal ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_connection_new_message_for_signal
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *sender,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *destination,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *interface_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signal_name);</pre>
+<p>
+Creates a new <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> for sending a signal. This method is
+only useful for language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sender</code></em> :</span></p></td>
+<td> Sender of the signal or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use unique name for <em class="parameter"><code>connection</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destination</code></em> :</span></p></td>
+<td> Destination of signal or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to multi-cast to all recipients on the bus.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object path to broadcast the signal on.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_name</code></em> :</span></p></td>
+<td> The interface name to which <em class="parameter"><code>signal_name</code></em> belongs.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signal_name</code></em> :</span></p></td>
+<td> Name of the signal to broadcast.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_new_message_for_method_call ()">
+<a name="egg-dbus-connection-new-message-for-method-call"></a><h3>egg_dbus_connection_new_message_for_method_call ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_connection_new_message_for_method_call
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *sender,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *destination,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *object_path,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *interface_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *method_name);</pre>
+<p>
+Creates a new <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> for invoking a method. This method is
+only useful for language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sender</code></em> :</span></p></td>
+<td> Sender of the message or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use unique name for <em class="parameter"><code>connection</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destination</code></em> :</span></p></td>
+<td> Destination of name to invoke method on.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
+<td> The object to invoke the method on.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_name</code></em> :</span></p></td>
+<td> The interface name to which <em class="parameter"><code>method_name</code></em> belongs.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_name</code></em> :</span></p></td>
+<td> The name of the method to invoke.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_send_message ()">
+<a name="egg-dbus-connection-send-message"></a><h3>egg_dbus_connection_send_message ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_send_message    (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Sends <em class="parameter"><code>message</code></em> on <em class="parameter"><code>connection</code></em> without waiting for a reply. This method is
+only useful for language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_send_message_with_reply ()">
+<a name="egg-dbus-connection-send-message-with-reply"></a><h3>egg_dbus_connection_send_message_with_reply ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               egg_dbus_connection_send_message_with_reply
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *error_types,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+>GAsyncReadyCallback</a> callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);</pre>
+<p>
+Queues <em class="parameter"><code>message</code></em> to be sent and invokes <em class="parameter"><code>callback</code></em> (on the main thread) when there is a reply. This method is
+only useful for language bindings.
+</p>
+<p>
+In <em class="parameter"><code>callback</code></em>, <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply-finish" title="egg_dbus_connection_send_message_with_reply_finish ()"><code class="function">egg_dbus_connection_send_message_with_reply_finish()</code></a> should be used to
+extract the reply or error.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>call_flags</code></em> :</span></p></td>
+<td> Flags from <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags"><span class="type">EggDBusCallFlags</span></a> detailing how the message should be sent.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> The message to send.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error_types</code></em> :</span></p></td>
+<td> Either <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> or a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a> terminated list of <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a>s for <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> error domains to use
+when processing an error reply.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+><span class="type">GCancellable</span></a> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td> Callback when the asynchronous operation finishes.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td> User data to pass to <em class="parameter"><code>callback</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A pending call id (never zero) that can be used with <a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-cancel" title="egg_dbus_connection_pending_call_cancel ()"><code class="function">egg_dbus_connection_pending_call_cancel()</code></a> or
+<a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-block" title="egg_dbus_connection_pending_call_block ()"><code class="function">egg_dbus_connection_pending_call_block()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_send_message_with_reply_finish ()">
+<a name="egg-dbus-connection-send-message-with-reply-finish"></a><h3>egg_dbus_connection_send_message_with_reply_finish ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_connection_send_message_with_reply_finish
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+>GAsyncResult</a> *res,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Finishes sending a message where a reply is requested.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+><span class="type">GAsyncResult</span></a> obtained from the <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+><span class="type">GAsyncReadyCallback</span></a> function passed
+to <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()"><code class="function">egg_dbus_connection_send_message_with_reply()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_send_message_with_reply_sync ()">
+<a name="egg-dbus-connection-send-message-with-reply-sync"></a><h3>egg_dbus_connection_send_message_with_reply_sync ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_connection_send_message_with_reply_sync
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *error_types,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Queues <em class="parameter"><code>message</code></em> to be sent and waits until a reply arrives. This method is
+only useful for language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>call_flags</code></em> :</span></p></td>
+<td> Flags from <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags"><span class="type">EggDBusCallFlags</span></a> detailing how the message should be sent.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> The message to send.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error_types</code></em> :</span></p></td>
+<td> Either <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> or a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INVALID--CAPS"
+><span class="type">G_TYPE_INVALID</span></a> terminated list of <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a>s for <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> error domains to use
+when processing an error reply.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+><span class="type">GCancellable</span></a> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The reply or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_pending_call_cancel ()">
+<a name="egg-dbus-connection-pending-call-cancel"></a><h3>egg_dbus_connection_pending_call_cancel ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_pending_call_cancel
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> pending_call_id);</pre>
+<p>
+Cancels an asynchronous method invocation expecting a reply. The
+<a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+><span class="type">GAsyncReadyCallback</span></a> callback given to
+<a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()"><code class="function">egg_dbus_connection_send_message_with_reply()</code></a> will be invoked
+before this function returns.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pending_call_id</code></em> :</span></p></td>
+<td> A valid pending call id obtained from <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()"><code class="function">egg_dbus_connection_send_message_with_reply()</code></a>
+or similar wrapper functions (such as <a class="link" href="eggdbus-eggdbusbus.html#egg-dbus-bus-request-name" title="egg_dbus_bus_request_name ()"><code class="function">egg_dbus_bus_request_name()</code></a>).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_connection_pending_call_block ()">
+<a name="egg-dbus-connection-pending-call-block"></a><h3>egg_dbus_connection_pending_call_block ()</h3>
+<pre class="programlisting">void                egg_dbus_connection_pending_call_block
+                                                        (<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> *connection,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> pending_call_id);</pre>
+<p>
+Blocks until the asynchronous method invocation with
+<em class="parameter"><code>pending_call_id</code></em> completes. The <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+><span class="type">GAsyncReadyCallback</span></a> callback given to
+<a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()"><code class="function">egg_dbus_connection_send_message_with_reply()</code></a> will be invoked
+before this function returns.
+</p>
+<p>
+Depending on how the call was issued (e.g. what set of <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags"><span class="type">EggDBusCallFlags</span></a> was
+passed), this function may use a recursive <a
+href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainLoop"
+><span class="type">GMainLoop</span></a> for blocking.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>connection</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pending_call_id</code></em> :</span></p></td>
+<td> A valid pending call id obtained from <a class="link" href="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply" title="egg_dbus_connection_send_message_with_reply ()"><code class="function">egg_dbus_connection_send_message_with_reply()</code></a>
+or similar wrapper functions (such as <a class="link" href="eggdbus-eggdbusbus.html#egg-dbus-bus-request-name" title="egg_dbus_bus_request_name ()"><code class="function">egg_dbus_bus_request_name()</code></a>).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EggDBusConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "bus-type" property'>
+<a name="EggDBusConnection--bus-type"></a><h3>The <code class="literal">"bus-type"</code> property</h3>
+<pre class="programlisting">  "bus-type"                 <a class="link" href="EggDBusConnection.html#EggDBusBusType" title="enum EggDBusBusType">EggDBusBusType</a>        : Read / Write / Construct Only</pre>
+<p>Type of the bus we are connected to, if any.</p>
+<p>Default value: EGG_DBUS_BUS_TYPE_NONE</p>
+</div>
+<hr>
+<div class="refsect2" title='The "unique-name" property'>
+<a name="EggDBusConnection--unique-name"></a><h3>The <code class="literal">"unique-name"</code> property</h3>
+<pre class="programlisting">  "unique-name"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read</pre>
+<p>The unique name as assigned by the message bus.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

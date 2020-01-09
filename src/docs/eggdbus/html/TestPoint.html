@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TestPoint</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example.html" title="Example of Generated Code">
+<link rel="prev" href="tests-testtwiddle.html" title="TestTwiddle">
+<link rel="next" href="TestPair.html" title="TestPair">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="tests-testtwiddle.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="TestPair.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#TestPoint.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#TestPoint.description" class="shortcut">Description</a>
+                 | 
+                <a href="#TestPoint.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="TestPoint">
+<a name="TestPoint"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="TestPoint.top_of_page"></a>TestPoint</span></h2>
+<p>TestPoint — 2D point</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="TestPoint.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="TestPoint.html#TestPoint-struct" title="TestPoint">TestPoint</a>;
+<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *         <a class="link" href="TestPoint.html#test-point-new" title="test_point_new ()">test_point_new</a>                      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> x,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> y);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="TestPoint.html#test-point-get-x" title="test_point_get_x ()">test_point_get_x</a>                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="TestPoint.html#test-point-get-y" title="test_point_get_y ()">test_point_get_y</a>                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance);
+void                <a class="link" href="TestPoint.html#test-point-set-x" title="test_point_set_x ()">test_point_set_x</a>                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+void                <a class="link" href="TestPoint.html#test-point-set-y" title="test_point_set_y ()">test_point_set_y</a>                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="TestPoint.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a>
+         +----TestPoint
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="TestPoint.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a> type is used for 2D integer points.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="TestPoint.details"></a><h2>Details</h2>
+<div class="refsect2" title="TestPoint">
+<a name="TestPoint-struct"></a><h3>TestPoint</h3>
+<pre class="programlisting">typedef struct _TestPoint TestPoint;</pre>
+</div>
+<hr>
+<div class="refsect2" title="test_point_new ()">
+<a name="test-point-new"></a><h3>test_point_new ()</h3>
+<pre class="programlisting"><a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *         test_point_new                      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> x,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> y);</pre>
+<p>
+Constructs a new <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td> The X coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td> The Y coordinate
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_point_get_x ()">
+<a name="test-point-get-x"></a><h3>test_point_get_x ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                test_point_get_x                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance);</pre>
+<p>
+Gets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The X coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_point_get_y ()">
+<a name="test-point-get-y"></a><h3>test_point_get_y ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                test_point_get_y                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance);</pre>
+<p>
+Gets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The Y coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_point_set_x ()">
+<a name="test-point-set-x"></a><h3>test_point_set_x ()</h3>
+<pre class="programlisting">void                test_point_set_x                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Sets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The X coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_point_set_y ()">
+<a name="test-point-set-y"></a><h3>test_point_set_y ()</h3>
+<pre class="programlisting">void                test_point_set_y                    (<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *instance,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Sets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestPoint.html" title="TestPoint"><span class="type">TestPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The Y coordinate
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

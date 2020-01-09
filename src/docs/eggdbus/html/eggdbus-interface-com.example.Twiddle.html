@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>com.example.Twiddle Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="eggdbus-interface-com.example.Tweak.html" title="com.example.Tweak Interface">
+<link rel="next" href="ref-programs.html" title="Tools Reference">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-interface-com.example.Tweak.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="ref-programs.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-com.example.Twiddle.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Twiddle.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Twiddle.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="com.example.Twiddle Interface">
+<a name="eggdbus-interface-com.example.Twiddle"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">com.example.Twiddle Interface</span></h2>
+<p>com.example.Twiddle Interface — Twiddle interface used for testing</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.BroadcastzNewz" title="BroadcastzNewz ()">BroadcastzNewz</a>          (IN  String          newz)
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.GetMostPowerfulSubject" title="GetMostPowerfulSubject ()">GetMostPowerfulSubject</a>  (OUT <a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a>         most_powerful_subject)
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.GetAllSubjects" title="GetAllSubjects ()">GetAllSubjects</a>          (OUT Array&lt;<a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a>&gt;  subject)
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.RegisterInterface" title="RegisterInterface ()">RegisterInterface</a>       (IN  String          object_path,
+                         IN  Boolean         impl_frob,
+                         IN  Boolean         impl_tweak,
+                         IN  Boolean         impl_twiddle)
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.UnregisterInterface" title="UnregisterInterface ()">UnregisterInterface</a>     (IN  String          object_path,
+                         IN  Boolean         impl_frob,
+                         IN  Boolean         impl_tweak,
+                         IN  Boolean         impl_twiddle)
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.UnregisterAllInterfaces" title="UnregisterAllInterfaces ()">UnregisterAllInterfaces</a> (IN  String          object_path)
+    </pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eggdbus-if-signals-com.example.Twiddle"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Twiddle.html#eggdbus-signal-com.example.Twiddle::NewzNotifz" title='The "NewzNotifz" signal'>NewzNotifz</a> (String  newz)
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-com.example.Twiddle"></a><h2>Description</h2>
+<p>
+The #Twiddle interface wraps the D-Bus interface <code class="literal">com.example.Twiddle</code>. It is used in the EggDBus test suite.
+      </p>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-com.example.Twiddle"></a><h2>Method Details</h2>
+<div class="refsect2" title="BroadcastzNewz ()">
+<a name="eggdbus-method-com.example.Twiddle.BroadcastzNewz"></a><h3>BroadcastzNewz ()</h3>
+<pre class="programlisting">
+BroadcastzNewz (IN  String  newz)
+    </pre>
+<p>
+Broadcast newz to the world. This method will make the object emit the #Twiddle::NewzNotifz signal with <em class="parameter"><code>newz</code></em> as the newz to broadcast.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>newz</code></em></code>:</span></p></td>
+<td><p>
+The newz to broadcast
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetMostPowerfulSubject ()">
+<a name="eggdbus-method-com.example.Twiddle.GetMostPowerfulSubject"></a><h3>GetMostPowerfulSubject ()</h3>
+<pre class="programlisting">
+GetMostPowerfulSubject (OUT <a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a>  most_powerful_subject)
+    </pre>
+<p>
+Gets the most powerful subject
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT <a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a> <em class="parameter"><code>most_powerful_subject</code></em></code>:</span></p></td>
+<td><p>
+The most powerful subject
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetAllSubjects ()">
+<a name="eggdbus-method-com.example.Twiddle.GetAllSubjects"></a><h3>GetAllSubjects ()</h3>
+<pre class="programlisting">
+GetAllSubjects (OUT Array&lt;<a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a>&gt;  subject)
+    </pre>
+<p>
+Gets all known subjects
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;<a
+href="/usr/share/gtk-doc/html/polkit-1/eggdbus-interface-org.freedesktop.PolicyKit1.Authority.html#eggdbus-struct-Subject"
+>Subject</a>&gt; <em class="parameter"><code>subject</code></em></code>:</span></p></td>
+<td><p>
+An array of subjects
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="RegisterInterface ()">
+<a name="eggdbus-method-com.example.Twiddle.RegisterInterface"></a><h3>RegisterInterface ()</h3>
+<pre class="programlisting">
+RegisterInterface (IN  String   object_path,
+                   IN  Boolean  impl_frob,
+                   IN  Boolean  impl_tweak,
+                   IN  Boolean  impl_twiddle)
+    </pre>
+<p>
+Register a new object (or an interface)
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>object_path</code></em></code>:</span></p></td>
+<td><p>
+The object path to register the object on
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_frob</code></em></code>:</span></p></td>
+<td><p>
+Whether the object should implement the #Frob interface
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_tweak</code></em></code>:</span></p></td>
+<td><p>
+Whether the object should implement the #Tweak interface
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_twiddle</code></em></code>:</span></p></td>
+<td><p>
+Whether the object should implement the #Twiddle interface
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="UnregisterInterface ()">
+<a name="eggdbus-method-com.example.Twiddle.UnregisterInterface"></a><h3>UnregisterInterface ()</h3>
+<pre class="programlisting">
+UnregisterInterface (IN  String   object_path,
+                     IN  Boolean  impl_frob,
+                     IN  Boolean  impl_tweak,
+                     IN  Boolean  impl_twiddle)
+    </pre>
+<p>
+Unregister an object (or an interface of an object)
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>object_path</code></em></code>:</span></p></td>
+<td><p>
+The object path for unregistering
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_frob</code></em></code>:</span></p></td>
+<td><p>
+Remove the #Frob interface if registered
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_tweak</code></em></code>:</span></p></td>
+<td><p>
+Remove the #Tweak interface if registered
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Boolean <em class="parameter"><code>impl_twiddle</code></em></code>:</span></p></td>
+<td><p>
+Remove the #Twiddle interface if registered
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="UnregisterAllInterfaces ()">
+<a name="eggdbus-method-com.example.Twiddle.UnregisterAllInterfaces"></a><h3>UnregisterAllInterfaces ()</h3>
+<pre class="programlisting">
+UnregisterAllInterfaces (IN  String  object_path)
+    </pre>
+<p>
+Unregister all interfaces for an object
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>object_path</code></em></code>:</span></p></td>
+<td><p>
+The object path for unregistering
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eggdbus-if-signal-details-com.example.Twiddle"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "NewzNotifz" signal'>
+<a name="eggdbus-signal-com.example.Twiddle::NewzNotifz"></a><h3>The "NewzNotifz" signal</h3>
+<pre class="programlisting">
+NewzNotifz (String  newz)
+    </pre>
+<p>
+Emitted when newz are available
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>newz</code></em></code>:</span></p></td>
+<td><p>
+The newz being emitted
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

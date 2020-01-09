@@ -1,0 +1,2721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusMessage</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">
+<link rel="next" href="eggdbus-eggdbusinterface.html" title="EggDBusInterface">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusBusNameTracker.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-eggdbusinterface.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusMessage.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusMessage.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusMessage.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#EggDBusMessage.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusMessage">
+<a name="EggDBusMessage"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusMessage.top_of_page"></a>EggDBusMessage</span></h2>
+<p>EggDBusMessage — Represents a D-Bus message</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusMessage.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusMessage.html#EggDBusMessage-struct" title="EggDBusMessage">EggDBusMessage</a>;
+enum                <a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType">EggDBusMessageType</a>;
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusMessage.html#egg-dbus-message-new-for-method-reply" title="egg_dbus_message_new_for_method_reply ()">egg_dbus_message_new_for_method_reply</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *reply_to);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusMessage.html#egg-dbus-message-new-for-method-error-reply" title="egg_dbus_message_new_for_method_error_reply ()">egg_dbus_message_new_for_method_error_reply</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *reply_to,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *error_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *error_message);
+<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-connection" title="egg_dbus_message_get_connection ()">egg_dbus_message_get_connection</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+<a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType">EggDBusMessageType</a>  <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-message-type" title="egg_dbus_message_get_message_type ()">egg_dbus_message_get_message_type</a>   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-object-path" title="egg_dbus_message_get_object_path ()">egg_dbus_message_get_object_path</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-interface-name" title="egg_dbus_message_get_interface_name ()">egg_dbus_message_get_interface_name</a> (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-method-name" title="egg_dbus_message_get_method_name ()">egg_dbus_message_get_method_name</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-signal-name" title="egg_dbus_message_get_signal_name ()">egg_dbus_message_get_signal_name</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-in-reply-to" title="egg_dbus_message_get_in_reply_to ()">egg_dbus_message_get_in_reply_to</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-sender" title="egg_dbus_message_get_sender ()">egg_dbus_message_get_sender</a>         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-destination" title="egg_dbus_message_get_destination ()">egg_dbus_message_get_destination</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMessage.html#egg-dbus-message-get-signature" title="egg_dbus_message_get_signature ()">egg_dbus_message_get_signature</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-string" title="egg_dbus_message_append_string ()">egg_dbus_message_append_string</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-string-array" title="egg_dbus_message_append_string_array ()">egg_dbus_message_append_string_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-object-path" title="egg_dbus_message_append_object_path ()">egg_dbus_message_append_object_path</a> (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-object-path-array" title="egg_dbus_message_append_object_path_array ()">egg_dbus_message_append_object_path_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-signature" title="egg_dbus_message_append_signature ()">egg_dbus_message_append_signature</a>   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-signature-array" title="egg_dbus_message_append_signature_array ()">egg_dbus_message_append_signature_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-byte" title="egg_dbus_message_append_byte ()">egg_dbus_message_append_byte</a>        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-int16" title="egg_dbus_message_append_int16 ()">egg_dbus_message_append_int16</a>       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-uint16" title="egg_dbus_message_append_uint16 ()">egg_dbus_message_append_uint16</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-int" title="egg_dbus_message_append_int ()">egg_dbus_message_append_int</a>         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-uint" title="egg_dbus_message_append_uint ()">egg_dbus_message_append_uint</a>        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-int64" title="egg_dbus_message_append_int64 ()">egg_dbus_message_append_int64</a>       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-uint64" title="egg_dbus_message_append_uint64 ()">egg_dbus_message_append_uint64</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-boolean" title="egg_dbus_message_append_boolean ()">egg_dbus_message_append_boolean</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-double" title="egg_dbus_message_append_double ()">egg_dbus_message_append_double</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-seq" title="egg_dbus_message_append_seq ()">egg_dbus_message_append_seq</a>         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-map" title="egg_dbus_message_append_map ()">egg_dbus_message_append_map</a>         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-structure" title="egg_dbus_message_append_structure ()">egg_dbus_message_append_structure</a>   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-variant" title="egg_dbus_message_append_variant ()">egg_dbus_message_append_variant</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-append-gvalue" title="egg_dbus_message_append_gvalue ()">egg_dbus_message_append_gvalue</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-string" title="egg_dbus_message_extract_string ()">egg_dbus_message_extract_string</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-string-array" title="egg_dbus_message_extract_string_array ()">egg_dbus_message_extract_string_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-object-path" title="egg_dbus_message_extract_object_path ()">egg_dbus_message_extract_object_path</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-object-path-array" title="egg_dbus_message_extract_object_path_array ()">egg_dbus_message_extract_object_path_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-signature" title="egg_dbus_message_extract_signature ()">egg_dbus_message_extract_signature</a>  (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-signature-array" title="egg_dbus_message_extract_signature_array ()">egg_dbus_message_extract_signature_array</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-byte" title="egg_dbus_message_extract_byte ()">egg_dbus_message_extract_byte</a>       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-int16" title="egg_dbus_message_extract_int16 ()">egg_dbus_message_extract_int16</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-uint16" title="egg_dbus_message_extract_uint16 ()">egg_dbus_message_extract_uint16</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-int" title="egg_dbus_message_extract_int ()">egg_dbus_message_extract_int</a>        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-uint" title="egg_dbus_message_extract_uint ()">egg_dbus_message_extract_uint</a>       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-int64" title="egg_dbus_message_extract_int64 ()">egg_dbus_message_extract_int64</a>      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-uint64" title="egg_dbus_message_extract_uint64 ()">egg_dbus_message_extract_uint64</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-boolean" title="egg_dbus_message_extract_boolean ()">egg_dbus_message_extract_boolean</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-double" title="egg_dbus_message_extract_double ()">egg_dbus_message_extract_double</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-seq" title="egg_dbus_message_extract_seq ()">egg_dbus_message_extract_seq</a>        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> **out_seq,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-map" title="egg_dbus_message_extract_map ()">egg_dbus_message_extract_map</a>        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> **out_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-structure" title="egg_dbus_message_extract_structure ()">egg_dbus_message_extract_structure</a>  (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> **out_structure,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-variant" title="egg_dbus_message_extract_variant ()">egg_dbus_message_extract_variant</a>    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> **out_variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusMessage.html#egg-dbus-message-extract-gvalue" title="egg_dbus_message_extract_gvalue ()">egg_dbus_message_extract_gvalue</a>     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusMessage.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusMessage
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EggDBusMessage.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--connection" title='The "connection" property'>connection</a>"               <a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a>*    : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--destination" title='The "destination" property'>destination</a>"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--error-message" title='The "error-message" property'>error-message</a>"            <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--error-name" title='The "error-name" property'>error-name</a>"               <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--in-reply-to" title='The "in-reply-to" property'>in-reply-to</a>"              <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a>*       : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--interface-name" title='The "interface-name" property'>interface-name</a>"           <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--message-type" title='The "message-type" property'>message-type</a>"             <a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType">EggDBusMessageType</a>    : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--method-name" title='The "method-name" property'>method-name</a>"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--object-path" title='The "object-path" property'>object-path</a>"              <a class="link" href="eggdbus-eggdbusobjectpath.html#EggDBusObjectPath" title="EggDBusObjectPath">EggDBusObjectPath</a>*    : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--sender" title='The "sender" property'>sender</a>"                   <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--signal-name" title='The "signal-name" property'>signal-name</a>"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusMessage.html#EggDBusMessage--signature" title='The "signature" property'>signature</a>"                <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusMessage.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> class is used for sending and receiving D-Bus messages. This class is
+only useful for language bindings.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusMessage.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusMessage">
+<a name="EggDBusMessage-struct"></a><h3>EggDBusMessage</h3>
+<pre class="programlisting">typedef struct _EggDBusMessage EggDBusMessage;</pre>
+</div>
+<hr>
+<div class="refsect2" title="enum EggDBusMessageType">
+<a name="EggDBusMessageType"></a><h3>enum EggDBusMessageType</h3>
+<pre class="programlisting">typedef enum {
+  EGG_DBUS_MESSAGE_TYPE_METHOD_CALL,
+  EGG_DBUS_MESSAGE_TYPE_METHOD_REPLY,
+  EGG_DBUS_MESSAGE_TYPE_METHOD_ERROR_REPLY,
+  EGG_DBUS_MESSAGE_TYPE_SIGNAL,
+} EggDBusMessageType;
+</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_new_for_method_reply ()">
+<a name="egg-dbus-message-new-for-method-reply"></a><h3>egg_dbus_message_new_for_method_reply ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_message_new_for_method_reply
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *reply_to);</pre>
+<p>
+Creates a new message representing a reply to another message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reply_to</code></em> :</span></p></td>
+<td> The message to reply to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_new_for_method_error_reply ()">
+<a name="egg-dbus-message-new-for-method-error-reply"></a><h3>egg_dbus_message_new_for_method_error_reply ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_message_new_for_method_error_reply
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *reply_to,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *error_name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *error_message);</pre>
+<p>
+Creates a new error message in reply to another message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reply_to</code></em> :</span></p></td>
+<td> The message to reply to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error_name</code></em> :</span></p></td>
+<td> D-Bus error name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error_message</code></em> :</span></p></td>
+<td> D-Bus error message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_connection ()">
+<a name="egg-dbus-message-get-connection"></a><h3>egg_dbus_message_get_connection ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * egg_dbus_message_get_connection     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the connection that <em class="parameter"><code>message</code></em> is associated with.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The connection that <em class="parameter"><code>message</code></em> is associated with. Do not free, the connection is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_message_type ()">
+<a name="egg-dbus-message-get-message-type"></a><h3>egg_dbus_message_get_message_type ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType">EggDBusMessageType</a>  egg_dbus_message_get_message_type   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+The type of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A value from the <a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType"><span class="type">EggDBusMessageType</span></a> enumeration.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_object_path ()">
+<a name="egg-dbus-message-get-object-path"></a><h3>egg_dbus_message_get_object_path ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_object_path    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the object path of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The object path of <em class="parameter"><code>message</code></em>. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_interface_name ()">
+<a name="egg-dbus-message-get-interface-name"></a><h3>egg_dbus_message_get_interface_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_interface_name (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the interface name of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The intername name of <em class="parameter"><code>message</code></em>. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_method_name ()">
+<a name="egg-dbus-message-get-method-name"></a><h3>egg_dbus_message_get_method_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_method_name    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the method name of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The method name of the message. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_signal_name ()">
+<a name="egg-dbus-message-get-signal-name"></a><h3>egg_dbus_message_get_signal_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_signal_name    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the signal name of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The signal name of the message. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_in_reply_to ()">
+<a name="egg-dbus-message-get-in-reply-to"></a><h3>egg_dbus_message_get_in_reply_to ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_message_get_in_reply_to    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the message that <em class="parameter"><code>message</code></em> is a reply to.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_sender ()">
+<a name="egg-dbus-message-get-sender"></a><h3>egg_dbus_message_get_sender ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_sender         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the sender of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The sender of the message. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_destination ()">
+<a name="egg-dbus-message-get-destination"></a><h3>egg_dbus_message_get_destination ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_destination    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the destination of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The destination of the message. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_get_signature ()">
+<a name="egg-dbus-message-get-signature"></a><h3>egg_dbus_message_get_signature ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_message_get_signature      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message);</pre>
+<p>
+Gets the signature of the message.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The signature of the message. Do not free, the value is owned by <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_string ()">
+<a name="egg-dbus-message-append-string"></a><h3>egg_dbus_message_append_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_string      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a string to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_string_array ()">
+<a name="egg-dbus-message-append-string-array"></a><h3>egg_dbus_message_append_string_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_string_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated string array to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_object_path ()">
+<a name="egg-dbus-message-append-object-path"></a><h3>egg_dbus_message_append_object_path ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_object_path (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends an object path to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_object_path_array ()">
+<a name="egg-dbus-message-append-object-path-array"></a><h3>egg_dbus_message_append_object_path_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_object_path_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated object path array to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_signature ()">
+<a name="egg-dbus-message-append-signature"></a><h3>egg_dbus_message_append_signature ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_signature   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a D-Bus signature to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_signature_array ()">
+<a name="egg-dbus-message-append-signature-array"></a><h3>egg_dbus_message_append_signature_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_signature_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated D-Bus signature array to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_byte ()">
+<a name="egg-dbus-message-append-byte"></a><h3>egg_dbus_message_append_byte ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_byte        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_int16 ()">
+<a name="egg-dbus-message-append-int16"></a><h3>egg_dbus_message_append_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_int16       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_uint16 ()">
+<a name="egg-dbus-message-append-uint16"></a><h3>egg_dbus_message_append_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_uint16      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_int ()">
+<a name="egg-dbus-message-append-int"></a><h3>egg_dbus_message_append_int ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_int         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_uint ()">
+<a name="egg-dbus-message-append-uint"></a><h3>egg_dbus_message_append_uint ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_uint        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_int64 ()">
+<a name="egg-dbus-message-append-int64"></a><h3>egg_dbus_message_append_int64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_int64       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_uint64 ()">
+<a name="egg-dbus-message-append-uint64"></a><h3>egg_dbus_message_append_uint64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_uint64      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_boolean ()">
+<a name="egg-dbus-message-append-boolean"></a><h3>egg_dbus_message_append_boolean ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_boolean     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_double ()">
+<a name="egg-dbus-message-append-double"></a><h3>egg_dbus_message_append_double ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_double      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_seq ()">
+<a name="egg-dbus-message-append-seq"></a><h3>egg_dbus_message_append_seq ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_seq         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <span class="type">EggDBusSeq</span> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>seq</code></em> :</span></p></td>
+<td> Sequence to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_signature</code></em> :</span></p></td>
+<td> D-Bus signature of elements in <em class="parameter"><code>seq</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_map ()">
+<a name="egg-dbus-message-append-map"></a><h3>egg_dbus_message_append_map ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_map         (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <span class="type">EggDBusMap</span> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> Map to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_signature</code></em> :</span></p></td>
+<td> D-Bus signature of keys in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_signature</code></em> :</span></p></td>
+<td> D-Bus signature of values in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_structure ()">
+<a name="egg-dbus-message-append-structure"></a><h3>egg_dbus_message_append_structure ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_structure   (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>structure</code></em> :</span></p></td>
+<td> Structure to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_variant ()">
+<a name="egg-dbus-message-append-variant"></a><h3>egg_dbus_message_append_variant ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_variant     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> Variant to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_append_gvalue ()">
+<a name="egg-dbus-message-append-gvalue"></a><h3>egg_dbus_message_append_gvalue ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_append_gvalue      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signature,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Appends a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> to <em class="parameter"><code>message</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to append to <em class="parameter"><code>message</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td> D-Bus signature of <em class="parameter"><code>value</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_string ()">
+<a name="egg-dbus-message-extract-string"></a><h3>egg_dbus_message_extract_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_string     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a string from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_string_array ()">
+<a name="egg-dbus-message-extract-string-array"></a><h3>egg_dbus_message_extract_string_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_string_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts an array of strings from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_object_path ()">
+<a name="egg-dbus-message-extract-object-path"></a><h3>egg_dbus_message_extract_object_path ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_object_path
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts an object path from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_object_path_array ()">
+<a name="egg-dbus-message-extract-object-path-array"></a><h3>egg_dbus_message_extract_object_path_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_object_path_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts an array of object paths from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_signature ()">
+<a name="egg-dbus-message-extract-signature"></a><h3>egg_dbus_message_extract_signature ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_signature  (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a D-Bus signature from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_signature_array ()">
+<a name="egg-dbus-message-extract-signature-array"></a><h3>egg_dbus_message_extract_signature_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_signature_array
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> ***out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts an array of D-Bus signatures from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_byte ()">
+<a name="egg-dbus-message-extract-byte"></a><h3>egg_dbus_message_extract_byte ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_byte       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_int16 ()">
+<a name="egg-dbus-message-extract-int16"></a><h3>egg_dbus_message_extract_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_int16      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_uint16 ()">
+<a name="egg-dbus-message-extract-uint16"></a><h3>egg_dbus_message_extract_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_uint16     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_int ()">
+<a name="egg-dbus-message-extract-int"></a><h3>egg_dbus_message_extract_int ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_int        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_uint ()">
+<a name="egg-dbus-message-extract-uint"></a><h3>egg_dbus_message_extract_uint ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_uint       (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_int64 ()">
+<a name="egg-dbus-message-extract-int64"></a><h3>egg_dbus_message_extract_int64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_int64      (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_uint64 ()">
+<a name="egg-dbus-message-extract-uint64"></a><h3>egg_dbus_message_extract_uint64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_uint64     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_boolean ()">
+<a name="egg-dbus-message-extract-boolean"></a><h3>egg_dbus_message_extract_boolean ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_boolean    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_double ()">
+<a name="egg-dbus-message-extract-double"></a><h3>egg_dbus_message_extract_double ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_double     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_seq ()">
+<a name="egg-dbus-message-extract-seq"></a><h3>egg_dbus_message_extract_seq ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_seq        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> **out_seq,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <span class="type">EggDBusSequence</span> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_seq</code></em> :</span></p></td>
+<td> Return location for extracted sequence or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_map ()">
+<a name="egg-dbus-message-extract-map"></a><h3>egg_dbus_message_extract_map ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_map        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> **out_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_map</code></em> :</span></p></td>
+<td> Return location for extracted map or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_structure ()">
+<a name="egg-dbus-message-extract-structure"></a><h3>egg_dbus_message_extract_structure ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_structure  (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> **out_structure,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_structure</code></em> :</span></p></td>
+<td> Return location for extracted structure or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_variant ()">
+<a name="egg-dbus-message-extract-variant"></a><h3>egg_dbus_message_extract_variant ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_variant    (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> **out_variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts a <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a> from <em class="parameter"><code>message</code></em> and moves on to the next element.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_variant</code></em> :</span></p></td>
+<td> Return location for extracted variant or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_message_extract_gvalue ()">
+<a name="egg-dbus-message-extract-gvalue"></a><h3>egg_dbus_message_extract_gvalue ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_message_extract_gvalue     (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *message,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *out_value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Extracts the next complete complete type from <em class="parameter"><code>message</code></em> as a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_value</code></em> :</span></p></td>
+<td> Return location for extracted value or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> unless <em class="parameter"><code>error</code></em> is set.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EggDBusMessage.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "connection" property'>
+<a name="EggDBusMessage--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a>*    : Read / Write / Construct Only</pre>
+<p>The connection this message is for.</p>
+</div>
+<hr>
+<div class="refsect2" title='The "destination" property'>
+<a name="EggDBusMessage--destination"></a><h3>The <code class="literal">"destination"</code> property</h3>
+<pre class="programlisting">  "destination"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The destination of the message.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "error-message" property'>
+<a name="EggDBusMessage--error-message"></a><h3>The <code class="literal">"error-message"</code> property</h3>
+<pre class="programlisting">  "error-message"            <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The error message.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "error-name" property'>
+<a name="EggDBusMessage--error-name"></a><h3>The <code class="literal">"error-name"</code> property</h3>
+<pre class="programlisting">  "error-name"               <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The error name.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "in-reply-to" property'>
+<a name="EggDBusMessage--in-reply-to"></a><h3>The <code class="literal">"in-reply-to"</code> property</h3>
+<pre class="programlisting">  "in-reply-to"              <a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a>*       : Read / Write / Construct Only</pre>
+<p>The message this is a reply to.</p>
+</div>
+<hr>
+<div class="refsect2" title='The "interface-name" property'>
+<a name="EggDBusMessage--interface-name"></a><h3>The <code class="literal">"interface-name"</code> property</h3>
+<pre class="programlisting">  "interface-name"           <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The name of the interface.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "message-type" property'>
+<a name="EggDBusMessage--message-type"></a><h3>The <code class="literal">"message-type"</code> property</h3>
+<pre class="programlisting">  "message-type"             <a class="link" href="EggDBusMessage.html#EggDBusMessageType" title="enum EggDBusMessageType">EggDBusMessageType</a>    : Read / Write / Construct Only</pre>
+<p>The type of the message.</p>
+<p>Default value: EGG_DBUS_MESSAGE_TYPE_METHOD_CALL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "method-name" property'>
+<a name="EggDBusMessage--method-name"></a><h3>The <code class="literal">"method-name"</code> property</h3>
+<pre class="programlisting">  "method-name"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The name of the method.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "object-path" property'>
+<a name="EggDBusMessage--object-path"></a><h3>The <code class="literal">"object-path"</code> property</h3>
+<pre class="programlisting">  "object-path"              <a class="link" href="eggdbus-eggdbusobjectpath.html#EggDBusObjectPath" title="EggDBusObjectPath">EggDBusObjectPath</a>*    : Read / Write / Construct Only</pre>
+<p>The object path.</p>
+</div>
+<hr>
+<div class="refsect2" title='The "sender" property'>
+<a name="EggDBusMessage--sender"></a><h3>The <code class="literal">"sender"</code> property</h3>
+<pre class="programlisting">  "sender"                   <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The name of who sent the message.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "signal-name" property'>
+<a name="EggDBusMessage--signal-name"></a><h3>The <code class="literal">"signal-name"</code> property</h3>
+<pre class="programlisting">  "signal-name"              <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>The name of the signal.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "signature" property'>
+<a name="EggDBusMessage--signature"></a><h3>The <code class="literal">"signature"</code> property</h3>
+<pre class="programlisting">  "signature"                <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read</pre>
+<p>The signature of the message.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

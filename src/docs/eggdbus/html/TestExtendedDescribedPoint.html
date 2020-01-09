@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TestExtendedDescribedPoint</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example.html" title="Example of Generated Code">
+<link rel="prev" href="TestDescribedPoint.html" title="TestDescribedPoint">
+<link rel="next" href="TestStructWithVariant.html" title="TestStructWithVariant">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="TestDescribedPoint.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="TestStructWithVariant.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#TestExtendedDescribedPoint.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#TestExtendedDescribedPoint.description" class="shortcut">Description</a>
+                 | 
+                <a href="#TestExtendedDescribedPoint.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="TestExtendedDescribedPoint">
+<a name="TestExtendedDescribedPoint"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="TestExtendedDescribedPoint.top_of_page"></a>TestExtendedDescribedPoint</span></h2>
+<p>TestExtendedDescribedPoint — Extended described point</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="TestExtendedDescribedPoint.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="TestExtendedDescribedPoint.html#TestExtendedDescribedPoint-struct" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a>;
+<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> * <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-new" title="test_extended_described_point_new ()">test_extended_described_point_new</a>
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *desc,
+                                                         <a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *point,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ext_desc);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-get-desc" title="test_extended_described_point_get_desc ()">test_extended_described_point_get_desc</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);
+<a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *         <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-get-point" title="test_extended_described_point_get_point ()">test_extended_described_point_get_point</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-get-ext-desc" title="test_extended_described_point_get_ext_desc ()">test_extended_described_point_get_ext_desc</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);
+void                <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-set-desc" title="test_extended_described_point_set_desc ()">test_extended_described_point_set_desc</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+void                <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-set-point" title="test_extended_described_point_set_point ()">test_extended_described_point_set_point</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         <a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *value);
+void                <a class="link" href="TestExtendedDescribedPoint.html#test-extended-described-point-set-ext-desc" title="test_extended_described_point_set_ext_desc ()">test_extended_described_point_set_ext_desc</a>
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="TestExtendedDescribedPoint.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a>
+         +----TestExtendedDescribedPoint
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="TestExtendedDescribedPoint.description"></a><h2>Description</h2>
+<p>
+Test type for wrapping (s(ii)s).</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="TestExtendedDescribedPoint.details"></a><h2>Details</h2>
+<div class="refsect2" title="TestExtendedDescribedPoint">
+<a name="TestExtendedDescribedPoint-struct"></a><h3>TestExtendedDescribedPoint</h3>
+<pre class="programlisting">typedef struct _TestExtendedDescribedPoint TestExtendedDescribedPoint;</pre>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_new ()">
+<a name="test-extended-described-point-new"></a><h3>test_extended_described_point_new ()</h3>
+<pre class="programlisting"><a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> * test_extended_described_point_new
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *desc,
+                                                         <a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *point,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *ext_desc);</pre>
+<p>
+Constructs a new <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
+<td> A description of the described point
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td> The point being described
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ext_desc</code></em> :</span></p></td>
+<td> An extended description of the point
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_get_desc ()">
+<a name="test-extended-described-point-get-desc"></a><h3>test_extended_described_point_get_desc ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       test_extended_described_point_get_desc
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);</pre>
+<p>
+Gets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A description of the described point
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_get_point ()">
+<a name="test-extended-described-point-get-point"></a><h3>test_extended_described_point_get_point ()</h3>
+<pre class="programlisting"><a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *         test_extended_described_point_get_point
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);</pre>
+<p>
+Gets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The point being described
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_get_ext_desc ()">
+<a name="test-extended-described-point-get-ext-desc"></a><h3>test_extended_described_point_get_ext_desc ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       test_extended_described_point_get_ext_desc
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance);</pre>
+<p>
+Gets element 2 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> An extended description of the point
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_set_desc ()">
+<a name="test-extended-described-point-set-desc"></a><h3>test_extended_described_point_set_desc ()</h3>
+<pre class="programlisting">void                test_extended_described_point_set_desc
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Sets element 0 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A description of the described point
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_set_point ()">
+<a name="test-extended-described-point-set-point"></a><h3>test_extended_described_point_set_point ()</h3>
+<pre class="programlisting">void                test_extended_described_point_set_point
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         <a class="link" href="TestPoint.html" title="TestPoint">TestPoint</a> *value);</pre>
+<p>
+Sets element 1 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The point being described
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="test_extended_described_point_set_ext_desc ()">
+<a name="test-extended-described-point-set-ext-desc"></a><h3>test_extended_described_point_set_ext_desc ()</h3>
+<pre class="programlisting">void                test_extended_described_point_set_ext_desc
+                                                        (<a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint">TestExtendedDescribedPoint</a> *instance,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Sets element 2 of the <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a> wrapped by <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>instance</code></em> :</span></p></td>
+<td> A <a class="link" href="TestExtendedDescribedPoint.html" title="TestExtendedDescribedPoint"><span class="type">TestExtendedDescribedPoint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> An extended description of the point
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

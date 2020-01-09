@@ -1,0 +1,373 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/com/example/TestService">
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="Point">
+    <annotation name="org.gtk.EggDBus.DocString" value="The #Point type is used for 2D integer points."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="2D point"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member"  value="Int32:x">
+      <annotation name="org.gtk.EggDBus.DocString" value="The X coordinate"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Int32:y">
+      <annotation name="org.gtk.EggDBus.DocString" value="The Y coordinate"/>
+    </annotation>
+  </annotation>
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="Pair">
+    <annotation name="org.gtk.EggDBus.DocString" value="The #Pair type is used to group two integers together."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Pair of integers"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member"  value="Int32:first">
+      <annotation name="org.gtk.EggDBus.DocString" value="The first element"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Int32:second">
+      <annotation name="org.gtk.EggDBus.DocString" value="The second element"/>
+    </annotation>
+  </annotation>
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="DescribedPoint">
+    <annotation name="org.gtk.EggDBus.DocString" value="Test type for wrapping (s(ii))."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Described point"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="String:desc">
+      <annotation name="org.gtk.EggDBus.DocString" value="A description of the described point"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Point:point">
+      <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The point being described"/>
+    </annotation>
+  </annotation>
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="DescribedPair">
+    <annotation name="org.gtk.EggDBus.DocString" value="Test type for wrapping (s(ii))."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Described pair"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="String:desc">
+      <annotation name="org.gtk.EggDBus.DocString" value="A description of the described pair"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Pair:pair">
+      <annotation name="org.gtk.EggDBus.Type" value="Pair"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The pair being described"/>
+    </annotation>
+  </annotation>
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="ExtendedDescribedPoint">
+    <annotation name="org.gtk.EggDBus.DocString" value="Test type for wrapping (s(ii)s)."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Extended described point"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="String:desc">
+      <annotation name="org.gtk.EggDBus.DocString" value="A description of the described point"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Point:point">
+      <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The point being described"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="String:ext_desc">
+      <annotation name="org.gtk.EggDBus.DocString" value="An extended description of the point"/>
+    </annotation>
+  </annotation>
+
+  <annotation name="org.gtk.EggDBus.DeclareStruct" value="StructWithVariant">
+    <annotation name="org.gtk.EggDBus.DocString" value="Test type for a complex structure (siivi)."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Complex structure"/>
+
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="String:name">
+      <annotation name="org.gtk.EggDBus.DocString" value="A name"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Int32:anger_level">
+      <annotation name="org.gtk.EggDBus.DocString" value="The level of anger"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Int32:threat_level">
+      <annotation name="org.gtk.EggDBus.DocString" value="The level of threat"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Variant:a_variant">
+      <annotation name="org.gtk.EggDBus.DocString" value="Some variant"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Struct.Member" value="Int32:override_c_type">
+      <annotation name="org.gtk.EggDBus.DocString" value="Some primitive type"/>
+      <annotation name="org.gtk.EggDBus.CType" value="TestSomeExampleCType"/>
+    </annotation>
+  </annotation>
+
+  <!-- -->
+  <!-- -->
+  <!-- -->
+
+  <interface name="com.example.Frob">
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Frob interface used for testing"/>
+    <annotation name="org.gtk.EggDBus.DocString" value="<para>The #com.example.Frob interface is used in the EggDBus test suite.</para><para>Test of symbol/constant/method/signal/property resolution: Link to method com.example.Frob.HelloWorld(). And a link to a signal #com.example.Frob::SignalWithPrimitiveTypes. And a property #com.example.Frob:foo. And also a struct #Point. And an error %com.example.Error.FluxCapacitorFailure. And a flag value %CreateFlags.LogAttempt. And an enum %Vehicle.Truck. Link to an enumeration #Vehicle. Link to a collection of errors #com.example.Error. And a collection of flags #DeleteFlags. %TRUE. %FALSE. That's it.</para>"/>
+
+    <method name="HelloWorld">
+      <arg direction="in"  type="s" name="hello_message" />
+      <arg direction="out" type="s" />
+    </method>
+
+    <method name="TestPrimitiveTypes">
+      <arg direction="in"  type="y" name="val_byte" />
+      <arg direction="in"  type="b" name="val_boolean" />
+      <arg direction="in"  type="n" name="val_int16" />
+      <arg direction="in"  type="q" name="val_uint16" />
+      <arg direction="in"  type="i" name="val_int32" />
+      <arg direction="in"  type="u" name="val_uint32" />
+      <arg direction="in"  type="x" name="val_int64" />
+      <arg direction="in"  type="t" name="val_uint64" />
+      <arg direction="in"  type="d" name="val_double" />
+      <arg direction="in"  type="s" name="val_string" />
+      <arg direction="in"  type="o" name="val_objpath" />
+      <arg direction="in"  type="g" name="val_signature" />
+      <arg direction="out" type="y" />
+      <arg direction="out" type="b" />
+      <arg direction="out" type="n" />
+      <arg direction="out" type="q" />
+      <arg direction="out" type="i" />
+      <arg direction="out" type="u" />
+      <arg direction="out" type="x" />
+      <arg direction="out" type="t" />
+      <arg direction="out" type="d" />
+      <arg direction="out" type="s" />
+      <arg direction="out" type="o" />
+      <arg direction="out" type="g" />
+    </method>
+
+    <method name="TestArrayOfPrimitiveTypes">
+      <arg direction="in"  type="ay" name="val_byte" />
+      <arg direction="in"  type="ab" name="val_boolean" />
+      <arg direction="in"  type="an" name="val_int16" />
+      <arg direction="in"  type="aq" name="val_uint16" />
+      <arg direction="in"  type="ai" name="val_int32" />
+      <arg direction="in"  type="au" name="val_uint32" />
+      <arg direction="in"  type="ax" name="val_int64" />
+      <arg direction="in"  type="at" name="val_uint64" />
+      <arg direction="in"  type="ad" name="val_double" />
+      <arg direction="in"  type="as" name="val_string" />
+      <arg direction="in"  type="ao" name="val_objpath" />
+      <arg direction="in"  type="ag" name="val_signature" />
+      <arg direction="out" type="ay" />
+      <arg direction="out" type="ab" />
+      <arg direction="out" type="an" />
+      <arg direction="out" type="aq" />
+      <arg direction="out" type="ai" />
+      <arg direction="out" type="au" />
+      <arg direction="out" type="ax" />
+      <arg direction="out" type="at" />
+      <arg direction="out" type="ad" />
+      <arg direction="out" type="as" />
+      <arg direction="out" type="ao" />
+      <arg direction="out" type="ag" />
+    </method>
+
+    <method name="TestStructureTypes">
+      <arg direction="in"  type="(ii)" name="s1">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      </arg>
+      <arg direction="in"  type="(s(ii))" name="s2">
+        <annotation name="org.gtk.EggDBus.Type" value="DescribedPoint"/>
+      </arg>
+      <arg direction="out" type="(ii)">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      </arg>
+      <arg direction="out" type="(s(ii))">
+        <annotation name="org.gtk.EggDBus.Type" value="DescribedPoint"/>
+      </arg>
+    </method>
+
+    <method name="TestArrayOfStructureTypes">
+      <arg direction="in"  type="a(s(ii)s)" name="list" />
+      <arg direction="out" type="a(s(ii)s)" />
+    </method>
+
+    <method name="TestHashTables">
+      <!-- TODO: add tests for signature type -->
+      <arg direction="in"  type="a{ss}" name="hss" />
+      <arg direction="out" type="a{ss}" />
+      <arg direction="in"  type="a{oo}" name="hoo" />
+      <arg direction="out" type="a{oo}" />
+      <arg direction="in"  type="a{ii}" name="hii" />
+      <arg direction="out" type="a{ii}" />
+      <arg direction="in"  type="a{yy}" name="hyy" />
+      <arg direction="out" type="a{yy}" />
+      <arg direction="in"  type="a{nn}" name="hnn" />
+      <arg direction="out" type="a{nn}" />
+      <arg direction="in"  type="a{qq}" name="hqq" />
+      <arg direction="out" type="a{qq}" />
+      <arg direction="in"  type="a{uu}" name="huu" />
+      <arg direction="out" type="a{uu}" />
+      <arg direction="in"  type="a{bb}" name="hbb" />
+      <arg direction="out" type="a{bb}" />
+      <arg direction="in"  type="a{xx}" name="hxx" />
+      <arg direction="out" type="a{xx}" />
+      <arg direction="in"  type="a{tt}" name="htt" />
+      <arg direction="out" type="a{tt}" />
+      <arg direction="in"  type="a{dd}" name="hdd" />
+      <arg direction="out" type="a{dd}" />
+    </method>
+
+    <method name="TestHashTablesOfArrays">
+      <!-- TODO: add tests for signature type -->
+      <arg direction="in"  type="a{sas}" name="hsas" />
+      <arg direction="out" type="a{sas}" />
+      <arg direction="in"  type="a{sao}" name="hsao" />
+      <arg direction="out" type="a{sao}" />
+      <arg direction="in"  type="a{sai}" name="hsai" />
+      <arg direction="out" type="a{sai}" />
+      <arg direction="in"  type="a{say}" name="hsay" />
+      <arg direction="out" type="a{say}" />
+      <arg direction="in"  type="a{san}" name="hsan" />
+      <arg direction="out" type="a{san}" />
+      <arg direction="in"  type="a{saq}" name="hsaq" />
+      <arg direction="out" type="a{saq}" />
+      <arg direction="in"  type="a{sau}" name="hsau" />
+      <arg direction="out" type="a{sau}" />
+      <arg direction="in"  type="a{sab}" name="hsab" />
+      <arg direction="out" type="a{sab}" />
+      <arg direction="in"  type="a{sax}" name="hsax" />
+      <arg direction="out" type="a{sax}" />
+      <arg direction="in"  type="a{sat}" name="hsat" />
+      <arg direction="out" type="a{sat}" />
+      <arg direction="in"  type="a{sad}" name="hsad" />
+      <arg direction="out" type="a{sad}" />
+      <arg direction="in"  type="a{sa(ii)}" name="hash_of_point_arrays">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Array<Point>>"/>
+      </arg>
+      <arg direction="out" type="a{sa(ii)}" name="new_hash_of_point_arrays">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Array<Point>>"/>
+      </arg>
+    </method>
+
+    <method name="TestHashTableOfStructures">
+      <arg direction="in"  type="a{s(ii)}" name="hash_of_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Point>"/>
+      </arg>
+      <arg direction="out" type="a{s(s(ii))}" name="hash_of_described_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,DescribedPoint>"/>
+      </arg>
+    </method>
+
+    <method name="TestHashTableOfHashTablesOfStructures">
+      <arg direction="in"  type="a{sa{s(ii)}}" name="hash_of_hash_of_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Dict<String,Point>>"/>
+      </arg>
+      <arg direction="out" type="a{sa{s(ii)}}" name="new_hash_of_hash_of_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Dict<String,Point>>"/>
+      </arg>
+    </method>
+
+    <method name="TestArrayOfHashTablesOfStructures">
+      <arg direction="in"  type="aa{s(ii)}" name="array_of_hash_of_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Array<Dict<String,Point>>"/>
+      </arg>
+      <arg direction="out" type="aa{s(ii)}" name="new_array_of_hash_of_points">
+        <annotation name="org.gtk.EggDBus.Type" value="Array<Dict<String,Point>>"/>
+      </arg>
+    </method>
+
+    <method name="TestArrayOfArrays">
+      <!-- TODO: add tests for signature type -->
+      <arg direction="in"  type="aas" name="aas" />
+      <arg direction="in"  type="aa(ii)" name="aastruct">
+        <annotation name="org.gtk.EggDBus.Type" value="Array<Array<Point>>"/>
+      </arg>
+      <arg direction="in"  type="aao" name="aao" />
+      <arg direction="in"  type="aai" name="aai" />
+      <arg direction="in"  type="aay" name="aay" />
+      <arg direction="in"  type="aan" name="aan" />
+      <arg direction="in"  type="aaq" name="aaq" />
+      <arg direction="in"  type="aau" name="aau" />
+      <arg direction="in"  type="aab" name="aab" />
+      <arg direction="in"  type="aax" name="aax" />
+      <arg direction="in"  type="aat" name="aat" />
+      <arg direction="in"  type="aad" name="aad" />
+      <arg direction="in"  type="aaas" name="aaas" />
+      <arg direction="out" type="aas" name="ret_aas"/>
+      <arg direction="out" type="aa(ii)" name="ret_aastruct">
+        <annotation name="org.gtk.EggDBus.Type" value="Array<Array<Point>>"/>
+      </arg>
+      <arg direction="out" type="aao" name="ret_aao"/>
+      <arg direction="out" type="aai" name="ret_aai"/>
+      <arg direction="out" type="aay" name="ret_aay"/>
+      <arg direction="out" type="aan" name="ret_aan"/>
+      <arg direction="out" type="aaq" name="ret_aaq"/>
+      <arg direction="out" type="aau" name="ret_aau"/>
+      <arg direction="out" type="aab" name="ret_aab"/>
+      <arg direction="out" type="aax" name="ret_aax"/>
+      <arg direction="out" type="aat" name="ret_aat"/>
+      <arg direction="out" type="aad" name="ret_aad"/>
+      <arg direction="out" type="aaas" name="ret_aaas"/>
+    </method>
+
+    <method name="TestVariantReturn">
+      <arg direction="in"  type="s" name="desired_variant" />
+      <arg direction="out" type="v" name="variant" />
+    </method>
+
+    <property name="y" type="y" access="read"/>
+    <property name="b" type="b" access="read"/>
+    <property name="n" type="n" access="read"/>
+    <property name="q" type="q" access="read"/>
+    <property name="i" type="i" access="read"/>
+    <property name="u" type="u" access="read"/>
+    <property name="x" type="x" access="read"/>
+    <property name="t" type="t" access="read"/>
+    <property name="d" type="d" access="read"/>
+    <property name="s" type="s" access="read"/>
+    <property name="o" type="o" access="read"/>
+    <property name="g" type="g" access="read"/>
+    <property name="ay" type="ay" access="read"/>
+    <property name="ab" type="ab" access="read"/>
+    <property name="an" type="an" access="read"/>
+    <property name="aq" type="aq" access="read"/>
+    <property name="ai" type="ai" access="read"/>
+    <property name="au" type="au" access="read"/>
+    <property name="ax" type="ax" access="read"/>
+    <property name="at" type="at" access="read"/>
+    <property name="ad" type="ad" access="read"/>
+    <property name="as" type="as" access="read"/>
+    <property name="ao" type="ao" access="read"/>
+    <property name="ag" type="ag" access="read"/>
+
+    <property name="foo" type="s" access="read"/>
+
+    <signal name="SignalWithPrimitiveTypes">
+      <arg type="y" name="val_byte" />
+      <arg type="b" name="val_boolean" />
+      <arg type="n" name="val_int16" />
+      <arg type="q" name="val_uint16" />
+      <arg type="i" name="val_int32" />
+      <arg type="u" name="val_uint32" />
+      <arg type="x" name="val_int64" />
+      <arg type="t" name="val_uint64" />
+      <arg type="d" name="val_double" />
+      <arg type="s" name="val_string" />
+      <arg type="o" name="val_objpath" />
+      <arg type="g" name="val_sig" />
+    </signal>
+
+    <signal name="SignalWithArrayOfPrimitiveTypes">
+      <arg type="ay" name="array_byte" />
+      <arg type="ai" name="array_int32" />
+      <arg type="as" name="array_string" />
+      <arg type="ao" name="array_objpath" />
+      <arg type="ag" name="array_sig" />
+    </signal>
+
+    <signal name="SignalWithStructureAndHash">
+      <arg type="(ii)" name="point">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      </arg>
+      <arg type="(s(ii))" name="described-point">
+        <annotation name="org.gtk.EggDBus.Type" value="DescribedPoint"/>
+      </arg>
+      <arg type="a{ss}" name="hash_of_string_to_string" />
+      <arg type="a{s(ii)}" name="hash_of_string_to_point">
+        <annotation name="org.gtk.EggDBus.Type" value="Dict<String,Point>"/>
+      </arg>
+    </signal>
+
+    <method name="EmitTestSignals">
+    </method>
+
+  </interface>
+
+</node>
+

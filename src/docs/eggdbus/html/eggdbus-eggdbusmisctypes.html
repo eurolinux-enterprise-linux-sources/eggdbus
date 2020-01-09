@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fundamental types</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="datatypes.html" title="Types and Collections">
+<link rel="prev" href="datatypes.html" title="Types and Collections">
+<link rel="next" href="eggdbus-eggdbusobjectpath.html" title="EggDBusObjectPath">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="datatypes.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="datatypes.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-eggdbusobjectpath.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-eggdbusmisctypes.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-eggdbusmisctypes.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="Fundamental types">
+<a name="eggdbus-eggdbusmisctypes"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eggdbus-eggdbusmisctypes.top_of_page"></a>Fundamental types</span></h2>
+<p>Fundamental types — Types for 16-bit integers</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eggdbus-eggdbusmisctypes.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16">EGG_DBUS_TYPE_INT16</a>
+#define             <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16">EGG_DBUS_TYPE_UINT16</a>
+                    <a class="link" href="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecInt16" title="EggDBusParamSpecInt16">EggDBusParamSpecInt16</a>;
+                    <a class="link" href="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecUInt16" title="EggDBusParamSpecUInt16">EggDBusParamSpecUInt16</a>;
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a>*         <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-param-spec-int16" title="egg_dbus_param_spec_int16 ()">egg_dbus_param_spec_int16</a>           (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *nick,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *blurb,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> minimum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> maximum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> default_value,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamFlags"
+>GParamFlags</a> flags);
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a>*         <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-param-spec-uint16" title="egg_dbus_param_spec_uint16 ()">egg_dbus_param_spec_uint16</a>          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *nick,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *blurb,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> minimum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> maximum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> default_value,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamFlags"
+>GParamFlags</a> flags);
+#define             <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-VALUE-HOLDS-INT16--CAPS" title="EGG_DBUS_VALUE_HOLDS_INT16()">EGG_DBUS_VALUE_HOLDS_INT16</a>          (value)
+#define             <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-VALUE-HOLDS-UINT16--CAPS" title="EGG_DBUS_VALUE_HOLDS_UINT16()">EGG_DBUS_VALUE_HOLDS_UINT16</a>         (value)
+void                <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-value-set-int16" title="egg_dbus_value_set_int16 ()">egg_dbus_value_set_int16</a>            (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> v_int16);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a>              <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-value-get-int16" title="egg_dbus_value_get_int16 ()">egg_dbus_value_get_int16</a>            (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value);
+void                <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-value-set-uint16" title="egg_dbus_value_set_uint16 ()">egg_dbus_value_set_uint16</a>           (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> v_uint16);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a>             <a class="link" href="eggdbus-eggdbusmisctypes.html#egg-dbus-value-get-uint16" title="egg_dbus_value_get_uint16 ()">egg_dbus_value_get_uint16</a>           (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-eggdbusmisctypes.description"></a><h2>Description</h2>
+<p>
+This really should be in GObject but it isn't.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eggdbus-eggdbusmisctypes.details"></a><h2>Details</h2>
+<div class="refsect2" title="EGG_DBUS_TYPE_INT16">
+<a name="EGG-DBUS-TYPE-INT16--CAPS"></a><h3>EGG_DBUS_TYPE_INT16</h3>
+<pre class="programlisting">#define EGG_DBUS_TYPE_INT16                     (egg_dbus_int16_get_type())
+</pre>
+<p>
+A fundamental type corresponding to <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.</p>
+</div>
+<hr>
+<div class="refsect2" title="EGG_DBUS_TYPE_UINT16">
+<a name="EGG-DBUS-TYPE-UINT16--CAPS"></a><h3>EGG_DBUS_TYPE_UINT16</h3>
+<pre class="programlisting">#define EGG_DBUS_TYPE_UINT16                    (egg_dbus_uint16_get_type())
+</pre>
+<p>
+A fundamental type corresponding to <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.</p>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusParamSpecInt16">
+<a name="EggDBusParamSpecInt16"></a><h3>EggDBusParamSpecInt16</h3>
+<pre class="programlisting">typedef struct {
+  GParamSpec    parent_instance;
+
+  gint16        minimum;
+  gint16        maximum;
+  gint16        default_value;
+} EggDBusParamSpecInt16;
+</pre>
+<p>
+A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+><span class="type">GParamSpec</span></a> derived structure that contains the meta data for 16bit integer properties.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a> <em class="structfield"><code>parent_instance</code></em>;</span></p></td>
+<td> private <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+><span class="type">GParamSpec</span></a> portion
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> <em class="structfield"><code>minimum</code></em>;</span></p></td>
+<td> minimum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> <em class="structfield"><code>maximum</code></em>;</span></p></td>
+<td> maximum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> <em class="structfield"><code>default_value</code></em>;</span></p></td>
+<td> default value for the property specified
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusParamSpecUInt16">
+<a name="EggDBusParamSpecUInt16"></a><h3>EggDBusParamSpecUInt16</h3>
+<pre class="programlisting">typedef struct {
+  GParamSpec    parent_instance;
+
+  guint16       minimum;
+  guint16       maximum;
+  guint16       default_value;
+} EggDBusParamSpecUInt16;
+</pre>
+<p>
+A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+><span class="type">GParamSpec</span></a> derived structure that contains the meta data for unsigned 16bit integer properties.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a> <em class="structfield"><code>parent_instance</code></em>;</span></p></td>
+<td> private <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+><span class="type">GParamSpec</span></a> portion
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> <em class="structfield"><code>minimum</code></em>;</span></p></td>
+<td> minimum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> <em class="structfield"><code>maximum</code></em>;</span></p></td>
+<td> maximum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> <em class="structfield"><code>default_value</code></em>;</span></p></td>
+<td> default value for the property specified
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_param_spec_int16 ()">
+<a name="egg-dbus-param-spec-int16"></a><h3>egg_dbus_param_spec_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a>*         egg_dbus_param_spec_int16           (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *nick,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *blurb,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> minimum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> maximum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> default_value,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamFlags"
+>GParamFlags</a> flags);</pre>
+<p>
+Creates a new <a class="link" href="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecInt16" title="EggDBusParamSpecInt16"><span class="type">EggDBusParamSpecInt16</span></a> instance specifying a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a> property.
+</p>
+<p>
+See <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#g-param-spec-internal"
+><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> canonical name of the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nick</code></em> :</span></p></td>
+<td> nick name for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>blurb</code></em> :</span></p></td>
+<td> description of the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minimum</code></em> :</span></p></td>
+<td> minimum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maximum</code></em> :</span></p></td>
+<td> maximum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_value</code></em> :</span></p></td>
+<td> default value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td> flags for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly created parameter specification
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_param_spec_uint16 ()">
+<a name="egg-dbus-param-spec-uint16"></a><h3>egg_dbus_param_spec_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamSpec"
+>GParamSpec</a>*         egg_dbus_param_spec_uint16          (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *nick,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *blurb,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> minimum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> maximum,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> default_value,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#GParamFlags"
+>GParamFlags</a> flags);</pre>
+<p>
+Creates a new <a class="link" href="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecUInt16" title="EggDBusParamSpecUInt16"><span class="type">EggDBusParamSpecUInt16</span></a> instance specifying a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a>
+property.
+</p>
+<p>
+See <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-GParamSpec.html#g-param-spec-internal"
+><code class="function">g_param_spec_internal()</code></a> for details on property names.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> canonical name of the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nick</code></em> :</span></p></td>
+<td> nick name for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>blurb</code></em> :</span></p></td>
+<td> description of the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>minimum</code></em> :</span></p></td>
+<td> minimum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maximum</code></em> :</span></p></td>
+<td> maximum value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>default_value</code></em> :</span></p></td>
+<td> default value for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td> flags for the property specified
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly created parameter specification
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EGG_DBUS_VALUE_HOLDS_INT16()">
+<a name="EGG-DBUS-VALUE-HOLDS-INT16--CAPS"></a><h3>EGG_DBUS_VALUE_HOLDS_INT16()</h3>
+<pre class="programlisting">#define EGG_DBUS_VALUE_HOLDS_INT16(value)       (G_TYPE_CHECK_VALUE_TYPE ((value), EGG_DBUS_TYPE_INT16))
+</pre>
+<p>
+Checks whether the given <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> can hold values of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> structure
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> on success.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EGG_DBUS_VALUE_HOLDS_UINT16()">
+<a name="EGG-DBUS-VALUE-HOLDS-UINT16--CAPS"></a><h3>EGG_DBUS_VALUE_HOLDS_UINT16()</h3>
+<pre class="programlisting">#define EGG_DBUS_VALUE_HOLDS_UINT16(value)      (G_TYPE_CHECK_VALUE_TYPE ((value), EGG_DBUS_TYPE_UINT16))
+</pre>
+<p>
+Checks whether the given <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> can hold values of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> structure
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> on success.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_value_set_int16 ()">
+<a name="egg-dbus-value-set-int16"></a><h3>egg_dbus_value_set_int16 ()</h3>
+<pre class="programlisting">void                egg_dbus_value_set_int16            (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> v_int16);</pre>
+<p>
+Set the contents of a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a> <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> to <em class="parameter"><code>v_int16</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_int16</code></em> :</span></p></td>
+<td> 16bit integer value to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_value_get_int16 ()">
+<a name="egg-dbus-value-get-int16"></a><h3>egg_dbus_value_get_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a>              egg_dbus_value_get_int16            (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value);</pre>
+<p>
+Get the contents of a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a> <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS" title="EGG_DBUS_TYPE_INT16"><code class="literal">EGG_DBUS_TYPE_INT16</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 16bit integer contents of <em class="parameter"><code>value</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_value_set_uint16 ()">
+<a name="egg-dbus-value-set-uint16"></a><h3>egg_dbus_value_set_uint16 ()</h3>
+<pre class="programlisting">void                egg_dbus_value_set_uint16           (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> v_uint16);</pre>
+<p>
+Set the contents of a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a> <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> to <em class="parameter"><code>v_uint16</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>v_uint16</code></em> :</span></p></td>
+<td> unsigned 16bit integer value to be set
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_value_get_uint16 ()">
+<a name="egg-dbus-value-get-uint16"></a><h3>egg_dbus_value_get_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a>             egg_dbus_value_get_uint16           (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value);</pre>
+<p>
+Get the contents of a <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a> <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> a valid <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> of type <a class="link" href="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS" title="EGG_DBUS_TYPE_UINT16"><code class="literal">EGG_DBUS_TYPE_UINT16</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> unsigned 16bit integer contents of <em class="parameter"><code>value</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

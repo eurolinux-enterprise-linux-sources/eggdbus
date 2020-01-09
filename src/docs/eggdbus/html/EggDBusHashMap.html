@@ -1,0 +1,2002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusHashMap</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="datatypes.html" title="Types and Collections">
+<link rel="prev" href="EggDBusArraySeq.html" title="EggDBusArraySeq">
+<link rel="next" href="EggDBusVariant.html" title="EggDBusVariant">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusArraySeq.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="datatypes.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusVariant.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusHashMap.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusHashMap.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusHashMap.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusHashMap">
+<a name="EggDBusHashMap"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusHashMap.top_of_page"></a>EggDBusHashMap</span></h2>
+<p>EggDBusHashMap — Hash Maps</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusHashMap.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            (<a class="link" href="EggDBusHashMap.html#EggDBusHashMapForeachFunc" title="EggDBusHashMapForeachFunc ()">*EggDBusHashMapForeachFunc</a>)        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);
+                    <a class="link" href="EggDBusHashMap.html#EggDBusHashMap-struct" title="EggDBusHashMap">EggDBusHashMap</a>;
+<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-new" title="egg_dbus_hash_map_new ()">egg_dbus_hash_map_new</a>               (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> key_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> key_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> value_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> value_free_func);
+<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-new-full" title="egg_dbus_hash_map_new_full ()">egg_dbus_hash_map_new_full</a>          (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> key_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashFunc"
+>GHashFunc</a> key_hash_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GEqualFunc"
+>GEqualFunc</a> key_equal_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> key_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Boxed-Types.html#GBoxedCopyFunc"
+>GBoxedCopyFunc</a> key_copy_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> value_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> value_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Boxed-Types.html#GBoxedCopyFunc"
+>GBoxedCopyFunc</a> value_copy_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GEqualFunc"
+>GEqualFunc</a> value_equal_func);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-get-size" title="egg_dbus_hash_map_get_size ()">egg_dbus_hash_map_get_size</a>          (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-get-key-type" title="egg_dbus_hash_map_get_key_type ()">egg_dbus_hash_map_get_key_type</a>      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-get-value-type" title="egg_dbus_hash_map_get_value_type ()">egg_dbus_hash_map_get_value_type</a>    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-clear" title="egg_dbus_hash_map_clear ()">egg_dbus_hash_map_clear</a>             (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert" title="egg_dbus_hash_map_insert ()">egg_dbus_hash_map_insert</a>            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()">egg_dbus_hash_map_contains</a>          (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup" title="egg_dbus_hash_map_lookup ()">egg_dbus_hash_map_lookup</a>            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-copy" title="egg_dbus_hash_map_lookup_copy ()">egg_dbus_hash_map_lookup_copy</a>       (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-remove" title="egg_dbus_hash_map_remove ()">egg_dbus_hash_map_remove</a>            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-foreach" title="egg_dbus_hash_map_foreach ()">egg_dbus_hash_map_foreach</a>           (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a class="link" href="EggDBusHashMap.html#EggDBusHashMapForeachFunc" title="EggDBusHashMapForeachFunc ()">EggDBusHashMapForeachFunc</a> func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains-fixed" title="egg_dbus_hash_map_contains_fixed ()">egg_dbus_hash_map_contains_fixed</a>    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains-float" title="egg_dbus_hash_map_contains_float ()">egg_dbus_hash_map_contains_float</a>    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed" title="egg_dbus_hash_map_lookup_fixed ()">egg_dbus_hash_map_lookup_fixed</a>      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float" title="egg_dbus_hash_map_lookup_float ()">egg_dbus_hash_map_lookup_float</a>      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-copy" title="egg_dbus_hash_map_lookup_fixed_copy ()">egg_dbus_hash_map_lookup_fixed_copy</a> (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-copy" title="egg_dbus_hash_map_lookup_float_copy ()">egg_dbus_hash_map_lookup_float_copy</a> (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-ptr-fixed" title="egg_dbus_hash_map_lookup_ptr_fixed ()">egg_dbus_hash_map_lookup_ptr_fixed</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-ptr-float" title="egg_dbus_hash_map_lookup_ptr_float ()">egg_dbus_hash_map_lookup_ptr_float</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-fixed" title="egg_dbus_hash_map_lookup_fixed_fixed ()">egg_dbus_hash_map_lookup_fixed_fixed</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-float" title="egg_dbus_hash_map_lookup_fixed_float ()">egg_dbus_hash_map_lookup_fixed_float</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-fixed" title="egg_dbus_hash_map_lookup_float_fixed ()">egg_dbus_hash_map_lookup_float_fixed</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-float" title="egg_dbus_hash_map_lookup_float_float ()">egg_dbus_hash_map_lookup_float_float</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-remove-fixed" title="egg_dbus_hash_map_remove_fixed ()">egg_dbus_hash_map_remove_fixed</a>      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-remove-float" title="egg_dbus_hash_map_remove_float ()">egg_dbus_hash_map_remove_float</a>      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-ptr-fixed" title="egg_dbus_hash_map_insert_ptr_fixed ()">egg_dbus_hash_map_insert_ptr_fixed</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-ptr-float" title="egg_dbus_hash_map_insert_ptr_float ()">egg_dbus_hash_map_insert_ptr_float</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-ptr" title="egg_dbus_hash_map_insert_fixed_ptr ()">egg_dbus_hash_map_insert_fixed_ptr</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-fixed" title="egg_dbus_hash_map_insert_fixed_fixed ()">egg_dbus_hash_map_insert_fixed_fixed</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-float" title="egg_dbus_hash_map_insert_fixed_float ()">egg_dbus_hash_map_insert_fixed_float</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-ptr" title="egg_dbus_hash_map_insert_float_ptr ()">egg_dbus_hash_map_insert_float_ptr</a>  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-fixed" title="egg_dbus_hash_map_insert_float_fixed ()">egg_dbus_hash_map_insert_float_fixed</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);
+void                <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-float" title="egg_dbus_hash_map_insert_float_float ()">egg_dbus_hash_map_insert_float_float</a>
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusHashMap.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusHashMap
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusHashMap.description"></a><h2>Description</h2>
+<p>
+A map type for that maps keys from one <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> to values of another <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> using hashing.
+See <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-new" title="egg_dbus_hash_map_new ()"><code class="function">egg_dbus_hash_map_new()</code></a> for details.
+</p>
+<p>
+By default, the map takes ownership when inserting key/value pairs meaning that the programmer gives
+up his references. Values looked up from the map are owned by the array. There is also convenience
+API to get a copy of the value, see <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-copy" title="egg_dbus_hash_map_lookup_copy ()"><code class="function">egg_dbus_hash_map_lookup_copy()</code></a>.
+</p>
+<p>
+Note that this class exposes a number of implementation details directly in the class
+instance structure for efficient and convenient access when used from the C programming
+language. Use with caution. For the same reasons, this class also provides a number of
+convenience functions for dealing with fixed-size integral and floating point numbers.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusHashMap.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusHashMapForeachFunc ()">
+<a name="EggDBusHashMapForeachFunc"></a><h3>EggDBusHashMapForeachFunc ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            (*EggDBusHashMapForeachFunc)        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> value,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);</pre>
+<p>
+Type of callback function passed to <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-foreach" title="egg_dbus_hash_map_foreach ()"><code class="function">egg_dbus_hash_map_foreach()</code></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> The map being iterated over.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> A key.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value corresponding to <em class="parameter"><code>key</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td> User data passed to <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-foreach" title="egg_dbus_hash_map_foreach ()"><code class="function">egg_dbus_hash_map_foreach()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> to short-circuit the iteration; <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a> to continue iterating.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusHashMap">
+<a name="EggDBusHashMap-struct"></a><h3>EggDBusHashMap</h3>
+<pre class="programlisting">typedef struct {
+  GType                 key_type;
+  GType                 value_type;
+  GHashTable           *data;
+} EggDBusHashMap;
+</pre>
+<p>
+The <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a> instance structure should normally not be accessed directly, use accessor
+functions instead. Certain instance members are provided <span class="emphasis"><em>only</em></span> for efficient
+and convenient access when using the C programming language. Use with caution.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> <em class="structfield"><code>key_type</code></em>;</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> of the keys in the hash map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> <em class="structfield"><code>value_type</code></em>;</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> of the values in the hash map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"
+>GHashTable</a> *<em class="structfield"><code>data</code></em>;</span></p></td>
+<td> Underlying <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"
+><span class="type">GHashTable</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_new ()">
+<a name="egg-dbus-hash-map-new"></a><h3>egg_dbus_hash_map_new ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    egg_dbus_hash_map_new               (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> key_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> key_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> value_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> value_free_func);</pre>
+<p>
+Creates a new hash map for mapping keys of type <em class="parameter"><code>key_type</code></em> to values of type <em class="parameter"><code>value_type</code></em>.
+</p>
+<p>
+See <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-new-full" title="egg_dbus_hash_map_new_full ()"><code class="function">egg_dbus_hash_map_new_full()</code></a> for a more complicated version of this function.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_type</code></em> :</span></p></td>
+<td> The type of the keys in the map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_free_func</code></em> :</span></p></td>
+<td> Function to be used to free keys or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_type</code></em> :</span></p></td>
+<td> The type of the values in the map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_free_func</code></em> :</span></p></td>
+<td> Function to be used to free values or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_new_full ()">
+<a name="egg-dbus-hash-map-new-full"></a><h3>egg_dbus_hash_map_new_full ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    egg_dbus_hash_map_new_full          (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> key_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashFunc"
+>GHashFunc</a> key_hash_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GEqualFunc"
+>GEqualFunc</a> key_equal_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> key_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Boxed-Types.html#GBoxedCopyFunc"
+>GBoxedCopyFunc</a> key_copy_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> value_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> value_free_func,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Boxed-Types.html#GBoxedCopyFunc"
+>GBoxedCopyFunc</a> value_copy_func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GEqualFunc"
+>GEqualFunc</a> value_equal_func);</pre>
+<p>
+Creates a new hash map for mapping keys of type <em class="parameter"><code>key_type</code></em> to values of type <em class="parameter"><code>value_type</code></em>.
+The map will use <em class="parameter"><code>key_free_func</code></em> and <em class="parameter"><code>value_free_func</code></em> to free keys and values respectively.
+If either of these functions are <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>, it's the responsibility of the owner to make sure
+any keys or values inserted into the map are freed.
+</p>
+<p>
+If either of <em class="parameter"><code>key_hash_func</code></em> or <em class="parameter"><code>key_equal_func</code></em> is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> a default hash or equality function
+will be used if one such exists (for example one exists for <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING--CAPS"
+><span class="type">G_TYPE_STRING</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a> and
+so on). If a hash or equality function wasn't given and no default hash function exists, it
+is a programming error and a warning will be reported using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"
+><code class="function">g_error()</code></a> (causing program
+termination).
+</p>
+<p>
+If either of <em class="parameter"><code>key_copy_func</code></em> or <em class="parameter"><code>value_copy_func</code></em> is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> default copy functions will be used
+if available (for example there is no default copy function for <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER--CAPS"
+><span class="type">G_TYPE_POINTER</span></a> or
+derived types). Note that <span class="emphasis"><em>optional</em></span> methods such as <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-copy" title="egg_dbus_hash_map_lookup_copy ()"><code class="function">egg_dbus_hash_map_lookup_copy()</code></a>
+won't work if there is no value copy function.
+</p>
+<p>
+Normally the hash map stores pointers to both key and values and the methods taking and
+returning keys or values will also take pointers to keys or values. However, for fixed-size integral
+types that fits in a pointer (such as <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a> or <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-BOOLEAN--CAPS"
+><span class="type">G_TYPE_BOOLEAN</span></a>), the key or value is stored
+in the pointer to avoid allocating memory. Typically this is not something you need to care about
+as such implementation details are hidden behind convenience API like <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-ptr" title="egg_dbus_hash_map_insert_fixed_ptr ()"><code class="function">egg_dbus_hash_map_insert_fixed_ptr()</code></a>
+or <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed" title="egg_dbus_hash_map_lookup_fixed ()"><code class="function">egg_dbus_hash_map_lookup_fixed()</code></a>.
+</p>
+<p>
+Note that it is a programming error to pass a free function for fixed-size types (e.g. integral
+or floating point types); a warning will be reported using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"
+><code class="function">g_error()</code></a> (causing program termination).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_type</code></em> :</span></p></td>
+<td> The type of the keys in the map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_hash_func</code></em> :</span></p></td>
+<td> Hash function for keys or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use the default hash function if one such exists.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_equal_func</code></em> :</span></p></td>
+<td> Function to compare keys or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use the default equality function if one such exists.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_free_func</code></em> :</span></p></td>
+<td> Function to be used to free keys or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_copy_func</code></em> :</span></p></td>
+<td> Function to copy keys or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use the default copy function if one such exists.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_type</code></em> :</span></p></td>
+<td> The type of the values in the map.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_free_func</code></em> :</span></p></td>
+<td> Function to be used to free values or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_copy_func</code></em> :</span></p></td>
+<td> Function to copy values or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use the default copy function if one such exists.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_equal_func</code></em> :</span></p></td>
+<td> Function to compare values or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> to use the default equality function if one such exists.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_get_size ()">
+<a name="egg-dbus-hash-map-get-size"></a><h3>egg_dbus_hash_map_get_size ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               egg_dbus_hash_map_get_size          (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);</pre>
+<p>
+Gets the number of key/value pairs in <em class="parameter"><code>hash_map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The number of key/value pairs in <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_get_key_type ()">
+<a name="egg-dbus-hash-map-get-key-type"></a><h3>egg_dbus_hash_map_get_key_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               egg_dbus_hash_map_get_key_type      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);</pre>
+<p>
+Gets the type of the keys in <em class="parameter"><code>hash_map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> of keys in <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_get_value_type ()">
+<a name="egg-dbus-hash-map-get-value-type"></a><h3>egg_dbus_hash_map_get_value_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               egg_dbus_hash_map_get_value_type    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);</pre>
+<p>
+Gets the type of the values in <em class="parameter"><code>hash_map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> of values in <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_clear ()">
+<a name="egg-dbus-hash-map-clear"></a><h3>egg_dbus_hash_map_clear ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_clear             (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map);</pre>
+<p>
+Removes all key/value pairs from <em class="parameter"><code>hash_map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert ()">
+<a name="egg-dbus-hash-map-insert"></a><h3>egg_dbus_hash_map_insert ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the old value is freed using
+that function. If a <em class="parameter"><code>key_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the passed key
+is freed using that function.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_contains ()">
+<a name="egg-dbus-hash-map-contains"></a><h3>egg_dbus_hash_map_contains ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_contains          (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Checks if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to check for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup ()">
+<a name="egg-dbus-hash-map-lookup"></a><h3>egg_dbus_hash_map_lookup ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+Note that the returned value is owned by <em class="parameter"><code>hash_map</code></em> and may be invalid if
+later removed from the map. If you want a copy, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-copy" title="egg_dbus_hash_map_lookup_copy ()"><code class="function">egg_dbus_hash_map_lookup_copy()</code></a>
+instead.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_copy ()">
+<a name="egg-dbus-hash-map-lookup-copy"></a><h3>egg_dbus_hash_map_lookup_copy ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup_copy       (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Like <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup" title="egg_dbus_hash_map_lookup ()"><code class="function">egg_dbus_hash_map_lookup()</code></a> but returns a copy of the value.
+</p>
+<p>
+This method is <span class="emphasis"><em>optional</em></span> as some value types (for example <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER--CAPS"
+><span class="type">G_TYPE_POINTER</span></a>
+and derived types) have no natural copy function and one might not have been set when <em class="parameter"><code>hash_map</code></em>
+was constructed. It is a programming error to call this method on <em class="parameter"><code>hash_map</code></em> if there
+is no value copy function on <em class="parameter"><code>hash_map</code></em> (a warning will be printed using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"
+><code class="function">g_error()</code></a> causing program
+termination).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A copy of the value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_remove ()">
+<a name="egg-dbus-hash-map-remove"></a><h3>egg_dbus_hash_map_remove ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_remove            (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Removes a key and it associated value from <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the value is freed using
+that function. If a <em class="parameter"><code>key_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the key in
+the map is freed using that function.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to remove.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>key</code></em> was removed from <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_foreach ()">
+<a name="egg-dbus-hash-map-foreach"></a><h3>egg_dbus_hash_map_foreach ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_foreach           (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a class="link" href="EggDBusHashMap.html#EggDBusHashMapForeachFunc" title="EggDBusHashMapForeachFunc ()">EggDBusHashMapForeachFunc</a> func,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);</pre>
+<p>
+Calls <em class="parameter"><code>func</code></em> for each of the key/value pairs in <em class="parameter"><code>hash_map</code></em>. The function is passed the key and
+value of each pair, and the given <em class="parameter"><code>user_data</code></em> parameter. The map may not be modified while iterating
+over it (you can't add/remove items).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td> Callback function.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td> User data to pass to <em class="parameter"><code>func</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if the iteration was short-circuited, <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a> otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_contains_fixed ()">
+<a name="egg-dbus-hash-map-contains-fixed"></a><h3>egg_dbus_hash_map_contains_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_contains_fixed    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Checks if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to check for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_contains_float ()">
+<a name="egg-dbus-hash-map-contains-float"></a><h3>egg_dbus_hash_map_contains_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_contains_float    (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Checks if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to check for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>hash_map</code></em> contains a value for <em class="parameter"><code>key</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_fixed ()">
+<a name="egg-dbus-hash-map-lookup-fixed"></a><h3>egg_dbus_hash_map_lookup_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup_fixed      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_float ()">
+<a name="egg-dbus-hash-map-lookup-float"></a><h3>egg_dbus_hash_map_lookup_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup_float      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_fixed_copy ()">
+<a name="egg-dbus-hash-map-lookup-fixed-copy"></a><h3>egg_dbus_hash_map_lookup_fixed_copy ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup_fixed_copy (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Like <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed" title="egg_dbus_hash_map_lookup_fixed ()"><code class="function">egg_dbus_hash_map_lookup_fixed()</code></a> but returns a copy of the value.
+</p>
+<p>
+This method is <span class="emphasis"><em>optional</em></span> as some value types (for example <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER--CAPS"
+><span class="type">G_TYPE_POINTER</span></a>
+and derived types) have no natural copy function and one might not have been set when <em class="parameter"><code>hash_map</code></em>
+was constructed. It is a programming error to call this method on <em class="parameter"><code>hash_map</code></em> if there
+is no value copy function on <em class="parameter"><code>hash_map</code></em> (a warning will be printed using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"
+><code class="function">g_error()</code></a> causing program
+termination).
+</p>
+<p>
+This is a C convenience function for when the key type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A copy of the value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_float_copy ()">
+<a name="egg-dbus-hash-map-lookup-float-copy"></a><h3>egg_dbus_hash_map_lookup_float_copy ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_hash_map_lookup_float_copy (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Like <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float" title="egg_dbus_hash_map_lookup_float ()"><code class="function">egg_dbus_hash_map_lookup_float()</code></a> but returns a copy of the value.
+</p>
+<p>
+This method is <span class="emphasis"><em>optional</em></span> as some value types (for example <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-POINTER--CAPS"
+><span class="type">G_TYPE_POINTER</span></a>
+and derived types) have no natural copy function and one might not have been set when <em class="parameter"><code>hash_map</code></em>
+was constructed. It is a programming error to call this method on <em class="parameter"><code>hash_map</code></em> if there
+is no value copy function on <em class="parameter"><code>hash_map</code></em> (a warning will be printed using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-error"
+><code class="function">g_error()</code></a> causing program
+termination).
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A copy of the value associated with <em class="parameter"><code>key</code></em> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_ptr_fixed ()">
+<a name="egg-dbus-hash-map-lookup-ptr-fixed"></a><h3>egg_dbus_hash_map_lookup_ptr_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             egg_dbus_hash_map_lookup_ptr_fixed  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the value type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or 0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_ptr_float ()">
+<a name="egg-dbus-hash-map-lookup-ptr-float"></a><h3>egg_dbus_hash_map_lookup_ptr_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             egg_dbus_hash_map_lookup_ptr_float  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0.0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the value type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or 0.0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_fixed_fixed ()">
+<a name="egg-dbus-hash-map-lookup-fixed-fixed"></a><h3>egg_dbus_hash_map_lookup_fixed_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             egg_dbus_hash_map_lookup_fixed_fixed
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when both the key and value types are integral
+types (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or 0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_fixed_float ()">
+<a name="egg-dbus-hash-map-lookup-fixed-float"></a><h3>egg_dbus_hash_map_lookup_fixed_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             egg_dbus_hash_map_lookup_fixed_float
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0.0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral type
+(<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on) and value type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or 0.0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_float_fixed ()">
+<a name="egg-dbus-hash-map-lookup-float-fixed"></a><h3>egg_dbus_hash_map_lookup_float_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             egg_dbus_hash_map_lookup_float_fixed
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point type
+(<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>) and the value type is an integral type
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  The value associated with <em class="parameter"><code>key</code></em> or 0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_lookup_float_float ()">
+<a name="egg-dbus-hash-map-lookup-float-float"></a><h3>egg_dbus_hash_map_lookup_float_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             egg_dbus_hash_map_lookup_float_float
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Looks up the value associated with <em class="parameter"><code>key</code></em> in <em class="parameter"><code>hash_map</code></em>. Note that this function
+cannot distinguish between a key that is not present and one which is present
+but has the value 0.0. If you need this distinction, use <a class="link" href="EggDBusHashMap.html#egg-dbus-hash-map-contains" title="egg_dbus_hash_map_contains ()"><code class="function">egg_dbus_hash_map_contains()</code></a>.
+</p>
+<p>
+This is a C convenience function for when both the key and value type are floating point
+types (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to look up value for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The value associated with <em class="parameter"><code>key</code></em> or 0.0.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_remove_fixed ()">
+<a name="egg-dbus-hash-map-remove-fixed"></a><h3>egg_dbus_hash_map_remove_fixed ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_remove_fixed      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key);</pre>
+<p>
+Removes a key and it associated value from <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the value is freed using
+that function.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to remove.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>key</code></em> was removed from <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_remove_float ()">
+<a name="egg-dbus-hash-map-remove-float"></a><h3>egg_dbus_hash_map_remove_float ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_hash_map_remove_float      (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key);</pre>
+<p>
+Removes a key and it associated value from <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the value is freed using
+that function.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to remove.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>key</code></em> was removed from <em class="parameter"><code>hash_map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_ptr_fixed ()">
+<a name="egg-dbus-hash-map-insert-ptr-fixed"></a><h3>egg_dbus_hash_map_insert_ptr_fixed ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_ptr_fixed  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+If a <em class="parameter"><code>key_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the passed key
+is freed using that function.
+</p>
+<p>
+This is a C convenience function for when the value type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_ptr_float ()">
+<a name="egg-dbus-hash-map-insert-ptr-float"></a><h3>egg_dbus_hash_map_insert_ptr_float ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_ptr_float  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+If a <em class="parameter"><code>key_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the passed key
+is freed using that function.
+</p>
+<p>
+This is a C convenience function for when the value type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_fixed_ptr ()">
+<a name="egg-dbus-hash-map-insert-fixed-ptr"></a><h3>egg_dbus_hash_map_insert_fixed_ptr ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_fixed_ptr  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the old value is freed using
+that function.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_fixed_fixed ()">
+<a name="egg-dbus-hash-map-insert-fixed-fixed"></a><h3>egg_dbus_hash_map_insert_fixed_fixed ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_fixed_fixed
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+</p>
+<p>
+This is a C convenience function for when both the key and value types are integral
+types (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_fixed_float ()">
+<a name="egg-dbus-hash-map-insert-fixed-float"></a><h3>egg_dbus_hash_map_insert_fixed_float ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_fixed_float
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+</p>
+<p>
+This is a C convenience function for when the key type is an integral type
+(<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on) and value type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_float_ptr ()">
+<a name="egg-dbus-hash-map-insert-float-ptr"></a><h3>egg_dbus_hash_map_insert_float_ptr ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_float_ptr  (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+If a <em class="parameter"><code>value_free_func</code></em> was supplied when creating <em class="parameter"><code>hash_map</code></em>, the old value is freed using
+that function.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_float_fixed ()">
+<a name="egg-dbus-hash-map-insert-float-fixed"></a><h3>egg_dbus_hash_map_insert_float_fixed ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_float_fixed
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+</p>
+<p>
+This is a C convenience function for when the key type is a floating point type
+(<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>) and the value type is an integral type
+type (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-INT--CAPS"
+><span class="type">G_TYPE_INT</span></a>, <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-UINT64--CAPS"
+><span class="type">G_TYPE_UINT64</span></a> and so on).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_hash_map_insert_float_float ()">
+<a name="egg-dbus-hash-map-insert-float-float"></a><h3>egg_dbus_hash_map_insert_float_float ()</h3>
+<pre class="programlisting">void                egg_dbus_hash_map_insert_float_float
+                                                        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *hash_map,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);</pre>
+<p>
+Inserts a new key and value into <em class="parameter"><code>hash_map</code></em>.
+</p>
+<p>
+If the key already exists in the <em class="parameter"><code>hash_map</code></em> its current value is replaced with the new value.
+</p>
+<p>
+This is a C convenience function for when both the key and value type are floating point
+types (<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-FLOAT--CAPS"
+><span class="type">G_TYPE_FLOAT</span></a> and <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-DOUBLE--CAPS"
+><span class="type">G_TYPE_DOUBLE</span></a>).</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hash_map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key to insert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Value to insert.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

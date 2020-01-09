@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-enummain-DetailedError">
+  <refmeta>
+    <refentrytitle role="top_of_page">com.example.Error.Detailed.* Error Domain</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>com.example.Error.Detailed.* Error Domain</refname>
+    <refpurpose>Detailed errors</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="enum" id="eggdbus-errordomain-com.example.Error.Detailed.">      <title>The com.example.Error.Detailed.* Error Domain</title>
+        <para>
+          <programlisting>
+{
+  com.example.Error.Detailed.Failed,
+  com.example.Error.Detailed.Permissions.TooCool
+}
+          </programlisting>
+          <para>
+Another error domain declaration.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-DetailedError.com.example.Error.Detailed.Failed" role="constant">
+    <term><literal>com.example.Error.Detailed.Failed</literal></term>
+    <listitem>
+      <para>
+Something went wrong
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-DetailedError.com.example.Error.Detailed.Permissions.TooCool" role="constant">
+    <term><literal>com.example.Error.Detailed.Permissions.TooCool</literal></term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

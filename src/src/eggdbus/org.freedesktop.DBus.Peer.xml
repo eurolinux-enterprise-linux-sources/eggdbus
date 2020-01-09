@@ -1,0 +1,22 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/">
+
+  <interface name="org.freedesktop.DBus.Peer">
+    <annotation name="org.gtk.EggDBus.DocString" value="All D-Bus objects are supposed to implement the #org.freedesktop.DBus.Peer D-Bus interface. The interface is designed to be a minimal interface for checking whether the other end is reachable and, if so, what machine hosts the object."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Minimal peering interface"/>
+
+    <method name="Ping">
+      <annotation name="org.gtk.EggDBus.DocString" value="A method used to diagnose whether an object is reachable."/>
+    </method>
+
+    <method name="GetMachineId">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets the Machine UUID of the machine hosting the object."/>
+      <arg direction="out" type="s" name="machine_uuid">
+        <annotation name="org.gtk.EggDBus.DocString" value="A Universally Unique Identifier for the machine hosting the object. See the D-Bus specification for more information about D-Bus UUIDs."/>
+      </arg>
+    </method>
+
+  </interface>
+</node>
+

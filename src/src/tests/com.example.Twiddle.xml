@@ -1,0 +1,206 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/com/example/TestService">
+
+  <!-- Example of declaring an error domain -->
+  <annotation name="org.gtk.EggDBus.DeclareErrorDomain" value="Error">
+    <annotation name="org.gtk.EggDBus.DocString" value="An example of an error enumeration."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Errors"/>
+
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.Failed">
+      <annotation name="org.gtk.EggDBus.DocString" value="Something went wrong"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.FluxCapacitorFailure">
+      <annotation name="org.gtk.EggDBus.DocString" value="The Flux Capacitor failed"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.WouldDestruct">
+      <annotation name="org.gtk.EggDBus.ErrorDomain.Member.Value" value="100"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Operation would destruct the TwiddleFrobber"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.WouldBlock">
+      <annotation name="org.gtk.EggDBus.DocString" value="This should be value 101"/>
+    </annotation>
+  </annotation>
+
+  <!-- Example of declaring another error domain -->
+  <annotation name="org.gtk.EggDBus.DeclareErrorDomain" value="DetailedError">
+    <annotation name="org.gtk.EggDBus.DocString" value="Another error domain declaration."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Detailed errors"/>
+
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.Detailed.Failed">
+      <annotation name="org.gtk.EggDBus.DocString" value="Something went wrong"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.ErrorDomain.Member" value="com.example.Error.Detailed.Permissions.TooCool">
+      <!-- docstring explicitly left out -->
+    </annotation>
+  </annotation>
+
+  <!-- example of flags -->
+  <annotation name="org.gtk.EggDBus.DeclareFlags" value="CreateFlags">
+    <annotation name="org.gtk.EggDBus.DocString" value="Flags used for creating stuff."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Creation flags"/>
+
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="UseFrobnicator">
+      <annotation name="org.gtk.EggDBus.DocString" value="When creating, use the frobnicator to do so"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="LogAttempt">
+      <annotation name="org.gtk.EggDBus.DocString" value="Log any create attemps to the system log"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="SomeOtherFlag">
+      <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0x80"/>
+      <!-- docstring explicitly left out -->
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="YetAnotherFlag">
+      <annotation name="org.gtk.EggDBus.DocString" value="This should have value 0x100 == 256"/>
+    </annotation>
+  </annotation>
+
+  <!-- another example of flags (to check we don't generate a _NONE entry since value 0 exists already) -->
+  <annotation name="org.gtk.EggDBus.DeclareFlags" value="DeleteFlags">
+    <annotation name="org.gtk.EggDBus.DocString" value="Flags used for deleting stuff."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Deletion flags"/>
+
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="NoFlagsSet">
+      <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="No flags explicitly set"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="UseOrbitalLaser">
+      <annotation name="org.gtk.EggDBus.DocString" value="Use the Orbital Laser for deletion"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="MediaCoverage">
+      <annotation name="org.gtk.EggDBus.DocString" value="Call the media before deletion"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="Audible">
+      <annotation name="org.gtk.EggDBus.DocString" value="Delete should be audible"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="Visible">
+      <annotation name="org.gtk.EggDBus.DocString" value="Deletion should be visible"/>
+    </annotation>
+  </annotation>
+
+  <!-- another example of flags (to check we don't generate a _NONE entry since name _NONE exists already) -->
+  <annotation name="org.gtk.EggDBus.DeclareFlags" value="OtherFlags">
+    <annotation name="org.gtk.EggDBus.DocString" value="Another test flag enumeration."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Some other flags"/>
+
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="None">
+      <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0x40"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="No flags explicitly set (but it's a stupid value!)"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="UseOrbitalLaser">
+      <annotation name="org.gtk.EggDBus.DocString" value="Use the Orbital Laser for deletion"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Flags.Member" value="MediaCoverage">
+      <annotation name="org.gtk.EggDBus.DocString" value="Call the media before deletion"/>
+    </annotation>
+  </annotation>
+
+  <!-- example of enums -->
+  <annotation name="org.gtk.EggDBus.DeclareEnum" value="Vehicle">
+    <annotation name="org.gtk.EggDBus.DocString" value="A test enumeration."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Vehicles"/>
+
+    <annotation name="org.gtk.EggDBus.Enum.Member" value="SportUtilityVehicle">
+      <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="100"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="A SUV"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Enum.Member" value="Convertible">
+      <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="110"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="A car without a top"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Enum.Member" value="Truck">
+      <!-- docstring explicitly left out -->
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Enum.Member" value="Patriot">
+      <annotation name="org.gtk.EggDBus.DocString" value="As known from the GTA games"/>
+    </annotation>
+    <annotation name="org.gtk.EggDBus.Enum.Member" value="StationWagon">
+      <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="120"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Old skool"/>
+    </annotation>
+  </annotation>
+
+  <!-- Example of a user supplied struct; user must manually supply the <namespace>Subject class -->
+  <annotation name="org.gtk.EggDBus.DeclareStruct"       value="Subject">
+    <annotation name="org.gtk.EggDBus.Struct.Type"  value="Struct<String,Dict<String,Variant>>"/>
+  </annotation>
+
+  <!-- -->
+  <!-- -->
+  <!-- -->
+
+  <interface name="com.example.Twiddle">
+    <annotation name="org.gtk.EggDBus.DocString" value="The #Twiddle interface wraps the D-Bus interface <literal>com.example.Twiddle</literal>. It is used in the EggDBus test suite."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Twiddle interface used for testing"/>
+
+    <signal name="NewzNotifz">
+      <annotation name="org.gtk.EggDBus.DocString" value="Emitted when newz are available"/>
+      <arg type="s" name="newz">
+        <annotation name="org.gtk.EggDBus.DocString" value="The newz being emitted"/>
+      </arg>
+    </signal>
+
+    <method name="BroadcastzNewz">
+      <annotation name="org.gtk.EggDBus.DocString" value="Broadcast newz to the world. This method will make the object emit the #Twiddle::NewzNotifz signal with @newz as the newz to broadcast."/>
+      <arg direction="in"  type="s" name="newz">
+        <annotation name="org.gtk.EggDBus.DocString" value="The newz to broadcast"/>
+      </arg>
+    </method>
+
+    <method name="GetMostPowerfulSubject">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets the most powerful subject"/>
+      <arg name="most_powerful_subject" direction="out" type="(sa{sv})">
+        <annotation name="org.gtk.EggDBus.DocString" value="The most powerful subject"/>
+      </arg>
+    </method>
+
+    <method name="GetAllSubjects">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets all known subjects"/>
+      <arg name="subject" direction="out" type="a(sa{sv})">
+        <annotation name="org.gtk.EggDBus.DocString" value="An array of subjects"/>
+      </arg>
+    </method>
+
+    <method name="RegisterInterface">
+      <annotation name="org.gtk.EggDBus.DocString" value="Register a new object (or an interface)"/>
+      <arg name="object_path"  direction="in" type="s">
+        <annotation name="org.gtk.EggDBus.DocString" value="The object path to register the object on"/>
+      </arg>
+      <arg name="impl_frob"    direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Whether the object should implement the #Frob interface"/>
+      </arg>
+      <arg name="impl_tweak"   direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Whether the object should implement the #Tweak interface"/>
+      </arg>
+      <arg name="impl_twiddle" direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Whether the object should implement the #Twiddle interface"/>
+      </arg>
+    </method>
+
+    <method name="UnregisterInterface">
+      <annotation name="org.gtk.EggDBus.DocString" value="Unregister an object (or an interface of an object)"/>
+      <arg name="object_path"  direction="in" type="s">
+        <annotation name="org.gtk.EggDBus.DocString" value="The object path for unregistering"/>
+      </arg>
+      <arg name="impl_frob"    direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Remove the #Frob interface if registered"/>
+      </arg>
+      <arg name="impl_tweak"   direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Remove the #Tweak interface if registered"/>
+      </arg>
+      <arg name="impl_twiddle" direction="in" type="b">
+        <annotation name="org.gtk.EggDBus.DocString" value="Remove the #Twiddle interface if registered"/>
+      </arg>
+    </method>
+
+    <method name="UnregisterAllInterfaces">
+      <annotation name="org.gtk.EggDBus.DocString" value="Unregister all interfaces for an object"/>
+      <arg name="object_path"  direction="in" type="s">
+        <annotation name="org.gtk.EggDBus.DocString" value="The object path for unregistering"/>
+      </arg>
+    </method>
+
+  </interface>
+
+</node>
+

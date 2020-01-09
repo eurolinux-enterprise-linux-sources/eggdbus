@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-structmain-StructWithVariant">
+  <refmeta>
+    <refentrytitle role="top_of_page">StructWithVariant Structure</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>StructWithVariant Structure</refname>
+    <refpurpose>Complex structure</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="struct" id="eggdbus-struct-StructWithVariant">
+      <title>The StructWithVariant Structure</title>
+        <para>
+          <programlisting>
+{
+  String  name,
+  Int32   anger_level,
+  Int32   threat_level,
+  Variant a_variant,
+  Int32   override_c_type
+}
+          </programlisting>
+          <para>
+Test type for a complex structure (siivi).
+          </para>
+          <variablelist role="struct">
+  <varlistentry>
+    <term><literal>String <structfield>name</structfield></literal></term>
+    <listitem>
+      <para>
+A name
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <structfield>anger_level</structfield></literal></term>
+    <listitem>
+      <para>
+The level of anger
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <structfield>threat_level</structfield></literal></term>
+    <listitem>
+      <para>
+The level of threat
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Variant <structfield>a_variant</structfield></literal></term>
+    <listitem>
+      <para>
+Some variant
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <structfield>override_c_type</structfield></literal></term>
+    <listitem>
+      <para>
+Some primitive type
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

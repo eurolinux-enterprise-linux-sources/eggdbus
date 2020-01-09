@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.freedesktop.DBus.Properties Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="eggdbus-interface-org.freedesktop.DBus.Peer.html" title="org.freedesktop.DBus.Peer Interface">
+<link rel="next" href="eggdbus-interface-org.freedesktop.DBus.Introspectable.html" title="org.freedesktop.DBus.Introspectable Interface">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-interface-org.freedesktop.DBus.Peer.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-interface-org.freedesktop.DBus.Introspectable.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-org.freedesktop.DBus.Properties.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-org.freedesktop.DBus.Properties.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-interface-org.freedesktop.DBus.Properties.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="org.freedesktop.DBus.Properties Interface">
+<a name="eggdbus-interface-org.freedesktop.DBus.Properties"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">org.freedesktop.DBus.Properties Interface</span></h2>
+<p>org.freedesktop.DBus.Properties Interface — Properties interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.Get" title="Get ()">Get</a>    (IN  String                interface_name,
+        IN  String                property_name,
+        OUT Variant               value)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.GetAll" title="GetAll ()">GetAll</a> (IN  String                interface_name,
+        OUT Dict&lt;String,Variant&gt;  properties)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.Set" title="Set ()">Set</a>    (IN  String                interface_name,
+        IN  String                property_name,
+        IN  Variant               value)
+    </pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eggdbus-if-signals-org.freedesktop.DBus.Properties"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-signal-org.freedesktop.DBus.Properties::EggDBusChanged" title='The "EggDBusChanged" signal'>EggDBusChanged</a> (String                interface_name,
+                Dict&lt;String,Variant&gt;  changed_properties)
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-org.freedesktop.DBus.Properties"></a><h2>Description</h2>
+<p>
+Many native APIs will have a concept of object <span class="emphasis"><em>properties</em></span> or <span class="emphasis"><em>attributes</em></span>. These can be exposed via the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.Properties.html" title="org.freedesktop.DBus.Properties Interface">org.freedesktop.DBus.Properties</a> interface. The available properties and whether they are writable can be determined by using the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.Introspectable.html" title="org.freedesktop.DBus.Introspectable Interface">org.freedesktop.DBus.Introspectable</a> interface.
+      </p>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-org.freedesktop.DBus.Properties"></a><h2>Method Details</h2>
+<div class="refsect2" title="Get ()">
+<a name="eggdbus-method-org.freedesktop.DBus.Properties.Get"></a><h3>Get ()</h3>
+<pre class="programlisting">
+Get (IN  String   interface_name,
+     IN  String   property_name,
+     OUT Variant  value)
+    </pre>
+<p>
+Gets the value of the property with name <em class="parameter"><code>property_name</code></em> on the interface with name <em class="parameter"><code>interface_name</code></em>.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>interface_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the D-Bus interface.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>property_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the property.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Variant <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+The value of the property.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetAll ()">
+<a name="eggdbus-method-org.freedesktop.DBus.Properties.GetAll"></a><h3>GetAll ()</h3>
+<pre class="programlisting">
+GetAll (IN  String                interface_name,
+        OUT Dict&lt;String,Variant&gt;  properties)
+    </pre>
+<p>
+Gets all properties on the interface with the name <em class="parameter"><code>interface_name</code></em>.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>interface_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the D-Bus interface.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Dict&lt;String,Variant&gt; <em class="parameter"><code>properties</code></em></code>:</span></p></td>
+<td><p>
+A dictionary containing all the properties.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="Set ()">
+<a name="eggdbus-method-org.freedesktop.DBus.Properties.Set"></a><h3>Set ()</h3>
+<pre class="programlisting">
+Set (IN  String   interface_name,
+     IN  String   property_name,
+     IN  Variant  value)
+    </pre>
+<p>
+Sets the value of the property with name <em class="parameter"><code>property_name</code></em> on the interface with name <em class="parameter"><code>interface_name</code></em> to <em class="parameter"><code>value</code></em>.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>interface_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the D-Bus interface.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>property_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the property.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Variant <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+The value to set.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eggdbus-if-signal-details-org.freedesktop.DBus.Properties"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "EggDBusChanged" signal'>
+<a name="eggdbus-signal-org.freedesktop.DBus.Properties::EggDBusChanged"></a><h3>The "EggDBusChanged" signal</h3>
+<pre class="programlisting">
+EggDBusChanged (String                interface_name,
+                Dict&lt;String,Variant&gt;  changed_properties)
+    </pre>
+<p>
+Emitted when one or more properties change on an interface. Note: this signal is proprietary to EggDBus; no other D-Bus implementation will emit it.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>interface_name</code></em></code>:</span></p></td>
+<td><p>
+The name of the D-Bus interface.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">Dict&lt;String,Variant&gt; <em class="parameter"><code>changed_properties</code></em></code>:</span></p></td>
+<td><p>
+A dictionary containing the changed properties.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

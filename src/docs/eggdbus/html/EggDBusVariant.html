@@ -1,0 +1,2505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusVariant</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="datatypes.html" title="Types and Collections">
+<link rel="prev" href="EggDBusHashMap.html" title="EggDBusHashMap">
+<link rel="next" href="EggDBusStructure.html" title="EggDBusStructure">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusHashMap.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="datatypes.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusStructure.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusVariant.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusVariant.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusVariant.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#EggDBusVariant.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusVariant">
+<a name="EggDBusVariant"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusVariant.top_of_page"></a>EggDBusVariant</span></h2>
+<p>EggDBusVariant — Holds a value and a type</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusVariant.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusVariant.html#EggDBusVariant-struct" title="EggDBusVariant">EggDBusVariant</a>;
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-print" title="egg_dbus_variant_print ()">egg_dbus_variant_print</a>              (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new" title="egg_dbus_variant_new ()">egg_dbus_variant_new</a>                (void);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-gvalue" title="egg_dbus_variant_new_for_gvalue ()">egg_dbus_variant_new_for_gvalue</a>     (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signature);
+const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *      <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-gvalue" title="egg_dbus_variant_get_gvalue ()">egg_dbus_variant_get_gvalue</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-variant-signature" title="egg_dbus_variant_get_variant_signature ()">egg_dbus_variant_get_variant_signature</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-string" title="egg_dbus_variant_new_for_string ()">egg_dbus_variant_new_for_string</a>     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-object-path" title="egg_dbus_variant_new_for_object_path ()">egg_dbus_variant_new_for_object_path</a>
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-signature" title="egg_dbus_variant_new_for_signature ()">egg_dbus_variant_new_for_signature</a>  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-string-array" title="egg_dbus_variant_new_for_string_array ()">egg_dbus_variant_new_for_string_array</a>
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-object-path-array" title="egg_dbus_variant_new_for_object_path_array ()">egg_dbus_variant_new_for_object_path_array</a>
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-signature-array" title="egg_dbus_variant_new_for_signature_array ()">egg_dbus_variant_new_for_signature_array</a>
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-byte" title="egg_dbus_variant_new_for_byte ()">egg_dbus_variant_new_for_byte</a>       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-int16" title="egg_dbus_variant_new_for_int16 ()">egg_dbus_variant_new_for_int16</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-uint16" title="egg_dbus_variant_new_for_uint16 ()">egg_dbus_variant_new_for_uint16</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-int" title="egg_dbus_variant_new_for_int ()">egg_dbus_variant_new_for_int</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-uint" title="egg_dbus_variant_new_for_uint ()">egg_dbus_variant_new_for_uint</a>       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-int64" title="egg_dbus_variant_new_for_int64 ()">egg_dbus_variant_new_for_int64</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-uint64" title="egg_dbus_variant_new_for_uint64 ()">egg_dbus_variant_new_for_uint64</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-boolean" title="egg_dbus_variant_new_for_boolean ()">egg_dbus_variant_new_for_boolean</a>    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-double" title="egg_dbus_variant_new_for_double ()">egg_dbus_variant_new_for_double</a>     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-seq" title="egg_dbus_variant_new_for_seq ()">egg_dbus_variant_new_for_seq</a>        (<a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-map" title="egg_dbus_variant_new_for_map ()">egg_dbus_variant_new_for_map</a>        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature);
+<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-new-for-structure" title="egg_dbus_variant_new_for_structure ()">egg_dbus_variant_new_for_structure</a>  (<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-string" title="egg_dbus_variant_set_string ()">egg_dbus_variant_set_string</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-object-path" title="egg_dbus_variant_set_object_path ()">egg_dbus_variant_set_object_path</a>    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-signature" title="egg_dbus_variant_set_signature ()">egg_dbus_variant_set_signature</a>      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-string-array" title="egg_dbus_variant_set_string_array ()">egg_dbus_variant_set_string_array</a>   (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-object-path-array" title="egg_dbus_variant_set_object_path_array ()">egg_dbus_variant_set_object_path_array</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-signature-array" title="egg_dbus_variant_set_signature_array ()">egg_dbus_variant_set_signature_array</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-byte" title="egg_dbus_variant_set_byte ()">egg_dbus_variant_set_byte</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-int16" title="egg_dbus_variant_set_int16 ()">egg_dbus_variant_set_int16</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-uint16" title="egg_dbus_variant_set_uint16 ()">egg_dbus_variant_set_uint16</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-int" title="egg_dbus_variant_set_int ()">egg_dbus_variant_set_int</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-uint" title="egg_dbus_variant_set_uint ()">egg_dbus_variant_set_uint</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-int64" title="egg_dbus_variant_set_int64 ()">egg_dbus_variant_set_int64</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-uint64" title="egg_dbus_variant_set_uint64 ()">egg_dbus_variant_set_uint64</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-boolean" title="egg_dbus_variant_set_boolean ()">egg_dbus_variant_set_boolean</a>        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-double" title="egg_dbus_variant_set_double ()">egg_dbus_variant_set_double</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-seq" title="egg_dbus_variant_set_seq ()">egg_dbus_variant_set_seq</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-map" title="egg_dbus_variant_set_map ()">egg_dbus_variant_set_map</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature);
+void                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-set-structure" title="egg_dbus_variant_set_structure ()">egg_dbus_variant_set_structure</a>      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-string" title="egg_dbus_variant_get_string ()">egg_dbus_variant_get_string</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-object-path" title="egg_dbus_variant_get_object_path ()">egg_dbus_variant_get_object_path</a>    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-signature" title="egg_dbus_variant_get_signature ()">egg_dbus_variant_get_signature</a>      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-string-array" title="egg_dbus_variant_get_string_array ()">egg_dbus_variant_get_string_array</a>   (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-object-path-array" title="egg_dbus_variant_get_object_path_array ()">egg_dbus_variant_get_object_path_array</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-signature-array" title="egg_dbus_variant_get_signature_array ()">egg_dbus_variant_get_signature_array</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a>              <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-byte" title="egg_dbus_variant_get_byte ()">egg_dbus_variant_get_byte</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a>              <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-int16" title="egg_dbus_variant_get_int16 ()">egg_dbus_variant_get_int16</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a>             <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-uint16" title="egg_dbus_variant_get_uint16 ()">egg_dbus_variant_get_uint16</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-int" title="egg_dbus_variant_get_int ()">egg_dbus_variant_get_int</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-uint" title="egg_dbus_variant_get_uint ()">egg_dbus_variant_get_uint</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a>              <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-int64" title="egg_dbus_variant_get_int64 ()">egg_dbus_variant_get_int64</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-uint64" title="egg_dbus_variant_get_uint64 ()">egg_dbus_variant_get_uint64</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-boolean" title="egg_dbus_variant_get_boolean ()">egg_dbus_variant_get_boolean</a>        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-double" title="egg_dbus_variant_get_double ()">egg_dbus_variant_get_double</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *   <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-seq" title="egg_dbus_variant_get_seq ()">egg_dbus_variant_get_seq</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-map" title="egg_dbus_variant_get_map ()">egg_dbus_variant_get_map</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *  <a class="link" href="EggDBusVariant.html#egg-dbus-variant-get-structure" title="egg_dbus_variant_get_structure ()">egg_dbus_variant_get_structure</a>      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-unset" title="egg_dbus_variant_is_unset ()">egg_dbus_variant_is_unset</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-string" title="egg_dbus_variant_is_string ()">egg_dbus_variant_is_string</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-object-path" title="egg_dbus_variant_is_object_path ()">egg_dbus_variant_is_object_path</a>     (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-signature" title="egg_dbus_variant_is_signature ()">egg_dbus_variant_is_signature</a>       (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-string-array" title="egg_dbus_variant_is_string_array ()">egg_dbus_variant_is_string_array</a>    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-object-path-array" title="egg_dbus_variant_is_object_path_array ()">egg_dbus_variant_is_object_path_array</a>
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-signature-array" title="egg_dbus_variant_is_signature_array ()">egg_dbus_variant_is_signature_array</a> (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-byte" title="egg_dbus_variant_is_byte ()">egg_dbus_variant_is_byte</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-int16" title="egg_dbus_variant_is_int16 ()">egg_dbus_variant_is_int16</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-uint16" title="egg_dbus_variant_is_uint16 ()">egg_dbus_variant_is_uint16</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-int" title="egg_dbus_variant_is_int ()">egg_dbus_variant_is_int</a>             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-uint" title="egg_dbus_variant_is_uint ()">egg_dbus_variant_is_uint</a>            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-int64" title="egg_dbus_variant_is_int64 ()">egg_dbus_variant_is_int64</a>           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-uint64" title="egg_dbus_variant_is_uint64 ()">egg_dbus_variant_is_uint64</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-boolean" title="egg_dbus_variant_is_boolean ()">egg_dbus_variant_is_boolean</a>         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-double" title="egg_dbus_variant_is_double ()">egg_dbus_variant_is_double</a>          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-seq" title="egg_dbus_variant_is_seq ()">egg_dbus_variant_is_seq</a>             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-map" title="egg_dbus_variant_is_map ()">egg_dbus_variant_is_map</a>             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="EggDBusVariant.html#egg-dbus-variant-is-structure" title="egg_dbus_variant_is_structure ()">egg_dbus_variant_is_structure</a>       (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusVariant.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusVariant
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EggDBusVariant.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusVariant.html#EggDBusVariant--signature" title='The "signature" property'>signature</a>"                <a class="link" href="eggdbus-eggdbussignature.html#EggDBusSignature" title="EggDBusSignature">EggDBusSignature</a>*     : Read
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusVariant.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a> type is used to represent D-Bus variants. It is a polymorphic type
+in the sense that it can hold any values of any type used in D-Bus. It is similar to
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> but provides a simpler API in addition to knowledge about the D-Bus signature.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusVariant.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusVariant">
+<a name="EggDBusVariant-struct"></a><h3>EggDBusVariant</h3>
+<pre class="programlisting">typedef struct _EggDBusVariant EggDBusVariant;</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_print ()">
+<a name="egg-dbus-variant-print"></a><h3>egg_dbus_variant_print ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_print              (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent);</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new ()">
+<a name="egg-dbus-variant-new"></a><h3>egg_dbus_variant_new ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new                (void);</pre>
+<p>
+Creates a new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a> that doesn't hold any value.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_gvalue ()">
+<a name="egg-dbus-variant-new-for-gvalue"></a><h3>egg_dbus_variant_new_for_gvalue ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_gvalue     (const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *value,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *signature);</pre>
+<p>
+Creates a new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a> from <em class="parameter"><code>value</code></em> and <em class="parameter"><code>signature</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td> D-Bus signature for <em class="parameter"><code>value</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_gvalue ()">
+<a name="egg-dbus-variant-get-gvalue"></a><h3>egg_dbus_variant_get_gvalue ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+>GValue</a> *      egg_dbus_variant_get_gvalue         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the value of <em class="parameter"><code>variant</code></em> as a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A pointer to a <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"
+><span class="type">GValue</span></a> owned by <em class="parameter"><code>variant</code></em>. Do not free.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_variant_signature ()">
+<a name="egg-dbus-variant-get-variant-signature"></a><h3>egg_dbus_variant_get_variant_signature ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_variant_get_variant_signature
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the signature of the type that <em class="parameter"><code>variant</code></em> holds.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A D-Bus signature. Do not free, the value is owned by <em class="parameter"><code>variant</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_string ()">
+<a name="egg-dbus-variant-new-for-string"></a><h3>egg_dbus_variant_new_for_string ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_string     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_object_path ()">
+<a name="egg-dbus-variant-new-for-object-path"></a><h3>egg_dbus_variant_new_for_object_path ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_object_path
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> An object path.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_signature ()">
+<a name="egg-dbus-variant-new-for-signature"></a><h3>egg_dbus_variant_new_for_signature ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_signature  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A D-Bus signature.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_string_array ()">
+<a name="egg-dbus-variant-new-for-string-array"></a><h3>egg_dbus_variant_new_for_string_array ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_string_array
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A string array.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_object_path_array ()">
+<a name="egg-dbus-variant-new-for-object-path-array"></a><h3>egg_dbus_variant_new_for_object_path_array ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_object_path_array
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> An object path array.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_signature_array ()">
+<a name="egg-dbus-variant-new-for-signature-array"></a><h3>egg_dbus_variant_new_for_signature_array ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_signature_array
+                                                        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Creates a new variant that holds a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A signature array.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_byte ()">
+<a name="egg-dbus-variant-new-for-byte"></a><h3>egg_dbus_variant_new_for_byte ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_byte       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_int16 ()">
+<a name="egg-dbus-variant-new-for-int16"></a><h3>egg_dbus_variant_new_for_int16 ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_int16      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_uint16 ()">
+<a name="egg-dbus-variant-new-for-uint16"></a><h3>egg_dbus_variant_new_for_uint16 ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_uint16     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_int ()">
+<a name="egg-dbus-variant-new-for-int"></a><h3>egg_dbus_variant_new_for_int ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_int        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_uint ()">
+<a name="egg-dbus-variant-new-for-uint"></a><h3>egg_dbus_variant_new_for_uint ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_uint       (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_int64 ()">
+<a name="egg-dbus-variant-new-for-int64"></a><h3>egg_dbus_variant_new_for_int64 ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_int64      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_uint64 ()">
+<a name="egg-dbus-variant-new-for-uint64"></a><h3>egg_dbus_variant_new_for_uint64 ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_uint64     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_boolean ()">
+<a name="egg-dbus-variant-new-for-boolean"></a><h3>egg_dbus_variant_new_for_boolean ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_boolean    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_double ()">
+<a name="egg-dbus-variant-new-for-double"></a><h3>egg_dbus_variant_new_for_double ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_double     (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);</pre>
+<p>
+Creates a new variant that holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_seq ()">
+<a name="egg-dbus-variant-new-for-seq"></a><h3>egg_dbus_variant_new_for_seq ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_seq        (<a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature);</pre>
+<p>
+Creates a new variant that holds a reference to <em class="parameter"><code>seq</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>seq</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq"><span class="type">EggDBusArraySeq</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the elements stored in <em class="parameter"><code>seq</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_map ()">
+<a name="egg-dbus-variant-new-for-map"></a><h3>egg_dbus_variant_new_for_map ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_map        (<a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature);</pre>
+<p>
+Creates a new variant that holds a reference to <em class="parameter"><code>map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the keys stored in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the values stored in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_new_for_structure ()">
+<a name="egg-dbus-variant-new-for-structure"></a><h3>egg_dbus_variant_new_for_structure ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *    egg_dbus_variant_new_for_structure  (<a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure);</pre>
+<p>
+Creates a new variant that holds a reference to <em class="parameter"><code>structure</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>structure</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_string ()">
+<a name="egg-dbus-variant-set-string"></a><h3>egg_dbus_variant_set_string ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_string         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_object_path ()">
+<a name="egg-dbus-variant-set-object-path"></a><h3>egg_dbus_variant_set_object_path ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_object_path    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> An object path.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_signature ()">
+<a name="egg-dbus-variant-set-signature"></a><h3>egg_dbus_variant_set_signature ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_signature      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A signature.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_string_array ()">
+<a name="egg-dbus-variant-set-string-array"></a><h3>egg_dbus_variant_set_string_array ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_string_array   (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated string array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_object_path_array ()">
+<a name="egg-dbus-variant-set-object-path-array"></a><h3>egg_dbus_variant_set_object_path_array ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_object_path_array
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated object path array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_signature_array ()">
+<a name="egg-dbus-variant-set-signature-array"></a><h3>egg_dbus_variant_set_signature_array ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_signature_array
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a copy of <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated signature array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_byte ()">
+<a name="egg-dbus-variant-set-byte"></a><h3>egg_dbus_variant_set_byte ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_byte           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_int16 ()">
+<a name="egg-dbus-variant-set-int16"></a><h3>egg_dbus_variant_set_int16 ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_int16          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_uint16 ()">
+<a name="egg-dbus-variant-set-uint16"></a><h3>egg_dbus_variant_set_uint16 ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_uint16         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_int ()">
+<a name="egg-dbus-variant-set-int"></a><h3>egg_dbus_variant_set_int ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_int            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_uint ()">
+<a name="egg-dbus-variant-set-uint"></a><h3>egg_dbus_variant_set_uint ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_uint           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_int64 ()">
+<a name="egg-dbus-variant-set-int64"></a><h3>egg_dbus_variant_set_int64 ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_int64          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_uint64 ()">
+<a name="egg-dbus-variant-set-uint64"></a><h3>egg_dbus_variant_set_uint64 ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_uint64         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_boolean ()">
+<a name="egg-dbus-variant-set-boolean"></a><h3>egg_dbus_variant_set_boolean ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_boolean        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_double ()">
+<a name="egg-dbus-variant-set-double"></a><h3>egg_dbus_variant_set_double ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_double         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> value);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a> equal to <em class="parameter"><code>value</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_seq ()">
+<a name="egg-dbus-variant-set-seq"></a><h3>egg_dbus_variant_set_seq ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_seq            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *seq,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *element_signature);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a reference to <em class="parameter"><code>seq</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>seq</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq"><span class="type">EggDBusArraySeq</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>element_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the elements stored in <em class="parameter"><code>seq</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_map ()">
+<a name="egg-dbus-variant-set-map"></a><h3>egg_dbus_variant_set_map ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_map            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *map,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key_signature,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *value_signature);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a reference to <em class="parameter"><code>map</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the keys stored in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value_signature</code></em> :</span></p></td>
+<td> D-Bus signature of the values stored in <em class="parameter"><code>map</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_set_structure ()">
+<a name="egg-dbus-variant-set-structure"></a><h3>egg_dbus_variant_set_structure ()</h3>
+<pre class="programlisting">void                egg_dbus_variant_set_structure      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant,
+                                                         <a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *structure);</pre>
+<p>
+Makes <em class="parameter"><code>variant</code></em> hold a reference to <em class="parameter"><code>structure</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>structure</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_string ()">
+<a name="egg-dbus-variant-get-string"></a><h3>egg_dbus_variant_get_string ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_variant_get_string         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the string stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A string. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_object_path ()">
+<a name="egg-dbus-variant-get-object-path"></a><h3>egg_dbus_variant_get_object_path ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_variant_get_object_path    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the object path stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> An object path. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_signature ()">
+<a name="egg-dbus-variant-get-signature"></a><h3>egg_dbus_variant_get_signature ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_variant_get_signature      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_string_array ()">
+<a name="egg-dbus-variant-get-string-array"></a><h3>egg_dbus_variant_get_string_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            egg_dbus_variant_get_string_array   (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the string array stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated string array. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"
+><code class="function">g_strfreev()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_object_path_array ()">
+<a name="egg-dbus-variant-get-object-path-array"></a><h3>egg_dbus_variant_get_object_path_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            egg_dbus_variant_get_object_path_array
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the object path array stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated object path array. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"
+><code class="function">g_strfreev()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_signature_array ()">
+<a name="egg-dbus-variant-get-signature-array"></a><h3>egg_dbus_variant_get_signature_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **            egg_dbus_variant_get_signature_array
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the signature array stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>-terminated signature array. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"
+><code class="function">g_strfreev()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_byte ()">
+<a name="egg-dbus-variant-get-byte"></a><h3>egg_dbus_variant_get_byte ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+>guchar</a>              egg_dbus_variant_get_byte           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_int16 ()">
+<a name="egg-dbus-variant-get-int16"></a><h3>egg_dbus_variant_get_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+>gint16</a>              egg_dbus_variant_get_int16          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_uint16 ()">
+<a name="egg-dbus-variant-get-uint16"></a><h3>egg_dbus_variant_get_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+>guint16</a>             egg_dbus_variant_get_uint16         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_int ()">
+<a name="egg-dbus-variant-get-int"></a><h3>egg_dbus_variant_get_int ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                egg_dbus_variant_get_int            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_uint ()">
+<a name="egg-dbus-variant-get-uint"></a><h3>egg_dbus_variant_get_uint ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               egg_dbus_variant_get_uint           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_int64 ()">
+<a name="egg-dbus-variant-get-int64"></a><h3>egg_dbus_variant_get_int64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+>gint64</a>              egg_dbus_variant_get_int64          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_uint64 ()">
+<a name="egg-dbus-variant-get-uint64"></a><h3>egg_dbus_variant_get_uint64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+>guint64</a>             egg_dbus_variant_get_uint64         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_boolean ()">
+<a name="egg-dbus-variant-get-boolean"></a><h3>egg_dbus_variant_get_boolean ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_get_boolean        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_double ()">
+<a name="egg-dbus-variant-get-double"></a><h3>egg_dbus_variant_get_double ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a>             egg_dbus_variant_get_double         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a> stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_seq ()">
+<a name="egg-dbus-variant-get-seq"></a><h3>egg_dbus_variant_get_seq ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq">EggDBusArraySeq</a> *   egg_dbus_variant_get_seq            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the sequence stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusArraySeq.html" title="EggDBusArraySeq"><span class="type">EggDBusArraySeq</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_map ()">
+<a name="egg-dbus-variant-get-map"></a><h3>egg_dbus_variant_get_map ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap">EggDBusHashMap</a> *    egg_dbus_variant_get_map            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the map stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusHashMap.html" title="EggDBusHashMap"><span class="type">EggDBusHashMap</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_get_structure ()">
+<a name="egg-dbus-variant-get-structure"></a><h3>egg_dbus_variant_get_structure ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusStructure.html" title="EggDBusStructure">EggDBusStructure</a> *  egg_dbus_variant_get_structure      (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Gets the structure stored in <em class="parameter"><code>variant</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusStructure.html" title="EggDBusStructure"><span class="type">EggDBusStructure</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_unset ()">
+<a name="egg-dbus-variant-is-unset"></a><h3>egg_dbus_variant_is_unset ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_unset           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a value.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>variant</code></em> doesn't hold a value.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_string ()">
+<a name="egg-dbus-variant-is-string"></a><h3>egg_dbus_variant_is_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_string          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a string.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_object_path ()">
+<a name="egg-dbus-variant-is-object-path"></a><h3>egg_dbus_variant_is_object_path ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_object_path     (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds an object path.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds an object path.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_signature ()">
+<a name="egg-dbus-variant-is-signature"></a><h3>egg_dbus_variant_is_signature ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_signature       (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_string_array ()">
+<a name="egg-dbus-variant-is-string-array"></a><h3>egg_dbus_variant_is_string_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_string_array    (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a string array.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a string array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_object_path_array ()">
+<a name="egg-dbus-variant-is-object-path-array"></a><h3>egg_dbus_variant_is_object_path_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_object_path_array
+                                                        (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds an object path array.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds an object path array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_signature_array ()">
+<a name="egg-dbus-variant-is-signature-array"></a><h3>egg_dbus_variant_is_signature_array ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_signature_array (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a signature array.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a signature array.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_byte ()">
+<a name="egg-dbus-variant-is-byte"></a><h3>egg_dbus_variant_is_byte ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_byte            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"
+><span class="type">guchar</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_int16 ()">
+<a name="egg-dbus-variant-is-int16"></a><h3>egg_dbus_variant_is_int16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_int16           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"
+><span class="type">gint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_uint16 ()">
+<a name="egg-dbus-variant-is-uint16"></a><h3>egg_dbus_variant_is_uint16 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_uint16          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"
+><span class="type">guint16</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_int ()">
+<a name="egg-dbus-variant-is-int"></a><h3>egg_dbus_variant_is_int ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_int             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+><span class="type">gint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_uint ()">
+<a name="egg-dbus-variant-is-uint"></a><h3>egg_dbus_variant_is_uint ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_uint            (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+><span class="type">guint</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_int64 ()">
+<a name="egg-dbus-variant-is-int64"></a><h3>egg_dbus_variant_is_int64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_int64           (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"
+><span class="type">gint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_uint64 ()">
+<a name="egg-dbus-variant-is-uint64"></a><h3>egg_dbus_variant_is_uint64 ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_uint64          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"
+><span class="type">guint64</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_boolean ()">
+<a name="egg-dbus-variant-is-boolean"></a><h3>egg_dbus_variant_is_boolean ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_boolean         (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+><span class="type">gboolean</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_double ()">
+<a name="egg-dbus-variant-is-double"></a><h3>egg_dbus_variant_is_double ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_double          (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+><span class="type">gdouble</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_seq ()">
+<a name="egg-dbus-variant-is-seq"></a><h3>egg_dbus_variant_is_seq ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_seq             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a sequence.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a sequence.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_map ()">
+<a name="egg-dbus-variant-is-map"></a><h3>egg_dbus_variant_is_map ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_map             (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a map.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a map.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_variant_is_structure ()">
+<a name="egg-dbus-variant-is-structure"></a><h3>egg_dbus_variant_is_structure ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_variant_is_structure       (<a class="link" href="EggDBusVariant.html" title="EggDBusVariant">EggDBusVariant</a> *variant);</pre>
+<p>
+Checks if <em class="parameter"><code>variant</code></em> holds a structure.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>variant</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusVariant.html" title="EggDBusVariant"><span class="type">EggDBusVariant</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> only if <em class="parameter"><code>variant</code></em> holds a structure.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EggDBusVariant.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "signature" property'>
+<a name="EggDBusVariant--signature"></a><h3>The <code class="literal">"signature"</code> property</h3>
+<pre class="programlisting">  "signature"                <a class="link" href="eggdbus-eggdbussignature.html#EggDBusSignature" title="EggDBusSignature">EggDBusSignature</a>*     : Read</pre>
+<p>The signature of the variant.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

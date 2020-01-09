@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.freedesktop.DBus Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="next" href="eggdbus-interface-org.freedesktop.DBus.Peer.html" title="org.freedesktop.DBus.Peer Interface">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="example-dbus.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-interface-org.freedesktop.DBus.Peer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-org.freedesktop.DBus.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-org.freedesktop.DBus.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-interface-org.freedesktop.DBus.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="org.freedesktop.DBus Interface">
+<a name="eggdbus-interface-org.freedesktop.DBus"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">org.freedesktop.DBus Interface</span></h2>
+<p>org.freedesktop.DBus Interface — Message bus daemon interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+Flags        <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameFlags" title="The RequestNameFlags Flags">RequestNameFlags</a>
+Enumeration  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameReply" title="The RequestNameReply Enumeration">RequestNameReply</a>
+Enumeration  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-ReleaseNameReply" title="The ReleaseNameReply Enumeration">ReleaseNameReply</a>
+Enumeration  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-StartServiceByNameReply" title="The StartServiceByNameReply Enumeration">StartServiceByNameReply</a>
+
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.Hello" title="Hello ()">Hello</a>                               (OUT String                   assigned_name)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName</a>                         (IN  String                   name,
+                                     IN  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameFlags" title="The RequestNameFlags Flags">RequestNameFlags</a>         flags,
+                                     OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameReply" title="The RequestNameReply Enumeration">RequestNameReply</a>         value)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ReleaseName" title="ReleaseName ()">ReleaseName</a>                         (IN  String                   name,
+                                     OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-ReleaseNameReply" title="The ReleaseNameReply Enumeration">ReleaseNameReply</a>         value)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.StartServiceByName" title="StartServiceByName ()">StartServiceByName</a>                  (IN  String                   name,
+                                     IN  UInt32                   flags,
+                                     OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-StartServiceByNameReply" title="The StartServiceByNameReply Enumeration">StartServiceByNameReply</a>  value)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.UpdateActivationEnvironment" title="UpdateActivationEnvironment ()">UpdateActivationEnvironment</a>         (IN  Dict&lt;String,String&gt;      env_hash)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.NameHasOwner" title="NameHasOwner ()">NameHasOwner</a>                        (IN  String                   name,
+                                     OUT Boolean                  has_owner)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListNames" title="ListNames ()">ListNames</a>                           (OUT Array&lt;String&gt;            names)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListActivatableNames" title="ListActivatableNames ()">ListActivatableNames</a>                (OUT Array&lt;String&gt;            activatable_names)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.AddMatch" title="AddMatch ()">AddMatch</a>                            (IN  String                   rule)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RemoveMatch" title="RemoveMatch ()">RemoveMatch</a>                         (IN  String                   rule)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetNameOwner" title="GetNameOwner ()">GetNameOwner</a>                        (IN  String                   name,
+                                     OUT String                   unique_name)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListQueuedOwners" title="ListQueuedOwners ()">ListQueuedOwners</a>                    (IN  String                   name,
+                                     OUT Array&lt;String&gt;            queued_owners)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionUnixUser" title="GetConnectionUnixUser ()">GetConnectionUnixUser</a>               (IN  String                   name,
+                                     OUT UInt32                   uid)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionUnixProcessID" title="GetConnectionUnixProcessID ()">GetConnectionUnixProcessID</a>          (IN  String                   name,
+                                     OUT UInt32                   pid)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetAdtAuditSessionData" title="GetAdtAuditSessionData ()">GetAdtAuditSessionData</a>              (IN  String                   name,
+                                     OUT Array&lt;Byte&gt;              data)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionSELinuxSecurityContext" title="GetConnectionSELinuxSecurityContext ()">GetConnectionSELinuxSecurityContext</a> (IN  String                   name,
+                                     OUT Array&lt;Byte&gt;              security_context)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ReloadConfig" title="ReloadConfig ()">ReloadConfig</a>                        ()
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetId" title="GetId ()">GetId</a>                               (OUT String                   unique_id)
+    </pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eggdbus-if-signals-org.freedesktop.DBus"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameOwnerChanged" title='The "NameOwnerChanged" signal'>NameOwnerChanged</a> (String  name,
+                  String  old_owner,
+                  String  new_owner)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameLost" title='The "NameLost" signal'>NameLost</a>         (String  name)
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameAcquired" title='The "NameAcquired" signal'>NameAcquired</a>     (String  name)
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-org.freedesktop.DBus"></a><h2>Description</h2>
+<p>
+The <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html" title="org.freedesktop.DBus Interface">org.freedesktop.DBus</a> D-Bus interface is implemented by message bus daemons. Normally applications only use the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName()</a> method to claim a well-known name on the message bus.
+      </p>
+</div>
+<div class="refsect1" title="Enumerations">
+<a name="eggdbus-if-enumerations-org.freedesktop.DBus"></a><h2>Enumerations</h2>
+<div class="refsect2" title="The RequestNameFlags Flags">
+<a name="eggdbus-enum-RequestNameFlags"></a><h3>The RequestNameFlags Flags</h3>
+<p>
+          </p>
+<pre class="programlisting">
+{
+  None             = 0x00000000,
+  AllowReplacement = 0x00000001,
+  ReplaceExisting  = 0x00000002,
+  DoNotQueue       = 0x00000004
+}
+          </pre>
+<p>
+          </p>
+<p>
+Flags used in the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName()</a> method.
+          </p>
+<p>
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameFlags.None"></a><span class="term"><code class="literal">None</code></span></p></td>
+<td><p>
+No flags set.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameFlags.AllowReplacement"></a><span class="term"><code class="literal">AllowReplacement</code></span></p></td>
+<td><p>
+If an application A specifies this flag and succeeds in becoming the owner of the name, and another application B later calls <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName()</a> with the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</a> flag, then application A will lose ownership and receive a <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameLost" title='The "NameLost" signal'><span class="type">"NameLost"</span></a> signal, and application B will become the new owner. If <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a> is not specified by application A, or <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</a> is not specified by application B, then application B will not replace application A as the owner.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameFlags.ReplaceExisting"></a><span class="term"><code class="literal">ReplaceExisting</code></span></p></td>
+<td><p>
+Try to replace the current owner if there is one. If this flag is not set the application will only become the owner of the name if there is no current owner. If this flag is set, the application will replace the current owner if the current owner specified <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a>.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameFlags.DoNotQueue"></a><span class="term"><code class="literal">DoNotQueue</code></span></p></td>
+<td><p>
+Without this flag, if an application requests a name that is already owned, the application will be placed in a queue to own the name when the current owner gives it up. If this flag is given, the application will not be placed in the queue, the request for the name will simply fail. This flag also affects behavior when an application is replaced as name owner; by default the application moves back into the waiting queue, unless this flag was provided when the application became the name owner.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        </p>
+</div>
+<hr>
+<div class="refsect2" title="The RequestNameReply Enumeration">
+<a name="eggdbus-enum-RequestNameReply"></a><h3>The RequestNameReply Enumeration</h3>
+<p>
+          </p>
+<pre class="programlisting">
+{
+  PrimaryOwner = 1,
+  InQueue      = 2,
+  Exists       = 3,
+  AlreadyOwned = 4
+}
+          </pre>
+<p>
+          </p>
+<p>
+Return values for the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName()</a> method
+          </p>
+<p>
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameReply.PrimaryOwner"></a><span class="term"><code class="literal">PrimaryOwner</code></span></p></td>
+<td><p>
+The caller is now the primary owner of the name, replacing any previous owner. Either the name had no owner before, or the caller specified <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</a> and the current owner specified <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a>.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameReply.InQueue"></a><span class="term"><code class="literal">InQueue</code></span></p></td>
+<td><p>
+The name already had an owner, <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</a> was not specified, and either the current owner did not specify <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a> or the requesting application did not specify <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</a>.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameReply.Exists"></a><span class="term"><code class="literal">Exists</code></span></p></td>
+<td><p>
+The name already has an owner, <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</a> was specified, and either <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a> was not specified by the current owner, or <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</a> was not specified by the requesting application.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-RequestNameReply.AlreadyOwned"></a><span class="term"><code class="literal">AlreadyOwned</code></span></p></td>
+<td><p>
+The application trying to request ownership of a name is already the owner of it
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        </p>
+</div>
+<hr>
+<div class="refsect2" title="The ReleaseNameReply Enumeration">
+<a name="eggdbus-enum-ReleaseNameReply"></a><h3>The ReleaseNameReply Enumeration</h3>
+<p>
+          </p>
+<pre class="programlisting">
+{
+  Released    = 1,
+  NonExistant = 2,
+  NotOwner    = 3
+}
+          </pre>
+<p>
+          </p>
+<p>
+Return values for the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ReleaseName" title="ReleaseName ()">ReleaseName()</a> method.
+          </p>
+<p>
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="eggdbus-constant-ReleaseNameReply.Released"></a><span class="term"><code class="literal">Released</code></span></p></td>
+<td><p>
+The caller has released his claim on the given name. Either the caller was the primary owner of the name, and the name is now unused or taken by somebody waiting in the queue for the name, or the caller was waiting in the queue for the name and has now been removed from the queue.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-ReleaseNameReply.NonExistant"></a><span class="term"><code class="literal">NonExistant</code></span></p></td>
+<td><p>
+The given name does not exist on this bus.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-ReleaseNameReply.NotOwner"></a><span class="term"><code class="literal">NotOwner</code></span></p></td>
+<td><p>
+The caller was not the primary owner of this name, and was also not waiting in the queue to own this name.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        </p>
+</div>
+<hr>
+<div class="refsect2" title="The StartServiceByNameReply Enumeration">
+<a name="eggdbus-enum-StartServiceByNameReply"></a><h3>The StartServiceByNameReply Enumeration</h3>
+<p>
+          </p>
+<pre class="programlisting">
+{
+  Success        = 1,
+  AlreadyRunning = 2
+}
+          </pre>
+<p>
+          </p>
+<p>
+Return values for the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.StartServiceByName" title="StartServiceByName ()">StartServiceByName()</a> method.
+          </p>
+<p>
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="eggdbus-constant-StartServiceByNameReply.Success"></a><span class="term"><code class="literal">Success</code></span></p></td>
+<td><p>
+The service was successfully started.
+      </p></td>
+</tr>
+<tr>
+<td><p><a name="eggdbus-constant-StartServiceByNameReply.AlreadyRunning"></a><span class="term"><code class="literal">AlreadyRunning</code></span></p></td>
+<td><p>
+A connection already owns the given name.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+<p>
+        </p>
+</div>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-org.freedesktop.DBus"></a><h2>Method Details</h2>
+<div class="refsect2" title="Hello ()">
+<a name="eggdbus-method-org.freedesktop.DBus.Hello"></a><h3>Hello ()</h3>
+<pre class="programlisting">
+Hello (OUT String  assigned_name)
+    </pre>
+<p>
+Before an application is able to send messages to other applications it must invoke this method on the message bus to obtain a unique name. If an application without a unique name tries to send a message to another application, or a message to the message bus itself that isn't the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.Hello" title="Hello ()">Hello()</a> method, it will be disconnected from the bus. There is no corresponding <span class="emphasis"><em>disconnect</em></span> request; if a client wishes to disconnect from the bus, it simply closes the socket (or other communication channel).
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>assigned_name</code></em></code>:</span></p></td>
+<td><p>
+Unique name assigned to the connection.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="RequestName ()">
+<a name="eggdbus-method-org.freedesktop.DBus.RequestName"></a><h3>RequestName ()</h3>
+<pre class="programlisting">
+RequestName (IN  String            name,
+             IN  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameFlags" title="The RequestNameFlags Flags">RequestNameFlags</a>  flags,
+             OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameReply" title="The RequestNameReply Enumeration">RequestNameReply</a>  value)
+    </pre>
+<p>
+This method call should be invoked on the <code class="literal">org.freedesktop.DBus</code> name to request the message bus to assign the given name to the method caller. Each name maintains a queue of possible owners, where the head of the queue is the primary or current owner of the name. Each potential owner in the queue maintains the <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</a> and <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</a> settings from its latest <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName" title="RequestName ()">RequestName()</a> call. See the D-Bus specification for more details.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name to request.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameFlags" title="The RequestNameFlags Flags">RequestNameFlags</a> <em class="parameter"><code>flags</code></em></code>:</span></p></td>
+<td><p>
+Flags.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameReply" title="The RequestNameReply Enumeration">RequestNameReply</a> <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+Return value.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ReleaseName ()">
+<a name="eggdbus-method-org.freedesktop.DBus.ReleaseName"></a><h3>ReleaseName ()</h3>
+<pre class="programlisting">
+ReleaseName (IN  String            name,
+             OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-ReleaseNameReply" title="The ReleaseNameReply Enumeration">ReleaseNameReply</a>  value)
+    </pre>
+<p>
+This method call should be invoked on the <code class="literal">org.freedesktop.DBus</code> name to request the message bus to release the method caller's claim to the given name. If the caller is the primary owner, a new primary owner will be selected from the queue if any other owners are waiting. If the caller is waiting in the queue for the name, the caller will removed from the queue and will not be made an owner of the name if it later becomes available. If there are no other owners in the queue for the name, it will be removed from the bus entirely.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name to release.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-ReleaseNameReply" title="The ReleaseNameReply Enumeration">ReleaseNameReply</a> <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+Return value.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="StartServiceByName ()">
+<a name="eggdbus-method-org.freedesktop.DBus.StartServiceByName"></a><h3>StartServiceByName ()</h3>
+<pre class="programlisting">
+StartServiceByName (IN  String                   name,
+                    IN  UInt32                   flags,
+                    OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-StartServiceByNameReply" title="The StartServiceByNameReply Enumeration">StartServiceByNameReply</a>  value)
+    </pre>
+<p>
+Tries to launch the executable associated with <em class="parameter"><code>name</code></em>. See the D-Bus specification for more details on service activation.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name of the service to start.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  UInt32 <em class="parameter"><code>flags</code></em></code>:</span></p></td>
+<td><p>
+Flags (currently not used).
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-StartServiceByNameReply" title="The StartServiceByNameReply Enumeration">StartServiceByNameReply</a> <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+Reply
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="UpdateActivationEnvironment ()">
+<a name="eggdbus-method-org.freedesktop.DBus.UpdateActivationEnvironment"></a><h3>UpdateActivationEnvironment ()</h3>
+<pre class="programlisting">
+UpdateActivationEnvironment (IN  Dict&lt;String,String&gt;  env_hash)
+    </pre>
+<p>
+Normally, session bus activated services inherit the environment of the bus daemon.  This method adds to or modifies that environment when activating services. Some bus instances, such as the standard system bus, may disable access to this method for some or all callers.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  Dict&lt;String,String&gt; <em class="parameter"><code>env_hash</code></em></code>:</span></p></td>
+<td><p>
+Environment to add or update.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="NameHasOwner ()">
+<a name="eggdbus-method-org.freedesktop.DBus.NameHasOwner"></a><h3>NameHasOwner ()</h3>
+<pre class="programlisting">
+NameHasOwner (IN  String   name,
+              OUT Boolean  has_owner)
+    </pre>
+<p>
+Checks if the specified name exists (currently has an owner).
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name to check.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Boolean <em class="parameter"><code>has_owner</code></em></code>:</span></p></td>
+<td><p>
+<code class="literal">TRUE</code> only if <em class="parameter"><code>name</code></em> exists.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ListNames ()">
+<a name="eggdbus-method-org.freedesktop.DBus.ListNames"></a><h3>ListNames ()</h3>
+<pre class="programlisting">
+ListNames (OUT Array&lt;String&gt;  names)
+    </pre>
+<p>
+Returns a list of all currently-owned names on the bus.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;String&gt; <em class="parameter"><code>names</code></em></code>:</span></p></td>
+<td><p>
+Array of strings where each string is a bus name.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ListActivatableNames ()">
+<a name="eggdbus-method-org.freedesktop.DBus.ListActivatableNames"></a><h3>ListActivatableNames ()</h3>
+<pre class="programlisting">
+ListActivatableNames (OUT Array&lt;String&gt;  activatable_names)
+    </pre>
+<p>
+Returns a list of all names that can be activated on the bus.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;String&gt; <em class="parameter"><code>activatable_names</code></em></code>:</span></p></td>
+<td><p>
+Array of strings where each string is a bus name.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="AddMatch ()">
+<a name="eggdbus-method-org.freedesktop.DBus.AddMatch"></a><h3>AddMatch ()</h3>
+<pre class="programlisting">
+AddMatch (IN  String  rule)
+    </pre>
+<p>
+Adds a match rule to match messages going through the message bus. If the bus does not have enough resources the %org.freedesktop.DBus.Error.OOM error is returned. See the D-Bus specification for more information about match rules.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>rule</code></em></code>:</span></p></td>
+<td><p>
+Match rule to add to the connection.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="RemoveMatch ()">
+<a name="eggdbus-method-org.freedesktop.DBus.RemoveMatch"></a><h3>RemoveMatch ()</h3>
+<pre class="programlisting">
+RemoveMatch (IN  String  rule)
+    </pre>
+<p>
+Removes the first rule that matches. If the rule is not found the %org.freedesktop.DBus.Error.MatchRuleNotFound  error is returned. See the D-Bus specification for more information about match rules.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>rule</code></em></code>:</span></p></td>
+<td><p>
+Match rule to remove from the connection.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetNameOwner ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetNameOwner"></a><h3>GetNameOwner ()</h3>
+<pre class="programlisting">
+GetNameOwner (IN  String  name,
+              OUT String  unique_name)
+    </pre>
+<p>
+Returns the unique connection name of the primary owner of the name given. If the requested name doesn't have an owner, returns a %org.freedesktop.DBus.Error.NameHasNoOwner error.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name to get owner of.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>unique_name</code></em></code>:</span></p></td>
+<td><p>
+The unique name that owns <em class="parameter"><code>name</code></em>.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ListQueuedOwners ()">
+<a name="eggdbus-method-org.freedesktop.DBus.ListQueuedOwners"></a><h3>ListQueuedOwners ()</h3>
+<pre class="programlisting">
+ListQueuedOwners (IN  String         name,
+                  OUT Array&lt;String&gt;  queued_owners)
+    </pre>
+<p>
+Lists the names waiting in queue to own <em class="parameter"><code>name</code></em>.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+A well-known name.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;String&gt; <em class="parameter"><code>queued_owners</code></em></code>:</span></p></td>
+<td><p>
+Array of unique names in queue to own <em class="parameter"><code>name</code></em>.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetConnectionUnixUser ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixUser"></a><h3>GetConnectionUnixUser ()</h3>
+<pre class="programlisting">
+GetConnectionUnixUser (IN  String  name,
+                       OUT UInt32  uid)
+    </pre>
+<p>
+Returns the UNIX user id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name of the connection to query.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT UInt32 <em class="parameter"><code>uid</code></em></code>:</span></p></td>
+<td><p>
+UNIX user id.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetConnectionUnixProcessID ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixProcessID"></a><h3>GetConnectionUnixProcessID ()</h3>
+<pre class="programlisting">
+GetConnectionUnixProcessID (IN  String  name,
+                            OUT UInt32  pid)
+    </pre>
+<p>
+Returns the UNIX process id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name of the connection to query.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT UInt32 <em class="parameter"><code>pid</code></em></code>:</span></p></td>
+<td><p>
+UNIX process id.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetAdtAuditSessionData ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetAdtAuditSessionData"></a><h3>GetAdtAuditSessionData ()</h3>
+<pre class="programlisting">
+GetAdtAuditSessionData (IN  String       name,
+                        OUT Array&lt;Byte&gt;  data)
+    </pre>
+<p>
+Returns the Solaris/ADT auditing data of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.AdtAuditDataUnknown error is returned.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name of the connection to query.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Byte&gt; <em class="parameter"><code>data</code></em></code>:</span></p></td>
+<td><p>
+An array of bytes (typically a string of undefined encoding).
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetConnectionSELinuxSecurityContext ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetConnectionSELinuxSecurityContext"></a><h3>GetConnectionSELinuxSecurityContext ()</h3>
+<pre class="programlisting">
+GetConnectionSELinuxSecurityContext (IN  String       name,
+                                     OUT Array&lt;Byte&gt;  security_context)
+    </pre>
+<p>
+Returns the SELinux security context of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.SELinuxSecurityContextUnknown error is returned.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name of the connection to query.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Array&lt;Byte&gt; <em class="parameter"><code>security_context</code></em></code>:</span></p></td>
+<td><p>
+An array of bytes (typically a string of undefined encoding).
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ReloadConfig ()">
+<a name="eggdbus-method-org.freedesktop.DBus.ReloadConfig"></a><h3>ReloadConfig ()</h3>
+<pre class="programlisting">
+ReloadConfig ()
+    </pre>
+<p>
+Asks the message bus to reload configuration files.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetId ()">
+<a name="eggdbus-method-org.freedesktop.DBus.GetId"></a><h3>GetId ()</h3>
+<pre class="programlisting">
+GetId (OUT String  unique_id)
+    </pre>
+<p>
+Gets the unique ID of the bus. The unique ID here is shared among all addresses the bus daemon is listening on (TCP, UNIX domain socket, etc.). Each address the bus is listening on also has its own unique ID. The per-bus and per-address IDs are not related. For a desktop session bus, the bus ID can be used as a way to uniquely identify a user's session. See the D-Bus specification for more information about unique IDs.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>unique_id</code></em></code>:</span></p></td>
+<td><p>
+Unique ID identifying the bus daemon
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eggdbus-if-signal-details-org.freedesktop.DBus"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "NameOwnerChanged" signal'>
+<a name="eggdbus-signal-org.freedesktop.DBus::NameOwnerChanged"></a><h3>The "NameOwnerChanged" signal</h3>
+<pre class="programlisting">
+NameOwnerChanged (String  name,
+                  String  old_owner,
+                  String  new_owner)
+    </pre>
+<p>
+This signal indicates that the owner of a name has changed. It's also the signal to use to detect the appearance of new names on the bus.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name with new owner.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>old_owner</code></em></code>:</span></p></td>
+<td><p>
+Old owner or empty string if none.
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>new_owner</code></em></code>:</span></p></td>
+<td><p>
+New owner or empty string if none.
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "NameLost" signal'>
+<a name="eggdbus-signal-org.freedesktop.DBus::NameLost"></a><h3>The "NameLost" signal</h3>
+<pre class="programlisting">
+NameLost (String  name)
+    </pre>
+<p>
+This signal is sent to a specific application when it loses ownership of a name.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name which was lost.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "NameAcquired" signal'>
+<a name="eggdbus-signal-org.freedesktop.DBus::NameAcquired"></a><h3>The "NameAcquired" signal</h3>
+<pre class="programlisting">
+NameAcquired (String  name)
+    </pre>
+<p>
+This signal is sent to a specific application when it gains ownership of a name.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>name</code></em></code>:</span></p></td>
+<td><p>
+Name which was acquired.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

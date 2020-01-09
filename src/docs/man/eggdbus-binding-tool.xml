@@ -1,0 +1,44 @@
+<refentry id="eggdbus-binding-tool.1">
+  <refentryinfo>
+    <title>eggdbus-binding-tool</title>
+    <date>December 2008</date>
+    <productname>EggDBus</productname>
+  </refentryinfo>
+
+  <refmeta>
+    <refentrytitle>eggdbus-binding-tool</refentrytitle>
+    <manvolnum>1</manvolnum>
+    <refmiscinfo class="version"></refmiscinfo>
+  </refmeta>
+
+  <refnamediv>
+    <refname>eggdbus-binding-tool</refname>
+    <refpurpose>EggDBus binding tool</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>eggdbus-binding-tool</command>
+      <arg><option>--help</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>DESCRIPTION</title>
+    <para>
+      TODO: Write me.
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>SEE ALSO</title>
+    <para>
+      <citerefentry>
+        <refentrytitle>dbus-send</refentrytitle><manvolnum>1</manvolnum>
+      </citerefentry>,
+      <citerefentry>
+        <refentrytitle>dbus-daemon</refentrytitle><manvolnum>1</manvolnum>
+      </citerefentry>
+    </para>
+  </refsect1>
+</refentry>

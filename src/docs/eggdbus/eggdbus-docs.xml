@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "../version.xml">
+]>
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>EggDBus Reference Manual</title>
+    <releaseinfo>Version &version;</releaseinfo>
+    <authorgroup>
+      <author>
+        <firstname>David</firstname>
+        <surname>Zeuthen</surname>
+        <affiliation>
+          <address>
+            <email>davidz@redhat.com</email>
+          </address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <copyright>
+      <year>2008</year>
+      <holder>The eggdbus Authors</holder>
+    </copyright>
+
+    <legalnotice>
+      <para>
+        Permission is granted to copy, distribute and/or modify this
+        document under the terms of the <citetitle>GNU Free
+        Documentation License</citetitle>, Version 1.1 or any later
+        version published by the Free Software Foundation with no
+        Invariant Sections, no Front-Cover Texts, and no Back-Cover
+        Texts. You may obtain a copy of the <citetitle>GNU Free
+        Documentation License</citetitle> from the Free Software
+        Foundation by visiting <ulink type="http"
+        url="http://www.fsf.org">their Web site</ulink> or by writing
+        to:
+
+        <address>
+          The Free Software Foundation, Inc.,
+          <street>59 Temple Place</street> - Suite 330,
+          <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>,
+          <country>USA</country>
+        </address>
+      </para>
+
+      <para>
+        Many of the names used by companies to distinguish their
+        products and services are claimed as trademarks. Where those
+        names appear in any GNOME documentation, and those trademarks
+        are made aware to the members of the GNOME documentation
+        Project, the names have been printed in caps or initial caps.
+      </para>
+    </legalnotice>
+  </bookinfo>
+
+  <reference id="ref-overview">
+    <title>EggDBus Overview</title>
+    <chapter id="ref-overview-intro">
+      <title>Introduction</title>
+      <para>
+        TODO: write me.
+      </para>
+    </chapter>
+    <chapter id="ref-overview-concepts">
+      <title>Mapping D-Bus to GObject</title>
+      <para>
+        TODO: write me.
+      </para>
+    </chapter>
+    <chapter id="ref-overview-compiling">
+      <title>Compiling EggDBus applications</title>
+      <para>
+        TODO: write me.
+      </para>
+    </chapter>
+  </reference>
+
+  <reference id="ref-api">
+    <title>API Reference</title>
+    <chapter id="datatypes">
+      <title>Types and Collections</title>
+      <xi:include href="xml/eggdbusmisctypes.xml"/>
+      <xi:include href="xml/eggdbusobjectpath.xml"/>
+      <xi:include href="xml/eggdbussignature.xml"/>
+      <xi:include href="xml/eggdbusarrayseq.xml"/>
+      <xi:include href="xml/eggdbushashmap.xml"/>
+      <xi:include href="xml/eggdbusvariant.xml"/>
+      <xi:include href="xml/eggdbusstructure.xml"/>
+    </chapter>
+    <chapter id="core">
+      <title>D-Bus Operations</title>
+      <xi:include href="xml/eggdbusconnection.xml"/>
+      <xi:include href="xml/eggdbusobjectproxy.xml"/>
+      <xi:include href="xml/eggdbusinterfaceproxy.xml"/>
+      <xi:include href="xml/eggdbusmethodinvocation.xml"/>
+      <xi:include href="xml/eggdbuserror.xml"/>
+      <xi:include href="xml/eggdbusbusnametracker.xml"/>
+      <xi:include href="xml/eggdbusmessage.xml"/>
+      <xi:include href="xml/eggdbusinterface.xml"/>
+    </chapter>
+
+    <chapter id="stdinterfaces">
+      <title>Well-known D-Bus Interfaces</title>
+      <xi:include href="xml/eggdbusbus.xml"/>
+      <xi:include href="xml/eggdbuspeer.xml"/>
+      <xi:include href="xml/eggdbusproperties.xml"/>
+      <xi:include href="xml/eggdbusintrospectable.xml"/>
+    </chapter>
+
+    <chapter id="example">
+      <title>Example of Generated Code</title>
+      <xi:include href="../tests/xml/testfrob.xml"/>
+      <xi:include href="../tests/xml/testtweak.xml"/>
+      <xi:include href="../tests/xml/testtwiddle.xml"/>
+      <xi:include href="../tests/xml/testpoint.xml"/>
+      <xi:include href="../tests/xml/testpair.xml"/>
+      <xi:include href="../tests/xml/testdescribedpair.xml"/>
+      <xi:include href="../tests/xml/testdescribedpoint.xml"/>
+      <xi:include href="../tests/xml/testextendeddescribedpoint.xml"/>
+      <xi:include href="../tests/xml/teststructwithvariant.xml"/>
+      <xi:include href="../tests/xml/testsubject.xml"/>
+      <xi:include href="../tests/xml/testerror.xml"/>
+      <xi:include href="../tests/xml/testdetailederror.xml"/>
+      <xi:include href="../tests/xml/testcreateflags.xml"/>
+      <xi:include href="../tests/xml/testdeleteflags.xml"/>
+      <xi:include href="../tests/xml/testotherflags.xml"/>
+      <xi:include href="../tests/xml/testvehicle.xml"/>
+    </chapter>
+
+    <chapter id="example-dbus">
+      <title>Example of Generated D-Bus docs</title>
+      <xi:include href="../../src/eggdbus/docbook-interface-org.freedesktop.DBus.xml"/>
+      <xi:include href="../../src/eggdbus/docbook-interface-org.freedesktop.DBus.Peer.xml"/>
+      <xi:include href="../../src/eggdbus/docbook-interface-org.freedesktop.DBus.Properties.xml"/>
+      <xi:include href="../../src/eggdbus/docbook-interface-org.freedesktop.DBus.Introspectable.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-CreateFlags.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-DeleteFlags.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-DetailedError.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-Error.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-OtherFlags.xml"/>
+      <xi:include href="../../src/tests/docbook-enum-Vehicle.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-Pair.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-Point.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-DescribedPair.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-DescribedPoint.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-StructWithVariant.xml"/>
+      <xi:include href="../../src/tests/docbook-struct-ExtendedDescribedPoint.xml"/>
+      <xi:include href="../../src/tests/docbook-interface-com.example.Frob.xml"/>
+      <xi:include href="../../src/tests/docbook-interface-com.example.Tweak.xml"/>
+      <xi:include href="../../src/tests/docbook-interface-com.example.Twiddle.xml"/>
+    </chapter>
+
+  </reference>
+
+  <reference id="ref-programs">
+    <title>Tools Reference</title>
+    <xi:include href="../man/eggdbus-binding-tool.xml"/>
+  </reference>
+
+  <reference id="ref-tutorial">
+    <title>Tutorial</title>
+    <chapter id="ref-tutorial-using">
+      <title>Using a D-Bus service</title>
+      <para>
+        TODO: write me.
+      </para>
+    </chapter>
+    <chapter id="ref-tutorial-providing">
+      <title>Writing a D-Bus service</title>
+      <para>
+        TODO: write me.
+      </para>
+    </chapter>
+  </reference>
+
+  <chapter id="eggdbus-hierarchy">
+    <title>Object Hierarchy</title>
+    <xi:include href="xml/tree_index.sgml"/>
+  </chapter>
+
+  <index>
+    <title>Index</title>
+  </index>
+
+</book>

@@ -1,0 +1,213 @@
+
+Should happen before 1.0 (before API/ABI freeze):
+
+ o  Review TODO items scattered around the code and update this file
+
+ o  Ensure we correctly interoperate with other D-Bus stacks with varying
+    levels of support of the org.fd.DBus.Properties
+
+     - Make sure things work in the absence of a GetAll() method
+
+    One way to write tests for this is to use Python on the server-side;
+    dbus-python doesn't really support properties natively so we can
+    easily set up the various test cases.
+
+ o  Document all annotations
+
+ o  Port DBusConnection mainloop integration from dbus-glib to avoid that
+    dependency
+
+ o  Add single-include-policy to generated files such as to force
+    the user to include <namespace>bindings.h
+
+ o  Make sure the values and nicks (e.g /*< nick=org.example.Error >*/)
+    for enums are nicely indented since it's shown verbatim in the
+    generated gtk-doc output
+
+ o  Rewrite references such as MethodCalls(), #FlagReference etc. in
+    .DocString annotations to match gtk-doc (this is probably hard)
+
+ o  Add a mode to generate nice DocBook that describes only the
+    D-Bus interface; similar to spectodocbook.xsl that the DeviceKit,
+    ConsoleKit and others projects use
+
+ o  Use quarks for all uses of g_object_set_data() etc.
+
+ o  Make sure all public facing API uses g_return_if_fail() guards
+
+ o  Audit all libdbus calls for return value and abort() on OOM
+
+ o  Add some harness to easily check that we don't leak anything when
+    building in maintainer mode. Add to test suite. Something similar
+    to what Alex mentions here
+
+     http://blogs.gnome.org/alexl/2006/04/13/nautilus-memory-use-analysis/
+
+    It wouldn't hurt having this kind of stuff built into the GObject
+    library itself and have it kick in if an environment variable
+    is set or whatever.
+
+ o  Make sure our test harness can run during 'make check' even
+    when there is no session bus (for e.g. running the test suite
+    as part of RPM build to ensure the test suite passes on many
+    archs)
+
+ o  Maybe return proxies instead of EggDBusObjectPath; provide an escape
+    hatch (through an annotation) to avoid this behavior (e.g. for broken
+    services that return an object path that refers to an object from
+    another service and/or bus). Maybe something like
+
+      <annotation name="org.gtk.GObject.ObjectPath" value="no_proxy"/>
+
+ o  Maybe use annotations to let the user call functions to transform both
+    incoming and outgoing parameters:
+    - <annotation name="org.gtk.GObject.ParamMapFrom"
+                  value="user_supplied_map_from_func"/>
+      <annotation name="org.gtk.GObject.ParamMapTo"
+                  value="user_supplied_map_to_func"/>
+
+ o  Write egg_dbus_proxy_invoke() family of varargs functions. The generated
+    code can use this; as a result it will be much smaller.
+
+ o  For incoming signals and incoming method calls, use a hash table in
+    handle_message() in the generated code. This should both make it more
+    efficient and the generated code smaller.
+
+ o  Maybe move EggDBusConnection to EggDBusBusConnection and write a superclass
+    EggDBusConnection that can be used for peer-to-peer communication.
+    Add test-cases for peer-to-peer. Also make sure that the bus connection
+    class is a singleton.
+
+ o  Have a way to do peer-to-peer connection. Ideally we want to use
+    something like the networking code that is starting to appear in GIO.
+    Might need libdbus changes to create a DBusConnection from a UNIX fd.
+
+ o  Figure out remaining D-Bus spec functionality needed (cf. the current
+    EggDBusChanged() signal on org.fd.Properties) for efficient operation;
+    implement it and mail the D-Bus mailing list for review/inclusion in
+    the D-Bus spec.
+
+ o  Retrieve properties async when constructing an EggDBusInterfaceProxy and
+    make it possible to get the proxy async from the connection (ie.
+    so when you get it then it has all properties).
+
+ o  Make it possible to specify the destination when emitting signals.
+    The API already provides for this, just need to actually JFDI
+    along with test cases.
+
+ o  When obtaining a proxy, maybe it should be possible to pass flags
+
+     - NO_SIGNAL_ADD_MATCH
+     - NO_NAME_TRACKING
+
+    This might be useful for apps using thousands of proxies. But it
+    smells like a bandaid; if a service exports thousands of objects
+    then you'd better have some good enumeration API so the clients
+    won't have to create a proxy for each and every service side
+    objects...
+
+ o  Write a good tutorial
+    - Some like the Java Pet Store but probably simpler
+
+ o  Make sure all functions and programs are properly documented (e.g.
+    gtk-doc and man pages)
+
+ o  Make sure all generated code have full gtk-doc coverage. Also
+    make sure it got the proper GObject-Introspection annotations.
+
+ o  Make sure we have test coverage of all important bits
+
+ o  Figure out what level of thread safety is needed; then implement and
+    write test cases.
+
+ o  Collection API
+    - we want something like libgee but with the nicer C API that we
+      already have in EggDBusArraySeq and EggDBusHashMap.
+    - see http://bugzilla.gnome.org/show_bug.cgi?id=560061
+
+ o  Is GMarkup a good enough parser for introspection XML or do we
+    want a real XML parser like Expat? If so, we might want to move
+    egg_dbus_interface_new_node_info_from_xml() into a separate
+    libeggdbus-introspection library. That sounds like overkill though.
+
+ o  Very little of the core functionality is related to D-Bus; would
+    it be useful to have EggIpcProxy, EggIpcConnection, EggIpcMessage,
+    EggIpcMethodInvocation GInterfaces that all generated code uses?
+
+    Then the existing EggDBus* classes simply implement these interfaces
+    and the wrappers could be used with, say EggXmlRpc* or EggSoap
+    implementations too.
+
+    Maybe this is just the Architecture Astronaut talking.
+
+Can happen post 1.0 (after API/ABI freeze):
+
+ o  Define an IDL language instead of abusing D-Bus introspection XML.
+    See [1] for an example of how this could look like.
+
+[1] : Ad-hoc proposal for what an IDL could look like. Totally not
+thought through yet, only added to get a better feeling of what
+annotations is needed. Yes, it's pretty lame right now.
+
+filename: com.example.didl
+
+-- BEGIN --
+
+# the namespace directive is only used to avoid typing the
+# same prefix over and over again.
+#
+namespace com.example {
+
+  struct Pair {
+    Int32 first;
+    Int32 second;
+  }
+
+  struct Point {
+    Int32 x;
+    Int32 y;
+  }
+
+  error Error {
+    SomeErrorName;
+    SomeOtherErrorName;
+  }
+
+  interface Tweak {
+
+    property read      String         foo;
+    property read      Srray<Int32>   bar;
+    property read      Pair           baz;
+    property readwrite String         SomeReadWriteProperty;
+
+    method BlockUntilRWPropertyChanges (out String    NewPropValue);
+
+    method ChangeReadableProperty      (String        new_value);
+
+    method ICanHazGreetingz            (String        greetz,
+                                        out String    word);
+
+    method BroadcastzNewz              (String        newz);
+
+    method GetServerUniqueName         (out String    server_unique_name);
+
+    method LongRunningMethod           (Int32         msec_to_run);
+
+    method ReturnGError                (String        error_domain,
+                                        Int32         error_code);
+
+    # This is a method that returns two structs of similar signatures; binding-generators
+    # can use the extra information to cast to Pair resp. Point.
+    #
+    method ReturnStuff                 (out Pair      pair,
+                                        out Point     point);
+
+    signal NewzNotifz (String newz);
+
+  };
+
+};
+
+-- END --
+
+

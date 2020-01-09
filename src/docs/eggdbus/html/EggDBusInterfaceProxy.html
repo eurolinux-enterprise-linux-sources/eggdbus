@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusInterfaceProxy</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">
+<link rel="next" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusObjectProxy.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusMethodInvocation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusInterfaceProxy.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusInterfaceProxy.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusInterfaceProxy.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusInterfaceProxy">
+<a name="EggDBusInterfaceProxy"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusInterfaceProxy.top_of_page"></a>EggDBusInterfaceProxy</span></h2>
+<p>EggDBusInterfaceProxy — Abstract base class for interface proxies</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusInterfaceProxy.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusInterfaceProxy.html#EggDBusInterfaceProxy-struct" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a>;
+<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> * <a class="link" href="EggDBusInterfaceProxy.html#egg-dbus-interface-proxy-get-object-proxy" title="egg_dbus_interface_proxy_get_object_proxy ()">egg_dbus_interface_proxy_get_object_proxy</a>
+                                                        (<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> *interface_proxy);
+<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceIface" title="EggDBusInterfaceIface">EggDBusInterfaceIface</a> * <a class="link" href="EggDBusInterfaceProxy.html#egg-dbus-interface-proxy-get-interface-iface" title="egg_dbus_interface_proxy_get_interface_iface ()">egg_dbus_interface_proxy_get_interface_iface</a>
+                                                        (<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> *interface_proxy);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusInterfaceProxy.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusInterfaceProxy
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusInterfaceProxy.description"></a><h2>Description</h2>
+<p>
+<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a> is an abstract base class that all interface proxies for concrete
+D-Bus interfaces are derived from. The base class provides a way to get the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>
+and also maps D-Bus properties to GObject properties.
+</p>
+<p>
+You normally get an interface proxy by using the <code class="function">QUERY_INTERFACE()</code> macros in generated
+glue GInterface code; for example for the interface proxy for the <code class="literal">org.freedesktop.DBus</code>
+D-Bus interface, you should use the <a class="link" href="eggdbus-eggdbusbus.html#EGG-DBUS-QUERY-INTERFACE-BUS--CAPS" title="EGG_DBUS_QUERY_INTERFACE_BUS()"><code class="function">EGG_DBUS_QUERY_INTERFACE_BUS()</code></a> macro:
+</p>
+<p>
+</p>
+<pre class="programlisting">
+EggDBusBus *bus;
+
+bus = EGG_DBUS_QUERY_INTERFACE_BUS (object_proxy);
+</pre>
+<p>
+</p>
+<p>
+In this example you can use the <em class="parameter"><code>bus</code></em> object to invoke methods on the
+<code class="literal">org.freedesktop.DBus</code> interface on the remote object represented by
+<em class="parameter"><code>object_proxy</code></em>. In addition, D-Bus properties and signals are available as GObject properties
+and signals on interface proxy objects.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusInterfaceProxy.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusInterfaceProxy">
+<a name="EggDBusInterfaceProxy-struct"></a><h3>EggDBusInterfaceProxy</h3>
+<pre class="programlisting">typedef struct _EggDBusInterfaceProxy EggDBusInterfaceProxy;</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_proxy_get_object_proxy ()">
+<a name="egg-dbus-interface-proxy-get-object-proxy"></a><h3>egg_dbus_interface_proxy_get_object_proxy ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> * egg_dbus_interface_proxy_get_object_proxy
+                                                        (<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> *interface_proxy);</pre>
+<p>
+Gets the object proxy that <em class="parameter"><code>interface_proxy</code></em> is associated with.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>. Do not free, the returned object is owned by <em class="parameter"><code>interface_proxy</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_proxy_get_interface_iface ()">
+<a name="egg-dbus-interface-proxy-get-interface-iface"></a><h3>egg_dbus_interface_proxy_get_interface_iface ()</h3>
+<pre class="programlisting"><a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceIface" title="EggDBusInterfaceIface">EggDBusInterfaceIface</a> * egg_dbus_interface_proxy_get_interface_iface
+                                                        (<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> *interface_proxy);</pre>
+<p>
+Gets the D-Bus interface VTable for <em class="parameter"><code>interface_proxy</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceIface" title="EggDBusInterfaceIface"><span class="type">EggDBusInterfaceIface</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="EggDBusInterfaceProxy.see-also"></a><h2>See Also</h2>
+#EggDBusObjectProxy
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

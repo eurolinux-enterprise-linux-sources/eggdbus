@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="EggDBus Reference Manual" link="index.html" author="David Zeuthen" name="eggdbus">
+  <chapters>
+    <sub name="EggDBus Overview" link="ref-overview.html">
+      <sub name="Introduction" link="ref-overview-intro.html"/>
+      <sub name="Mapping D-Bus to GObject" link="ref-overview-concepts.html"/>
+      <sub name="Compiling EggDBus applications" link="ref-overview-compiling.html"/>
+    </sub>
+    <sub name="API Reference" link="ref-api.html">
+      <sub name="Types and Collections" link="datatypes.html">
+        <sub name="Fundamental types" link="eggdbus-eggdbusmisctypes.html"/>
+        <sub name="EggDBusObjectPath" link="eggdbus-eggdbusobjectpath.html"/>
+        <sub name="EggDBusSignature" link="eggdbus-eggdbussignature.html"/>
+        <sub name="EggDBusArraySeq" link="EggDBusArraySeq.html"/>
+        <sub name="EggDBusHashMap" link="EggDBusHashMap.html"/>
+        <sub name="EggDBusVariant" link="EggDBusVariant.html"/>
+        <sub name="EggDBusStructure" link="EggDBusStructure.html"/>
+      </sub>
+      <sub name="D-Bus Operations" link="core.html">
+        <sub name="EggDBusConnection" link="EggDBusConnection.html"/>
+        <sub name="EggDBusObjectProxy" link="EggDBusObjectProxy.html"/>
+        <sub name="EggDBusInterfaceProxy" link="EggDBusInterfaceProxy.html"/>
+        <sub name="EggDBusMethodInvocation" link="EggDBusMethodInvocation.html"/>
+        <sub name="EggDBusError" link="eggdbus-eggdbuserror.html"/>
+        <sub name="EggDBusBusNameTracker" link="EggDBusBusNameTracker.html"/>
+        <sub name="EggDBusMessage" link="EggDBusMessage.html"/>
+        <sub name="EggDBusInterface" link="eggdbus-eggdbusinterface.html"/>
+      </sub>
+      <sub name="Well-known D-Bus Interfaces" link="stdinterfaces.html">
+        <sub name="EggDBusBus" link="eggdbus-eggdbusbus.html"/>
+        <sub name="EggDBusPeer" link="eggdbus-eggdbuspeer.html"/>
+        <sub name="EggDBusProperties" link="eggdbus-eggdbusproperties.html"/>
+        <sub name="EggDBusIntrospectable" link="eggdbus-eggdbusintrospectable.html"/>
+      </sub>
+      <sub name="Example of Generated Code" link="example.html">
+        <sub name="TestFrob" link="tests-testfrob.html"/>
+        <sub name="TestTweak" link="tests-testtweak.html"/>
+        <sub name="TestTwiddle" link="tests-testtwiddle.html"/>
+        <sub name="TestPoint" link="TestPoint.html"/>
+        <sub name="TestPair" link="TestPair.html"/>
+        <sub name="TestDescribedPair" link="TestDescribedPair.html"/>
+        <sub name="TestDescribedPoint" link="TestDescribedPoint.html"/>
+        <sub name="TestExtendedDescribedPoint" link="TestExtendedDescribedPoint.html"/>
+        <sub name="TestStructWithVariant" link="TestStructWithVariant.html"/>
+        <sub name="TestSubject" link="TestSubject.html"/>
+        <sub name="TestError" link="tests-testerror.html"/>
+        <sub name="TestDetailedError" link="tests-testdetailederror.html"/>
+        <sub name="TestCreateFlags" link="tests-testcreateflags.html"/>
+        <sub name="TestDeleteFlags" link="tests-testdeleteflags.html"/>
+        <sub name="TestOtherFlags" link="tests-testotherflags.html"/>
+        <sub name="TestVehicle" link="tests-testvehicle.html"/>
+      </sub>
+      <sub name="Example of Generated D-Bus docs" link="example-dbus.html">
+        <sub name="org.freedesktop.DBus Interface" link="eggdbus-interface-org.freedesktop.DBus.html"/>
+        <sub name="org.freedesktop.DBus.Peer Interface" link="eggdbus-interface-org.freedesktop.DBus.Peer.html"/>
+        <sub name="org.freedesktop.DBus.Properties Interface" link="eggdbus-interface-org.freedesktop.DBus.Properties.html"/>
+        <sub name="org.freedesktop.DBus.Introspectable Interface" link="eggdbus-interface-org.freedesktop.DBus.Introspectable.html"/>
+        <sub name="CreateFlags Flag Enumeration" link="eggdbus-enummain-CreateFlags.html"/>
+        <sub name="DeleteFlags Flag Enumeration" link="eggdbus-enummain-DeleteFlags.html"/>
+        <sub name="com.example.Error.Detailed.* Error Domain" link="eggdbus-enummain-DetailedError.html"/>
+        <sub name="com.example.Error.* Error Domain" link="eggdbus-enummain-Error.html"/>
+        <sub name="OtherFlags Flag Enumeration" link="eggdbus-enummain-OtherFlags.html"/>
+        <sub name="Vehicle Enumeration" link="eggdbus-enummain-Vehicle.html"/>
+        <sub name="Pair Structure" link="eggdbus-structmain-Pair.html"/>
+        <sub name="Point Structure" link="eggdbus-structmain-Point.html"/>
+        <sub name="DescribedPair Structure" link="eggdbus-structmain-DescribedPair.html"/>
+        <sub name="DescribedPoint Structure" link="eggdbus-structmain-DescribedPoint.html"/>
+        <sub name="StructWithVariant Structure" link="eggdbus-structmain-StructWithVariant.html"/>
+        <sub name="ExtendedDescribedPoint Structure" link="eggdbus-structmain-ExtendedDescribedPoint.html"/>
+        <sub name="com.example.Frob Interface" link="eggdbus-interface-com.example.Frob.html"/>
+        <sub name="com.example.Tweak Interface" link="eggdbus-interface-com.example.Tweak.html"/>
+        <sub name="com.example.Twiddle Interface" link="eggdbus-interface-com.example.Twiddle.html"/>
+      </sub>
+    </sub>
+    <sub name="Tools Reference" link="ref-programs.html">
+      <sub name="eggdbus-binding-tool" link="eggdbus-binding-tool.1.html"/>
+    </sub>
+    <sub name="Tutorial" link="ref-tutorial.html">
+      <sub name="Using a D-Bus service" link="ref-tutorial-using.html"/>
+      <sub name="Writing a D-Bus service" link="ref-tutorial-providing.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="eggdbus-hierarchy.html"/>
+    <sub name="Index" link="ix01.html"/>
+  </chapters>
+  <functions>
+    <function name="EGG_DBUS_TYPE_INT16" link="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-INT16--CAPS"/>
+    <function name="EGG_DBUS_TYPE_UINT16" link="eggdbus-eggdbusmisctypes.html#EGG-DBUS-TYPE-UINT16--CAPS"/>
+    <function name="EggDBusParamSpecInt16" link="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecInt16"/>
+    <function name="EggDBusParamSpecUInt16" link="eggdbus-eggdbusmisctypes.html#EggDBusParamSpecUInt16"/>
+    <function name="egg_dbus_param_spec_int16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-param-spec-int16"/>
+    <function name="egg_dbus_param_spec_uint16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-param-spec-uint16"/>
+    <function name="EGG_DBUS_VALUE_HOLDS_INT16()" link="eggdbus-eggdbusmisctypes.html#EGG-DBUS-VALUE-HOLDS-INT16--CAPS"/>
+    <function name="EGG_DBUS_VALUE_HOLDS_UINT16()" link="eggdbus-eggdbusmisctypes.html#EGG-DBUS-VALUE-HOLDS-UINT16--CAPS"/>
+    <function name="egg_dbus_value_set_int16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-value-set-int16"/>
+    <function name="egg_dbus_value_get_int16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-value-get-int16"/>
+    <function name="egg_dbus_value_set_uint16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-value-set-uint16"/>
+    <function name="egg_dbus_value_get_uint16 ()" link="eggdbus-eggdbusmisctypes.html#egg-dbus-value-get-uint16"/>
+    <function name="EggDBusObjectPath" link="eggdbus-eggdbusobjectpath.html#EggDBusObjectPath"/>
+    <function name="EggDBusObjectPathArray" link="eggdbus-eggdbusobjectpath.html#EggDBusObjectPathArray"/>
+    <function name="EGG_DBUS_TYPE_OBJECT_PATH" link="eggdbus-eggdbusobjectpath.html#EGG-DBUS-TYPE-OBJECT-PATH--CAPS"/>
+    <function name="EGG_DBUS_TYPE_OBJECT_PATH_ARRAY" link="eggdbus-eggdbusobjectpath.html#EGG-DBUS-TYPE-OBJECT-PATH-ARRAY--CAPS"/>
+    <function name="EggDBusSignature" link="eggdbus-eggdbussignature.html#EggDBusSignature"/>
+    <function name="EggDBusSignatureArray" link="eggdbus-eggdbussignature.html#EggDBusSignatureArray"/>
+    <function name="EGG_DBUS_TYPE_SIGNATURE" link="eggdbus-eggdbussignature.html#EGG-DBUS-TYPE-SIGNATURE--CAPS"/>
+    <function name="EGG_DBUS_TYPE_SIGNATURE_ARRAY" link="eggdbus-eggdbussignature.html#EGG-DBUS-TYPE-SIGNATURE-ARRAY--CAPS"/>
+    <function name="EggDBusArraySeq" link="EggDBusArraySeq.html#EggDBusArraySeq-struct"/>
+    <function name="egg_dbus_array_seq_new ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-new"/>
+    <function name="egg_dbus_array_seq_get_element_size ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-element-size"/>
+    <function name="egg_dbus_array_seq_get_element_type ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-element-type"/>
+    <function name="egg_dbus_array_seq_get_equal_func ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-equal-func"/>
+    <function name="egg_dbus_array_seq_have_copy_func ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-have-copy-func"/>
+    <function name="egg_dbus_array_seq_get_size ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-size"/>
+    <function name="egg_dbus_array_seq_set_size ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-set-size"/>
+    <function name="egg_dbus_array_seq_clear ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-clear"/>
+    <function name="egg_dbus_array_seq_get ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get"/>
+    <function name="egg_dbus_array_seq_get_copy ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-copy"/>
+    <function name="egg_dbus_array_seq_set ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-set"/>
+    <function name="egg_dbus_array_seq_insert ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-insert"/>
+    <function name="egg_dbus_array_seq_add ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-add"/>
+    <function name="egg_dbus_array_seq_remove_at ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-remove-at"/>
+    <function name="egg_dbus_array_seq_remove_range_at ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-remove-range-at"/>
+    <function name="egg_dbus_array_seq_index_of ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-index-of"/>
+    <function name="egg_dbus_array_seq_contains ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-contains"/>
+    <function name="egg_dbus_array_seq_remove ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-remove"/>
+    <function name="egg_dbus_array_seq_add_all ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-add-all"/>
+    <function name="egg_dbus_array_seq_steal_all ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-steal-all"/>
+    <function name="egg_dbus_array_seq_add_fixed ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-add-fixed"/>
+    <function name="egg_dbus_array_seq_add_float ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-add-float"/>
+    <function name="egg_dbus_array_seq_set_fixed ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-set-fixed"/>
+    <function name="egg_dbus_array_seq_set_float ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-set-float"/>
+    <function name="egg_dbus_array_seq_insert_fixed ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-insert-fixed"/>
+    <function name="egg_dbus_array_seq_insert_float ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-insert-float"/>
+    <function name="egg_dbus_array_seq_get_fixed ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-fixed"/>
+    <function name="egg_dbus_array_seq_get_float ()" link="EggDBusArraySeq.html#egg-dbus-array-seq-get-float"/>
+    <function name="EggDBusHashMapForeachFunc ()" link="EggDBusHashMap.html#EggDBusHashMapForeachFunc"/>
+    <function name="EggDBusHashMap" link="EggDBusHashMap.html#EggDBusHashMap-struct"/>
+    <function name="egg_dbus_hash_map_new ()" link="EggDBusHashMap.html#egg-dbus-hash-map-new"/>
+    <function name="egg_dbus_hash_map_new_full ()" link="EggDBusHashMap.html#egg-dbus-hash-map-new-full"/>
+    <function name="egg_dbus_hash_map_get_size ()" link="EggDBusHashMap.html#egg-dbus-hash-map-get-size"/>
+    <function name="egg_dbus_hash_map_get_key_type ()" link="EggDBusHashMap.html#egg-dbus-hash-map-get-key-type"/>
+    <function name="egg_dbus_hash_map_get_value_type ()" link="EggDBusHashMap.html#egg-dbus-hash-map-get-value-type"/>
+    <function name="egg_dbus_hash_map_clear ()" link="EggDBusHashMap.html#egg-dbus-hash-map-clear"/>
+    <function name="egg_dbus_hash_map_insert ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert"/>
+    <function name="egg_dbus_hash_map_contains ()" link="EggDBusHashMap.html#egg-dbus-hash-map-contains"/>
+    <function name="egg_dbus_hash_map_lookup ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup"/>
+    <function name="egg_dbus_hash_map_lookup_copy ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-copy"/>
+    <function name="egg_dbus_hash_map_remove ()" link="EggDBusHashMap.html#egg-dbus-hash-map-remove"/>
+    <function name="egg_dbus_hash_map_foreach ()" link="EggDBusHashMap.html#egg-dbus-hash-map-foreach"/>
+    <function name="egg_dbus_hash_map_contains_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-contains-fixed"/>
+    <function name="egg_dbus_hash_map_contains_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-contains-float"/>
+    <function name="egg_dbus_hash_map_lookup_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed"/>
+    <function name="egg_dbus_hash_map_lookup_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float"/>
+    <function name="egg_dbus_hash_map_lookup_fixed_copy ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-copy"/>
+    <function name="egg_dbus_hash_map_lookup_float_copy ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-copy"/>
+    <function name="egg_dbus_hash_map_lookup_ptr_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-ptr-fixed"/>
+    <function name="egg_dbus_hash_map_lookup_ptr_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-ptr-float"/>
+    <function name="egg_dbus_hash_map_lookup_fixed_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-fixed"/>
+    <function name="egg_dbus_hash_map_lookup_fixed_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-fixed-float"/>
+    <function name="egg_dbus_hash_map_lookup_float_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-fixed"/>
+    <function name="egg_dbus_hash_map_lookup_float_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-lookup-float-float"/>
+    <function name="egg_dbus_hash_map_remove_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-remove-fixed"/>
+    <function name="egg_dbus_hash_map_remove_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-remove-float"/>
+    <function name="egg_dbus_hash_map_insert_ptr_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-ptr-fixed"/>
+    <function name="egg_dbus_hash_map_insert_ptr_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-ptr-float"/>
+    <function name="egg_dbus_hash_map_insert_fixed_ptr ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-ptr"/>
+    <function name="egg_dbus_hash_map_insert_fixed_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-fixed"/>
+    <function name="egg_dbus_hash_map_insert_fixed_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-fixed-float"/>
+    <function name="egg_dbus_hash_map_insert_float_ptr ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-ptr"/>
+    <function name="egg_dbus_hash_map_insert_float_fixed ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-fixed"/>
+    <function name="egg_dbus_hash_map_insert_float_float ()" link="EggDBusHashMap.html#egg-dbus-hash-map-insert-float-float"/>
+    <function name="EggDBusVariant" link="EggDBusVariant.html#EggDBusVariant-struct"/>
+    <function name="egg_dbus_variant_print ()" link="EggDBusVariant.html#egg-dbus-variant-print"/>
+    <function name="egg_dbus_variant_new ()" link="EggDBusVariant.html#egg-dbus-variant-new"/>
+    <function name="egg_dbus_variant_new_for_gvalue ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-gvalue"/>
+    <function name="egg_dbus_variant_get_gvalue ()" link="EggDBusVariant.html#egg-dbus-variant-get-gvalue"/>
+    <function name="egg_dbus_variant_get_variant_signature ()" link="EggDBusVariant.html#egg-dbus-variant-get-variant-signature"/>
+    <function name="egg_dbus_variant_new_for_string ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-string"/>
+    <function name="egg_dbus_variant_new_for_object_path ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-object-path"/>
+    <function name="egg_dbus_variant_new_for_signature ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-signature"/>
+    <function name="egg_dbus_variant_new_for_string_array ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-string-array"/>
+    <function name="egg_dbus_variant_new_for_object_path_array ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-object-path-array"/>
+    <function name="egg_dbus_variant_new_for_signature_array ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-signature-array"/>
+    <function name="egg_dbus_variant_new_for_byte ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-byte"/>
+    <function name="egg_dbus_variant_new_for_int16 ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-int16"/>
+    <function name="egg_dbus_variant_new_for_uint16 ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-uint16"/>
+    <function name="egg_dbus_variant_new_for_int ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-int"/>
+    <function name="egg_dbus_variant_new_for_uint ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-uint"/>
+    <function name="egg_dbus_variant_new_for_int64 ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-int64"/>
+    <function name="egg_dbus_variant_new_for_uint64 ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-uint64"/>
+    <function name="egg_dbus_variant_new_for_boolean ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-boolean"/>
+    <function name="egg_dbus_variant_new_for_double ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-double"/>
+    <function name="egg_dbus_variant_new_for_seq ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-seq"/>
+    <function name="egg_dbus_variant_new_for_map ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-map"/>
+    <function name="egg_dbus_variant_new_for_structure ()" link="EggDBusVariant.html#egg-dbus-variant-new-for-structure"/>
+    <function name="egg_dbus_variant_set_string ()" link="EggDBusVariant.html#egg-dbus-variant-set-string"/>
+    <function name="egg_dbus_variant_set_object_path ()" link="EggDBusVariant.html#egg-dbus-variant-set-object-path"/>
+    <function name="egg_dbus_variant_set_signature ()" link="EggDBusVariant.html#egg-dbus-variant-set-signature"/>
+    <function name="egg_dbus_variant_set_string_array ()" link="EggDBusVariant.html#egg-dbus-variant-set-string-array"/>
+    <function name="egg_dbus_variant_set_object_path_array ()" link="EggDBusVariant.html#egg-dbus-variant-set-object-path-array"/>
+    <function name="egg_dbus_variant_set_signature_array ()" link="EggDBusVariant.html#egg-dbus-variant-set-signature-array"/>
+    <function name="egg_dbus_variant_set_byte ()" link="EggDBusVariant.html#egg-dbus-variant-set-byte"/>
+    <function name="egg_dbus_variant_set_int16 ()" link="EggDBusVariant.html#egg-dbus-variant-set-int16"/>
+    <function name="egg_dbus_variant_set_uint16 ()" link="EggDBusVariant.html#egg-dbus-variant-set-uint16"/>
+    <function name="egg_dbus_variant_set_int ()" link="EggDBusVariant.html#egg-dbus-variant-set-int"/>
+    <function name="egg_dbus_variant_set_uint ()" link="EggDBusVariant.html#egg-dbus-variant-set-uint"/>
+    <function name="egg_dbus_variant_set_int64 ()" link="EggDBusVariant.html#egg-dbus-variant-set-int64"/>
+    <function name="egg_dbus_variant_set_uint64 ()" link="EggDBusVariant.html#egg-dbus-variant-set-uint64"/>
+    <function name="egg_dbus_variant_set_boolean ()" link="EggDBusVariant.html#egg-dbus-variant-set-boolean"/>
+    <function name="egg_dbus_variant_set_double ()" link="EggDBusVariant.html#egg-dbus-variant-set-double"/>
+    <function name="egg_dbus_variant_set_seq ()" link="EggDBusVariant.html#egg-dbus-variant-set-seq"/>
+    <function name="egg_dbus_variant_set_map ()" link="EggDBusVariant.html#egg-dbus-variant-set-map"/>
+    <function name="egg_dbus_variant_set_structure ()" link="EggDBusVariant.html#egg-dbus-variant-set-structure"/>
+    <function name="egg_dbus_variant_get_string ()" link="EggDBusVariant.html#egg-dbus-variant-get-string"/>
+    <function name="egg_dbus_variant_get_object_path ()" link="EggDBusVariant.html#egg-dbus-variant-get-object-path"/>
+    <function name="egg_dbus_variant_get_signature ()" link="EggDBusVariant.html#egg-dbus-variant-get-signature"/>
+    <function name="egg_dbus_variant_get_string_array ()" link="EggDBusVariant.html#egg-dbus-variant-get-string-array"/>
+    <function name="egg_dbus_variant_get_object_path_array ()" link="EggDBusVariant.html#egg-dbus-variant-get-object-path-array"/>
+    <function name="egg_dbus_variant_get_signature_array ()" link="EggDBusVariant.html#egg-dbus-variant-get-signature-array"/>
+    <function name="egg_dbus_variant_get_byte ()" link="EggDBusVariant.html#egg-dbus-variant-get-byte"/>
+    <function name="egg_dbus_variant_get_int16 ()" link="EggDBusVariant.html#egg-dbus-variant-get-int16"/>
+    <function name="egg_dbus_variant_get_uint16 ()" link="EggDBusVariant.html#egg-dbus-variant-get-uint16"/>
+    <function name="egg_dbus_variant_get_int ()" link="EggDBusVariant.html#egg-dbus-variant-get-int"/>
+    <function name="egg_dbus_variant_get_uint ()" link="EggDBusVariant.html#egg-dbus-variant-get-uint"/>
+    <function name="egg_dbus_variant_get_int64 ()" link="EggDBusVariant.html#egg-dbus-variant-get-int64"/>
+    <function name="egg_dbus_variant_get_uint64 ()" link="EggDBusVariant.html#egg-dbus-variant-get-uint64"/>
+    <function name="egg_dbus_variant_get_boolean ()" link="EggDBusVariant.html#egg-dbus-variant-get-boolean"/>
+    <function name="egg_dbus_variant_get_double ()" link="EggDBusVariant.html#egg-dbus-variant-get-double"/>
+    <function name="egg_dbus_variant_get_seq ()" link="EggDBusVariant.html#egg-dbus-variant-get-seq"/>
+    <function name="egg_dbus_variant_get_map ()" link="EggDBusVariant.html#egg-dbus-variant-get-map"/>
+    <function name="egg_dbus_variant_get_structure ()" link="EggDBusVariant.html#egg-dbus-variant-get-structure"/>
+    <function name="egg_dbus_variant_is_unset ()" link="EggDBusVariant.html#egg-dbus-variant-is-unset"/>
+    <function name="egg_dbus_variant_is_string ()" link="EggDBusVariant.html#egg-dbus-variant-is-string"/>
+    <function name="egg_dbus_variant_is_object_path ()" link="EggDBusVariant.html#egg-dbus-variant-is-object-path"/>
+    <function name="egg_dbus_variant_is_signature ()" link="EggDBusVariant.html#egg-dbus-variant-is-signature"/>
+    <function name="egg_dbus_variant_is_string_array ()" link="EggDBusVariant.html#egg-dbus-variant-is-string-array"/>
+    <function name="egg_dbus_variant_is_object_path_array ()" link="EggDBusVariant.html#egg-dbus-variant-is-object-path-array"/>
+    <function name="egg_dbus_variant_is_signature_array ()" link="EggDBusVariant.html#egg-dbus-variant-is-signature-array"/>
+    <function name="egg_dbus_variant_is_byte ()" link="EggDBusVariant.html#egg-dbus-variant-is-byte"/>
+    <function name="egg_dbus_variant_is_int16 ()" link="EggDBusVariant.html#egg-dbus-variant-is-int16"/>
+    <function name="egg_dbus_variant_is_uint16 ()" link="EggDBusVariant.html#egg-dbus-variant-is-uint16"/>
+    <function name="egg_dbus_variant_is_int ()" link="EggDBusVariant.html#egg-dbus-variant-is-int"/>
+    <function name="egg_dbus_variant_is_uint ()" link="EggDBusVariant.html#egg-dbus-variant-is-uint"/>
+    <function name="egg_dbus_variant_is_int64 ()" link="EggDBusVariant.html#egg-dbus-variant-is-int64"/>
+    <function name="egg_dbus_variant_is_uint64 ()" link="EggDBusVariant.html#egg-dbus-variant-is-uint64"/>
+    <function name="egg_dbus_variant_is_boolean ()" link="EggDBusVariant.html#egg-dbus-variant-is-boolean"/>
+    <function name="egg_dbus_variant_is_double ()" link="EggDBusVariant.html#egg-dbus-variant-is-double"/>
+    <function name="egg_dbus_variant_is_seq ()" link="EggDBusVariant.html#egg-dbus-variant-is-seq"/>
+    <function name="egg_dbus_variant_is_map ()" link="EggDBusVariant.html#egg-dbus-variant-is-map"/>
+    <function name="egg_dbus_variant_is_structure ()" link="EggDBusVariant.html#egg-dbus-variant-is-structure"/>
+    <function name="The &quot;signature&quot; property" link="EggDBusVariant.html#EggDBusVariant--signature"/>
+    <function name="EggDBusStructure" link="EggDBusStructure.html#EggDBusStructure-struct"/>
+    <function name="EGG_DBUS_STRUCTURE_TYPE_CHECK_INSTANCE_CAST()" link="EggDBusStructure.html#EGG-DBUS-STRUCTURE-TYPE-CHECK-INSTANCE-CAST--CAPS"/>
+    <function name="EGG_DBUS_STRUCTURE_TYPE_CHECK_INSTANCE_TYPE()" link="EggDBusStructure.html#EGG-DBUS-STRUCTURE-TYPE-CHECK-INSTANCE-TYPE--CAPS"/>
+    <function name="egg_dbus_structure_new ()" link="EggDBusStructure.html#egg-dbus-structure-new"/>
+    <function name="egg_dbus_structure_get_num_elements ()" link="EggDBusStructure.html#egg-dbus-structure-get-num-elements"/>
+    <function name="egg_dbus_structure_get_element ()" link="EggDBusStructure.html#egg-dbus-structure-get-element"/>
+    <function name="egg_dbus_structure_get_element_valist ()" link="EggDBusStructure.html#egg-dbus-structure-get-element-valist"/>
+    <function name="egg_dbus_structure_get_element_as_gvalue ()" link="EggDBusStructure.html#egg-dbus-structure-get-element-as-gvalue"/>
+    <function name="egg_dbus_structure_set_element ()" link="EggDBusStructure.html#egg-dbus-structure-set-element"/>
+    <function name="egg_dbus_structure_set_element_valist ()" link="EggDBusStructure.html#egg-dbus-structure-set-element-valist"/>
+    <function name="egg_dbus_structure_set_element_as_gvalue ()" link="EggDBusStructure.html#egg-dbus-structure-set-element-as-gvalue"/>
+    <function name="egg_dbus_structure_get_signature ()" link="EggDBusStructure.html#egg-dbus-structure-get-signature"/>
+    <function name="egg_dbus_structure_get_signature_for_element ()" link="EggDBusStructure.html#egg-dbus-structure-get-signature-for-element"/>
+    <function name="egg_dbus_structure_print ()" link="EggDBusStructure.html#egg-dbus-structure-print"/>
+    <function name="The &quot;elemement-signatures&quot; property" link="EggDBusStructure.html#EggDBusStructure--elemement-signatures"/>
+    <function name="The &quot;elements&quot; property" link="EggDBusStructure.html#EggDBusStructure--elements"/>
+    <function name="The &quot;num-elemements&quot; property" link="EggDBusStructure.html#EggDBusStructure--num-elemements"/>
+    <function name="The &quot;signature&quot; property" link="EggDBusStructure.html#EggDBusStructure--signature"/>
+    <function name="EggDBusConnection" link="EggDBusConnection.html#EggDBusConnection-struct"/>
+    <function name="enum EggDBusCallFlags" link="EggDBusConnection.html#EggDBusCallFlags"/>
+    <function name="enum EggDBusBusType" link="EggDBusConnection.html#EggDBusBusType"/>
+    <function name="egg_dbus_connection_get_for_bus ()" link="EggDBusConnection.html#egg-dbus-connection-get-for-bus"/>
+    <function name="egg_dbus_connection_get_object_proxy ()" link="EggDBusConnection.html#egg-dbus-connection-get-object-proxy"/>
+    <function name="egg_dbus_connection_get_bus ()" link="EggDBusConnection.html#egg-dbus-connection-get-bus"/>
+    <function name="egg_dbus_connection_get_unique_name ()" link="EggDBusConnection.html#egg-dbus-connection-get-unique-name"/>
+    <function name="egg_dbus_connection_register_interface ()" link="EggDBusConnection.html#egg-dbus-connection-register-interface"/>
+    <function name="egg_dbus_connection_register_interface_valist ()" link="EggDBusConnection.html#egg-dbus-connection-register-interface-valist"/>
+    <function name="egg_dbus_connection_unregister_interface ()" link="EggDBusConnection.html#egg-dbus-connection-unregister-interface"/>
+    <function name="egg_dbus_connection_unregister_interface_valist ()" link="EggDBusConnection.html#egg-dbus-connection-unregister-interface-valist"/>
+    <function name="egg_dbus_connection_lookup_interface ()" link="EggDBusConnection.html#egg-dbus-connection-lookup-interface"/>
+    <function name="egg_dbus_connection_new_message_for_signal ()" link="EggDBusConnection.html#egg-dbus-connection-new-message-for-signal"/>
+    <function name="egg_dbus_connection_new_message_for_method_call ()" link="EggDBusConnection.html#egg-dbus-connection-new-message-for-method-call"/>
+    <function name="egg_dbus_connection_send_message ()" link="EggDBusConnection.html#egg-dbus-connection-send-message"/>
+    <function name="egg_dbus_connection_send_message_with_reply ()" link="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply"/>
+    <function name="egg_dbus_connection_send_message_with_reply_finish ()" link="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply-finish"/>
+    <function name="egg_dbus_connection_send_message_with_reply_sync ()" link="EggDBusConnection.html#egg-dbus-connection-send-message-with-reply-sync"/>
+    <function name="egg_dbus_connection_pending_call_cancel ()" link="EggDBusConnection.html#egg-dbus-connection-pending-call-cancel"/>
+    <function name="egg_dbus_connection_pending_call_block ()" link="EggDBusConnection.html#egg-dbus-connection-pending-call-block"/>
+    <function name="The &quot;bus-type&quot; property" link="EggDBusConnection.html#EggDBusConnection--bus-type"/>
+    <function name="The &quot;unique-name&quot; property" link="EggDBusConnection.html#EggDBusConnection--unique-name"/>
+    <function name="EggDBusObjectProxy" link="EggDBusObjectProxy.html#EggDBusObjectProxy-struct"/>
+    <function name="egg_dbus_object_proxy_get_connection ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-connection"/>
+    <function name="egg_dbus_object_proxy_get_name ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-name"/>
+    <function name="egg_dbus_object_proxy_get_object_path ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-object-path"/>
+    <function name="egg_dbus_object_proxy_get_name_owner ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-name-owner"/>
+    <function name="egg_dbus_object_proxy_introspect ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect"/>
+    <function name="egg_dbus_object_proxy_introspect_finish ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect-finish"/>
+    <function name="egg_dbus_object_proxy_introspect_sync ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect-sync"/>
+    <function name="egg_dbus_object_proxy_invalidate_properties ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-invalidate-properties"/>
+    <function name="egg_dbus_object_proxy_query_interface ()" link="EggDBusObjectProxy.html#egg-dbus-object-proxy-query-interface"/>
+    <function name="The &quot;connection&quot; property" link="EggDBusObjectProxy.html#EggDBusObjectProxy--connection"/>
+    <function name="The &quot;name&quot; property" link="EggDBusObjectProxy.html#EggDBusObjectProxy--name"/>
+    <function name="The &quot;name-owner&quot; property" link="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner"/>
+    <function name="The &quot;object-path&quot; property" link="EggDBusObjectProxy.html#EggDBusObjectProxy--object-path"/>
+    <function name="EggDBusInterfaceProxy" link="EggDBusInterfaceProxy.html#EggDBusInterfaceProxy-struct"/>
+    <function name="egg_dbus_interface_proxy_get_object_proxy ()" link="EggDBusInterfaceProxy.html#egg-dbus-interface-proxy-get-object-proxy"/>
+    <function name="egg_dbus_interface_proxy_get_interface_iface ()" link="EggDBusInterfaceProxy.html#egg-dbus-interface-proxy-get-interface-iface"/>
+    <function name="EggDBusMethodInvocation" link="EggDBusMethodInvocation.html#EggDBusMethodInvocation-struct"/>
+    <function name="egg_dbus_method_invocation_new ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-new"/>
+    <function name="egg_dbus_method_invocation_get_source_tag ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-source-tag"/>
+    <function name="egg_dbus_method_invocation_create_reply_message ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-create-reply-message"/>
+    <function name="egg_dbus_method_invocation_get_caller ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-caller"/>
+    <function name="egg_dbus_method_invocation_get_connection ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-connection"/>
+    <function name="egg_dbus_method_invocation_add_destroy_notify ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-add-destroy-notify"/>
+    <function name="egg_dbus_method_invocation_return_error ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error"/>
+    <function name="egg_dbus_method_invocation_return_error_valist ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error-valist"/>
+    <function name="egg_dbus_method_invocation_return_error_literal ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error-literal"/>
+    <function name="egg_dbus_method_invocation_return_gerror ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-gerror"/>
+    <function name="egg_dbus_method_invocation_return_dbus_error ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error"/>
+    <function name="egg_dbus_method_invocation_return_dbus_error_valist ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error-valist"/>
+    <function name="egg_dbus_method_invocation_return_dbus_error_literal ()" link="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error-literal"/>
+    <function name="EGG_DBUS_ERROR" link="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR--CAPS"/>
+    <function name="egg_dbus_error_quark ()" link="eggdbus-eggdbuserror.html#egg-dbus-error-quark"/>
+    <function name="egg_dbus_error_get_remote_exception ()" link="eggdbus-eggdbuserror.html#egg-dbus-error-get-remote-exception"/>
+    <function name="enum EggDBusError" link="eggdbus-eggdbuserror.html#EggDBusError"/>
+    <function name="EggDBusBusNameTracker" link="EggDBusBusNameTracker.html#EggDBusBusNameTracker-struct"/>
+    <function name="egg_dbus_bus_name_tracker_new ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-new"/>
+    <function name="egg_dbus_bus_name_tracker_watch_bus_name ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-watch-bus-name"/>
+    <function name="egg_dbus_bus_name_tracker_stop_watching_bus_name ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-stop-watching-bus-name"/>
+    <function name="egg_dbus_bus_name_tracker_has_info_for_bus_name ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-has-info-for-bus-name"/>
+    <function name="egg_dbus_bus_name_tracker_get_owner_for_bus_name ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-get-owner-for-bus-name"/>
+    <function name="egg_dbus_bus_name_tracker_get_known_well_known_bus_names_for_unique_bus_name ()" link="EggDBusBusNameTracker.html#egg-dbus-bus-name-tracker-get-known-well-known-bus-names-for-unique-bus-name"/>
+    <function name="The &quot;bus&quot; property" link="EggDBusBusNameTracker.html#EggDBusBusNameTracker--bus"/>
+    <function name="The &quot;bus-name-gained-owner&quot; signal" link="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-gained-owner"/>
+    <function name="The &quot;bus-name-has-info&quot; signal" link="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-has-info"/>
+    <function name="The &quot;bus-name-lost-owner&quot; signal" link="EggDBusBusNameTracker.html#EggDBusBusNameTracker-bus-name-lost-owner"/>
+    <function name="EggDBusMessage" link="EggDBusMessage.html#EggDBusMessage-struct"/>
+    <function name="enum EggDBusMessageType" link="EggDBusMessage.html#EggDBusMessageType"/>
+    <function name="egg_dbus_message_new_for_method_reply ()" link="EggDBusMessage.html#egg-dbus-message-new-for-method-reply"/>
+    <function name="egg_dbus_message_new_for_method_error_reply ()" link="EggDBusMessage.html#egg-dbus-message-new-for-method-error-reply"/>
+    <function name="egg_dbus_message_get_connection ()" link="EggDBusMessage.html#egg-dbus-message-get-connection"/>
+    <function name="egg_dbus_message_get_message_type ()" link="EggDBusMessage.html#egg-dbus-message-get-message-type"/>
+    <function name="egg_dbus_message_get_object_path ()" link="EggDBusMessage.html#egg-dbus-message-get-object-path"/>
+    <function name="egg_dbus_message_get_interface_name ()" link="EggDBusMessage.html#egg-dbus-message-get-interface-name"/>
+    <function name="egg_dbus_message_get_method_name ()" link="EggDBusMessage.html#egg-dbus-message-get-method-name"/>
+    <function name="egg_dbus_message_get_signal_name ()" link="EggDBusMessage.html#egg-dbus-message-get-signal-name"/>
+    <function name="egg_dbus_message_get_in_reply_to ()" link="EggDBusMessage.html#egg-dbus-message-get-in-reply-to"/>
+    <function name="egg_dbus_message_get_sender ()" link="EggDBusMessage.html#egg-dbus-message-get-sender"/>
+    <function name="egg_dbus_message_get_destination ()" link="EggDBusMessage.html#egg-dbus-message-get-destination"/>
+    <function name="egg_dbus_message_get_signature ()" link="EggDBusMessage.html#egg-dbus-message-get-signature"/>
+    <function name="egg_dbus_message_append_string ()" link="EggDBusMessage.html#egg-dbus-message-append-string"/>
+    <function name="egg_dbus_message_append_string_array ()" link="EggDBusMessage.html#egg-dbus-message-append-string-array"/>
+    <function name="egg_dbus_message_append_object_path ()" link="EggDBusMessage.html#egg-dbus-message-append-object-path"/>
+    <function name="egg_dbus_message_append_object_path_array ()" link="EggDBusMessage.html#egg-dbus-message-append-object-path-array"/>
+    <function name="egg_dbus_message_append_signature ()" link="EggDBusMessage.html#egg-dbus-message-append-signature"/>
+    <function name="egg_dbus_message_append_signature_array ()" link="EggDBusMessage.html#egg-dbus-message-append-signature-array"/>
+    <function name="egg_dbus_message_append_byte ()" link="EggDBusMessage.html#egg-dbus-message-append-byte"/>
+    <function name="egg_dbus_message_append_int16 ()" link="EggDBusMessage.html#egg-dbus-message-append-int16"/>
+    <function name="egg_dbus_message_append_uint16 ()" link="EggDBusMessage.html#egg-dbus-message-append-uint16"/>
+    <function name="egg_dbus_message_append_int ()" link="EggDBusMessage.html#egg-dbus-message-append-int"/>
+    <function name="egg_dbus_message_append_uint ()" link="EggDBusMessage.html#egg-dbus-message-append-uint"/>
+    <function name="egg_dbus_message_append_int64 ()" link="EggDBusMessage.html#egg-dbus-message-append-int64"/>
+    <function name="egg_dbus_message_append_uint64 ()" link="EggDBusMessage.html#egg-dbus-message-append-uint64"/>
+    <function name="egg_dbus_message_append_boolean ()" link="EggDBusMessage.html#egg-dbus-message-append-boolean"/>
+    <function name="egg_dbus_message_append_double ()" link="EggDBusMessage.html#egg-dbus-message-append-double"/>
+    <function name="egg_dbus_message_append_seq ()" link="EggDBusMessage.html#egg-dbus-message-append-seq"/>
+    <function name="egg_dbus_message_append_map ()" link="EggDBusMessage.html#egg-dbus-message-append-map"/>
+    <function name="egg_dbus_message_append_structure ()" link="EggDBusMessage.html#egg-dbus-message-append-structure"/>
+    <function name="egg_dbus_message_append_variant ()" link="EggDBusMessage.html#egg-dbus-message-append-variant"/>
+    <function name="egg_dbus_message_append_gvalue ()" link="EggDBusMessage.html#egg-dbus-message-append-gvalue"/>
+    <function name="egg_dbus_message_extract_string ()" link="EggDBusMessage.html#egg-dbus-message-extract-string"/>
+    <function name="egg_dbus_message_extract_string_array ()" link="EggDBusMessage.html#egg-dbus-message-extract-string-array"/>
+    <function name="egg_dbus_message_extract_object_path ()" link="EggDBusMessage.html#egg-dbus-message-extract-object-path"/>
+    <function name="egg_dbus_message_extract_object_path_array ()" link="EggDBusMessage.html#egg-dbus-message-extract-object-path-array"/>
+    <function name="egg_dbus_message_extract_signature ()" link="EggDBusMessage.html#egg-dbus-message-extract-signature"/>
+    <function name="egg_dbus_message_extract_signature_array ()" link="EggDBusMessage.html#egg-dbus-message-extract-signature-array"/>
+    <function name="egg_dbus_message_extract_byte ()" link="EggDBusMessage.html#egg-dbus-message-extract-byte"/>
+    <function name="egg_dbus_message_extract_int16 ()" link="EggDBusMessage.html#egg-dbus-message-extract-int16"/>
+    <function name="egg_dbus_message_extract_uint16 ()" link="EggDBusMessage.html#egg-dbus-message-extract-uint16"/>
+    <function name="egg_dbus_message_extract_int ()" link="EggDBusMessage.html#egg-dbus-message-extract-int"/>
+    <function name="egg_dbus_message_extract_uint ()" link="EggDBusMessage.html#egg-dbus-message-extract-uint"/>
+    <function name="egg_dbus_message_extract_int64 ()" link="EggDBusMessage.html#egg-dbus-message-extract-int64"/>
+    <function name="egg_dbus_message_extract_uint64 ()" link="EggDBusMessage.html#egg-dbus-message-extract-uint64"/>
+    <function name="egg_dbus_message_extract_boolean ()" link="EggDBusMessage.html#egg-dbus-message-extract-boolean"/>
+    <function name="egg_dbus_message_extract_double ()" link="EggDBusMessage.html#egg-dbus-message-extract-double"/>
+    <function name="egg_dbus_message_extract_seq ()" link="EggDBusMessage.html#egg-dbus-message-extract-seq"/>
+    <function name="egg_dbus_message_extract_map ()" link="EggDBusMessage.html#egg-dbus-message-extract-map"/>
+    <function name="egg_dbus_message_extract_structure ()" link="EggDBusMessage.html#egg-dbus-message-extract-structure"/>
+    <function name="egg_dbus_message_extract_variant ()" link="EggDBusMessage.html#egg-dbus-message-extract-variant"/>
+    <function name="egg_dbus_message_extract_gvalue ()" link="EggDBusMessage.html#egg-dbus-message-extract-gvalue"/>
+    <function name="The &quot;connection&quot; property" link="EggDBusMessage.html#EggDBusMessage--connection"/>
+    <function name="The &quot;destination&quot; property" link="EggDBusMessage.html#EggDBusMessage--destination"/>
+    <function name="The &quot;error-message&quot; property" link="EggDBusMessage.html#EggDBusMessage--error-message"/>
+    <function name="The &quot;error-name&quot; property" link="EggDBusMessage.html#EggDBusMessage--error-name"/>
+    <function name="The &quot;in-reply-to&quot; property" link="EggDBusMessage.html#EggDBusMessage--in-reply-to"/>
+    <function name="The &quot;interface-name&quot; property" link="EggDBusMessage.html#EggDBusMessage--interface-name"/>
+    <function name="The &quot;message-type&quot; property" link="EggDBusMessage.html#EggDBusMessage--message-type"/>
+    <function name="The &quot;method-name&quot; property" link="EggDBusMessage.html#EggDBusMessage--method-name"/>
+    <function name="The &quot;object-path&quot; property" link="EggDBusMessage.html#EggDBusMessage--object-path"/>
+    <function name="The &quot;sender&quot; property" link="EggDBusMessage.html#EggDBusMessage--sender"/>
+    <function name="The &quot;signal-name&quot; property" link="EggDBusMessage.html#EggDBusMessage--signal-name"/>
+    <function name="The &quot;signature&quot; property" link="EggDBusMessage.html#EggDBusMessage--signature"/>
+    <function name="EggDBusInterface" link="eggdbus-eggdbusinterface.html#EggDBusInterface-struct"/>
+    <function name="EggDBusInterfaceIface" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceIface"/>
+    <function name="enum EggDBusInterfacePropertyInfoFlags" link="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfoFlags"/>
+    <function name="EggDBusInterfaceAnnotationInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo"/>
+    <function name="EggDBusInterfaceArgInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo"/>
+    <function name="EggDBusInterfaceMethodInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceMethodInfo"/>
+    <function name="EggDBusInterfaceSignalInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo"/>
+    <function name="EggDBusInterfacePropertyInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo"/>
+    <function name="EggDBusInterfaceInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo"/>
+    <function name="EggDBusInterfaceNodeInfo" link="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo"/>
+    <function name="egg_dbus_interface_annotation_info_lookup ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-annotation-info-lookup"/>
+    <function name="egg_dbus_interface_info_lookup_signal_for_g_name ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-signal-for-g-name"/>
+    <function name="egg_dbus_interface_info_lookup_property_for_name ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-property-for-name"/>
+    <function name="egg_dbus_interface_info_lookup_property_for_g_name ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-property-for-g-name"/>
+    <function name="egg_dbus_interface_new_node_info_from_xml ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-new-node-info-from-xml"/>
+    <function name="egg_dbus_interface_node_info_free ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-free"/>
+    <function name="egg_dbus_interface_info_to_xml ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-to-xml"/>
+    <function name="egg_dbus_interface_node_info_to_xml ()" link="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-to-xml"/>
+    <function name="egg_dbus_bindings_get_error_domain_types ()" link="eggdbus-eggdbusinterface.html#egg-dbus-bindings-get-error-domain-types"/>
+    <function name="EggDBusBus" link="eggdbus-eggdbusbus.html#EggDBusBus-struct"/>
+    <function name="EggDBusBusIface" link="eggdbus-eggdbusbus.html#EggDBusBusIface"/>
+    <function name="EGG_DBUS_QUERY_INTERFACE_BUS()" link="eggdbus-eggdbusbus.html#EGG-DBUS-QUERY-INTERFACE-BUS--CAPS"/>
+    <function name="enum EggDBusRequestNameFlags" link="eggdbus-eggdbusbus.html#EggDBusRequestNameFlags"/>
+    <function name="enum EggDBusRequestNameReply" link="eggdbus-eggdbusbus.html#EggDBusRequestNameReply"/>
+    <function name="enum EggDBusReleaseNameReply" link="eggdbus-eggdbusbus.html#EggDBusReleaseNameReply"/>
+    <function name="enum EggDBusStartServiceByNameReply" link="eggdbus-eggdbusbus.html#EggDBusStartServiceByNameReply"/>
+    <function name="egg_dbus_bus_hello_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-hello-sync"/>
+    <function name="egg_dbus_bus_request_name_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-request-name-sync"/>
+    <function name="egg_dbus_bus_release_name_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-release-name-sync"/>
+    <function name="egg_dbus_bus_start_service_by_name_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-start-service-by-name-sync"/>
+    <function name="egg_dbus_bus_update_activation_environment_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-update-activation-environment-sync"/>
+    <function name="egg_dbus_bus_name_has_owner_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-name-has-owner-sync"/>
+    <function name="egg_dbus_bus_list_names_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-names-sync"/>
+    <function name="egg_dbus_bus_list_activatable_names_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-activatable-names-sync"/>
+    <function name="egg_dbus_bus_add_match_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-add-match-sync"/>
+    <function name="egg_dbus_bus_remove_match_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-remove-match-sync"/>
+    <function name="egg_dbus_bus_get_name_owner_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-name-owner-sync"/>
+    <function name="egg_dbus_bus_list_queued_owners_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-queued-owners-sync"/>
+    <function name="egg_dbus_bus_get_connection_unix_user_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-user-sync"/>
+    <function name="egg_dbus_bus_get_connection_unix_process_id_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-process-id-sync"/>
+    <function name="egg_dbus_bus_get_adt_audit_session_data_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-adt-audit-session-data-sync"/>
+    <function name="egg_dbus_bus_get_connection_se_linux_security_context_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-se-linux-security-context-sync"/>
+    <function name="egg_dbus_bus_reload_config_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-reload-config-sync"/>
+    <function name="egg_dbus_bus_get_id_sync ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-id-sync"/>
+    <function name="egg_dbus_bus_hello ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-hello"/>
+    <function name="egg_dbus_bus_hello_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-hello-finish"/>
+    <function name="egg_dbus_bus_request_name ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-request-name"/>
+    <function name="egg_dbus_bus_request_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-request-name-finish"/>
+    <function name="egg_dbus_bus_release_name ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-release-name"/>
+    <function name="egg_dbus_bus_release_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-release-name-finish"/>
+    <function name="egg_dbus_bus_start_service_by_name ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-start-service-by-name"/>
+    <function name="egg_dbus_bus_start_service_by_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-start-service-by-name-finish"/>
+    <function name="egg_dbus_bus_update_activation_environment ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-update-activation-environment"/>
+    <function name="egg_dbus_bus_update_activation_environment_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-update-activation-environment-finish"/>
+    <function name="egg_dbus_bus_name_has_owner ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-name-has-owner"/>
+    <function name="egg_dbus_bus_name_has_owner_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-name-has-owner-finish"/>
+    <function name="egg_dbus_bus_list_names ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-names"/>
+    <function name="egg_dbus_bus_list_names_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-names-finish"/>
+    <function name="egg_dbus_bus_list_activatable_names ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-activatable-names"/>
+    <function name="egg_dbus_bus_list_activatable_names_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-activatable-names-finish"/>
+    <function name="egg_dbus_bus_add_match ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-add-match"/>
+    <function name="egg_dbus_bus_add_match_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-add-match-finish"/>
+    <function name="egg_dbus_bus_remove_match ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-remove-match"/>
+    <function name="egg_dbus_bus_remove_match_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-remove-match-finish"/>
+    <function name="egg_dbus_bus_get_name_owner ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-name-owner"/>
+    <function name="egg_dbus_bus_get_name_owner_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-name-owner-finish"/>
+    <function name="egg_dbus_bus_list_queued_owners ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-queued-owners"/>
+    <function name="egg_dbus_bus_list_queued_owners_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-list-queued-owners-finish"/>
+    <function name="egg_dbus_bus_get_connection_unix_user ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-user"/>
+    <function name="egg_dbus_bus_get_connection_unix_user_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-user-finish"/>
+    <function name="egg_dbus_bus_get_connection_unix_process_id ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-process-id"/>
+    <function name="egg_dbus_bus_get_connection_unix_process_id_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-unix-process-id-finish"/>
+    <function name="egg_dbus_bus_get_adt_audit_session_data ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-adt-audit-session-data"/>
+    <function name="egg_dbus_bus_get_adt_audit_session_data_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-adt-audit-session-data-finish"/>
+    <function name="egg_dbus_bus_get_connection_se_linux_security_context ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-se-linux-security-context"/>
+    <function name="egg_dbus_bus_get_connection_se_linux_security_context_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-connection-se-linux-security-context-finish"/>
+    <function name="egg_dbus_bus_reload_config ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-reload-config"/>
+    <function name="egg_dbus_bus_reload_config_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-reload-config-finish"/>
+    <function name="egg_dbus_bus_get_id ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-id"/>
+    <function name="egg_dbus_bus_get_id_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-get-id-finish"/>
+    <function name="egg_dbus_bus_handle_hello_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-hello-finish"/>
+    <function name="egg_dbus_bus_handle_request_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-request-name-finish"/>
+    <function name="egg_dbus_bus_handle_release_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-release-name-finish"/>
+    <function name="egg_dbus_bus_handle_start_service_by_name_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-start-service-by-name-finish"/>
+    <function name="egg_dbus_bus_handle_update_activation_environment_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-update-activation-environment-finish"/>
+    <function name="egg_dbus_bus_handle_name_has_owner_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-name-has-owner-finish"/>
+    <function name="egg_dbus_bus_handle_list_names_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-list-names-finish"/>
+    <function name="egg_dbus_bus_handle_list_activatable_names_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-list-activatable-names-finish"/>
+    <function name="egg_dbus_bus_handle_add_match_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-add-match-finish"/>
+    <function name="egg_dbus_bus_handle_remove_match_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-remove-match-finish"/>
+    <function name="egg_dbus_bus_handle_get_name_owner_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-name-owner-finish"/>
+    <function name="egg_dbus_bus_handle_list_queued_owners_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-list-queued-owners-finish"/>
+    <function name="egg_dbus_bus_handle_get_connection_unix_user_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-connection-unix-user-finish"/>
+    <function name="egg_dbus_bus_handle_get_connection_unix_process_id_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-connection-unix-process-id-finish"/>
+    <function name="egg_dbus_bus_handle_get_adt_audit_session_data_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-adt-audit-session-data-finish"/>
+    <function name="egg_dbus_bus_handle_get_connection_se_linux_security_context_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-connection-se-linux-security-context-finish"/>
+    <function name="egg_dbus_bus_handle_reload_config_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-reload-config-finish"/>
+    <function name="egg_dbus_bus_handle_get_id_finish ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-handle-get-id-finish"/>
+    <function name="egg_dbus_bus_emit_signal_name_owner_changed ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-emit-signal-name-owner-changed"/>
+    <function name="egg_dbus_bus_emit_signal_name_lost ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-emit-signal-name-lost"/>
+    <function name="egg_dbus_bus_emit_signal_name_acquired ()" link="eggdbus-eggdbusbus.html#egg-dbus-bus-emit-signal-name-acquired"/>
+    <function name="The &quot;name-acquired&quot; signal" link="eggdbus-eggdbusbus.html#EggDBusBus-name-acquired"/>
+    <function name="The &quot;name-lost&quot; signal" link="eggdbus-eggdbusbus.html#EggDBusBus-name-lost"/>
+    <function name="The &quot;name-owner-changed&quot; signal" link="eggdbus-eggdbusbus.html#EggDBusBus-name-owner-changed"/>
+    <function name="EggDBusPeer" link="eggdbus-eggdbuspeer.html#EggDBusPeer-struct"/>
+    <function name="EggDBusPeerIface" link="eggdbus-eggdbuspeer.html#EggDBusPeerIface"/>
+    <function name="EGG_DBUS_QUERY_INTERFACE_PEER()" link="eggdbus-eggdbuspeer.html#EGG-DBUS-QUERY-INTERFACE-PEER--CAPS"/>
+    <function name="egg_dbus_peer_ping_sync ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-ping-sync"/>
+    <function name="egg_dbus_peer_get_machine_id_sync ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-get-machine-id-sync"/>
+    <function name="egg_dbus_peer_ping ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-ping"/>
+    <function name="egg_dbus_peer_ping_finish ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-ping-finish"/>
+    <function name="egg_dbus_peer_get_machine_id ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-get-machine-id"/>
+    <function name="egg_dbus_peer_get_machine_id_finish ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-get-machine-id-finish"/>
+    <function name="egg_dbus_peer_handle_ping_finish ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-handle-ping-finish"/>
+    <function name="egg_dbus_peer_handle_get_machine_id_finish ()" link="eggdbus-eggdbuspeer.html#egg-dbus-peer-handle-get-machine-id-finish"/>
+    <function name="EggDBusProperties" link="eggdbus-eggdbusproperties.html#EggDBusProperties-struct"/>
+    <function name="EggDBusPropertiesIface" link="eggdbus-eggdbusproperties.html#EggDBusPropertiesIface"/>
+    <function name="EGG_DBUS_QUERY_INTERFACE_PROPERTIES()" link="eggdbus-eggdbusproperties.html#EGG-DBUS-QUERY-INTERFACE-PROPERTIES--CAPS"/>
+    <function name="egg_dbus_properties_get_sync ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get-sync"/>
+    <function name="egg_dbus_properties_get_all_sync ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get-all-sync"/>
+    <function name="egg_dbus_properties_set_sync ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-set-sync"/>
+    <function name="egg_dbus_properties_get ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get"/>
+    <function name="egg_dbus_properties_get_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get-finish"/>
+    <function name="egg_dbus_properties_get_all ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get-all"/>
+    <function name="egg_dbus_properties_get_all_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-get-all-finish"/>
+    <function name="egg_dbus_properties_set ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-set"/>
+    <function name="egg_dbus_properties_set_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-set-finish"/>
+    <function name="egg_dbus_properties_handle_get_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-handle-get-finish"/>
+    <function name="egg_dbus_properties_handle_get_all_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-handle-get-all-finish"/>
+    <function name="egg_dbus_properties_handle_set_finish ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-handle-set-finish"/>
+    <function name="egg_dbus_properties_emit_signal_egg_dbus_changed ()" link="eggdbus-eggdbusproperties.html#egg-dbus-properties-emit-signal-egg-dbus-changed"/>
+    <function name="The &quot;egg-dbus-changed&quot; signal" link="eggdbus-eggdbusproperties.html#EggDBusProperties-egg-dbus-changed"/>
+    <function name="EggDBusIntrospectable" link="eggdbus-eggdbusintrospectable.html#EggDBusIntrospectable-struct"/>
+    <function name="EggDBusIntrospectableIface" link="eggdbus-eggdbusintrospectable.html#EggDBusIntrospectableIface"/>
+    <function name="EGG_DBUS_QUERY_INTERFACE_INTROSPECTABLE()" link="eggdbus-eggdbusintrospectable.html#EGG-DBUS-QUERY-INTERFACE-INTROSPECTABLE--CAPS"/>
+    <function name="egg_dbus_introspectable_introspect_sync ()" link="eggdbus-eggdbusintrospectable.html#egg-dbus-introspectable-introspect-sync"/>
+    <function name="egg_dbus_introspectable_introspect ()" link="eggdbus-eggdbusintrospectable.html#egg-dbus-introspectable-introspect"/>
+    <function name="egg_dbus_introspectable_introspect_finish ()" link="eggdbus-eggdbusintrospectable.html#egg-dbus-introspectable-introspect-finish"/>
+    <function name="egg_dbus_introspectable_handle_introspect_finish ()" link="eggdbus-eggdbusintrospectable.html#egg-dbus-introspectable-handle-introspect-finish"/>
+    <function name="TestFrob" link="tests-testfrob.html#TestFrob-struct"/>
+    <function name="TestFrobIface" link="tests-testfrob.html#TestFrobIface"/>
+    <function name="TEST_QUERY_INTERFACE_FROB()" link="tests-testfrob.html#TEST-QUERY-INTERFACE-FROB--CAPS"/>
+    <function name="test_frob_override_properties ()" link="tests-testfrob.html#test-frob-override-properties"/>
+    <function name="test_frob_get_y ()" link="tests-testfrob.html#test-frob-get-y"/>
+    <function name="test_frob_get_b ()" link="tests-testfrob.html#test-frob-get-b"/>
+    <function name="test_frob_get_n ()" link="tests-testfrob.html#test-frob-get-n"/>
+    <function name="test_frob_get_q ()" link="tests-testfrob.html#test-frob-get-q"/>
+    <function name="test_frob_get_i ()" link="tests-testfrob.html#test-frob-get-i"/>
+    <function name="test_frob_get_u ()" link="tests-testfrob.html#test-frob-get-u"/>
+    <function name="test_frob_get_x ()" link="tests-testfrob.html#test-frob-get-x"/>
+    <function name="test_frob_get_t ()" link="tests-testfrob.html#test-frob-get-t"/>
+    <function name="test_frob_get_d ()" link="tests-testfrob.html#test-frob-get-d"/>
+    <function name="test_frob_get_s ()" link="tests-testfrob.html#test-frob-get-s"/>
+    <function name="test_frob_get_o ()" link="tests-testfrob.html#test-frob-get-o"/>
+    <function name="test_frob_get_g ()" link="tests-testfrob.html#test-frob-get-g"/>
+    <function name="test_frob_get_ay ()" link="tests-testfrob.html#test-frob-get-ay"/>
+    <function name="test_frob_get_ab ()" link="tests-testfrob.html#test-frob-get-ab"/>
+    <function name="test_frob_get_an ()" link="tests-testfrob.html#test-frob-get-an"/>
+    <function name="test_frob_get_aq ()" link="tests-testfrob.html#test-frob-get-aq"/>
+    <function name="test_frob_get_ai ()" link="tests-testfrob.html#test-frob-get-ai"/>
+    <function name="test_frob_get_au ()" link="tests-testfrob.html#test-frob-get-au"/>
+    <function name="test_frob_get_ax ()" link="tests-testfrob.html#test-frob-get-ax"/>
+    <function name="test_frob_get_at ()" link="tests-testfrob.html#test-frob-get-at"/>
+    <function name="test_frob_get_ad ()" link="tests-testfrob.html#test-frob-get-ad"/>
+    <function name="test_frob_get_as ()" link="tests-testfrob.html#test-frob-get-as"/>
+    <function name="test_frob_get_ao ()" link="tests-testfrob.html#test-frob-get-ao"/>
+    <function name="test_frob_get_ag ()" link="tests-testfrob.html#test-frob-get-ag"/>
+    <function name="test_frob_get_foo ()" link="tests-testfrob.html#test-frob-get-foo"/>
+    <function name="test_frob_hello_world_sync ()" link="tests-testfrob.html#test-frob-hello-world-sync"/>
+    <function name="test_frob_test_primitive_types_sync ()" link="tests-testfrob.html#test-frob-test-primitive-types-sync"/>
+    <function name="test_frob_test_array_of_primitive_types_sync ()" link="tests-testfrob.html#test-frob-test-array-of-primitive-types-sync"/>
+    <function name="test_frob_test_structure_types_sync ()" link="tests-testfrob.html#test-frob-test-structure-types-sync"/>
+    <function name="test_frob_test_array_of_structure_types_sync ()" link="tests-testfrob.html#test-frob-test-array-of-structure-types-sync"/>
+    <function name="test_frob_test_hash_tables_sync ()" link="tests-testfrob.html#test-frob-test-hash-tables-sync"/>
+    <function name="test_frob_test_hash_tables_of_arrays_sync ()" link="tests-testfrob.html#test-frob-test-hash-tables-of-arrays-sync"/>
+    <function name="test_frob_test_hash_table_of_structures_sync ()" link="tests-testfrob.html#test-frob-test-hash-table-of-structures-sync"/>
+    <function name="test_frob_test_hash_table_of_hash_tables_of_structures_sync ()" link="tests-testfrob.html#test-frob-test-hash-table-of-hash-tables-of-structures-sync"/>
+    <function name="test_frob_test_array_of_hash_tables_of_structures_sync ()" link="tests-testfrob.html#test-frob-test-array-of-hash-tables-of-structures-sync"/>
+    <function name="test_frob_test_array_of_arrays_sync ()" link="tests-testfrob.html#test-frob-test-array-of-arrays-sync"/>
+    <function name="test_frob_test_variant_return_sync ()" link="tests-testfrob.html#test-frob-test-variant-return-sync"/>
+    <function name="test_frob_emit_test_signals_sync ()" link="tests-testfrob.html#test-frob-emit-test-signals-sync"/>
+    <function name="test_frob_hello_world ()" link="tests-testfrob.html#test-frob-hello-world"/>
+    <function name="test_frob_hello_world_finish ()" link="tests-testfrob.html#test-frob-hello-world-finish"/>
+    <function name="test_frob_test_primitive_types ()" link="tests-testfrob.html#test-frob-test-primitive-types"/>
+    <function name="test_frob_test_primitive_types_finish ()" link="tests-testfrob.html#test-frob-test-primitive-types-finish"/>
+    <function name="test_frob_test_array_of_primitive_types ()" link="tests-testfrob.html#test-frob-test-array-of-primitive-types"/>
+    <function name="test_frob_test_array_of_primitive_types_finish ()" link="tests-testfrob.html#test-frob-test-array-of-primitive-types-finish"/>
+    <function name="test_frob_test_structure_types ()" link="tests-testfrob.html#test-frob-test-structure-types"/>
+    <function name="test_frob_test_structure_types_finish ()" link="tests-testfrob.html#test-frob-test-structure-types-finish"/>
+    <function name="test_frob_test_array_of_structure_types ()" link="tests-testfrob.html#test-frob-test-array-of-structure-types"/>
+    <function name="test_frob_test_array_of_structure_types_finish ()" link="tests-testfrob.html#test-frob-test-array-of-structure-types-finish"/>
+    <function name="test_frob_test_hash_tables ()" link="tests-testfrob.html#test-frob-test-hash-tables"/>
+    <function name="test_frob_test_hash_tables_finish ()" link="tests-testfrob.html#test-frob-test-hash-tables-finish"/>
+    <function name="test_frob_test_hash_tables_of_arrays ()" link="tests-testfrob.html#test-frob-test-hash-tables-of-arrays"/>
+    <function name="test_frob_test_hash_tables_of_arrays_finish ()" link="tests-testfrob.html#test-frob-test-hash-tables-of-arrays-finish"/>
+    <function name="test_frob_test_hash_table_of_structures ()" link="tests-testfrob.html#test-frob-test-hash-table-of-structures"/>
+    <function name="test_frob_test_hash_table_of_structures_finish ()" link="tests-testfrob.html#test-frob-test-hash-table-of-structures-finish"/>
+    <function name="test_frob_test_hash_table_of_hash_tables_of_structures ()" link="tests-testfrob.html#test-frob-test-hash-table-of-hash-tables-of-structures"/>
+    <function name="test_frob_test_hash_table_of_hash_tables_of_structures_finish ()" link="tests-testfrob.html#test-frob-test-hash-table-of-hash-tables-of-structures-finish"/>
+    <function name="test_frob_test_array_of_hash_tables_of_structures ()" link="tests-testfrob.html#test-frob-test-array-of-hash-tables-of-structures"/>
+    <function name="test_frob_test_array_of_hash_tables_of_structures_finish ()" link="tests-testfrob.html#test-frob-test-array-of-hash-tables-of-structures-finish"/>
+    <function name="test_frob_test_array_of_arrays ()" link="tests-testfrob.html#test-frob-test-array-of-arrays"/>
+    <function name="test_frob_test_array_of_arrays_finish ()" link="tests-testfrob.html#test-frob-test-array-of-arrays-finish"/>
+    <function name="test_frob_test_variant_return ()" link="tests-testfrob.html#test-frob-test-variant-return"/>
+    <function name="test_frob_test_variant_return_finish ()" link="tests-testfrob.html#test-frob-test-variant-return-finish"/>
+    <function name="test_frob_emit_test_signals ()" link="tests-testfrob.html#test-frob-emit-test-signals"/>
+    <function name="test_frob_emit_test_signals_finish ()" link="tests-testfrob.html#test-frob-emit-test-signals-finish"/>
+    <function name="test_frob_handle_hello_world_finish ()" link="tests-testfrob.html#test-frob-handle-hello-world-finish"/>
+    <function name="test_frob_handle_test_primitive_types_finish ()" link="tests-testfrob.html#test-frob-handle-test-primitive-types-finish"/>
+    <function name="test_frob_handle_test_array_of_primitive_types_finish ()" link="tests-testfrob.html#test-frob-handle-test-array-of-primitive-types-finish"/>
+    <function name="test_frob_handle_test_structure_types_finish ()" link="tests-testfrob.html#test-frob-handle-test-structure-types-finish"/>
+    <function name="test_frob_handle_test_array_of_structure_types_finish ()" link="tests-testfrob.html#test-frob-handle-test-array-of-structure-types-finish"/>
+    <function name="test_frob_handle_test_hash_tables_finish ()" link="tests-testfrob.html#test-frob-handle-test-hash-tables-finish"/>
+    <function name="test_frob_handle_test_hash_tables_of_arrays_finish ()" link="tests-testfrob.html#test-frob-handle-test-hash-tables-of-arrays-finish"/>
+    <function name="test_frob_handle_test_hash_table_of_structures_finish ()" link="tests-testfrob.html#test-frob-handle-test-hash-table-of-structures-finish"/>
+    <function name="test_frob_handle_test_hash_table_of_hash_tables_of_structures_finish ()" link="tests-testfrob.html#test-frob-handle-test-hash-table-of-hash-tables-of-structures-finish"/>
+    <function name="test_frob_handle_test_array_of_hash_tables_of_structures_finish ()" link="tests-testfrob.html#test-frob-handle-test-array-of-hash-tables-of-structures-finish"/>
+    <function name="test_frob_handle_test_array_of_arrays_finish ()" link="tests-testfrob.html#test-frob-handle-test-array-of-arrays-finish"/>
+    <function name="test_frob_handle_test_variant_return_finish ()" link="tests-testfrob.html#test-frob-handle-test-variant-return-finish"/>
+    <function name="test_frob_handle_emit_test_signals_finish ()" link="tests-testfrob.html#test-frob-handle-emit-test-signals-finish"/>
+    <function name="test_frob_emit_signal_signal_with_primitive_types ()" link="tests-testfrob.html#test-frob-emit-signal-signal-with-primitive-types"/>
+    <function name="test_frob_emit_signal_signal_with_array_of_primitive_types ()" link="tests-testfrob.html#test-frob-emit-signal-signal-with-array-of-primitive-types"/>
+    <function name="test_frob_emit_signal_signal_with_structure_and_hash ()" link="tests-testfrob.html#test-frob-emit-signal-signal-with-structure-and-hash"/>
+    <function name="The &quot;ab&quot; property" link="tests-testfrob.html#TestFrob--ab"/>
+    <function name="The &quot;ad&quot; property" link="tests-testfrob.html#TestFrob--ad"/>
+    <function name="The &quot;ag&quot; property" link="tests-testfrob.html#TestFrob--ag"/>
+    <function name="The &quot;ai&quot; property" link="tests-testfrob.html#TestFrob--ai"/>
+    <function name="The &quot;an&quot; property" link="tests-testfrob.html#TestFrob--an"/>
+    <function name="The &quot;ao&quot; property" link="tests-testfrob.html#TestFrob--ao"/>
+    <function name="The &quot;aq&quot; property" link="tests-testfrob.html#TestFrob--aq"/>
+    <function name="The &quot;as&quot; property" link="tests-testfrob.html#TestFrob--as"/>
+    <function name="The &quot;at&quot; property" link="tests-testfrob.html#TestFrob--at"/>
+    <function name="The &quot;au&quot; property" link="tests-testfrob.html#TestFrob--au"/>
+    <function name="The &quot;ax&quot; property" link="tests-testfrob.html#TestFrob--ax"/>
+    <function name="The &quot;ay&quot; property" link="tests-testfrob.html#TestFrob--ay"/>
+    <function name="The &quot;b&quot; property" link="tests-testfrob.html#TestFrob--b"/>
+    <function name="The &quot;d&quot; property" link="tests-testfrob.html#TestFrob--d"/>
+    <function name="The &quot;foo&quot; property" link="tests-testfrob.html#TestFrob--foo"/>
+    <function name="The &quot;g&quot; property" link="tests-testfrob.html#TestFrob--g"/>
+    <function name="The &quot;i&quot; property" link="tests-testfrob.html#TestFrob--i"/>
+    <function name="The &quot;n&quot; property" link="tests-testfrob.html#TestFrob--n"/>
+    <function name="The &quot;o&quot; property" link="tests-testfrob.html#TestFrob--o"/>
+    <function name="The &quot;q&quot; property" link="tests-testfrob.html#TestFrob--q"/>
+    <function name="The &quot;s&quot; property" link="tests-testfrob.html#TestFrob--s"/>
+    <function name="The &quot;t&quot; property" link="tests-testfrob.html#TestFrob--t"/>
+    <function name="The &quot;u&quot; property" link="tests-testfrob.html#TestFrob--u"/>
+    <function name="The &quot;x&quot; property" link="tests-testfrob.html#TestFrob--x"/>
+    <function name="The &quot;y&quot; property" link="tests-testfrob.html#TestFrob--y"/>
+    <function name="The &quot;signal-with-array-of-primitive-types&quot; signal" link="tests-testfrob.html#TestFrob-signal-with-array-of-primitive-types"/>
+    <function name="The &quot;signal-with-primitive-types&quot; signal" link="tests-testfrob.html#TestFrob-signal-with-primitive-types"/>
+    <function name="The &quot;signal-with-structure-and-hash&quot; signal" link="tests-testfrob.html#TestFrob-signal-with-structure-and-hash"/>
+    <function name="TestTweak" link="tests-testtweak.html#TestTweak-struct"/>
+    <function name="TestTweakIface" link="tests-testtweak.html#TestTweakIface"/>
+    <function name="TEST_QUERY_INTERFACE_TWEAK()" link="tests-testtweak.html#TEST-QUERY-INTERFACE-TWEAK--CAPS"/>
+    <function name="test_tweak_override_properties ()" link="tests-testtweak.html#test-tweak-override-properties"/>
+    <function name="test_tweak_get_foo ()" link="tests-testtweak.html#test-tweak-get-foo"/>
+    <function name="test_tweak_get_bar ()" link="tests-testtweak.html#test-tweak-get-bar"/>
+    <function name="test_tweak_get_baz ()" link="tests-testtweak.html#test-tweak-get-baz"/>
+    <function name="test_tweak_get_baz_forced_to_use_pair ()" link="tests-testtweak.html#test-tweak-get-baz-forced-to-use-pair"/>
+    <function name="test_tweak_get_some_read_write_property ()" link="tests-testtweak.html#test-tweak-get-some-read-write-property"/>
+    <function name="test_tweak_get_property_with_ctype ()" link="tests-testtweak.html#test-tweak-get-property-with-ctype"/>
+    <function name="test_tweak_get_escape_vehicle ()" link="tests-testtweak.html#test-tweak-get-escape-vehicle"/>
+    <function name="test_tweak_get_default_create_flags ()" link="tests-testtweak.html#test-tweak-get-default-create-flags"/>
+    <function name="test_tweak_set_some_read_write_property ()" link="tests-testtweak.html#test-tweak-set-some-read-write-property"/>
+    <function name="test_tweak_set_property_with_ctype ()" link="tests-testtweak.html#test-tweak-set-property-with-ctype"/>
+    <function name="test_tweak_set_escape_vehicle ()" link="tests-testtweak.html#test-tweak-set-escape-vehicle"/>
+    <function name="test_tweak_set_default_create_flags ()" link="tests-testtweak.html#test-tweak-set-default-create-flags"/>
+    <function name="test_tweak_block_until_rw_property_changes_sync ()" link="tests-testtweak.html#test-tweak-block-until-rw-property-changes-sync"/>
+    <function name="test_tweak_change_readable_property_sync ()" link="tests-testtweak.html#test-tweak-change-readable-property-sync"/>
+    <function name="test_tweak_i_can_haz_greetingz_sync ()" link="tests-testtweak.html#test-tweak-i-can-haz-greetingz-sync"/>
+    <function name="test_tweak_broadcastz_newz_sync ()" link="tests-testtweak.html#test-tweak-broadcastz-newz-sync"/>
+    <function name="test_tweak_get_server_unique_name_sync ()" link="tests-testtweak.html#test-tweak-get-server-unique-name-sync"/>
+    <function name="test_tweak_long_running_method_sync ()" link="tests-testtweak.html#test-tweak-long-running-method-sync"/>
+    <function name="test_tweak_return_gerror_sync ()" link="tests-testtweak.html#test-tweak-return-gerror-sync"/>
+    <function name="test_tweak_method_struct_disambiguation_sync ()" link="tests-testtweak.html#test-tweak-method-struct-disambiguation-sync"/>
+    <function name="test_tweak_method_with_ctypes_sync ()" link="tests-testtweak.html#test-tweak-method-with-ctypes-sync"/>
+    <function name="test_tweak_block_until_rw_property_changes ()" link="tests-testtweak.html#test-tweak-block-until-rw-property-changes"/>
+    <function name="test_tweak_block_until_rw_property_changes_finish ()" link="tests-testtweak.html#test-tweak-block-until-rw-property-changes-finish"/>
+    <function name="test_tweak_change_readable_property ()" link="tests-testtweak.html#test-tweak-change-readable-property"/>
+    <function name="test_tweak_change_readable_property_finish ()" link="tests-testtweak.html#test-tweak-change-readable-property-finish"/>
+    <function name="test_tweak_i_can_haz_greetingz ()" link="tests-testtweak.html#test-tweak-i-can-haz-greetingz"/>
+    <function name="test_tweak_i_can_haz_greetingz_finish ()" link="tests-testtweak.html#test-tweak-i-can-haz-greetingz-finish"/>
+    <function name="test_tweak_broadcastz_newz ()" link="tests-testtweak.html#test-tweak-broadcastz-newz"/>
+    <function name="test_tweak_broadcastz_newz_finish ()" link="tests-testtweak.html#test-tweak-broadcastz-newz-finish"/>
+    <function name="test_tweak_get_server_unique_name ()" link="tests-testtweak.html#test-tweak-get-server-unique-name"/>
+    <function name="test_tweak_get_server_unique_name_finish ()" link="tests-testtweak.html#test-tweak-get-server-unique-name-finish"/>
+    <function name="test_tweak_long_running_method ()" link="tests-testtweak.html#test-tweak-long-running-method"/>
+    <function name="test_tweak_long_running_method_finish ()" link="tests-testtweak.html#test-tweak-long-running-method-finish"/>
+    <function name="test_tweak_return_gerror ()" link="tests-testtweak.html#test-tweak-return-gerror"/>
+    <function name="test_tweak_return_gerror_finish ()" link="tests-testtweak.html#test-tweak-return-gerror-finish"/>
+    <function name="test_tweak_method_struct_disambiguation ()" link="tests-testtweak.html#test-tweak-method-struct-disambiguation"/>
+    <function name="test_tweak_method_struct_disambiguation_finish ()" link="tests-testtweak.html#test-tweak-method-struct-disambiguation-finish"/>
+    <function name="test_tweak_method_with_ctypes ()" link="tests-testtweak.html#test-tweak-method-with-ctypes"/>
+    <function name="test_tweak_method_with_ctypes_finish ()" link="tests-testtweak.html#test-tweak-method-with-ctypes-finish"/>
+    <function name="test_tweak_handle_block_until_rw_property_changes_finish ()" link="tests-testtweak.html#test-tweak-handle-block-until-rw-property-changes-finish"/>
+    <function name="test_tweak_handle_change_readable_property_finish ()" link="tests-testtweak.html#test-tweak-handle-change-readable-property-finish"/>
+    <function name="test_tweak_handle_i_can_haz_greetingz_finish ()" link="tests-testtweak.html#test-tweak-handle-i-can-haz-greetingz-finish"/>
+    <function name="test_tweak_handle_broadcastz_newz_finish ()" link="tests-testtweak.html#test-tweak-handle-broadcastz-newz-finish"/>
+    <function name="test_tweak_handle_get_server_unique_name_finish ()" link="tests-testtweak.html#test-tweak-handle-get-server-unique-name-finish"/>
+    <function name="test_tweak_handle_long_running_method_finish ()" link="tests-testtweak.html#test-tweak-handle-long-running-method-finish"/>
+    <function name="test_tweak_handle_return_gerror_finish ()" link="tests-testtweak.html#test-tweak-handle-return-gerror-finish"/>
+    <function name="test_tweak_handle_method_struct_disambiguation_finish ()" link="tests-testtweak.html#test-tweak-handle-method-struct-disambiguation-finish"/>
+    <function name="test_tweak_handle_method_with_ctypes_finish ()" link="tests-testtweak.html#test-tweak-handle-method-with-ctypes-finish"/>
+    <function name="test_tweak_emit_signal_newz_notifz ()" link="tests-testtweak.html#test-tweak-emit-signal-newz-notifz"/>
+    <function name="test_tweak_emit_signal_signal_struct_disambiguation ()" link="tests-testtweak.html#test-tweak-emit-signal-signal-struct-disambiguation"/>
+    <function name="test_tweak_emit_signal_signal_with_ctype ()" link="tests-testtweak.html#test-tweak-emit-signal-signal-with-ctype"/>
+    <function name="test_tweak_emit_signal_escape_vehicle_changed ()" link="tests-testtweak.html#test-tweak-emit-signal-escape-vehicle-changed"/>
+    <function name="The &quot;bar&quot; property" link="tests-testtweak.html#TestTweak--bar"/>
+    <function name="The &quot;baz&quot; property" link="tests-testtweak.html#TestTweak--baz"/>
+    <function name="The &quot;baz-forced-to-use-pair&quot; property" link="tests-testtweak.html#TestTweak--baz-forced-to-use-pair"/>
+    <function name="The &quot;default-create-flags&quot; property" link="tests-testtweak.html#TestTweak--default-create-flags"/>
+    <function name="The &quot;escape-vehicle&quot; property" link="tests-testtweak.html#TestTweak--escape-vehicle"/>
+    <function name="The &quot;foo&quot; property" link="tests-testtweak.html#TestTweak--foo"/>
+    <function name="The &quot;property-with-ctype&quot; property" link="tests-testtweak.html#TestTweak--property-with-ctype"/>
+    <function name="The &quot;some-read-write-property&quot; property" link="tests-testtweak.html#TestTweak--some-read-write-property"/>
+    <function name="The &quot;escape-vehicle-changed&quot; signal" link="tests-testtweak.html#TestTweak-escape-vehicle-changed"/>
+    <function name="The &quot;newz-notifz&quot; signal" link="tests-testtweak.html#TestTweak-newz-notifz"/>
+    <function name="The &quot;signal-struct-disambiguation&quot; signal" link="tests-testtweak.html#TestTweak-signal-struct-disambiguation"/>
+    <function name="The &quot;signal-with-ctype&quot; signal" link="tests-testtweak.html#TestTweak-signal-with-ctype"/>
+    <function name="TestTwiddle" link="tests-testtwiddle.html#TestTwiddle-struct"/>
+    <function name="TestTwiddleIface" link="tests-testtwiddle.html#TestTwiddleIface"/>
+    <function name="TEST_QUERY_INTERFACE_TWIDDLE()" link="tests-testtwiddle.html#TEST-QUERY-INTERFACE-TWIDDLE--CAPS"/>
+    <function name="test_twiddle_broadcastz_newz_sync ()" link="tests-testtwiddle.html#test-twiddle-broadcastz-newz-sync"/>
+    <function name="test_twiddle_get_most_powerful_subject_sync ()" link="tests-testtwiddle.html#test-twiddle-get-most-powerful-subject-sync"/>
+    <function name="test_twiddle_get_all_subjects_sync ()" link="tests-testtwiddle.html#test-twiddle-get-all-subjects-sync"/>
+    <function name="test_twiddle_register_interface_sync ()" link="tests-testtwiddle.html#test-twiddle-register-interface-sync"/>
+    <function name="test_twiddle_unregister_interface_sync ()" link="tests-testtwiddle.html#test-twiddle-unregister-interface-sync"/>
+    <function name="test_twiddle_unregister_all_interfaces_sync ()" link="tests-testtwiddle.html#test-twiddle-unregister-all-interfaces-sync"/>
+    <function name="test_twiddle_broadcastz_newz ()" link="tests-testtwiddle.html#test-twiddle-broadcastz-newz"/>
+    <function name="test_twiddle_broadcastz_newz_finish ()" link="tests-testtwiddle.html#test-twiddle-broadcastz-newz-finish"/>
+    <function name="test_twiddle_get_most_powerful_subject ()" link="tests-testtwiddle.html#test-twiddle-get-most-powerful-subject"/>
+    <function name="test_twiddle_get_most_powerful_subject_finish ()" link="tests-testtwiddle.html#test-twiddle-get-most-powerful-subject-finish"/>
+    <function name="test_twiddle_get_all_subjects ()" link="tests-testtwiddle.html#test-twiddle-get-all-subjects"/>
+    <function name="test_twiddle_get_all_subjects_finish ()" link="tests-testtwiddle.html#test-twiddle-get-all-subjects-finish"/>
+    <function name="test_twiddle_register_interface ()" link="tests-testtwiddle.html#test-twiddle-register-interface"/>
+    <function name="test_twiddle_register_interface_finish ()" link="tests-testtwiddle.html#test-twiddle-register-interface-finish"/>
+    <function name="test_twiddle_unregister_interface ()" link="tests-testtwiddle.html#test-twiddle-unregister-interface"/>
+    <function name="test_twiddle_unregister_interface_finish ()" link="tests-testtwiddle.html#test-twiddle-unregister-interface-finish"/>
+    <function name="test_twiddle_unregister_all_interfaces ()" link="tests-testtwiddle.html#test-twiddle-unregister-all-interfaces"/>
+    <function name="test_twiddle_unregister_all_interfaces_finish ()" link="tests-testtwiddle.html#test-twiddle-unregister-all-interfaces-finish"/>
+    <function name="test_twiddle_handle_broadcastz_newz_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-broadcastz-newz-finish"/>
+    <function name="test_twiddle_handle_get_most_powerful_subject_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-get-most-powerful-subject-finish"/>
+    <function name="test_twiddle_handle_get_all_subjects_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-get-all-subjects-finish"/>
+    <function name="test_twiddle_handle_register_interface_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-register-interface-finish"/>
+    <function name="test_twiddle_handle_unregister_interface_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-unregister-interface-finish"/>
+    <function name="test_twiddle_handle_unregister_all_interfaces_finish ()" link="tests-testtwiddle.html#test-twiddle-handle-unregister-all-interfaces-finish"/>
+    <function name="test_twiddle_emit_signal_newz_notifz ()" link="tests-testtwiddle.html#test-twiddle-emit-signal-newz-notifz"/>
+    <function name="The &quot;newz-notifz&quot; signal" link="tests-testtwiddle.html#TestTwiddle-newz-notifz"/>
+    <function name="TestPoint" link="TestPoint.html#TestPoint-struct"/>
+    <function name="test_point_new ()" link="TestPoint.html#test-point-new"/>
+    <function name="test_point_get_x ()" link="TestPoint.html#test-point-get-x"/>
+    <function name="test_point_get_y ()" link="TestPoint.html#test-point-get-y"/>
+    <function name="test_point_set_x ()" link="TestPoint.html#test-point-set-x"/>
+    <function name="test_point_set_y ()" link="TestPoint.html#test-point-set-y"/>
+    <function name="TestPair" link="TestPair.html#TestPair-struct"/>
+    <function name="test_pair_new ()" link="TestPair.html#test-pair-new"/>
+    <function name="test_pair_get_first ()" link="TestPair.html#test-pair-get-first"/>
+    <function name="test_pair_get_second ()" link="TestPair.html#test-pair-get-second"/>
+    <function name="test_pair_set_first ()" link="TestPair.html#test-pair-set-first"/>
+    <function name="test_pair_set_second ()" link="TestPair.html#test-pair-set-second"/>
+    <function name="TestDescribedPair" link="TestDescribedPair.html#TestDescribedPair-struct"/>
+    <function name="test_described_pair_new ()" link="TestDescribedPair.html#test-described-pair-new"/>
+    <function name="test_described_pair_get_desc ()" link="TestDescribedPair.html#test-described-pair-get-desc"/>
+    <function name="test_described_pair_get_pair ()" link="TestDescribedPair.html#test-described-pair-get-pair"/>
+    <function name="test_described_pair_set_desc ()" link="TestDescribedPair.html#test-described-pair-set-desc"/>
+    <function name="test_described_pair_set_pair ()" link="TestDescribedPair.html#test-described-pair-set-pair"/>
+    <function name="TestDescribedPoint" link="TestDescribedPoint.html#TestDescribedPoint-struct"/>
+    <function name="test_described_point_new ()" link="TestDescribedPoint.html#test-described-point-new"/>
+    <function name="test_described_point_get_desc ()" link="TestDescribedPoint.html#test-described-point-get-desc"/>
+    <function name="test_described_point_get_point ()" link="TestDescribedPoint.html#test-described-point-get-point"/>
+    <function name="test_described_point_set_desc ()" link="TestDescribedPoint.html#test-described-point-set-desc"/>
+    <function name="test_described_point_set_point ()" link="TestDescribedPoint.html#test-described-point-set-point"/>
+    <function name="TestExtendedDescribedPoint" link="TestExtendedDescribedPoint.html#TestExtendedDescribedPoint-struct"/>
+    <function name="test_extended_described_point_new ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-new"/>
+    <function name="test_extended_described_point_get_desc ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-get-desc"/>
+    <function name="test_extended_described_point_get_point ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-get-point"/>
+    <function name="test_extended_described_point_get_ext_desc ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-get-ext-desc"/>
+    <function name="test_extended_described_point_set_desc ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-set-desc"/>
+    <function name="test_extended_described_point_set_point ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-set-point"/>
+    <function name="test_extended_described_point_set_ext_desc ()" link="TestExtendedDescribedPoint.html#test-extended-described-point-set-ext-desc"/>
+    <function name="TestStructWithVariant" link="TestStructWithVariant.html#TestStructWithVariant-struct"/>
+    <function name="test_struct_with_variant_new ()" link="TestStructWithVariant.html#test-struct-with-variant-new"/>
+    <function name="test_struct_with_variant_get_name ()" link="TestStructWithVariant.html#test-struct-with-variant-get-name"/>
+    <function name="test_struct_with_variant_get_anger_level ()" link="TestStructWithVariant.html#test-struct-with-variant-get-anger-level"/>
+    <function name="test_struct_with_variant_get_threat_level ()" link="TestStructWithVariant.html#test-struct-with-variant-get-threat-level"/>
+    <function name="test_struct_with_variant_get_a_variant ()" link="TestStructWithVariant.html#test-struct-with-variant-get-a-variant"/>
+    <function name="test_struct_with_variant_get_override_c_type ()" link="TestStructWithVariant.html#test-struct-with-variant-get-override-c-type"/>
+    <function name="test_struct_with_variant_set_name ()" link="TestStructWithVariant.html#test-struct-with-variant-set-name"/>
+    <function name="test_struct_with_variant_set_anger_level ()" link="TestStructWithVariant.html#test-struct-with-variant-set-anger-level"/>
+    <function name="test_struct_with_variant_set_threat_level ()" link="TestStructWithVariant.html#test-struct-with-variant-set-threat-level"/>
+    <function name="test_struct_with_variant_set_a_variant ()" link="TestStructWithVariant.html#test-struct-with-variant-set-a-variant"/>
+    <function name="test_struct_with_variant_set_override_c_type ()" link="TestStructWithVariant.html#test-struct-with-variant-set-override-c-type"/>
+    <function name="TestSubject" link="TestSubject.html#TestSubject-struct"/>
+    <function name="enum TestSubjectKind" link="TestSubject.html#TestSubjectKind"/>
+    <function name="test_subject_new ()" link="TestSubject.html#test-subject-new"/>
+    <function name="test_subject_get_kind ()" link="TestSubject.html#test-subject-get-kind"/>
+    <function name="test_subject_get_name ()" link="TestSubject.html#test-subject-get-name"/>
+    <function name="test_subject_get_favorite_food ()" link="TestSubject.html#test-subject-get-favorite-food"/>
+    <function name="test_subject_get_favorite_color ()" link="TestSubject.html#test-subject-get-favorite-color"/>
+    <function name="TEST_ERROR" link="tests-testerror.html#TEST-ERROR--CAPS"/>
+    <function name="test_error_quark ()" link="tests-testerror.html#test-error-quark"/>
+    <function name="test_error_get_type ()" link="tests-testerror.html#test-error-get-type"/>
+    <function name="TEST_TYPE_ERROR" link="tests-testerror.html#TEST-TYPE-ERROR--CAPS"/>
+    <function name="enum TestError" link="tests-testerror.html#TestError"/>
+    <function name="TEST_DETAILED_ERROR" link="tests-testdetailederror.html#TEST-DETAILED-ERROR--CAPS"/>
+    <function name="test_detailed_error_quark ()" link="tests-testdetailederror.html#test-detailed-error-quark"/>
+    <function name="test_detailed_error_get_type ()" link="tests-testdetailederror.html#test-detailed-error-get-type"/>
+    <function name="TEST_TYPE_DETAILED_ERROR" link="tests-testdetailederror.html#TEST-TYPE-DETAILED-ERROR--CAPS"/>
+    <function name="enum TestDetailedError" link="tests-testdetailederror.html#TestDetailedError"/>
+    <function name="test_create_flags_get_type ()" link="tests-testcreateflags.html#test-create-flags-get-type"/>
+    <function name="TEST_TYPE_CREATE_FLAGS" link="tests-testcreateflags.html#TEST-TYPE-CREATE-FLAGS--CAPS"/>
+    <function name="enum TestCreateFlags" link="tests-testcreateflags.html#TestCreateFlags"/>
+    <function name="test_delete_flags_get_type ()" link="tests-testdeleteflags.html#test-delete-flags-get-type"/>
+    <function name="TEST_TYPE_DELETE_FLAGS" link="tests-testdeleteflags.html#TEST-TYPE-DELETE-FLAGS--CAPS"/>
+    <function name="enum TestDeleteFlags" link="tests-testdeleteflags.html#TestDeleteFlags"/>
+    <function name="test_other_flags_get_type ()" link="tests-testotherflags.html#test-other-flags-get-type"/>
+    <function name="TEST_TYPE_OTHER_FLAGS" link="tests-testotherflags.html#TEST-TYPE-OTHER-FLAGS--CAPS"/>
+    <function name="enum TestOtherFlags" link="tests-testotherflags.html#TestOtherFlags"/>
+    <function name="test_vehicle_get_type ()" link="tests-testvehicle.html#test-vehicle-get-type"/>
+    <function name="TEST_TYPE_VEHICLE" link="tests-testvehicle.html#TEST-TYPE-VEHICLE--CAPS"/>
+    <function name="enum TestVehicle" link="tests-testvehicle.html#TestVehicle"/>
+    <function name="The RequestNameFlags Flags" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameFlags"/>
+    <function name="The RequestNameReply Enumeration" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-RequestNameReply"/>
+    <function name="The ReleaseNameReply Enumeration" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-ReleaseNameReply"/>
+    <function name="The StartServiceByNameReply Enumeration" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-enum-StartServiceByNameReply"/>
+    <function name="Hello ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.Hello"/>
+    <function name="RequestName ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RequestName"/>
+    <function name="ReleaseName ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ReleaseName"/>
+    <function name="StartServiceByName ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.StartServiceByName"/>
+    <function name="UpdateActivationEnvironment ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.UpdateActivationEnvironment"/>
+    <function name="NameHasOwner ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.NameHasOwner"/>
+    <function name="ListNames ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListNames"/>
+    <function name="ListActivatableNames ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListActivatableNames"/>
+    <function name="AddMatch ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.AddMatch"/>
+    <function name="RemoveMatch ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.RemoveMatch"/>
+    <function name="GetNameOwner ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetNameOwner"/>
+    <function name="ListQueuedOwners ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ListQueuedOwners"/>
+    <function name="GetConnectionUnixUser ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionUnixUser"/>
+    <function name="GetConnectionUnixProcessID ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionUnixProcessID"/>
+    <function name="GetAdtAuditSessionData ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetAdtAuditSessionData"/>
+    <function name="GetConnectionSELinuxSecurityContext ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetConnectionSELinuxSecurityContext"/>
+    <function name="ReloadConfig ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.ReloadConfig"/>
+    <function name="GetId ()" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-method-org.freedesktop.DBus.GetId"/>
+    <function name="The &quot;NameOwnerChanged&quot; signal" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameOwnerChanged"/>
+    <function name="The &quot;NameLost&quot; signal" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameLost"/>
+    <function name="The &quot;NameAcquired&quot; signal" link="eggdbus-interface-org.freedesktop.DBus.html#eggdbus-signal-org.freedesktop.DBus::NameAcquired"/>
+    <function name="Ping ()" link="eggdbus-interface-org.freedesktop.DBus.Peer.html#eggdbus-method-org.freedesktop.DBus.Peer.Ping"/>
+    <function name="GetMachineId ()" link="eggdbus-interface-org.freedesktop.DBus.Peer.html#eggdbus-method-org.freedesktop.DBus.Peer.GetMachineId"/>
+    <function name="Get ()" link="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.Get"/>
+    <function name="GetAll ()" link="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.GetAll"/>
+    <function name="Set ()" link="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-method-org.freedesktop.DBus.Properties.Set"/>
+    <function name="The &quot;EggDBusChanged&quot; signal" link="eggdbus-interface-org.freedesktop.DBus.Properties.html#eggdbus-signal-org.freedesktop.DBus.Properties::EggDBusChanged"/>
+    <function name="Introspect ()" link="eggdbus-interface-org.freedesktop.DBus.Introspectable.html#eggdbus-method-org.freedesktop.DBus.Introspectable.Introspect"/>
+    <function name="The CreateFlags Flags" link="eggdbus-enummain-CreateFlags.html#eggdbus-enum-CreateFlags"/>
+    <function name="The DeleteFlags Flags" link="eggdbus-enummain-DeleteFlags.html#eggdbus-enum-DeleteFlags"/>
+    <function name="The com.example.Error.Detailed.* Error Domain" link="eggdbus-enummain-DetailedError.html#eggdbus-errordomain-com.example.Error.Detailed."/>
+    <function name="The com.example.Error.* Error Domain" link="eggdbus-enummain-Error.html#eggdbus-errordomain-com.example.Error."/>
+    <function name="The OtherFlags Flags" link="eggdbus-enummain-OtherFlags.html#eggdbus-enum-OtherFlags"/>
+    <function name="The Vehicle Enumeration" link="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle"/>
+    <function name="The Pair Structure" link="eggdbus-structmain-Pair.html#eggdbus-struct-Pair"/>
+    <function name="The Point Structure" link="eggdbus-structmain-Point.html#eggdbus-struct-Point"/>
+    <function name="The DescribedPair Structure" link="eggdbus-structmain-DescribedPair.html#eggdbus-struct-DescribedPair"/>
+    <function name="The DescribedPoint Structure" link="eggdbus-structmain-DescribedPoint.html#eggdbus-struct-DescribedPoint"/>
+    <function name="The StructWithVariant Structure" link="eggdbus-structmain-StructWithVariant.html#eggdbus-struct-StructWithVariant"/>
+    <function name="The ExtendedDescribedPoint Structure" link="eggdbus-structmain-ExtendedDescribedPoint.html#eggdbus-struct-ExtendedDescribedPoint"/>
+    <function name="HelloWorld ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.HelloWorld"/>
+    <function name="TestPrimitiveTypes ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestPrimitiveTypes"/>
+    <function name="TestArrayOfPrimitiveTypes ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfPrimitiveTypes"/>
+    <function name="TestStructureTypes ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestStructureTypes"/>
+    <function name="TestArrayOfStructureTypes ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfStructureTypes"/>
+    <function name="TestHashTables ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTables"/>
+    <function name="TestHashTablesOfArrays ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTablesOfArrays"/>
+    <function name="TestHashTableOfStructures ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTableOfStructures"/>
+    <function name="TestHashTableOfHashTablesOfStructures ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestHashTableOfHashTablesOfStructures"/>
+    <function name="TestArrayOfHashTablesOfStructures ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfHashTablesOfStructures"/>
+    <function name="TestArrayOfArrays ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestArrayOfArrays"/>
+    <function name="TestVariantReturn ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.TestVariantReturn"/>
+    <function name="EmitTestSignals ()" link="eggdbus-interface-com.example.Frob.html#eggdbus-method-com.example.Frob.EmitTestSignals"/>
+    <function name="The &quot;SignalWithPrimitiveTypes&quot; signal" link="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes"/>
+    <function name="The &quot;SignalWithArrayOfPrimitiveTypes&quot; signal" link="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithArrayOfPrimitiveTypes"/>
+    <function name="The &quot;SignalWithStructureAndHash&quot; signal" link="eggdbus-interface-com.example.Frob.html#eggdbus-signal-com.example.Frob::SignalWithStructureAndHash"/>
+    <function name="The &quot;y&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:y"/>
+    <function name="The &quot;b&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:b"/>
+    <function name="The &quot;n&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:n"/>
+    <function name="The &quot;q&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:q"/>
+    <function name="The &quot;i&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:i"/>
+    <function name="The &quot;u&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:u"/>
+    <function name="The &quot;x&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:x"/>
+    <function name="The &quot;t&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:t"/>
+    <function name="The &quot;d&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:d"/>
+    <function name="The &quot;s&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:s"/>
+    <function name="The &quot;o&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:o"/>
+    <function name="The &quot;g&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:g"/>
+    <function name="The &quot;ay&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ay"/>
+    <function name="The &quot;ab&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ab"/>
+    <function name="The &quot;an&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:an"/>
+    <function name="The &quot;aq&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:aq"/>
+    <function name="The &quot;ai&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ai"/>
+    <function name="The &quot;au&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:au"/>
+    <function name="The &quot;ax&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ax"/>
+    <function name="The &quot;at&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:at"/>
+    <function name="The &quot;ad&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ad"/>
+    <function name="The &quot;as&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:as"/>
+    <function name="The &quot;ao&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ao"/>
+    <function name="The &quot;ag&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:ag"/>
+    <function name="The &quot;foo&quot; property" link="eggdbus-interface-com.example.Frob.html#eggdbus-property-com.example.Frob:foo"/>
+    <function name="BlockUntilRWPropertyChanges ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.BlockUntilRWPropertyChanges"/>
+    <function name="ChangeReadableProperty ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ChangeReadableProperty"/>
+    <function name="ICanHazGreetingz ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ICanHazGreetingz"/>
+    <function name="BroadcastzNewz ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.BroadcastzNewz"/>
+    <function name="GetServerUniqueName ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.GetServerUniqueName"/>
+    <function name="LongRunningMethod ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.LongRunningMethod"/>
+    <function name="ReturnGError ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ReturnGError"/>
+    <function name="MethodStructDisambiguation ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.MethodStructDisambiguation"/>
+    <function name="MethodWithCTypes ()" link="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.MethodWithCTypes"/>
+    <function name="The &quot;NewzNotifz&quot; signal" link="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::NewzNotifz"/>
+    <function name="The &quot;SignalStructDisambiguation&quot; signal" link="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::SignalStructDisambiguation"/>
+    <function name="The &quot;SignalWithCType&quot; signal" link="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::SignalWithCType"/>
+    <function name="The &quot;EscapeVehicleChanged&quot; signal" link="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::EscapeVehicleChanged"/>
+    <function name="The &quot;foo&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:foo"/>
+    <function name="The &quot;bar&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:bar"/>
+    <function name="The &quot;baz&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:baz"/>
+    <function name="The &quot;baz-forced-to-use-pair&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:baz-forced-to-use-pair"/>
+    <function name="The &quot;SomeReadWriteProperty&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:SomeReadWriteProperty"/>
+    <function name="The &quot;PropertyWithCType&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:PropertyWithCType"/>
+    <function name="The &quot;EscapeVehicle&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:EscapeVehicle"/>
+    <function name="The &quot;DefaultCreateFlags&quot; property" link="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:DefaultCreateFlags"/>
+    <function name="BroadcastzNewz ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.BroadcastzNewz"/>
+    <function name="GetMostPowerfulSubject ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.GetMostPowerfulSubject"/>
+    <function name="GetAllSubjects ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.GetAllSubjects"/>
+    <function name="RegisterInterface ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.RegisterInterface"/>
+    <function name="UnregisterInterface ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.UnregisterInterface"/>
+    <function name="UnregisterAllInterfaces ()" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-method-com.example.Twiddle.UnregisterAllInterfaces"/>
+    <function name="The &quot;NewzNotifz&quot; signal" link="eggdbus-interface-com.example.Twiddle.html#eggdbus-signal-com.example.Twiddle::NewzNotifz"/>
+  </functions>
+</book>

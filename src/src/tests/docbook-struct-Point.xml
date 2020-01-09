@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-structmain-Point">
+  <refmeta>
+    <refentrytitle role="top_of_page">Point Structure</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>Point Structure</refname>
+    <refpurpose>2D point</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="struct" id="eggdbus-struct-Point">
+      <title>The Point Structure</title>
+        <para>
+          <programlisting>
+{
+  Int32 x,
+  Int32 y
+}
+          </programlisting>
+          <para>
+The <link linkend="eggdbus-struct-Point">Point</link> type is used for 2D integer points.
+          </para>
+          <variablelist role="struct">
+  <varlistentry>
+    <term><literal>Int32 <structfield>x</structfield></literal></term>
+    <listitem>
+      <para>
+The X coordinate
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <structfield>y</structfield></literal></term>
+    <listitem>
+      <para>
+The Y coordinate
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

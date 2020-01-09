@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>com.example.Tweak Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="eggdbus-interface-com.example.Frob.html" title="com.example.Frob Interface">
+<link rel="next" href="eggdbus-interface-com.example.Twiddle.html" title="com.example.Twiddle Interface">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-interface-com.example.Frob.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-interface-com.example.Twiddle.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-com.example.Tweak.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Tweak.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Tweak.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#eggdbus-interface-com.example.Tweak.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="com.example.Tweak Interface">
+<a name="eggdbus-interface-com.example.Tweak"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">com.example.Tweak Interface</span></h2>
+<p>com.example.Tweak Interface — Tweak interface used for testing</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.BlockUntilRWPropertyChanges" title="BlockUntilRWPropertyChanges ()">BlockUntilRWPropertyChanges</a> (OUT String  NewPropValue)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ChangeReadableProperty" title="ChangeReadableProperty ()">ChangeReadableProperty</a>      (IN  String  new_value)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ICanHazGreetingz" title="ICanHazGreetingz ()">ICanHazGreetingz</a>            (IN  String  greetz,
+                             OUT String  word)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.BroadcastzNewz" title="BroadcastzNewz ()">BroadcastzNewz</a>              (IN  String  newz)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.GetServerUniqueName" title="GetServerUniqueName ()">GetServerUniqueName</a>         (OUT String  server_unique_name)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.LongRunningMethod" title="LongRunningMethod ()">LongRunningMethod</a>           (IN  Int32   msec_to_run)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.ReturnGError" title="ReturnGError ()">ReturnGError</a>                (IN  String  error_domain,
+                             IN  Int32   error_code)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.MethodStructDisambiguation" title="MethodStructDisambiguation ()">MethodStructDisambiguation</a>  (IN  <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>    pair,
+                             IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>   point,
+                             OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>   enhanced_point,
+                             OUT <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>    enhanced_pair)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-method-com.example.Tweak.MethodWithCTypes" title="MethodWithCTypes ()">MethodWithCTypes</a>            (IN  Int32   value,
+                             OUT Int32   better_value)
+    </pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="eggdbus-if-signals-com.example.Tweak"></a><h2>Signals</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::NewzNotifz" title='The "NewzNotifz" signal'>NewzNotifz</a>                 (String   newz)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::SignalStructDisambiguation" title='The "SignalStructDisambiguation" signal'>SignalStructDisambiguation</a> (<a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>     pair,
+                            <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>    point)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::SignalWithCType" title='The "SignalWithCType" signal'>SignalWithCType</a>            (Int32    better_value)
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-signal-com.example.Tweak::EscapeVehicleChanged" title='The "EscapeVehicleChanged" signal'>EscapeVehicleChanged</a>       (<a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a>  new_escape_vehicle)
+    </pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="eggdbus-if-properties-com.example.Tweak"></a><h2>Properties</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:foo" title='The "foo" property'>foo</a>                        readable     String
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:bar" title='The "bar" property'>bar</a>                        readable     Array&lt;Int32&gt;
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:baz" title='The "baz" property'>baz</a>                        readable     <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:baz-forced-to-use-pair" title='The "baz-forced-to-use-pair" property'>baz-forced-to-use-pair</a>     readable     <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:SomeReadWriteProperty" title='The "SomeReadWriteProperty" property'>SomeReadWriteProperty</a>      readwrite    String
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:PropertyWithCType" title='The "PropertyWithCType" property'>PropertyWithCType</a>          readwrite    Int32
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:EscapeVehicle" title='The "EscapeVehicle" property'>EscapeVehicle</a>              readwrite    <a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a>
+<a class="link" href="eggdbus-interface-com.example.Tweak.html#eggdbus-property-com.example.Tweak:DefaultCreateFlags" title='The "DefaultCreateFlags" property'>DefaultCreateFlags</a>         readwrite    <a class="link" href="eggdbus-enummain-CreateFlags.html#eggdbus-enum-CreateFlags" title="The CreateFlags Flags">CreateFlags</a>
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-com.example.Tweak"></a><h2>Description</h2>
+<p>
+The #Tweak interface wraps the D-Bus interface <code class="literal">com.example.Tweak</code>. It is used in the EggDBus test suite.
+      </p>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-com.example.Tweak"></a><h2>Method Details</h2>
+<div class="refsect2" title="BlockUntilRWPropertyChanges ()">
+<a name="eggdbus-method-com.example.Tweak.BlockUntilRWPropertyChanges"></a><h3>BlockUntilRWPropertyChanges ()</h3>
+<pre class="programlisting">
+BlockUntilRWPropertyChanges (OUT String  NewPropValue)
+    </pre>
+<p>
+Blocks until #Tweak:SomeReadWriteProperty changes
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>NewPropValue</code></em></code>:</span></p></td>
+<td><p>
+The new value of #Tweak:SomeReadWriteProperty
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ChangeReadableProperty ()">
+<a name="eggdbus-method-com.example.Tweak.ChangeReadableProperty"></a><h3>ChangeReadableProperty ()</h3>
+<pre class="programlisting">
+ChangeReadableProperty (IN  String  new_value)
+    </pre>
+<p>
+Changes the #Tweak:foo property
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>new_value</code></em></code>:</span></p></td>
+<td><p>
+New value for the #Tweak:foo property
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ICanHazGreetingz ()">
+<a name="eggdbus-method-com.example.Tweak.ICanHazGreetingz"></a><h3>ICanHazGreetingz ()</h3>
+<pre class="programlisting">
+ICanHazGreetingz (IN  String  greetz,
+                  OUT String  word)
+    </pre>
+<p>
+This method will take a greeting and give a rewritten greeting back
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>greetz</code></em></code>:</span></p></td>
+<td><p>
+Greeting to pass to method
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>word</code></em></code>:</span></p></td>
+<td><p>
+Rewritten greeting
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="BroadcastzNewz ()">
+<a name="eggdbus-method-com.example.Tweak.BroadcastzNewz"></a><h3>BroadcastzNewz ()</h3>
+<pre class="programlisting">
+BroadcastzNewz (IN  String  newz)
+    </pre>
+<p>
+Conduit to broadcast newz. This method will make the object emit the #Tweak::NewzNotifz signal using the passed in parameter <em class="parameter"><code>newz</code></em> as the news to broadcast.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>newz</code></em></code>:</span></p></td>
+<td><p>
+The news to broadcast
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GetServerUniqueName ()">
+<a name="eggdbus-method-com.example.Tweak.GetServerUniqueName"></a><h3>GetServerUniqueName ()</h3>
+<pre class="programlisting">
+GetServerUniqueName (OUT String  server_unique_name)
+    </pre>
+<p>
+Gets the unique D-Bus name of the server
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>server_unique_name</code></em></code>:</span></p></td>
+<td><p>
+Unique D-Bus name
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="LongRunningMethod ()">
+<a name="eggdbus-method-com.example.Tweak.LongRunningMethod"></a><h3>LongRunningMethod ()</h3>
+<pre class="programlisting">
+LongRunningMethod (IN  Int32  msec_to_run)
+    </pre>
+<p>
+A method that takes <em class="parameter"><code>msec_to_run</code></em> milliseconds to reply
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">IN  Int32 <em class="parameter"><code>msec_to_run</code></em></code>:</span></p></td>
+<td><p>
+Number of milliseconds to wait until replying
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="ReturnGError ()">
+<a name="eggdbus-method-com.example.Tweak.ReturnGError"></a><h3>ReturnGError ()</h3>
+<pre class="programlisting">
+ReturnGError (IN  String  error_domain,
+              IN  Int32   error_code)
+    </pre>
+<p>
+Throws an error identified by <em class="parameter"><code>error_domain</code></em> and <em class="parameter"><code>error_code</code></em>. This is mainly for testing that we can transparently hand #GError's back and forth.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  String <em class="parameter"><code>error_domain</code></em></code>:</span></p></td>
+<td><p>
+A #GError error domain
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Int32 <em class="parameter"><code>error_code</code></em></code>:</span></p></td>
+<td><p>
+The error code for <em class="parameter"><code>error_domain</code></em>
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="MethodStructDisambiguation ()">
+<a name="eggdbus-method-com.example.Tweak.MethodStructDisambiguation"></a><h3>MethodStructDisambiguation ()</h3>
+<pre class="programlisting">
+MethodStructDisambiguation (IN  <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>   pair,
+                            IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>  point,
+                            OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>  enhanced_point,
+                            OUT <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>   enhanced_pair)
+    </pre>
+<p>
+A method to check we can properly disambiguate what structure wrapper types to use
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a> <em class="parameter"><code>pair</code></em></code>:</span></p></td>
+<td><p>
+A pair
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">IN  <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>point</code></em></code>:</span></p></td>
+<td><p>
+A point
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>enhanced_point</code></em></code>:</span></p></td>
+<td><p>
+An enhanced point
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a> <em class="parameter"><code>enhanced_pair</code></em></code>:</span></p></td>
+<td><p>
+An enhanced pair
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="MethodWithCTypes ()">
+<a name="eggdbus-method-com.example.Tweak.MethodWithCTypes"></a><h3>MethodWithCTypes ()</h3>
+<pre class="programlisting">
+MethodWithCTypes (IN  Int32  value,
+                  OUT Int32  better_value)
+    </pre>
+<p>
+A method to check we properly support specifying what C type to use for an integral type
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal">IN  Int32 <em class="parameter"><code>value</code></em></code>:</span></p></td>
+<td><p>
+Some value
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal">OUT Int32 <em class="parameter"><code>better_value</code></em></code>:</span></p></td>
+<td><p>
+I can't believe it's a better value!
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="eggdbus-if-signal-details-com.example.Tweak"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "NewzNotifz" signal'>
+<a name="eggdbus-signal-com.example.Tweak::NewzNotifz"></a><h3>The "NewzNotifz" signal</h3>
+<pre class="programlisting">
+NewzNotifz (String  newz)
+    </pre>
+<p>
+Emitted when there are NEWZ on the #Tweak interface
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">String <em class="parameter"><code>newz</code></em></code>:</span></p></td>
+<td><p>
+The newz in the tweaked world
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "SignalStructDisambiguation" signal'>
+<a name="eggdbus-signal-com.example.Tweak::SignalStructDisambiguation"></a><h3>The "SignalStructDisambiguation" signal</h3>
+<pre class="programlisting">
+SignalStructDisambiguation (<a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>   pair,
+                            <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>  point)
+    </pre>
+<p>
+A signal to check we can properly disambiguate what structure wrapper types to use
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><code class="literal"><a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a> <em class="parameter"><code>pair</code></em></code>:</span></p></td>
+<td><p>
+A pair
+      </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="literal"><a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a> <em class="parameter"><code>point</code></em></code>:</span></p></td>
+<td><p>
+A point
+      </p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "SignalWithCType" signal'>
+<a name="eggdbus-signal-com.example.Tweak::SignalWithCType"></a><h3>The "SignalWithCType" signal</h3>
+<pre class="programlisting">
+SignalWithCType (Int32  better_value)
+    </pre>
+<p>
+A signal to check we properly support specifying what C type to use for an integral type
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">Int32 <em class="parameter"><code>better_value</code></em></code>:</span></p></td>
+<td><p>
+Some value
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title='The "EscapeVehicleChanged" signal'>
+<a name="eggdbus-signal-com.example.Tweak::EscapeVehicleChanged"></a><h3>The "EscapeVehicleChanged" signal</h3>
+<pre class="programlisting">
+EscapeVehicleChanged (<a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a>  new_escape_vehicle)
+    </pre>
+<p>
+A signal to check we properly support emitting signals with enums
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal"><a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a> <em class="parameter"><code>new_escape_vehicle</code></em></code>:</span></p></td>
+<td><p>
+The new escape vehicle
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="eggdbus-if-property-details-com.example.Tweak"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "foo" property'>
+<a name="eggdbus-property-com.example.Tweak:foo"></a><h3>The "foo" property</h3>
+<pre class="programlisting">
+foo     readable     String
+    </pre>
+<p>
+The Foo value
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "bar" property'>
+<a name="eggdbus-property-com.example.Tweak:bar"></a><h3>The "bar" property</h3>
+<pre class="programlisting">
+bar     readable     Array&lt;Int32&gt;
+    </pre>
+<p>
+The Bar factor
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "baz" property'>
+<a name="eggdbus-property-com.example.Tweak:baz"></a><h3>The "baz" property</h3>
+<pre class="programlisting">
+baz     readable     <a class="link" href="eggdbus-structmain-Point.html#eggdbus-struct-Point" title="The Point Structure">Point</a>
+    </pre>
+<p>
+The Baz indicator
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "baz-forced-to-use-pair" property'>
+<a name="eggdbus-property-com.example.Tweak:baz-forced-to-use-pair"></a><h3>The "baz-forced-to-use-pair" property</h3>
+<pre class="programlisting">
+baz-forced-to-use-pair     readable     <a class="link" href="eggdbus-structmain-Pair.html#eggdbus-struct-Pair" title="The Pair Structure">Pair</a>
+    </pre>
+<p>
+ A slightly different Baz indicator 
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "SomeReadWriteProperty" property'>
+<a name="eggdbus-property-com.example.Tweak:SomeReadWriteProperty"></a><h3>The "SomeReadWriteProperty" property</h3>
+<pre class="programlisting">
+SomeReadWriteProperty     readwrite    String
+    </pre>
+<p>
+Hey, I'm promiscuous. I'm writeable!
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "PropertyWithCType" property'>
+<a name="eggdbus-property-com.example.Tweak:PropertyWithCType"></a><h3>The "PropertyWithCType" property</h3>
+<pre class="programlisting">
+PropertyWithCType     readwrite    Int32
+    </pre>
+<p>
+I'm a special C type
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "EscapeVehicle" property'>
+<a name="eggdbus-property-com.example.Tweak:EscapeVehicle"></a><h3>The "EscapeVehicle" property</h3>
+<pre class="programlisting">
+EscapeVehicle     readwrite    <a class="link" href="eggdbus-enummain-Vehicle.html#eggdbus-enum-Vehicle" title="The Vehicle Enumeration">Vehicle</a>
+    </pre>
+<p>
+The vehicle used for escaping.
+    </p>
+</div>
+<hr>
+<div class="refsect2" title='The "DefaultCreateFlags" property'>
+<a name="eggdbus-property-com.example.Tweak:DefaultCreateFlags"></a><h3>The "DefaultCreateFlags" property</h3>
+<pre class="programlisting">
+DefaultCreateFlags     readwrite    <a class="link" href="eggdbus-enummain-CreateFlags.html#eggdbus-enum-CreateFlags" title="The CreateFlags Flags">CreateFlags</a>
+    </pre>
+<p>
+The default create flags to use.
+    </p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

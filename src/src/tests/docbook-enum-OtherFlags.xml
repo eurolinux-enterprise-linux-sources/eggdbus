@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-enummain-OtherFlags">
+  <refmeta>
+    <refentrytitle role="top_of_page">OtherFlags Flag Enumeration</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>OtherFlags Flag Enumeration</refname>
+    <refpurpose>Some other flags</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="enum" id="eggdbus-enum-OtherFlags">
+      <title>The OtherFlags Flags</title>
+        <para>
+          <programlisting>
+{
+  None            = 0x00000040,
+  UseOrbitalLaser = 0x00000080,
+  MediaCoverage   = 0x00000100
+}
+          </programlisting>
+          <para>
+Another test flag enumeration.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-OtherFlags.None" role="constant">
+    <term><literal>None</literal></term>
+    <listitem>
+      <para>
+No flags explicitly set (but it's a stupid value!)
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-OtherFlags.UseOrbitalLaser" role="constant">
+    <term><literal>UseOrbitalLaser</literal></term>
+    <listitem>
+      <para>
+Use the Orbital Laser for deletion
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-OtherFlags.MediaCoverage" role="constant">
+    <term><literal>MediaCoverage</literal></term>
+    <listitem>
+      <para>
+Call the media before deletion
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

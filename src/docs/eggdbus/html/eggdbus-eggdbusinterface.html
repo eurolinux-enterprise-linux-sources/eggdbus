@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusInterface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusMessage.html" title="EggDBusMessage">
+<link rel="next" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusMessage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="stdinterfaces.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-eggdbusinterface.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-eggdbusinterface.description" class="shortcut">Description</a>
+                 | 
+                <a href="#eggdbus-eggdbusinterface.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusInterface">
+<a name="eggdbus-eggdbusinterface"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eggdbus-eggdbusinterface.top_of_page"></a>EggDBusInterface</span></h2>
+<p>EggDBusInterface — Encapsulates a D-Bus interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eggdbus-eggdbusinterface.synopsis"></a><h2>Synopsis</h2>
+<a name="EggDBusInterface"></a><pre class="synopsis">
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterface-struct" title="EggDBusInterface">EggDBusInterface</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceIface" title="EggDBusInterfaceIface">EggDBusInterfaceIface</a>;
+enum                <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfoFlags" title="enum EggDBusInterfacePropertyInfoFlags">EggDBusInterfacePropertyInfoFlags</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo">EggDBusInterfaceArgInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceMethodInfo" title="EggDBusInterfaceMethodInfo">EggDBusInterfaceMethodInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo">EggDBusInterfaceSignalInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a>;
+                    <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a>;
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-annotation-info-lookup" title="egg_dbus_interface_annotation_info_lookup ()">egg_dbus_interface_annotation_info_lookup</a>
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *annotations,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *annotation_name);
+const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo">EggDBusInterfaceSignalInfo</a> * <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-signal-for-g-name" title="egg_dbus_interface_info_lookup_signal_for_g_name ()">egg_dbus_interface_info_lookup_signal_for_g_name</a>
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *g_name);
+const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a> * <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-property-for-name" title="egg_dbus_interface_info_lookup_property_for_name ()">egg_dbus_interface_info_lookup_property_for_name</a>
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);
+const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a> * <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-lookup-property-for-g-name" title="egg_dbus_interface_info_lookup_property_for_g_name ()">egg_dbus_interface_info_lookup_property_for_g_name</a>
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *g_name);
+<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-new-node-info-from-xml" title="egg_dbus_interface_new_node_info_from_xml ()">egg_dbus_interface_new_node_info_from_xml</a>
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *xml_data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+void                <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-free" title="egg_dbus_interface_node_info_free ()">egg_dbus_interface_node_info_free</a>   (<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> *node_info);
+void                <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-info-to-xml" title="egg_dbus_interface_info_to_xml ()">egg_dbus_interface_info_to_xml</a>      (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *string_builder);
+void                <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-to-xml" title="egg_dbus_interface_node_info_to_xml ()">egg_dbus_interface_node_info_to_xml</a> (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> *node_info,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *string_builder);
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *             <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-bindings-get-error-domain-types" title="egg_dbus_bindings_get_error_domain_types ()">egg_dbus_bindings_get_error_domain_types</a>
+                                                        (void);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="eggdbus-eggdbusinterface.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----EggDBusInterface
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-eggdbusinterface.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterface"><span class="type">EggDBusInterface</span></a> interface is used for describing remote D-Bus interfaces
+and dispatching messages.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eggdbus-eggdbusinterface.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusInterface">
+<a name="EggDBusInterface-struct"></a><h3>EggDBusInterface</h3>
+<pre class="programlisting">typedef struct _EggDBusInterface EggDBusInterface;</pre>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceIface">
+<a name="EggDBusInterfaceIface"></a><h3>EggDBusInterfaceIface</h3>
+<pre class="programlisting">typedef struct {
+  GTypeInterface g_iface;
+
+  const EggDBusInterfaceInfo * (*get_interface_info)  (void);
+
+  void                         (*handle_message)      (EggDBusInterface    *interface,
+                                                       EggDBusMessage      *message);
+
+  EggDBusInterfaceProxy *      (*get_interface_proxy) (EggDBusObjectProxy  *object_proxy);
+} EggDBusInterfaceIface;
+</pre>
+<p>
+VTable for <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterface"><span class="type">EggDBusInterface</span></a>. This GInterface is used for both interface proxies (on
+the client side) and when exporting D-Bus interfaces (on the server side).
+</p>
+<p>
+When exporting a D-Bus interface (using <a class="link" href="EggDBusConnection.html#egg-dbus-connection-register-interface" title="egg_dbus_connection_register_interface ()"><code class="function">egg_dbus_connection_register_interface()</code></a>), simply
+provide <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> derived instance that implement this interface.
+</p>
+<p>
+You need to implement the <em class="parameter"><code>get_interface_info</code></em> vfunc to describe what the D-Bus interface
+looks like (this is designed to be stored in read-only data) as well as how D-Bus signal and
+property names (typically CamelCase) are mapped to GObject signal and property names (typically
+lowercase using hyphens).
+</p>
+<p>
+Incoming method calls are dispatched through the <em class="parameter"><code>handle_message</code></em> vfunc, D-Bus properties
+are get/set through the <code class="function">get_property()</code> / <code class="function">set_property()</code> vfuncs on the <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+><span class="type">GObject</span></a> class and
+emitted GObject signals (that matches D-Bus signals) are broadcast on the <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>
+instance(s) that the exported D-Bus interface have been registered with.
+</p>
+<p>
+Implementing the <em class="parameter"><code>get_interface_proxy</code></em> vfunc is optional. Typically language bindings
+for static languages (such as C or C++) wants to implement this vfunc to provide a
+type-safe client-side API for accessing the D-Bus interface. If implemented, then
+D-Bus signals received on the client-side will be propagated from <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>
+through <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> to the <em class="parameter"><code>handle_message</code></em> vfunc. Typically, implementations
+will want to turn the <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> into a GObject signal.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GTypeInterface"
+>GTypeInterface</a> <em class="structfield"><code>g_iface</code></em>;</span></p></td>
+<td> Parent interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code>get_interface_info</code></em> ()</span></p></td>
+<td> Gets introspection information about the interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code>handle_message</code></em> ()</span></p></td>
+<td> Handle an incoming message for an interface.  This is used for both dispatching
+signals for proxies and for handling method calls invocations originating from remote processes.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code>get_interface_proxy</code></em> ()</span></p></td>
+<td> Gets an interface proxy that can be used to access the D-Bus interface
+for the remote object represented by the given <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> object. The returned instance
+must be derived from <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a> and must implement the given interface.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum EggDBusInterfacePropertyInfoFlags">
+<a name="EggDBusInterfacePropertyInfoFlags"></a><h3>enum EggDBusInterfacePropertyInfoFlags</h3>
+<pre class="programlisting">typedef enum
+{
+  EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_NONE = 0,
+  EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_READABLE = (1&lt;&lt;0),
+  EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_WRITABLE = (1&lt;&lt;1),
+} EggDBusInterfacePropertyInfoFlags;
+</pre>
+<p>
+Flags describing the access control of a D-Bus property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="EGG-DBUS-INTERFACE-PROPERTY-INFO-FLAGS-NONE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_NONE</code></span></p></td>
+<td> No flags set.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-INTERFACE-PROPERTY-INFO-FLAGS-READABLE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_READABLE</code></span></p></td>
+<td> Property is readable.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-INTERFACE-PROPERTY-INFO-FLAGS-WRITABLE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_INTERFACE_PROPERTY_INFO_FLAGS_WRITABLE</code></span></p></td>
+<td> Property is writable.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceAnnotationInfo">
+<a name="EggDBusInterfaceAnnotationInfo"></a><h3>EggDBusInterfaceAnnotationInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *key;
+  const gchar                           *value;
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceAnnotationInfo;
+</pre>
+<p>
+Information about an annotation.
+</p>
+<p>
+By convention, an array of annotations is always terminated by an element
+where <em class="parameter"><code>key</code></em> is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>key</code></em>;</span></p></td>
+<td> The name of the annotation, e.g. <code class="literal">org.freedesktop.DBus.Deprecated</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>value</code></em>;</span></p></td>
+<td> The value of the annotation.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the annotation or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceArgInfo">
+<a name="EggDBusInterfaceArgInfo"></a><h3>EggDBusInterfaceArgInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *name;
+  const gchar                           *signature;
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceArgInfo;
+</pre>
+<p>
+Information about an argument for a method or a signal.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> Name of the argument, e.g. <em class="parameter"><code>unix_user_id</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>signature</code></em>;</span></p></td>
+<td> D-Bus signature of the argument (a single complete type).
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the argument or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceMethodInfo">
+<a name="EggDBusInterfaceMethodInfo"></a><h3>EggDBusInterfaceMethodInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *name;
+
+  const gchar                           *in_signature;
+  guint                                  in_num_args;
+  const EggDBusInterfaceArgInfo         *in_args;
+
+  const gchar                           *out_signature;
+  guint                                  out_num_args;
+  const EggDBusInterfaceArgInfo         *out_args;
+
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceMethodInfo;
+</pre>
+<p>
+Information about a method on an D-Bus interface.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> The name of the D-Bus method, e.g. <em class="parameter"><code>RequestName</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>in_signature</code></em>;</span></p></td>
+<td> The combined D-Bus signature of all arguments passed to the method (<em class="parameter"><code>in_num_args</code></em> complete types).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>in_num_args</code></em>;</span></p></td>
+<td> Number of arguments passed to the method.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo">EggDBusInterfaceArgInfo</a> *<em class="structfield"><code>in_args</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>in_num_args</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo"><span class="type">EggDBusInterfaceArgInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>in_num_args</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>out_signature</code></em>;</span></p></td>
+<td> The combined D-Bus signature of all arguments the method returns (<em class="parameter"><code>out_num_args</code></em> complete types).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>out_num_args</code></em>;</span></p></td>
+<td> Number of arguments the method returns.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo">EggDBusInterfaceArgInfo</a> *<em class="structfield"><code>out_args</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>out_num_args</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo"><span class="type">EggDBusInterfaceArgInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>out_num_args</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the method or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceSignalInfo">
+<a name="EggDBusInterfaceSignalInfo"></a><h3>EggDBusInterfaceSignalInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *name;
+  const gchar                           *g_name;
+
+  const gchar                           *signature;
+  guint                                  num_args;
+  const EggDBusInterfaceArgInfo         *args;
+
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceSignalInfo;
+</pre>
+<p>
+Information about a signal on a D-Bus interface.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> The name of the D-Bus signal, e.g. <em class="parameter"><code>NameOwnerChanged</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>g_name</code></em>;</span></p></td>
+<td> The GObject name of the D-Bus signal (in lower case with hyphens), e.g. <span class="emphasis"><em>name-owner-changed</em></span>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>signature</code></em>;</span></p></td>
+<td> The combined D-Bus signature of all arguments of the signal (<em class="parameter"><code>num_args</code></em> complete types).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_args</code></em>;</span></p></td>
+<td> Number of arguments of the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo">EggDBusInterfaceArgInfo</a> *<em class="structfield"><code>args</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_args</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceArgInfo" title="EggDBusInterfaceArgInfo"><span class="type">EggDBusInterfaceArgInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_args</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the signal or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfacePropertyInfo">
+<a name="EggDBusInterfacePropertyInfo"></a><h3>EggDBusInterfacePropertyInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *name;
+  const gchar                           *g_name;
+  const gchar                           *signature;
+  EggDBusInterfacePropertyInfoFlags      flags;
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfacePropertyInfo;
+</pre>
+<p>
+Information about a D-Bus property on a D-Bus interface.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> The name of the D-Bus property, e.g. <em class="parameter"><code>SupportedFilesystems</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>g_name</code></em>;</span></p></td>
+<td> The GObject name of the D-Bus property (in lower case with hyphens), e.g. <span class="emphasis"><em>supported-filesystems</em></span>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>signature</code></em>;</span></p></td>
+<td> The D-Bus signature of the property (a single complete type).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfoFlags" title="enum EggDBusInterfacePropertyInfoFlags">EggDBusInterfacePropertyInfoFlags</a> <em class="structfield"><code>flags</code></em>;</span></p></td>
+<td> Access control flags for the property.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the property or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceInfo">
+<a name="EggDBusInterfaceInfo"></a><h3>EggDBusInterfaceInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *name;
+
+  guint                                  num_methods;
+  const EggDBusInterfaceMethodInfo      *methods;
+
+  guint                                  num_signals;
+  const EggDBusInterfaceSignalInfo      *signals;
+
+  guint                                  num_properties;
+  const EggDBusInterfacePropertyInfo    *properties;
+
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceInfo;
+</pre>
+<p>
+Information about a D-Bus interface.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td> The name of the D-Bus interface, e.g. <code class="literal">org.freedesktop.DBus.Properties</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_methods</code></em>;</span></p></td>
+<td> Number of methods on the interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceMethodInfo" title="EggDBusInterfaceMethodInfo">EggDBusInterfaceMethodInfo</a> *<em class="structfield"><code>methods</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_methods</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceMethodInfo" title="EggDBusInterfaceMethodInfo"><span class="type">EggDBusInterfaceMethodInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_methods</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_signals</code></em>;</span></p></td>
+<td> Number of signals on the interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo">EggDBusInterfaceSignalInfo</a> *<em class="structfield"><code>signals</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_signals</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo"><span class="type">EggDBusInterfaceSignalInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_signals</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_properties</code></em>;</span></p></td>
+<td> Number of properties on the interface.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a> *<em class="structfield"><code>properties</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_properties</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo"><span class="type">EggDBusInterfacePropertyInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_properties</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the interface or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="EggDBusInterfaceNodeInfo">
+<a name="EggDBusInterfaceNodeInfo"></a><h3>EggDBusInterfaceNodeInfo</h3>
+<pre class="programlisting">typedef struct {
+  const gchar                           *path;
+
+  guint                                  num_interfaces;
+  const EggDBusInterfaceInfo            *interfaces;
+
+  guint                                  num_nodes;
+  const EggDBusInterfaceNodeInfo        *nodes;
+
+  const EggDBusInterfaceAnnotationInfo  *annotations;
+} EggDBusInterfaceNodeInfo;
+</pre>
+<p>
+Information about nodes in a remote object hierarchy.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>path</code></em>;</span></p></td>
+<td> The path of the node or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if omitted. Note that this may be a relative path. See the D-Bus specification for more details.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_interfaces</code></em>;</span></p></td>
+<td> Number of interfaces of the node.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *<em class="structfield"><code>interfaces</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_interfaces</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo"><span class="type">EggDBusInterfaceInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_interfaces</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> <em class="structfield"><code>num_nodes</code></em>;</span></p></td>
+<td> Number of child nodes.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> *<em class="structfield"><code>nodes</code></em>;</span></p></td>
+<td> A pointer to an array of <em class="parameter"><code>num_nodes</code></em> <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a> structures or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>num_nodes</code></em> is 0.
+</td>
+</tr>
+<tr>
+<td><p><span class="term">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *<em class="structfield"><code>annotations</code></em>;</span></p></td>
+<td> A pointer to an array of annotations for the node or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if there are no annotations.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_annotation_info_lookup ()">
+<a name="egg-dbus-interface-annotation-info-lookup"></a><h3>egg_dbus_interface_annotation_info_lookup ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_interface_annotation_info_lookup
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceAnnotationInfo" title="EggDBusInterfaceAnnotationInfo">EggDBusInterfaceAnnotationInfo</a> *annotations,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *annotation_name);</pre>
+<p>
+Looks up the value of an annotation.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>annotations</code></em> :</span></p></td>
+<td> An array of annotations.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>annotation_name</code></em> :</span></p></td>
+<td> The name of the annotation to look up.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A string. Do not free, it is owned by <em class="parameter"><code>annotations</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_info_lookup_signal_for_g_name ()">
+<a name="egg-dbus-interface-info-lookup-signal-for-g-name"></a><h3>egg_dbus_interface_info_lookup_signal_for_g_name ()</h3>
+<pre class="programlisting">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo">EggDBusInterfaceSignalInfo</a> * egg_dbus_interface_info_lookup_signal_for_g_name
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *g_name);</pre>
+<p>
+Looks up information about a signal.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo"><span class="type">EggDBusInterfaceInfo</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g_name</code></em> :</span></p></td>
+<td> A GObject signal name (lower case with hyphens)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceSignalInfo" title="EggDBusInterfaceSignalInfo"><span class="type">EggDBusInterfaceSignalInfo</span></a>. Do not free, it is owned by <em class="parameter"><code>info</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_info_lookup_property_for_name ()">
+<a name="egg-dbus-interface-info-lookup-property-for-name"></a><h3>egg_dbus_interface_info_lookup_property_for_name ()</h3>
+<pre class="programlisting">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a> * egg_dbus_interface_info_lookup_property_for_name
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);</pre>
+<p>
+Looks up information about a property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo"><span class="type">EggDBusInterfaceInfo</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A D-Bus property name (typically in CamelCase).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo"><span class="type">EggDBusInterfacePropertyInfo</span></a>. Do not free, it is owned by <em class="parameter"><code>info</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_info_lookup_property_for_g_name ()">
+<a name="egg-dbus-interface-info-lookup-property-for-g-name"></a><h3>egg_dbus_interface_info_lookup_property_for_g_name ()</h3>
+<pre class="programlisting">const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo">EggDBusInterfacePropertyInfo</a> * egg_dbus_interface_info_lookup_property_for_g_name
+                                                        (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *g_name);</pre>
+<p>
+Looks up information about a property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo"><span class="type">EggDBusInterfaceInfo</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>g_name</code></em> :</span></p></td>
+<td> A GObject property name (e.g. lower case with hyphens).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfacePropertyInfo" title="EggDBusInterfacePropertyInfo"><span class="type">EggDBusInterfacePropertyInfo</span></a>. Do not free, it is owned by <em class="parameter"><code>info</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_new_node_info_from_xml ()">
+<a name="egg-dbus-interface-new-node-info-from-xml"></a><h3>egg_dbus_interface_new_node_info_from_xml ()</h3>
+<pre class="programlisting"><a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * egg_dbus_interface_new_node_info_from_xml
+                                                        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *xml_data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Parses <em class="parameter"><code>xml_data</code></em> and returns a <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a> representing the data.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml_data</code></em> :</span></p></td>
+<td> Valid D-Bus introspection XML.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a> structure or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em> is set. Free with
+         <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-free" title="egg_dbus_interface_node_info_free ()"><code class="function">egg_dbus_interface_node_info_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_node_info_free ()">
+<a name="egg-dbus-interface-node-info-free"></a><h3>egg_dbus_interface_node_info_free ()</h3>
+<pre class="programlisting">void                egg_dbus_interface_node_info_free   (<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> *node_info);</pre>
+<p>
+Frees <em class="parameter"><code>node_info</code></em>. This is a deep free, all nodes of <em class="parameter"><code>node_info</code></em> and it's children will be freed as well.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>node_info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_info_to_xml ()">
+<a name="egg-dbus-interface-info-to-xml"></a><h3>egg_dbus_interface_info_to_xml ()</h3>
+<pre class="programlisting">void                egg_dbus_interface_info_to_xml      (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo">EggDBusInterfaceInfo</a> *info,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *string_builder);</pre>
+<p>
+Appends an XML representation of <em class="parameter"><code>info</code></em> (and it's children) to <em class="parameter"><code>string_builder</code></em>.
+</p>
+<p>
+This function is typically used for generating introspection XML documents at run-time for
+handling the <code class="literal">org.freedesktop.DBus.Introspectable.Introspect</code> method.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceInfo" title="EggDBusInterfaceInfo"><span class="type">EggDBusInterfaceInfo</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>indent</code></em> :</span></p></td>
+<td> Indentation level.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string_builder</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+><span class="type">GString</span></a> to to append XML data to.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_interface_node_info_to_xml ()">
+<a name="egg-dbus-interface-node-info-to-xml"></a><h3>egg_dbus_interface_node_info_to_xml ()</h3>
+<pre class="programlisting">void                egg_dbus_interface_node_info_to_xml (const <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> *node_info,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> indent,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+>GString</a> *string_builder);</pre>
+<p>
+Appends an XML representation of <em class="parameter"><code>node_info</code></em> (and it's children) to <em class="parameter"><code>string_builder</code></em>.
+</p>
+<p>
+This function is typically used for generating introspection XML documents at run-time for
+handling the <code class="literal">org.freedesktop.DBus.Introspectable.Introspect</code> method.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node_info</code></em> :</span></p></td>
+<td> A <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>indent</code></em> :</span></p></td>
+<td> Indentation level.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string_builder</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"
+><span class="type">GString</span></a> to to append XML data to.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_bindings_get_error_domain_types ()">
+<a name="egg-dbus-bindings-get-error-domain-types"></a><h3>egg_dbus_bindings_get_error_domain_types ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> *             egg_dbus_bindings_get_error_domain_types
+                                                        (void);</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

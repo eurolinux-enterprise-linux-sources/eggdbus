@@ -1,0 +1,2024 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-com.example.Frob">
+  <refmeta>
+    <refentrytitle role="top_of_page">com.example.Frob Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>com.example.Frob Interface</refname>
+    <refpurpose>Frob interface used for testing</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+<link linkend="eggdbus-method-com.example.Frob.HelloWorld">HelloWorld</link>                            (IN  String                           hello_message,
+                                       OUT String                           arg_1)
+<link linkend="eggdbus-method-com.example.Frob.TestPrimitiveTypes">TestPrimitiveTypes</link>                    (IN  Byte                             val_byte,
+                                       IN  Boolean                          val_boolean,
+                                       IN  Int16                            val_int16,
+                                       IN  UInt16                           val_uint16,
+                                       IN  Int32                            val_int32,
+                                       IN  UInt32                           val_uint32,
+                                       IN  Int64                            val_int64,
+                                       IN  UInt64                           val_uint64,
+                                       IN  Double                           val_double,
+                                       IN  String                           val_string,
+                                       IN  ObjectPath                       val_objpath,
+                                       IN  Signature                        val_signature,
+                                       OUT Byte                             arg_12,
+                                       OUT Boolean                          arg_13,
+                                       OUT Int16                            arg_14,
+                                       OUT UInt16                           arg_15,
+                                       OUT Int32                            arg_16,
+                                       OUT UInt32                           arg_17,
+                                       OUT Int64                            arg_18,
+                                       OUT UInt64                           arg_19,
+                                       OUT Double                           arg_20,
+                                       OUT String                           arg_21,
+                                       OUT ObjectPath                       arg_22,
+                                       OUT Signature                        arg_23)
+<link linkend="eggdbus-method-com.example.Frob.TestArrayOfPrimitiveTypes">TestArrayOfPrimitiveTypes</link>             (IN  Array&lt;Byte&gt;                      val_byte,
+                                       IN  Array&lt;Boolean&gt;                   val_boolean,
+                                       IN  Array&lt;Int16&gt;                     val_int16,
+                                       IN  Array&lt;UInt16&gt;                    val_uint16,
+                                       IN  Array&lt;Int32&gt;                     val_int32,
+                                       IN  Array&lt;UInt32&gt;                    val_uint32,
+                                       IN  Array&lt;Int64&gt;                     val_int64,
+                                       IN  Array&lt;UInt64&gt;                    val_uint64,
+                                       IN  Array&lt;Double&gt;                    val_double,
+                                       IN  Array&lt;String&gt;                    val_string,
+                                       IN  Array&lt;ObjectPath&gt;                val_objpath,
+                                       IN  Array&lt;Signature&gt;                 val_signature,
+                                       OUT Array&lt;Byte&gt;                      arg_12,
+                                       OUT Array&lt;Boolean&gt;                   arg_13,
+                                       OUT Array&lt;Int16&gt;                     arg_14,
+                                       OUT Array&lt;UInt16&gt;                    arg_15,
+                                       OUT Array&lt;Int32&gt;                     arg_16,
+                                       OUT Array&lt;UInt32&gt;                    arg_17,
+                                       OUT Array&lt;Int64&gt;                     arg_18,
+                                       OUT Array&lt;UInt64&gt;                    arg_19,
+                                       OUT Array&lt;Double&gt;                    arg_20,
+                                       OUT Array&lt;String&gt;                    arg_21,
+                                       OUT Array&lt;ObjectPath&gt;                arg_22,
+                                       OUT Array&lt;Signature&gt;                 arg_23)
+<link linkend="eggdbus-method-com.example.Frob.TestStructureTypes">TestStructureTypes</link>                    (IN  <link linkend="eggdbus-struct-Point">Point</link>                            s1,
+                                       IN  <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>                   s2,
+                                       OUT <link linkend="eggdbus-struct-Point">Point</link>                            arg_2,
+                                       OUT <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>                   arg_3)
+<link linkend="eggdbus-method-com.example.Frob.TestArrayOfStructureTypes">TestArrayOfStructureTypes</link>             (IN  Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt;    list,
+                                       OUT Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt;    arg_1)
+<link linkend="eggdbus-method-com.example.Frob.TestHashTables">TestHashTables</link>                        (IN  Dict&lt;String,String&gt;              hss,
+                                       IN  Dict&lt;ObjectPath,ObjectPath&gt;      hoo,
+                                       IN  Dict&lt;Int32,Int32&gt;                hii,
+                                       IN  Dict&lt;Byte,Byte&gt;                  hyy,
+                                       IN  Dict&lt;Int16,Int16&gt;                hnn,
+                                       IN  Dict&lt;UInt16,UInt16&gt;              hqq,
+                                       IN  Dict&lt;UInt32,UInt32&gt;              huu,
+                                       IN  Dict&lt;Boolean,Boolean&gt;            hbb,
+                                       IN  Dict&lt;Int64,Int64&gt;                hxx,
+                                       IN  Dict&lt;UInt64,UInt64&gt;              htt,
+                                       IN  Dict&lt;Double,Double&gt;              hdd,
+                                       OUT Dict&lt;String,String&gt;              arg_1,
+                                       OUT Dict&lt;ObjectPath,ObjectPath&gt;      arg_3,
+                                       OUT Dict&lt;Int32,Int32&gt;                arg_5,
+                                       OUT Dict&lt;Byte,Byte&gt;                  arg_7,
+                                       OUT Dict&lt;Int16,Int16&gt;                arg_9,
+                                       OUT Dict&lt;UInt16,UInt16&gt;              arg_11,
+                                       OUT Dict&lt;UInt32,UInt32&gt;              arg_13,
+                                       OUT Dict&lt;Boolean,Boolean&gt;            arg_15,
+                                       OUT Dict&lt;Int64,Int64&gt;                arg_17,
+                                       OUT Dict&lt;UInt64,UInt64&gt;              arg_19,
+                                       OUT Dict&lt;Double,Double&gt;              arg_21)
+<link linkend="eggdbus-method-com.example.Frob.TestHashTablesOfArrays">TestHashTablesOfArrays</link>                (IN  Dict&lt;String,Array&lt;String&gt;&gt;       hsas,
+                                       IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt;   hsao,
+                                       IN  Dict&lt;String,Array&lt;Int32&gt;&gt;        hsai,
+                                       IN  Dict&lt;String,Array&lt;Byte&gt;&gt;         hsay,
+                                       IN  Dict&lt;String,Array&lt;Int16&gt;&gt;        hsan,
+                                       IN  Dict&lt;String,Array&lt;UInt16&gt;&gt;       hsaq,
+                                       IN  Dict&lt;String,Array&lt;UInt32&gt;&gt;       hsau,
+                                       IN  Dict&lt;String,Array&lt;Boolean&gt;&gt;      hsab,
+                                       IN  Dict&lt;String,Array&lt;Int64&gt;&gt;        hsax,
+                                       IN  Dict&lt;String,Array&lt;UInt64&gt;&gt;       hsat,
+                                       IN  Dict&lt;String,Array&lt;Double&gt;&gt;       hsad,
+                                       IN  Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;        hash_of_point_arrays,
+                                       OUT Dict&lt;String,Array&lt;String&gt;&gt;       arg_1,
+                                       OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt;   arg_3,
+                                       OUT Dict&lt;String,Array&lt;Int32&gt;&gt;        arg_5,
+                                       OUT Dict&lt;String,Array&lt;Byte&gt;&gt;         arg_7,
+                                       OUT Dict&lt;String,Array&lt;Int16&gt;&gt;        arg_9,
+                                       OUT Dict&lt;String,Array&lt;UInt16&gt;&gt;       arg_11,
+                                       OUT Dict&lt;String,Array&lt;UInt32&gt;&gt;       arg_13,
+                                       OUT Dict&lt;String,Array&lt;Boolean&gt;&gt;      arg_15,
+                                       OUT Dict&lt;String,Array&lt;Int64&gt;&gt;        arg_17,
+                                       OUT Dict&lt;String,Array&lt;UInt64&gt;&gt;       arg_19,
+                                       OUT Dict&lt;String,Array&lt;Double&gt;&gt;       arg_21,
+                                       OUT Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;        new_hash_of_point_arrays)
+<link linkend="eggdbus-method-com.example.Frob.TestHashTableOfStructures">TestHashTableOfStructures</link>             (IN  Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;               hash_of_points,
+                                       OUT Dict&lt;String,<link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>&gt;      hash_of_described_points)
+<link linkend="eggdbus-method-com.example.Frob.TestHashTableOfHashTablesOfStructures">TestHashTableOfHashTablesOfStructures</link> (IN  Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  hash_of_hash_of_points,
+                                       OUT Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  new_hash_of_hash_of_points)
+<link linkend="eggdbus-method-com.example.Frob.TestArrayOfHashTablesOfStructures">TestArrayOfHashTablesOfStructures</link>     (IN  Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;        array_of_hash_of_points,
+                                       OUT Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;        new_array_of_hash_of_points)
+<link linkend="eggdbus-method-com.example.Frob.TestArrayOfArrays">TestArrayOfArrays</link>                     (IN  Array&lt;Array&lt;String&gt;&gt;             aas,
+                                       IN  Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;              aastruct,
+                                       IN  Array&lt;Array&lt;ObjectPath&gt;&gt;         aao,
+                                       IN  Array&lt;Array&lt;Int32&gt;&gt;              aai,
+                                       IN  Array&lt;Array&lt;Byte&gt;&gt;               aay,
+                                       IN  Array&lt;Array&lt;Int16&gt;&gt;              aan,
+                                       IN  Array&lt;Array&lt;UInt16&gt;&gt;             aaq,
+                                       IN  Array&lt;Array&lt;UInt32&gt;&gt;             aau,
+                                       IN  Array&lt;Array&lt;Boolean&gt;&gt;            aab,
+                                       IN  Array&lt;Array&lt;Int64&gt;&gt;              aax,
+                                       IN  Array&lt;Array&lt;UInt64&gt;&gt;             aat,
+                                       IN  Array&lt;Array&lt;Double&gt;&gt;             aad,
+                                       IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;      aaas,
+                                       OUT Array&lt;Array&lt;String&gt;&gt;             ret_aas,
+                                       OUT Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;              ret_aastruct,
+                                       OUT Array&lt;Array&lt;ObjectPath&gt;&gt;         ret_aao,
+                                       OUT Array&lt;Array&lt;Int32&gt;&gt;              ret_aai,
+                                       OUT Array&lt;Array&lt;Byte&gt;&gt;               ret_aay,
+                                       OUT Array&lt;Array&lt;Int16&gt;&gt;              ret_aan,
+                                       OUT Array&lt;Array&lt;UInt16&gt;&gt;             ret_aaq,
+                                       OUT Array&lt;Array&lt;UInt32&gt;&gt;             ret_aau,
+                                       OUT Array&lt;Array&lt;Boolean&gt;&gt;            ret_aab,
+                                       OUT Array&lt;Array&lt;Int64&gt;&gt;              ret_aax,
+                                       OUT Array&lt;Array&lt;UInt64&gt;&gt;             ret_aat,
+                                       OUT Array&lt;Array&lt;Double&gt;&gt;             ret_aad,
+                                       OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;      ret_aaas)
+<link linkend="eggdbus-method-com.example.Frob.TestVariantReturn">TestVariantReturn</link>                     (IN  String                           desired_variant,
+                                       OUT Variant                          variant)
+<link linkend="eggdbus-method-com.example.Frob.EmitTestSignals">EmitTestSignals</link>                       ()
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="signal_proto" id="eggdbus-if-signals-com.example.Frob">
+    <title role="signal_proto.title">Signals</title>
+    <synopsis>
+<link linkend="eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes">SignalWithPrimitiveTypes</link>        (Byte                 val_byte,
+                                 Boolean              val_boolean,
+                                 Int16                val_int16,
+                                 UInt16               val_uint16,
+                                 Int32                val_int32,
+                                 UInt32               val_uint32,
+                                 Int64                val_int64,
+                                 UInt64               val_uint64,
+                                 Double               val_double,
+                                 String               val_string,
+                                 ObjectPath           val_objpath,
+                                 Signature            val_sig)
+<link linkend="eggdbus-signal-com.example.Frob::SignalWithArrayOfPrimitiveTypes">SignalWithArrayOfPrimitiveTypes</link> (Array&lt;Byte&gt;          array_byte,
+                                 Array&lt;Int32&gt;         array_int32,
+                                 Array&lt;String&gt;        array_string,
+                                 Array&lt;ObjectPath&gt;    array_objpath,
+                                 Array&lt;Signature&gt;     array_sig)
+<link linkend="eggdbus-signal-com.example.Frob::SignalWithStructureAndHash">SignalWithStructureAndHash</link>      (<link linkend="eggdbus-struct-Point">Point</link>                point,
+                                 <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>       described-point,
+                                 Dict&lt;String,String&gt;  hash_of_string_to_string,
+                                 Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;   hash_of_string_to_point)
+    </synopsis>
+  </refsect1>
+  <refsect1 role="properties" id="eggdbus-if-properties-com.example.Frob">
+    <title role="properties.title">Properties</title>
+    <synopsis>
+<link linkend="eggdbus-property-com.example.Frob:y">y</link>       readable     Byte
+<link linkend="eggdbus-property-com.example.Frob:b">b</link>       readable     Boolean
+<link linkend="eggdbus-property-com.example.Frob:n">n</link>       readable     Int16
+<link linkend="eggdbus-property-com.example.Frob:q">q</link>       readable     UInt16
+<link linkend="eggdbus-property-com.example.Frob:i">i</link>       readable     Int32
+<link linkend="eggdbus-property-com.example.Frob:u">u</link>       readable     UInt32
+<link linkend="eggdbus-property-com.example.Frob:x">x</link>       readable     Int64
+<link linkend="eggdbus-property-com.example.Frob:t">t</link>       readable     UInt64
+<link linkend="eggdbus-property-com.example.Frob:d">d</link>       readable     Double
+<link linkend="eggdbus-property-com.example.Frob:s">s</link>       readable     String
+<link linkend="eggdbus-property-com.example.Frob:o">o</link>       readable     ObjectPath
+<link linkend="eggdbus-property-com.example.Frob:g">g</link>       readable     Signature
+<link linkend="eggdbus-property-com.example.Frob:ay">ay</link>      readable     Array&lt;Byte&gt;
+<link linkend="eggdbus-property-com.example.Frob:ab">ab</link>      readable     Array&lt;Boolean&gt;
+<link linkend="eggdbus-property-com.example.Frob:an">an</link>      readable     Array&lt;Int16&gt;
+<link linkend="eggdbus-property-com.example.Frob:aq">aq</link>      readable     Array&lt;UInt16&gt;
+<link linkend="eggdbus-property-com.example.Frob:ai">ai</link>      readable     Array&lt;Int32&gt;
+<link linkend="eggdbus-property-com.example.Frob:au">au</link>      readable     Array&lt;UInt32&gt;
+<link linkend="eggdbus-property-com.example.Frob:ax">ax</link>      readable     Array&lt;Int64&gt;
+<link linkend="eggdbus-property-com.example.Frob:at">at</link>      readable     Array&lt;UInt64&gt;
+<link linkend="eggdbus-property-com.example.Frob:ad">ad</link>      readable     Array&lt;Double&gt;
+<link linkend="eggdbus-property-com.example.Frob:as">as</link>      readable     Array&lt;String&gt;
+<link linkend="eggdbus-property-com.example.Frob:ao">ao</link>      readable     Array&lt;ObjectPath&gt;
+<link linkend="eggdbus-property-com.example.Frob:ag">ag</link>      readable     Array&lt;Signature&gt;
+<link linkend="eggdbus-property-com.example.Frob:foo">foo</link>     readable     String
+    </synopsis>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-description-com.example.Frob">
+    <title role="desc.title">Description</title>
+      <para>
+<para>The <link linkend="eggdbus-interface-com.example.Frob">com.example.Frob</link> interface is used in the EggDBus test suite.</para><para>Test of symbol/constant/method/signal/property resolution: Link to method <link linkend="eggdbus-method-com.example.Frob.HelloWorld">HelloWorld()</link>. And a link to a signal <link linkend="eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes"><type>"SignalWithPrimitiveTypes"</type></link>. And a property <link linkend="eggdbus-property-com.example.Frob:foo"><type>"foo"</type></link>. And also a struct <link linkend="eggdbus-struct-Point">Point</link>. And an error <link linkend="eggdbus-constant-Error.com.example.Error.FluxCapacitorFailure">com.example.Error.FluxCapacitorFailure</link>. And a flag value <link linkend="eggdbus-constant-CreateFlags.LogAttempt">CreateFlags.LogAttempt</link>. And an enum <link linkend="eggdbus-constant-Vehicle.Truck">Vehicle.Truck</link>. Link to an enumeration <link linkend="eggdbus-enum-Vehicle">Vehicle</link>. Link to a collection of errors <link linkend="eggdbus-errordomain-com.example.Error.">com.example.Error.* Error Domain</link>. And a collection of flags <link linkend="eggdbus-enum-DeleteFlags">DeleteFlags</link>. <literal>TRUE</literal>. <literal>FALSE</literal>. That's it.</para>
+      </para>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-com.example.Frob">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.HelloWorld">
+      <title>HelloWorld ()</title>
+    <programlisting>
+HelloWorld (IN  String  hello_message,
+            OUT String  arg_1)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>hello_message</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT String <parameter>arg_1</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestPrimitiveTypes">
+      <title>TestPrimitiveTypes ()</title>
+    <programlisting>
+TestPrimitiveTypes (IN  Byte        val_byte,
+                    IN  Boolean     val_boolean,
+                    IN  Int16       val_int16,
+                    IN  UInt16      val_uint16,
+                    IN  Int32       val_int32,
+                    IN  UInt32      val_uint32,
+                    IN  Int64       val_int64,
+                    IN  UInt64      val_uint64,
+                    IN  Double      val_double,
+                    IN  String      val_string,
+                    IN  ObjectPath  val_objpath,
+                    IN  Signature   val_signature,
+                    OUT Byte        arg_12,
+                    OUT Boolean     arg_13,
+                    OUT Int16       arg_14,
+                    OUT UInt16      arg_15,
+                    OUT Int32       arg_16,
+                    OUT UInt32      arg_17,
+                    OUT Int64       arg_18,
+                    OUT UInt64      arg_19,
+                    OUT Double      arg_20,
+                    OUT String      arg_21,
+                    OUT ObjectPath  arg_22,
+                    OUT Signature   arg_23)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Byte <parameter>val_byte</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>val_boolean</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Int16 <parameter>val_int16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  UInt16 <parameter>val_uint16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Int32 <parameter>val_int32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  UInt32 <parameter>val_uint32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Int64 <parameter>val_int64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  UInt64 <parameter>val_uint64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Double <parameter>val_double</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  String <parameter>val_string</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  ObjectPath <parameter>val_objpath</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Signature <parameter>val_signature</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Byte <parameter>arg_12</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Boolean <parameter>arg_13</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Int16 <parameter>arg_14</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT UInt16 <parameter>arg_15</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Int32 <parameter>arg_16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT UInt32 <parameter>arg_17</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Int64 <parameter>arg_18</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT UInt64 <parameter>arg_19</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Double <parameter>arg_20</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT String <parameter>arg_21</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT ObjectPath <parameter>arg_22</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Signature <parameter>arg_23</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestArrayOfPrimitiveTypes">
+      <title>TestArrayOfPrimitiveTypes ()</title>
+    <programlisting>
+TestArrayOfPrimitiveTypes (IN  Array&lt;Byte&gt;        val_byte,
+                           IN  Array&lt;Boolean&gt;     val_boolean,
+                           IN  Array&lt;Int16&gt;       val_int16,
+                           IN  Array&lt;UInt16&gt;      val_uint16,
+                           IN  Array&lt;Int32&gt;       val_int32,
+                           IN  Array&lt;UInt32&gt;      val_uint32,
+                           IN  Array&lt;Int64&gt;       val_int64,
+                           IN  Array&lt;UInt64&gt;      val_uint64,
+                           IN  Array&lt;Double&gt;      val_double,
+                           IN  Array&lt;String&gt;      val_string,
+                           IN  Array&lt;ObjectPath&gt;  val_objpath,
+                           IN  Array&lt;Signature&gt;   val_signature,
+                           OUT Array&lt;Byte&gt;        arg_12,
+                           OUT Array&lt;Boolean&gt;     arg_13,
+                           OUT Array&lt;Int16&gt;       arg_14,
+                           OUT Array&lt;UInt16&gt;      arg_15,
+                           OUT Array&lt;Int32&gt;       arg_16,
+                           OUT Array&lt;UInt32&gt;      arg_17,
+                           OUT Array&lt;Int64&gt;       arg_18,
+                           OUT Array&lt;UInt64&gt;      arg_19,
+                           OUT Array&lt;Double&gt;      arg_20,
+                           OUT Array&lt;String&gt;      arg_21,
+                           OUT Array&lt;ObjectPath&gt;  arg_22,
+                           OUT Array&lt;Signature&gt;   arg_23)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Array&lt;Byte&gt; <parameter>val_byte</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Boolean&gt; <parameter>val_boolean</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Int16&gt; <parameter>val_int16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;UInt16&gt; <parameter>val_uint16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Int32&gt; <parameter>val_int32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;UInt32&gt; <parameter>val_uint32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Int64&gt; <parameter>val_int64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;UInt64&gt; <parameter>val_uint64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Double&gt; <parameter>val_double</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;String&gt; <parameter>val_string</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;ObjectPath&gt; <parameter>val_objpath</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Signature&gt; <parameter>val_signature</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Byte&gt; <parameter>arg_12</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Boolean&gt; <parameter>arg_13</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Int16&gt; <parameter>arg_14</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;UInt16&gt; <parameter>arg_15</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Int32&gt; <parameter>arg_16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;UInt32&gt; <parameter>arg_17</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Int64&gt; <parameter>arg_18</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;UInt64&gt; <parameter>arg_19</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Double&gt; <parameter>arg_20</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;String&gt; <parameter>arg_21</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;ObjectPath&gt; <parameter>arg_22</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Signature&gt; <parameter>arg_23</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestStructureTypes">
+      <title>TestStructureTypes ()</title>
+    <programlisting>
+TestStructureTypes (IN  <link linkend="eggdbus-struct-Point">Point</link>           s1,
+                    IN  <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>  s2,
+                    OUT <link linkend="eggdbus-struct-Point">Point</link>           arg_2,
+                    OUT <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>  arg_3)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  <link linkend="eggdbus-struct-Point">Point</link> <parameter>s1</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link> <parameter>s2</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-struct-Point">Point</link> <parameter>arg_2</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link> <parameter>arg_3</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestArrayOfStructureTypes">
+      <title>TestArrayOfStructureTypes ()</title>
+    <programlisting>
+TestArrayOfStructureTypes (IN  Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt;  list,
+                           OUT Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt;  arg_1)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt; <parameter>list</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;<link linkend="eggdbus-struct-ExtendedDescribedPoint">ExtendedDescribedPoint</link>&gt; <parameter>arg_1</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestHashTables">
+      <title>TestHashTables ()</title>
+    <programlisting>
+TestHashTables (IN  Dict&lt;String,String&gt;          hss,
+                IN  Dict&lt;ObjectPath,ObjectPath&gt;  hoo,
+                IN  Dict&lt;Int32,Int32&gt;            hii,
+                IN  Dict&lt;Byte,Byte&gt;              hyy,
+                IN  Dict&lt;Int16,Int16&gt;            hnn,
+                IN  Dict&lt;UInt16,UInt16&gt;          hqq,
+                IN  Dict&lt;UInt32,UInt32&gt;          huu,
+                IN  Dict&lt;Boolean,Boolean&gt;        hbb,
+                IN  Dict&lt;Int64,Int64&gt;            hxx,
+                IN  Dict&lt;UInt64,UInt64&gt;          htt,
+                IN  Dict&lt;Double,Double&gt;          hdd,
+                OUT Dict&lt;String,String&gt;          arg_1,
+                OUT Dict&lt;ObjectPath,ObjectPath&gt;  arg_3,
+                OUT Dict&lt;Int32,Int32&gt;            arg_5,
+                OUT Dict&lt;Byte,Byte&gt;              arg_7,
+                OUT Dict&lt;Int16,Int16&gt;            arg_9,
+                OUT Dict&lt;UInt16,UInt16&gt;          arg_11,
+                OUT Dict&lt;UInt32,UInt32&gt;          arg_13,
+                OUT Dict&lt;Boolean,Boolean&gt;        arg_15,
+                OUT Dict&lt;Int64,Int64&gt;            arg_17,
+                OUT Dict&lt;UInt64,UInt64&gt;          arg_19,
+                OUT Dict&lt;Double,Double&gt;          arg_21)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,String&gt; <parameter>hss</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;ObjectPath,ObjectPath&gt; <parameter>hoo</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Int32,Int32&gt; <parameter>hii</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Byte,Byte&gt; <parameter>hyy</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Int16,Int16&gt; <parameter>hnn</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;UInt16,UInt16&gt; <parameter>hqq</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;UInt32,UInt32&gt; <parameter>huu</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Boolean,Boolean&gt; <parameter>hbb</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Int64,Int64&gt; <parameter>hxx</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;UInt64,UInt64&gt; <parameter>htt</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;Double,Double&gt; <parameter>hdd</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,String&gt; <parameter>arg_1</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;ObjectPath,ObjectPath&gt; <parameter>arg_3</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Int32,Int32&gt; <parameter>arg_5</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Byte,Byte&gt; <parameter>arg_7</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Int16,Int16&gt; <parameter>arg_9</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;UInt16,UInt16&gt; <parameter>arg_11</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;UInt32,UInt32&gt; <parameter>arg_13</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Boolean,Boolean&gt; <parameter>arg_15</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Int64,Int64&gt; <parameter>arg_17</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;UInt64,UInt64&gt; <parameter>arg_19</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;Double,Double&gt; <parameter>arg_21</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestHashTablesOfArrays">
+      <title>TestHashTablesOfArrays ()</title>
+    <programlisting>
+TestHashTablesOfArrays (IN  Dict&lt;String,Array&lt;String&gt;&gt;      hsas,
+                        IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt;  hsao,
+                        IN  Dict&lt;String,Array&lt;Int32&gt;&gt;       hsai,
+                        IN  Dict&lt;String,Array&lt;Byte&gt;&gt;        hsay,
+                        IN  Dict&lt;String,Array&lt;Int16&gt;&gt;       hsan,
+                        IN  Dict&lt;String,Array&lt;UInt16&gt;&gt;      hsaq,
+                        IN  Dict&lt;String,Array&lt;UInt32&gt;&gt;      hsau,
+                        IN  Dict&lt;String,Array&lt;Boolean&gt;&gt;     hsab,
+                        IN  Dict&lt;String,Array&lt;Int64&gt;&gt;       hsax,
+                        IN  Dict&lt;String,Array&lt;UInt64&gt;&gt;      hsat,
+                        IN  Dict&lt;String,Array&lt;Double&gt;&gt;      hsad,
+                        IN  Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;       hash_of_point_arrays,
+                        OUT Dict&lt;String,Array&lt;String&gt;&gt;      arg_1,
+                        OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt;  arg_3,
+                        OUT Dict&lt;String,Array&lt;Int32&gt;&gt;       arg_5,
+                        OUT Dict&lt;String,Array&lt;Byte&gt;&gt;        arg_7,
+                        OUT Dict&lt;String,Array&lt;Int16&gt;&gt;       arg_9,
+                        OUT Dict&lt;String,Array&lt;UInt16&gt;&gt;      arg_11,
+                        OUT Dict&lt;String,Array&lt;UInt32&gt;&gt;      arg_13,
+                        OUT Dict&lt;String,Array&lt;Boolean&gt;&gt;     arg_15,
+                        OUT Dict&lt;String,Array&lt;Int64&gt;&gt;       arg_17,
+                        OUT Dict&lt;String,Array&lt;UInt64&gt;&gt;      arg_19,
+                        OUT Dict&lt;String,Array&lt;Double&gt;&gt;      arg_21,
+                        OUT Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;       new_hash_of_point_arrays)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;String&gt;&gt; <parameter>hsas</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;ObjectPath&gt;&gt; <parameter>hsao</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Int32&gt;&gt; <parameter>hsai</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Byte&gt;&gt; <parameter>hsay</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Int16&gt;&gt; <parameter>hsan</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;UInt16&gt;&gt; <parameter>hsaq</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;UInt32&gt;&gt; <parameter>hsau</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Boolean&gt;&gt; <parameter>hsab</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Int64&gt;&gt; <parameter>hsax</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;UInt64&gt;&gt; <parameter>hsat</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;Double&gt;&gt; <parameter>hsad</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>hash_of_point_arrays</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;String&gt;&gt; <parameter>arg_1</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;ObjectPath&gt;&gt; <parameter>arg_3</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Int32&gt;&gt; <parameter>arg_5</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Byte&gt;&gt; <parameter>arg_7</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Int16&gt;&gt; <parameter>arg_9</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;UInt16&gt;&gt; <parameter>arg_11</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;UInt32&gt;&gt; <parameter>arg_13</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Boolean&gt;&gt; <parameter>arg_15</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Int64&gt;&gt; <parameter>arg_17</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;UInt64&gt;&gt; <parameter>arg_19</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;Double&gt;&gt; <parameter>arg_21</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>new_hash_of_point_arrays</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestHashTableOfStructures">
+      <title>TestHashTableOfStructures ()</title>
+    <programlisting>
+TestHashTableOfStructures (IN  Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;           hash_of_points,
+                           OUT Dict&lt;String,<link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>&gt;  hash_of_described_points)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt; <parameter>hash_of_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,<link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>&gt; <parameter>hash_of_described_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestHashTableOfHashTablesOfStructures">
+      <title>TestHashTableOfHashTablesOfStructures ()</title>
+    <programlisting>
+TestHashTableOfHashTablesOfStructures (IN  Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  hash_of_hash_of_points,
+                                       OUT Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  new_hash_of_hash_of_points)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>hash_of_hash_of_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>new_hash_of_hash_of_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestArrayOfHashTablesOfStructures">
+      <title>TestArrayOfHashTablesOfStructures ()</title>
+    <programlisting>
+TestArrayOfHashTablesOfStructures (IN  Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  array_of_hash_of_points,
+                                   OUT Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;  new_array_of_hash_of_points)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>array_of_hash_of_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>new_array_of_hash_of_points</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestArrayOfArrays">
+      <title>TestArrayOfArrays ()</title>
+    <programlisting>
+TestArrayOfArrays (IN  Array&lt;Array&lt;String&gt;&gt;         aas,
+                   IN  Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;          aastruct,
+                   IN  Array&lt;Array&lt;ObjectPath&gt;&gt;     aao,
+                   IN  Array&lt;Array&lt;Int32&gt;&gt;          aai,
+                   IN  Array&lt;Array&lt;Byte&gt;&gt;           aay,
+                   IN  Array&lt;Array&lt;Int16&gt;&gt;          aan,
+                   IN  Array&lt;Array&lt;UInt16&gt;&gt;         aaq,
+                   IN  Array&lt;Array&lt;UInt32&gt;&gt;         aau,
+                   IN  Array&lt;Array&lt;Boolean&gt;&gt;        aab,
+                   IN  Array&lt;Array&lt;Int64&gt;&gt;          aax,
+                   IN  Array&lt;Array&lt;UInt64&gt;&gt;         aat,
+                   IN  Array&lt;Array&lt;Double&gt;&gt;         aad,
+                   IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;  aaas,
+                   OUT Array&lt;Array&lt;String&gt;&gt;         ret_aas,
+                   OUT Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt;          ret_aastruct,
+                   OUT Array&lt;Array&lt;ObjectPath&gt;&gt;     ret_aao,
+                   OUT Array&lt;Array&lt;Int32&gt;&gt;          ret_aai,
+                   OUT Array&lt;Array&lt;Byte&gt;&gt;           ret_aay,
+                   OUT Array&lt;Array&lt;Int16&gt;&gt;          ret_aan,
+                   OUT Array&lt;Array&lt;UInt16&gt;&gt;         ret_aaq,
+                   OUT Array&lt;Array&lt;UInt32&gt;&gt;         ret_aau,
+                   OUT Array&lt;Array&lt;Boolean&gt;&gt;        ret_aab,
+                   OUT Array&lt;Array&lt;Int64&gt;&gt;          ret_aax,
+                   OUT Array&lt;Array&lt;UInt64&gt;&gt;         ret_aat,
+                   OUT Array&lt;Array&lt;Double&gt;&gt;         ret_aad,
+                   OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt;  ret_aaas)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;String&gt;&gt; <parameter>aas</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>aastruct</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;ObjectPath&gt;&gt; <parameter>aao</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Int32&gt;&gt; <parameter>aai</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Byte&gt;&gt; <parameter>aay</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Int16&gt;&gt; <parameter>aan</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;UInt16&gt;&gt; <parameter>aaq</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;UInt32&gt;&gt; <parameter>aau</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Boolean&gt;&gt; <parameter>aab</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Int64&gt;&gt; <parameter>aax</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;UInt64&gt;&gt; <parameter>aat</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Double&gt;&gt; <parameter>aad</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt; <parameter>aaas</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;String&gt;&gt; <parameter>ret_aas</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;<link linkend="eggdbus-struct-Point">Point</link>&gt;&gt; <parameter>ret_aastruct</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;ObjectPath&gt;&gt; <parameter>ret_aao</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Int32&gt;&gt; <parameter>ret_aai</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Byte&gt;&gt; <parameter>ret_aay</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Int16&gt;&gt; <parameter>ret_aan</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;UInt16&gt;&gt; <parameter>ret_aaq</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;UInt32&gt;&gt; <parameter>ret_aau</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Boolean&gt;&gt; <parameter>ret_aab</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Int64&gt;&gt; <parameter>ret_aax</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;UInt64&gt;&gt; <parameter>ret_aat</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Double&gt;&gt; <parameter>ret_aad</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Array&lt;Array&lt;String&gt;&gt;&gt; <parameter>ret_aaas</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.TestVariantReturn">
+      <title>TestVariantReturn ()</title>
+    <programlisting>
+TestVariantReturn (IN  String   desired_variant,
+                   OUT Variant  variant)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>desired_variant</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Variant <parameter>variant</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Frob.EmitTestSignals">
+      <title>EmitTestSignals ()</title>
+    <programlisting>
+EmitTestSignals ()
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="signals" id="eggdbus-if-signal-details-com.example.Frob">
+    <title role="signals.title">Signal Details</title>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Frob::SignalWithPrimitiveTypes">
+      <title>The "SignalWithPrimitiveTypes" signal</title>
+    <programlisting>
+SignalWithPrimitiveTypes (Byte        val_byte,
+                          Boolean     val_boolean,
+                          Int16       val_int16,
+                          UInt16      val_uint16,
+                          Int32       val_int32,
+                          UInt32      val_uint32,
+                          Int64       val_int64,
+                          UInt64      val_uint64,
+                          Double      val_double,
+                          String      val_string,
+                          ObjectPath  val_objpath,
+                          Signature   val_sig)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>Byte <parameter>val_byte</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Boolean <parameter>val_boolean</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int16 <parameter>val_int16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>UInt16 <parameter>val_uint16</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <parameter>val_int32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>UInt32 <parameter>val_uint32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int64 <parameter>val_int64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>UInt64 <parameter>val_uint64</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Double <parameter>val_double</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>String <parameter>val_string</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>ObjectPath <parameter>val_objpath</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Signature <parameter>val_sig</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Frob::SignalWithArrayOfPrimitiveTypes">
+      <title>The "SignalWithArrayOfPrimitiveTypes" signal</title>
+    <programlisting>
+SignalWithArrayOfPrimitiveTypes (Array&lt;Byte&gt;        array_byte,
+                                 Array&lt;Int32&gt;       array_int32,
+                                 Array&lt;String&gt;      array_string,
+                                 Array&lt;ObjectPath&gt;  array_objpath,
+                                 Array&lt;Signature&gt;   array_sig)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>Array&lt;Byte&gt; <parameter>array_byte</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Array&lt;Int32&gt; <parameter>array_int32</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Array&lt;String&gt; <parameter>array_string</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Array&lt;ObjectPath&gt; <parameter>array_objpath</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Array&lt;Signature&gt; <parameter>array_sig</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Frob::SignalWithStructureAndHash">
+      <title>The "SignalWithStructureAndHash" signal</title>
+    <programlisting>
+SignalWithStructureAndHash (<link linkend="eggdbus-struct-Point">Point</link>                point,
+                            <link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link>       described-point,
+                            Dict&lt;String,String&gt;  hash_of_string_to_string,
+                            Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt;   hash_of_string_to_point)
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-Point">Point</link> <parameter>point</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-DescribedPoint">DescribedPoint</link> <parameter>described-point</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Dict&lt;String,String&gt; <parameter>hash_of_string_to_string</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Dict&lt;String,<link linkend="eggdbus-struct-Point">Point</link>&gt; <parameter>hash_of_string_to_point</parameter></literal>:</term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="property_details" id="eggdbus-if-property-details-com.example.Frob">
+    <title role="property_details.title">Property Details</title>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:y">
+      <title>The "y" property</title>
+    <programlisting>
+y     readable     Byte
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:b">
+      <title>The "b" property</title>
+    <programlisting>
+b     readable     Boolean
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:n">
+      <title>The "n" property</title>
+    <programlisting>
+n     readable     Int16
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:q">
+      <title>The "q" property</title>
+    <programlisting>
+q     readable     UInt16
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:i">
+      <title>The "i" property</title>
+    <programlisting>
+i     readable     Int32
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:u">
+      <title>The "u" property</title>
+    <programlisting>
+u     readable     UInt32
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:x">
+      <title>The "x" property</title>
+    <programlisting>
+x     readable     Int64
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:t">
+      <title>The "t" property</title>
+    <programlisting>
+t     readable     UInt64
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:d">
+      <title>The "d" property</title>
+    <programlisting>
+d     readable     Double
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:s">
+      <title>The "s" property</title>
+    <programlisting>
+s     readable     String
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:o">
+      <title>The "o" property</title>
+    <programlisting>
+o     readable     ObjectPath
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:g">
+      <title>The "g" property</title>
+    <programlisting>
+g     readable     Signature
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ay">
+      <title>The "ay" property</title>
+    <programlisting>
+ay     readable     Array&lt;Byte&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ab">
+      <title>The "ab" property</title>
+    <programlisting>
+ab     readable     Array&lt;Boolean&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:an">
+      <title>The "an" property</title>
+    <programlisting>
+an     readable     Array&lt;Int16&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:aq">
+      <title>The "aq" property</title>
+    <programlisting>
+aq     readable     Array&lt;UInt16&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ai">
+      <title>The "ai" property</title>
+    <programlisting>
+ai     readable     Array&lt;Int32&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:au">
+      <title>The "au" property</title>
+    <programlisting>
+au     readable     Array&lt;UInt32&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ax">
+      <title>The "ax" property</title>
+    <programlisting>
+ax     readable     Array&lt;Int64&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:at">
+      <title>The "at" property</title>
+    <programlisting>
+at     readable     Array&lt;UInt64&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ad">
+      <title>The "ad" property</title>
+    <programlisting>
+ad     readable     Array&lt;Double&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:as">
+      <title>The "as" property</title>
+    <programlisting>
+as     readable     Array&lt;String&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ao">
+      <title>The "ao" property</title>
+    <programlisting>
+ao     readable     Array&lt;ObjectPath&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:ag">
+      <title>The "ag" property</title>
+    <programlisting>
+ag     readable     Array&lt;Signature&gt;
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+    <refsect2 role="property" id="eggdbus-property-com.example.Frob:foo">
+      <title>The "foo" property</title>
+    <programlisting>
+foo     readable     String
+    </programlisting>
+    <para>
+FIXME: not documented.
+    </para>
+    </refsect2>
+  </refsect1>
+</refentry>

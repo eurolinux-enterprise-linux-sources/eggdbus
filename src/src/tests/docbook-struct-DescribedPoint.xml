@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-structmain-DescribedPoint">
+  <refmeta>
+    <refentrytitle role="top_of_page">DescribedPoint Structure</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>DescribedPoint Structure</refname>
+    <refpurpose>Described point</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="struct" id="eggdbus-struct-DescribedPoint">
+      <title>The DescribedPoint Structure</title>
+        <para>
+          <programlisting>
+{
+  String desc,
+  <link linkend="eggdbus-struct-Point">Point</link>  point
+}
+          </programlisting>
+          <para>
+Test type for wrapping (s(ii)).
+          </para>
+          <variablelist role="struct">
+  <varlistentry>
+    <term><literal>String <structfield>desc</structfield></literal></term>
+    <listitem>
+      <para>
+A description of the described point
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-Point">Point</link> <structfield>point</structfield></literal></term>
+    <listitem>
+      <para>
+The point being described
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

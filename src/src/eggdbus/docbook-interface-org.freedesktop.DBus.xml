@@ -1,0 +1,767 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-org.freedesktop.DBus">
+  <refmeta>
+    <refentrytitle role="top_of_page">org.freedesktop.DBus Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>org.freedesktop.DBus Interface</refname>
+    <refpurpose>Message bus daemon interface</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+Flags        <link linkend="eggdbus-enum-RequestNameFlags">RequestNameFlags</link>
+Enumeration  <link linkend="eggdbus-enum-RequestNameReply">RequestNameReply</link>
+Enumeration  <link linkend="eggdbus-enum-ReleaseNameReply">ReleaseNameReply</link>
+Enumeration  <link linkend="eggdbus-enum-StartServiceByNameReply">StartServiceByNameReply</link>
+
+<link linkend="eggdbus-method-org.freedesktop.DBus.Hello">Hello</link>                               (OUT String                   assigned_name)
+<link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName</link>                         (IN  String                   name,
+                                     IN  <link linkend="eggdbus-enum-RequestNameFlags">RequestNameFlags</link>         flags,
+                                     OUT <link linkend="eggdbus-enum-RequestNameReply">RequestNameReply</link>         value)
+<link linkend="eggdbus-method-org.freedesktop.DBus.ReleaseName">ReleaseName</link>                         (IN  String                   name,
+                                     OUT <link linkend="eggdbus-enum-ReleaseNameReply">ReleaseNameReply</link>         value)
+<link linkend="eggdbus-method-org.freedesktop.DBus.StartServiceByName">StartServiceByName</link>                  (IN  String                   name,
+                                     IN  UInt32                   flags,
+                                     OUT <link linkend="eggdbus-enum-StartServiceByNameReply">StartServiceByNameReply</link>  value)
+<link linkend="eggdbus-method-org.freedesktop.DBus.UpdateActivationEnvironment">UpdateActivationEnvironment</link>         (IN  Dict&lt;String,String&gt;      env_hash)
+<link linkend="eggdbus-method-org.freedesktop.DBus.NameHasOwner">NameHasOwner</link>                        (IN  String                   name,
+                                     OUT Boolean                  has_owner)
+<link linkend="eggdbus-method-org.freedesktop.DBus.ListNames">ListNames</link>                           (OUT Array&lt;String&gt;            names)
+<link linkend="eggdbus-method-org.freedesktop.DBus.ListActivatableNames">ListActivatableNames</link>                (OUT Array&lt;String&gt;            activatable_names)
+<link linkend="eggdbus-method-org.freedesktop.DBus.AddMatch">AddMatch</link>                            (IN  String                   rule)
+<link linkend="eggdbus-method-org.freedesktop.DBus.RemoveMatch">RemoveMatch</link>                         (IN  String                   rule)
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetNameOwner">GetNameOwner</link>                        (IN  String                   name,
+                                     OUT String                   unique_name)
+<link linkend="eggdbus-method-org.freedesktop.DBus.ListQueuedOwners">ListQueuedOwners</link>                    (IN  String                   name,
+                                     OUT Array&lt;String&gt;            queued_owners)
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixUser">GetConnectionUnixUser</link>               (IN  String                   name,
+                                     OUT UInt32                   uid)
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixProcessID">GetConnectionUnixProcessID</link>          (IN  String                   name,
+                                     OUT UInt32                   pid)
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetAdtAuditSessionData">GetAdtAuditSessionData</link>              (IN  String                   name,
+                                     OUT Array&lt;Byte&gt;              data)
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetConnectionSELinuxSecurityContext">GetConnectionSELinuxSecurityContext</link> (IN  String                   name,
+                                     OUT Array&lt;Byte&gt;              security_context)
+<link linkend="eggdbus-method-org.freedesktop.DBus.ReloadConfig">ReloadConfig</link>                        ()
+<link linkend="eggdbus-method-org.freedesktop.DBus.GetId">GetId</link>                               (OUT String                   unique_id)
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="signal_proto" id="eggdbus-if-signals-org.freedesktop.DBus">
+    <title role="signal_proto.title">Signals</title>
+    <synopsis>
+<link linkend="eggdbus-signal-org.freedesktop.DBus::NameOwnerChanged">NameOwnerChanged</link> (String  name,
+                  String  old_owner,
+                  String  new_owner)
+<link linkend="eggdbus-signal-org.freedesktop.DBus::NameLost">NameLost</link>         (String  name)
+<link linkend="eggdbus-signal-org.freedesktop.DBus::NameAcquired">NameAcquired</link>     (String  name)
+    </synopsis>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-description-org.freedesktop.DBus">
+    <title role="desc.title">Description</title>
+      <para>
+The <link linkend="eggdbus-interface-org.freedesktop.DBus">org.freedesktop.DBus</link> D-Bus interface is implemented by message bus daemons. Normally applications only use the <link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName()</link> method to claim a well-known name on the message bus.
+      </para>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-enumerations-org.freedesktop.DBus">
+    <title role="desc.title">Enumerations</title>
+    <refsect2 role="enum" id="eggdbus-enum-RequestNameFlags">
+      <title>The RequestNameFlags Flags</title>
+        <para>
+          <programlisting>
+{
+  None             = 0x00000000,
+  AllowReplacement = 0x00000001,
+  ReplaceExisting  = 0x00000002,
+  DoNotQueue       = 0x00000004
+}
+          </programlisting>
+          <para>
+Flags used in the <link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName()</link> method.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-RequestNameFlags.None" role="constant">
+    <term><literal>None</literal></term>
+    <listitem>
+      <para>
+No flags set.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameFlags.AllowReplacement" role="constant">
+    <term><literal>AllowReplacement</literal></term>
+    <listitem>
+      <para>
+If an application A specifies this flag and succeeds in becoming the owner of the name, and another application B later calls <link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName()</link> with the <link linkend="eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</link> flag, then application A will lose ownership and receive a <link linkend="eggdbus-signal-org.freedesktop.DBus::NameLost"><type>"NameLost"</type></link> signal, and application B will become the new owner. If <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link> is not specified by application A, or <link linkend="eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</link> is not specified by application B, then application B will not replace application A as the owner.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameFlags.ReplaceExisting" role="constant">
+    <term><literal>ReplaceExisting</literal></term>
+    <listitem>
+      <para>
+Try to replace the current owner if there is one. If this flag is not set the application will only become the owner of the name if there is no current owner. If this flag is set, the application will replace the current owner if the current owner specified <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameFlags.DoNotQueue" role="constant">
+    <term><literal>DoNotQueue</literal></term>
+    <listitem>
+      <para>
+Without this flag, if an application requests a name that is already owned, the application will be placed in a queue to own the name when the current owner gives it up. If this flag is given, the application will not be placed in the queue, the request for the name will simply fail. This flag also affects behavior when an application is replaced as name owner; by default the application moves back into the waiting queue, unless this flag was provided when the application became the name owner.
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+    <refsect2 role="enum" id="eggdbus-enum-RequestNameReply">
+      <title>The RequestNameReply Enumeration</title>
+        <para>
+          <programlisting>
+{
+  PrimaryOwner = 1,
+  InQueue      = 2,
+  Exists       = 3,
+  AlreadyOwned = 4
+}
+          </programlisting>
+          <para>
+Return values for the <link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName()</link> method
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-RequestNameReply.PrimaryOwner" role="constant">
+    <term><literal>PrimaryOwner</literal></term>
+    <listitem>
+      <para>
+The caller is now the primary owner of the name, replacing any previous owner. Either the name had no owner before, or the caller specified <link linkend="eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</link> and the current owner specified <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameReply.InQueue" role="constant">
+    <term><literal>InQueue</literal></term>
+    <listitem>
+      <para>
+The name already had an owner, <link linkend="eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</link> was not specified, and either the current owner did not specify <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link> or the requesting application did not specify <link linkend="eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</link>.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameReply.Exists" role="constant">
+    <term><literal>Exists</literal></term>
+    <listitem>
+      <para>
+The name already has an owner, <link linkend="eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</link> was specified, and either <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link> was not specified by the current owner, or <link linkend="eggdbus-constant-RequestNameFlags.ReplaceExisting">RequestNameFlags.ReplaceExisting</link> was not specified by the requesting application.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-RequestNameReply.AlreadyOwned" role="constant">
+    <term><literal>AlreadyOwned</literal></term>
+    <listitem>
+      <para>
+The application trying to request ownership of a name is already the owner of it
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+    <refsect2 role="enum" id="eggdbus-enum-ReleaseNameReply">
+      <title>The ReleaseNameReply Enumeration</title>
+        <para>
+          <programlisting>
+{
+  Released    = 1,
+  NonExistant = 2,
+  NotOwner    = 3
+}
+          </programlisting>
+          <para>
+Return values for the <link linkend="eggdbus-method-org.freedesktop.DBus.ReleaseName">ReleaseName()</link> method.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-ReleaseNameReply.Released" role="constant">
+    <term><literal>Released</literal></term>
+    <listitem>
+      <para>
+The caller has released his claim on the given name. Either the caller was the primary owner of the name, and the name is now unused or taken by somebody waiting in the queue for the name, or the caller was waiting in the queue for the name and has now been removed from the queue.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-ReleaseNameReply.NonExistant" role="constant">
+    <term><literal>NonExistant</literal></term>
+    <listitem>
+      <para>
+The given name does not exist on this bus.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-ReleaseNameReply.NotOwner" role="constant">
+    <term><literal>NotOwner</literal></term>
+    <listitem>
+      <para>
+The caller was not the primary owner of this name, and was also not waiting in the queue to own this name.
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+    <refsect2 role="enum" id="eggdbus-enum-StartServiceByNameReply">
+      <title>The StartServiceByNameReply Enumeration</title>
+        <para>
+          <programlisting>
+{
+  Success        = 1,
+  AlreadyRunning = 2
+}
+          </programlisting>
+          <para>
+Return values for the <link linkend="eggdbus-method-org.freedesktop.DBus.StartServiceByName">StartServiceByName()</link> method.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-StartServiceByNameReply.Success" role="constant">
+    <term><literal>Success</literal></term>
+    <listitem>
+      <para>
+The service was successfully started.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-StartServiceByNameReply.AlreadyRunning" role="constant">
+    <term><literal>AlreadyRunning</literal></term>
+    <listitem>
+      <para>
+A connection already owns the given name.
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-org.freedesktop.DBus">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Hello">
+      <title>Hello ()</title>
+    <programlisting>
+Hello (OUT String  assigned_name)
+    </programlisting>
+    <para>
+Before an application is able to send messages to other applications it must invoke this method on the message bus to obtain a unique name. If an application without a unique name tries to send a message to another application, or a message to the message bus itself that isn't the <link linkend="eggdbus-method-org.freedesktop.DBus.Hello">Hello()</link> method, it will be disconnected from the bus. There is no corresponding <emphasis>disconnect</emphasis> request; if a client wishes to disconnect from the bus, it simply closes the socket (or other communication channel).
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT String <parameter>assigned_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Unique name assigned to the connection.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.RequestName">
+      <title>RequestName ()</title>
+    <programlisting>
+RequestName (IN  String            name,
+             IN  <link linkend="eggdbus-enum-RequestNameFlags">RequestNameFlags</link>  flags,
+             OUT <link linkend="eggdbus-enum-RequestNameReply">RequestNameReply</link>  value)
+    </programlisting>
+    <para>
+This method call should be invoked on the <literal>org.freedesktop.DBus</literal> name to request the message bus to assign the given name to the method caller. Each name maintains a queue of possible owners, where the head of the queue is the primary or current owner of the name. Each potential owner in the queue maintains the <link linkend="eggdbus-constant-RequestNameFlags.AllowReplacement">RequestNameFlags.AllowReplacement</link> and <link linkend="eggdbus-constant-RequestNameFlags.DoNotQueue">RequestNameFlags.DoNotQueue</link> settings from its latest <link linkend="eggdbus-method-org.freedesktop.DBus.RequestName">RequestName()</link> call. See the D-Bus specification for more details.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name to request.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  <link linkend="eggdbus-enum-RequestNameFlags">RequestNameFlags</link> <parameter>flags</parameter></literal>:</term>
+    <listitem>
+      <para>
+Flags.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-enum-RequestNameReply">RequestNameReply</link> <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+Return value.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.ReleaseName">
+      <title>ReleaseName ()</title>
+    <programlisting>
+ReleaseName (IN  String            name,
+             OUT <link linkend="eggdbus-enum-ReleaseNameReply">ReleaseNameReply</link>  value)
+    </programlisting>
+    <para>
+This method call should be invoked on the <literal>org.freedesktop.DBus</literal> name to request the message bus to release the method caller's claim to the given name. If the caller is the primary owner, a new primary owner will be selected from the queue if any other owners are waiting. If the caller is waiting in the queue for the name, the caller will removed from the queue and will not be made an owner of the name if it later becomes available. If there are no other owners in the queue for the name, it will be removed from the bus entirely.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name to release.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-enum-ReleaseNameReply">ReleaseNameReply</link> <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+Return value.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.StartServiceByName">
+      <title>StartServiceByName ()</title>
+    <programlisting>
+StartServiceByName (IN  String                   name,
+                    IN  UInt32                   flags,
+                    OUT <link linkend="eggdbus-enum-StartServiceByNameReply">StartServiceByNameReply</link>  value)
+    </programlisting>
+    <para>
+Tries to launch the executable associated with <parameter>name</parameter>. See the D-Bus specification for more details on service activation.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name of the service to start.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  UInt32 <parameter>flags</parameter></literal>:</term>
+    <listitem>
+      <para>
+Flags (currently not used).
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-enum-StartServiceByNameReply">StartServiceByNameReply</link> <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+Reply
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.UpdateActivationEnvironment">
+      <title>UpdateActivationEnvironment ()</title>
+    <programlisting>
+UpdateActivationEnvironment (IN  Dict&lt;String,String&gt;  env_hash)
+    </programlisting>
+    <para>
+Normally, session bus activated services inherit the environment of the bus daemon.  This method adds to or modifies that environment when activating services. Some bus instances, such as the standard system bus, may disable access to this method for some or all callers.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  Dict&lt;String,String&gt; <parameter>env_hash</parameter></literal>:</term>
+    <listitem>
+      <para>
+Environment to add or update.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.NameHasOwner">
+      <title>NameHasOwner ()</title>
+    <programlisting>
+NameHasOwner (IN  String   name,
+              OUT Boolean  has_owner)
+    </programlisting>
+    <para>
+Checks if the specified name exists (currently has an owner).
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name to check.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Boolean <parameter>has_owner</parameter></literal>:</term>
+    <listitem>
+      <para>
+<literal>TRUE</literal> only if <parameter>name</parameter> exists.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.ListNames">
+      <title>ListNames ()</title>
+    <programlisting>
+ListNames (OUT Array&lt;String&gt;  names)
+    </programlisting>
+    <para>
+Returns a list of all currently-owned names on the bus.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT Array&lt;String&gt; <parameter>names</parameter></literal>:</term>
+    <listitem>
+      <para>
+Array of strings where each string is a bus name.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.ListActivatableNames">
+      <title>ListActivatableNames ()</title>
+    <programlisting>
+ListActivatableNames (OUT Array&lt;String&gt;  activatable_names)
+    </programlisting>
+    <para>
+Returns a list of all names that can be activated on the bus.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT Array&lt;String&gt; <parameter>activatable_names</parameter></literal>:</term>
+    <listitem>
+      <para>
+Array of strings where each string is a bus name.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.AddMatch">
+      <title>AddMatch ()</title>
+    <programlisting>
+AddMatch (IN  String  rule)
+    </programlisting>
+    <para>
+Adds a match rule to match messages going through the message bus. If the bus does not have enough resources the %org.freedesktop.DBus.Error.OOM error is returned. See the D-Bus specification for more information about match rules.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>rule</parameter></literal>:</term>
+    <listitem>
+      <para>
+Match rule to add to the connection.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.RemoveMatch">
+      <title>RemoveMatch ()</title>
+    <programlisting>
+RemoveMatch (IN  String  rule)
+    </programlisting>
+    <para>
+Removes the first rule that matches. If the rule is not found the %org.freedesktop.DBus.Error.MatchRuleNotFound  error is returned. See the D-Bus specification for more information about match rules.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>rule</parameter></literal>:</term>
+    <listitem>
+      <para>
+Match rule to remove from the connection.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetNameOwner">
+      <title>GetNameOwner ()</title>
+    <programlisting>
+GetNameOwner (IN  String  name,
+              OUT String  unique_name)
+    </programlisting>
+    <para>
+Returns the unique connection name of the primary owner of the name given. If the requested name doesn't have an owner, returns a %org.freedesktop.DBus.Error.NameHasNoOwner error.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name to get owner of.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT String <parameter>unique_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The unique name that owns <parameter>name</parameter>.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.ListQueuedOwners">
+      <title>ListQueuedOwners ()</title>
+    <programlisting>
+ListQueuedOwners (IN  String         name,
+                  OUT Array&lt;String&gt;  queued_owners)
+    </programlisting>
+    <para>
+Lists the names waiting in queue to own <parameter>name</parameter>.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+A well-known name.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;String&gt; <parameter>queued_owners</parameter></literal>:</term>
+    <listitem>
+      <para>
+Array of unique names in queue to own <parameter>name</parameter>.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixUser">
+      <title>GetConnectionUnixUser ()</title>
+    <programlisting>
+GetConnectionUnixUser (IN  String  name,
+                       OUT UInt32  uid)
+    </programlisting>
+    <para>
+Returns the UNIX user id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name of the connection to query.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT UInt32 <parameter>uid</parameter></literal>:</term>
+    <listitem>
+      <para>
+UNIX user id.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetConnectionUnixProcessID">
+      <title>GetConnectionUnixProcessID ()</title>
+    <programlisting>
+GetConnectionUnixProcessID (IN  String  name,
+                            OUT UInt32  pid)
+    </programlisting>
+    <para>
+Returns the UNIX process id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name of the connection to query.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT UInt32 <parameter>pid</parameter></literal>:</term>
+    <listitem>
+      <para>
+UNIX process id.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetAdtAuditSessionData">
+      <title>GetAdtAuditSessionData ()</title>
+    <programlisting>
+GetAdtAuditSessionData (IN  String       name,
+                        OUT Array&lt;Byte&gt;  data)
+    </programlisting>
+    <para>
+Returns the Solaris/ADT auditing data of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.AdtAuditDataUnknown error is returned.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name of the connection to query.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Byte&gt; <parameter>data</parameter></literal>:</term>
+    <listitem>
+      <para>
+An array of bytes (typically a string of undefined encoding).
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetConnectionSELinuxSecurityContext">
+      <title>GetConnectionSELinuxSecurityContext ()</title>
+    <programlisting>
+GetConnectionSELinuxSecurityContext (IN  String       name,
+                                     OUT Array&lt;Byte&gt;  security_context)
+    </programlisting>
+    <para>
+Returns the SELinux security context of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.SELinuxSecurityContextUnknown error is returned.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name of the connection to query.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Array&lt;Byte&gt; <parameter>security_context</parameter></literal>:</term>
+    <listitem>
+      <para>
+An array of bytes (typically a string of undefined encoding).
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.ReloadConfig">
+      <title>ReloadConfig ()</title>
+    <programlisting>
+ReloadConfig ()
+    </programlisting>
+    <para>
+Asks the message bus to reload configuration files.
+    </para>
+<variablelist role="params">
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.GetId">
+      <title>GetId ()</title>
+    <programlisting>
+GetId (OUT String  unique_id)
+    </programlisting>
+    <para>
+Gets the unique ID of the bus. The unique ID here is shared among all addresses the bus daemon is listening on (TCP, UNIX domain socket, etc.). Each address the bus is listening on also has its own unique ID. The per-bus and per-address IDs are not related. For a desktop session bus, the bus ID can be used as a way to uniquely identify a user's session. See the D-Bus specification for more information about unique IDs.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT String <parameter>unique_id</parameter></literal>:</term>
+    <listitem>
+      <para>
+Unique ID identifying the bus daemon
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="signals" id="eggdbus-if-signal-details-org.freedesktop.DBus">
+    <title role="signals.title">Signal Details</title>
+    <refsect2 role="signal" id="eggdbus-signal-org.freedesktop.DBus::NameOwnerChanged">
+      <title>The "NameOwnerChanged" signal</title>
+    <programlisting>
+NameOwnerChanged (String  name,
+                  String  old_owner,
+                  String  new_owner)
+    </programlisting>
+    <para>
+This signal indicates that the owner of a name has changed. It's also the signal to use to detect the appearance of new names on the bus.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name with new owner.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>String <parameter>old_owner</parameter></literal>:</term>
+    <listitem>
+      <para>
+Old owner or empty string if none.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>String <parameter>new_owner</parameter></literal>:</term>
+    <listitem>
+      <para>
+New owner or empty string if none.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-org.freedesktop.DBus::NameLost">
+      <title>The "NameLost" signal</title>
+    <programlisting>
+NameLost (String  name)
+    </programlisting>
+    <para>
+This signal is sent to a specific application when it loses ownership of a name.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name which was lost.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="signal" id="eggdbus-signal-org.freedesktop.DBus::NameAcquired">
+      <title>The "NameAcquired" signal</title>
+    <programlisting>
+NameAcquired (String  name)
+    </programlisting>
+    <para>
+This signal is sent to a specific application when it gains ownership of a name.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>name</parameter></literal>:</term>
+    <listitem>
+      <para>
+Name which was acquired.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+</refentry>

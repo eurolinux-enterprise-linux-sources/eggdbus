@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-org.freedesktop.DBus.Peer">
+  <refmeta>
+    <refentrytitle role="top_of_page">org.freedesktop.DBus.Peer Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>org.freedesktop.DBus.Peer Interface</refname>
+    <refpurpose>Minimal peering interface</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+<link linkend="eggdbus-method-org.freedesktop.DBus.Peer.Ping">Ping</link>         ()
+<link linkend="eggdbus-method-org.freedesktop.DBus.Peer.GetMachineId">GetMachineId</link> (OUT String  machine_uuid)
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="desc" id="eggdbus-if-description-org.freedesktop.DBus.Peer">
+    <title role="desc.title">Description</title>
+      <para>
+All D-Bus objects are supposed to implement the <link linkend="eggdbus-interface-org.freedesktop.DBus.Peer">org.freedesktop.DBus.Peer</link> D-Bus interface. The interface is designed to be a minimal interface for checking whether the other end is reachable and, if so, what machine hosts the object.
+      </para>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-org.freedesktop.DBus.Peer">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Peer.Ping">
+      <title>Ping ()</title>
+    <programlisting>
+Ping ()
+    </programlisting>
+    <para>
+A method used to diagnose whether an object is reachable.
+    </para>
+<variablelist role="params">
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Peer.GetMachineId">
+      <title>GetMachineId ()</title>
+    <programlisting>
+GetMachineId (OUT String  machine_uuid)
+    </programlisting>
+    <para>
+Gets the Machine UUID of the machine hosting the object.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT String <parameter>machine_uuid</parameter></literal>:</term>
+    <listitem>
+      <para>
+A Universally Unique Identifier for the machine hosting the object. See the D-Bus specification for more information about D-Bus UUIDs.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+</refentry>

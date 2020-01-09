@@ -1,0 +1,169 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/com/example/TestService">
+
+  <interface name="com.example.Tweak">
+    <annotation name="org.gtk.EggDBus.DocString" value="The #Tweak interface wraps the D-Bus interface <literal>com.example.Tweak</literal>. It is used in the EggDBus test suite."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Tweak interface used for testing"/>
+
+    <property name="foo" type="s" access="read">
+      <annotation name="org.gtk.EggDBus.DocString" value="The Foo value"/>
+    </property>
+    <property name="bar" type="ai" access="read">
+      <annotation name="org.gtk.EggDBus.DocString" value="The Bar factor"/>
+    </property>
+    <property name="baz" type="(ii)" access="read">
+      <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The Baz indicator"/>
+    </property>
+
+    <property name="baz-forced-to-use-pair" type="(ii)" access="read">
+      <annotation name="org.gtk.EggDBus.Type" value="Pair"/>
+      <annotation name="org.gtk.EggDBus.DocString" value=" A slightly different Baz indicator "/>
+    </property>
+
+    <property name="SomeReadWriteProperty" type="s" access="readwrite">
+      <annotation name="org.gtk.EggDBus.DocString" value="Hey, I'm promiscuous. I'm writeable!"/>
+    </property>
+
+    <property name="PropertyWithCType" type="i" access="readwrite">
+      <annotation name="org.gtk.EggDBus.CType" value="TestSomeExampleCType"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="I'm a special C type"/>
+    </property>
+
+    <property name="EscapeVehicle" type="u" access="readwrite">
+      <annotation name="org.gtk.EggDBus.Type" value="Vehicle"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The vehicle used for escaping."/>
+    </property>
+
+    <property name="DefaultCreateFlags" type="u" access="readwrite">
+      <annotation name="org.gtk.EggDBus.Type" value="CreateFlags"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="The default create flags to use."/>
+    </property>
+
+    <method name="BlockUntilRWPropertyChanges">
+      <annotation name="org.gtk.EggDBus.DocString" value="Blocks until #Tweak:SomeReadWriteProperty changes"/>
+      <arg direction="out" type="s" name="NewPropValue">
+        <annotation name="org.gtk.EggDBus.DocString" value="The new value of #Tweak:SomeReadWriteProperty"/>
+      </arg>
+    </method>
+
+    <method name="ChangeReadableProperty">
+      <annotation name="org.gtk.EggDBus.DocString" value="Changes the #Tweak:foo property"/>
+      <arg direction="in" type="s" name="new_value">
+        <annotation name="org.gtk.EggDBus.DocString" value="New value for the #Tweak:foo property"/>
+      </arg>
+    </method>
+
+    <method name="ICanHazGreetingz">
+      <annotation name="org.gtk.EggDBus.DocString" value="This method will take a greeting and give a rewritten greeting back"/>
+      <arg direction="in"  type="s" name="greetz">
+        <annotation name="org.gtk.EggDBus.DocString" value="Greeting to pass to method"/>
+      </arg>
+      <arg direction="out" type="s" name="word">
+        <annotation name="org.gtk.EggDBus.DocString" value="Rewritten greeting"/>
+      </arg>
+    </method>
+
+    <signal name="NewzNotifz">
+      <annotation name="org.gtk.EggDBus.DocString" value="Emitted when there are NEWZ on the #Tweak interface"/>
+      <arg type="s" name="newz">
+        <annotation name="org.gtk.EggDBus.DocString" value="The newz in the tweaked world"/>
+      </arg>
+    </signal>
+
+    <method name="BroadcastzNewz">
+      <annotation name="org.gtk.EggDBus.DocString" value="Conduit to broadcast newz. This method will make the object emit the #Tweak::NewzNotifz signal using the passed in parameter @newz as the news to broadcast."/>
+      <arg direction="in"  type="s" name="newz">
+        <annotation name="org.gtk.EggDBus.DocString" value="The news to broadcast"/>
+      </arg>
+    </method>
+
+    <method name="GetServerUniqueName">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets the unique D-Bus name of the server"/>
+      <arg direction="out" type="s" name="server_unique_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Unique D-Bus name"/>
+      </arg>
+    </method>
+
+    <method name="LongRunningMethod">
+      <annotation name="org.gtk.EggDBus.DocString" value="A method that takes @msec_to_run milliseconds to reply"/>
+      <arg direction="in"  type="i" name="msec_to_run">
+        <annotation name="org.gtk.EggDBus.DocString" value="Number of milliseconds to wait until replying"/>
+      </arg>
+    </method>
+
+    <method name="ReturnGError">
+      <annotation name="org.gtk.EggDBus.DocString" value="Throws an error identified by @error_domain and @error_code. This is mainly for testing that we can transparently hand #GError<!-- -->'s back and forth."/>
+      <arg direction="in"  type="s" name="error_domain">
+        <annotation name="org.gtk.EggDBus.DocString" value="A #GError error domain"/>
+      </arg>
+      <arg direction="in"  type="i" name="error_code">
+        <annotation name="org.gtk.EggDBus.DocString" value="The error code for @error_domain"/>
+      </arg>
+    </method>
+
+    <method name="MethodStructDisambiguation">
+      <annotation name="org.gtk.EggDBus.DocString" value="A method to check we can properly disambiguate what structure wrapper types to use"/>
+      <arg direction="in"  type="(ii)" name="pair">
+        <annotation name="org.gtk.EggDBus.Type" value="Pair"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="A pair"/>
+      </arg>
+      <arg direction="in"  type="(ii)" name="point">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="A point"/>
+      </arg>
+      <arg direction="out"  type="(ii)" name="enhanced_point">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="An enhanced point"/>
+      </arg>
+      <arg direction="out"  type="(ii)" name="enhanced_pair">
+        <annotation name="org.gtk.EggDBus.Type" value="Pair"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="An enhanced pair"/>
+      </arg>
+    </method>
+
+    <signal name="SignalStructDisambiguation">
+      <annotation name="org.gtk.EggDBus.DocString" value="A signal to check we can properly disambiguate what structure wrapper types to use"/>
+      <arg type="(ii)" name="pair">
+        <annotation name="org.gtk.EggDBus.Type" value="Pair"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="A pair"/>
+      </arg>
+      <arg type="(ii)" name="point">
+        <annotation name="org.gtk.EggDBus.Type" value="Point"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="A point"/>
+      </arg>
+    </signal>
+
+    <signal name="SignalWithCType">
+      <annotation name="org.gtk.EggDBus.DocString" value="A signal to check we properly support specifying what C type to use for an integral type"/>
+      <arg type="i" name="better_value">
+        <annotation name="org.gtk.EggDBus.CType" value="TestSomeExampleCType"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Some value"/>
+      </arg>
+    </signal>
+
+    <method name="MethodWithCTypes">
+      <annotation name="org.gtk.EggDBus.DocString" value="A method to check we properly support specifying what C type to use for an integral type"/>
+      <arg direction="in" type="i" name="value">
+        <annotation name="org.gtk.EggDBus.CType" value="TestSomeExampleCType"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Some value"/>
+      </arg>
+      <arg direction="out" type="i" name="better_value">
+        <annotation name="org.gtk.EggDBus.CType" value="TestSomeExampleCType"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="I can't believe it's a better value!"/>
+      </arg>
+    </method>
+
+    <signal name="EscapeVehicleChanged">
+      <annotation name="org.gtk.EggDBus.DocString" value="A signal to check we properly support emitting signals with enums"/>
+      <arg type="u" name="new_escape_vehicle">
+        <annotation name="org.gtk.EggDBus.Type" value="Vehicle"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The new escape vehicle"/>
+      </arg>
+    </signal>
+
+  </interface>
+
+</node>
+

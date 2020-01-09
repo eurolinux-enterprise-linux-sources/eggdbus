@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusObjectProxy</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusConnection.html" title="EggDBusConnection">
+<link rel="next" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusConnection.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusInterfaceProxy.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusObjectProxy.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusObjectProxy.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusObjectProxy.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#EggDBusObjectProxy.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusObjectProxy">
+<a name="EggDBusObjectProxy"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusObjectProxy.top_of_page"></a>EggDBusObjectProxy</span></h2>
+<p>EggDBusObjectProxy — Proxy for remote objects</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusObjectProxy.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy-struct" title="EggDBusObjectProxy">EggDBusObjectProxy</a>;
+<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-connection" title="egg_dbus_object_proxy_get_connection ()">egg_dbus_object_proxy_get_connection</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-name" title="egg_dbus_object_proxy_get_name ()">egg_dbus_object_proxy_get_name</a>      (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-object-path" title="egg_dbus_object_proxy_get_object_path ()">egg_dbus_object_proxy_get_object_path</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-get-name-owner" title="egg_dbus_object_proxy_get_name_owner ()">egg_dbus_object_proxy_get_name_owner</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect" title="egg_dbus_object_proxy_introspect ()">egg_dbus_object_proxy_introspect</a>    (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+>GAsyncReadyCallback</a> callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);
+<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect-finish" title="egg_dbus_object_proxy_introspect_finish ()">egg_dbus_object_proxy_introspect_finish</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+>GAsyncResult</a> *res,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+<a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect-sync" title="egg_dbus_object_proxy_introspect_sync ()">egg_dbus_object_proxy_introspect_sync</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);
+void                <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-invalidate-properties" title="egg_dbus_object_proxy_invalidate_properties ()">egg_dbus_object_proxy_invalidate_properties</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);
+<a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> * <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-query-interface" title="egg_dbus_object_proxy_query_interface ()">egg_dbus_object_proxy_query_interface</a>
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusObjectProxy.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusObjectProxy
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="EggDBusObjectProxy.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--connection" title='The "connection" property'>connection</a>"               <a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a>*    : Read / Write / Construct Only
+  "<a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'>name</a>"                     <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only
+  "<a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'>name-owner</a>"               <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read
+  "<a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--object-path" title='The "object-path" property'>object-path</a>"              <a class="link" href="eggdbus-eggdbusobjectpath.html#EggDBusObjectPath" title="EggDBusObjectPath">EggDBusObjectPath</a>*    : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusObjectProxy.description"></a><h2>Description</h2>
+<p>
+Instances of the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> class represents remote objects. You can't instantiate
+this class directly, you have to use <a class="link" href="EggDBusConnection.html#egg-dbus-connection-get-object-proxy" title="egg_dbus_connection_get_object_proxy ()"><code class="function">egg_dbus_connection_get_object_proxy()</code></a>. The tripple
+consisting of a connection, bus name and object path uniquely identifies a remote object.
+</p>
+<p>
+You can get the connection name, object path for a <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance from the
+<a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--connection" title='The "connection" property'><span class="type">"connection"</span></a>, <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'><span class="type">"name"</span></a> and <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--object-path" title='The "object-path" property'><span class="type">"object-path"</span></a>
+properties. Also, the <span class="emphasis"><em>current</em></span> owner of the name the object proxy is
+associated with can be obtained from the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a> property.
+</p>
+<p>
+Note that an <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance may refer to a non-existant remote object. For
+example names on the message bus can come and go (can be checked with <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a>)
+and the remote object itself may be destroyed (for example if the object represents a
+piece of hardware on the system, the object may disappear when the hardware is unplugged).
+One way (if the remote service supports introspection) to find out if a remote object exists
+is to use the <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect" title="egg_dbus_object_proxy_introspect ()"><code class="function">egg_dbus_object_proxy_introspect()</code></a> method. If the call succeeds and the result
+includes one or more interfaces, the object is alive:
+</p>
+<p>
+</p>
+<pre class="programlisting">
+EggDBusInterfaceNodeInfo *node_info;
+GError *error;
+
+error = NULL;
+node_info = egg_dbus_object_proxy_introspect_sync (slash_object_proxy,
+                                                   EGG_DBUS_CALL_FLAGS_NONE,
+                                                   NULL,
+                                                   &amp;error);
+if (node_info == NULL)
+  {
+    /* handle error */
+  }
+else
+  {
+    if (node_info-&gt;num_interfaces &gt; 0)
+      {
+        /* object is alive, look at node_info for more information */
+      }
+    egg_dbus_interface_node_info_free (node_info);
+  }
+</pre>
+<p>
+</p>
+<p>
+To use a D-Bus interface on a <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance you will need a <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a>
+instance for the D-Bus interface in question. Interface proxies can be obtained using the
+<a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-query-interface" title="egg_dbus_object_proxy_query_interface ()"><code class="function">egg_dbus_object_proxy_query_interface()</code></a> method. Typically language bindings will provide a
+way to obtain it; for generated C/GObject code, a macro is provided. For example, to invoke the
+<code class="literal">Ping</code> method on the <code class="literal">org.freedesktop.DBus.Peer</code> interface
+on a <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>, the <a class="link" href="eggdbus-eggdbuspeer.html#EggDBusPeer"><span class="type">EggDBusPeer</span></a> interface proxy is used:
+</p>
+<p>
+</p>
+<pre class="programlisting">
+EggDBusPeer *peer;
+GError *error;
+
+peer = EGG_DBUS_QUERY_INTERFACE_PEER (object_proxy);
+
+error = NULL;
+if (!egg_dbus_peer_ping_sync (peer,
+                              EGG_DBUS_CALL_FLAGS_NONE,
+                              NULL, /* GCancellable */
+                              &amp;error))
+  {
+    g_warning ("Error: %s", error-&gt;message);
+    g_error_free (error);
+    goto error;
+  }
+</pre>
+<p>
+</p>
+<p>
+See the <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a> class for more details on using D-Bus interfaces.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusObjectProxy.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusObjectProxy">
+<a name="EggDBusObjectProxy-struct"></a><h3>EggDBusObjectProxy</h3>
+<pre class="programlisting">typedef struct _EggDBusObjectProxy EggDBusObjectProxy;</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_get_connection ()">
+<a name="egg-dbus-object-proxy-get-connection"></a><h3>egg_dbus_object_proxy_get_connection ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * egg_dbus_object_proxy_get_connection
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);</pre>
+<p>
+C getter for the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--connection" title='The "connection" property'><span class="type">"connection"</span></a> property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a> that <em class="parameter"><code>object_proxy</code></em> is associated with. Do not free, the
+         connection object is owned by <em class="parameter"><code>object_proxy</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_get_name ()">
+<a name="egg-dbus-object-proxy-get-name"></a><h3>egg_dbus_object_proxy_get_name ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_object_proxy_get_name      (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);</pre>
+<p>
+C getter for the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'><span class="type">"name"</span></a> property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The bus name that <em class="parameter"><code>object_proxy</code></em> is associated with. Do not free, the
+         string is owned by <em class="parameter"><code>object_proxy</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_get_object_path ()">
+<a name="egg-dbus-object-proxy-get-object-path"></a><h3>egg_dbus_object_proxy_get_object_path ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_object_proxy_get_object_path
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);</pre>
+<p>
+C getter for the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--object-path" title='The "object-path" property'><span class="type">"object-path"</span></a> property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The object path that <em class="parameter"><code>object_proxy</code></em> is associated with. Do not free, the
+         string is owned by <em class="parameter"><code>object_proxy</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_get_name_owner ()">
+<a name="egg-dbus-object-proxy-get-name-owner"></a><h3>egg_dbus_object_proxy_get_name_owner ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             egg_dbus_object_proxy_get_name_owner
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);</pre>
+<p>
+C getter for the <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name-owner" title='The "name-owner" property'><span class="type">"name-owner"</span></a> property.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The unique name, if any, that owns the name that <em class="parameter"><code>object_proxy</code></em> is associated
+         with. Free with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_introspect ()">
+<a name="egg-dbus-object-proxy-introspect"></a><h3>egg_dbus_object_proxy_introspect ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a>               egg_dbus_object_proxy_introspect    (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+>GAsyncReadyCallback</a> callback,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> user_data);</pre>
+<p>
+Asynchronously introspects <em class="parameter"><code>object_proxy</code></em>. Note that this may fail
+if the remote object doesn't implement the
+<code class="literal">org.freedesktop.DBus.Introspectable</code> D-Bus
+interface.
+</p>
+<p>
+When the asynchronous operation is finished, <em class="parameter"><code>callback</code></em> will be
+invoked; use <a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect-finish" title="egg_dbus_object_proxy_introspect_finish ()"><code class="function">egg_dbus_object_proxy_introspect_finish()</code></a> to finish
+the operation.
+</p>
+<p>
+Note that introspection data is never cached.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>call_flags</code></em> :</span></p></td>
+<td> Flags from <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags"><span class="type">EggDBusCallFlags</span></a> detailing how the D-Bus message should be sent.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+><span class="type">GCancellable</span></a> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td> Callback to invoke when the asynchronous operation finishes.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td> User data to pass to <em class="parameter"><code>callback</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A pending call id (never zero) that can be used with <a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-cancel" title="egg_dbus_connection_pending_call_cancel ()"><code class="function">egg_dbus_connection_pending_call_cancel()</code></a>
+         or <a class="link" href="EggDBusConnection.html#egg-dbus-connection-pending-call-block" title="egg_dbus_connection_pending_call_block ()"><code class="function">egg_dbus_connection_pending_call_block()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_introspect_finish ()">
+<a name="egg-dbus-object-proxy-introspect-finish"></a><h3>egg_dbus_object_proxy_introspect_finish ()</h3>
+<pre class="programlisting"><a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * egg_dbus_object_proxy_introspect_finish
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+>GAsyncResult</a> *res,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Finishes introspecting <em class="parameter"><code>object_proxy</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html"
+><span class="type">GAsyncResult</span></a> obtained from the <a
+href="http://library.gnome.org/devel/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"
+><span class="type">GAsyncReadyCallback</span></a> function passed to
+<a class="link" href="EggDBusObjectProxy.html#egg-dbus-object-proxy-introspect" title="egg_dbus_object_proxy_introspect ()"><code class="function">egg_dbus_object_proxy_introspect()</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em> is set, otherwise a <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a> structure
+that should be freed with <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-free" title="egg_dbus_interface_node_info_free ()"><code class="function">egg_dbus_interface_node_info_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_introspect_sync ()">
+<a name="egg-dbus-object-proxy-introspect-sync"></a><h3>egg_dbus_object_proxy_introspect_sync ()</h3>
+<pre class="programlisting"><a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo">EggDBusInterfaceNodeInfo</a> * egg_dbus_object_proxy_introspect_sync
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags">EggDBusCallFlags</a> call_flags,
+                                                         <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+>GCancellable</a> *cancellable,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **error);</pre>
+<p>
+Syncrhonously introspects <em class="parameter"><code>object_proxy</code></em>. Note that this may fail
+if the remote object doesn't implement the
+<code class="literal">org.freedesktop.DBus.Introspectable</code> D-Bus
+interface.
+</p>
+<p>
+Note that introspection data is never cached.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>call_flags</code></em> :</span></p></td>
+<td> Flags from <a class="link" href="EggDBusConnection.html#EggDBusCallFlags" title="enum EggDBusCallFlags"><span class="type">EggDBusCallFlags</span></a> detailing how the D-Bus message should be sent.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gio/unstable/GCancellable.html"
+><span class="type">GCancellable</span></a> or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Return location for error.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if <em class="parameter"><code>error</code></em> is set, otherwise a <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterfaceNodeInfo" title="EggDBusInterfaceNodeInfo"><span class="type">EggDBusInterfaceNodeInfo</span></a> structure
+that should be freed with <a class="link" href="eggdbus-eggdbusinterface.html#egg-dbus-interface-node-info-free" title="egg_dbus_interface_node_info_free ()"><code class="function">egg_dbus_interface_node_info_free()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_invalidate_properties ()">
+<a name="egg-dbus-object-proxy-invalidate-properties"></a><h3>egg_dbus_object_proxy_invalidate_properties ()</h3>
+<pre class="programlisting">void                egg_dbus_object_proxy_invalidate_properties
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy);</pre>
+<p>
+Invalidate the property caches for all interface proxies for <em class="parameter"><code>object_proxy</code></em>.
+</p>
+<p>
+Typically, this is not necessary but it's useful when the remote
+end doesn't use a standard set of signals to indicate property
+changes.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_object_proxy_query_interface ()">
+<a name="egg-dbus-object-proxy-query-interface"></a><h3>egg_dbus_object_proxy_query_interface ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">EggDBusInterfaceProxy</a> * egg_dbus_object_proxy_query_interface
+                                                        (<a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy">EggDBusObjectProxy</a> *object_proxy,
+                                                         <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a> interface_type);</pre>
+<p>
+Gets an interface proxy for accessing a D-Bus interface (as
+specified by <em class="parameter"><code>interface_type</code></em>) on the remote object represented by
+<em class="parameter"><code>object_proxy</code></em>.
+</p>
+<p>
+Note that there is no guarantee that <em class="parameter"><code>object_proxy</code></em> actually
+implements the D-Bus interface specified by <em class="parameter"><code>interface_type</code></em>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object_proxy</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>interface_type</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+><span class="type">GType</span></a> for an interface that extends <a class="link" href="eggdbus-eggdbusinterface.html#EggDBusInterface"><span class="type">EggDBusInterface</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> An instance that implements <em class="parameter"><code>interface_type</code></em> and is derived
+from <a class="link" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy"><span class="type">EggDBusInterfaceProxy</span></a>. Do not ref or unref the returned
+instance; it is owned by <em class="parameter"><code>object_proxy</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="EggDBusObjectProxy.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "connection" property'>
+<a name="EggDBusObjectProxy--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a>*    : Read / Write / Construct Only</pre>
+<p>
+The connection that the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance is associated with.</p>
+</div>
+<hr>
+<div class="refsect2" title='The "name" property'>
+<a name="EggDBusObjectProxy--name"></a><h3>The <code class="literal">"name"</code> property</h3>
+<pre class="programlisting">  "name"                     <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write / Construct Only</pre>
+<p>
+The name on the bus that the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance is associated with.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "name-owner" property'>
+<a name="EggDBusObjectProxy--name-owner"></a><h3>The <code class="literal">"name-owner"</code> property</h3>
+<pre class="programlisting">  "name-owner"               <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read</pre>
+<p>
+The unique name of the owner of <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'><span class="type">"name"</span></a>, if any.
+</p>
+<p>
+If <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'><span class="type">"name"</span></a> is a well-known name
+(e.g. <code class="literal">org.freedesktop.DeviceKit</code>), this
+property contains the unique name (e.g. <code class="literal">1:6</code>)
+of the process that currently owns the name. It is <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a> if no
+process currently provides the name. If a process starts owning
+the name, the property will reflect that.
+</p>
+<p>
+If <a class="link" href="EggDBusObjectProxy.html#EggDBusObjectProxy--name" title='The "name" property'><span class="type">"name"</span></a> itself is a unique name (e.g. of the form
+<code class="literal">:1.42</code>), then this property is equal to that
+name only if the remote end with the given name is connected to
+the bus. If the remote end disconnects, the property changes to
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.  If this is the case then the object proxy is pretty much useless
+as unique names are never recycled.
+</p>
+<p>
+Connect to the <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"
+><span class="type">"notify"</span></a> signal to track changes to this
+property.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2" title='The "object-path" property'>
+<a name="EggDBusObjectProxy--object-path"></a><h3>The <code class="literal">"object-path"</code> property</h3>
+<pre class="programlisting">  "object-path"              <a class="link" href="eggdbus-eggdbusobjectpath.html#EggDBusObjectPath" title="EggDBusObjectPath">EggDBusObjectPath</a>*    : Read / Write / Construct Only</pre>
+<p>
+The object path that the <a class="link" href="EggDBusObjectProxy.html" title="EggDBusObjectProxy"><span class="type">EggDBusObjectProxy</span></a> instance is associated with.</p>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="EggDBusObjectProxy.see-also"></a><h2>See Also</h2>
+#EggDBusConnection
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

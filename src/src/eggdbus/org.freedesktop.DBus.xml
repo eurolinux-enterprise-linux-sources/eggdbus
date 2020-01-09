@@ -1,0 +1,310 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+
+  <interface name="org.freedesktop.DBus">
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Message bus daemon interface"/>
+    <annotation name="org.gtk.EggDBus.DocString" value="The #org.freedesktop.DBus D-Bus interface is implemented by message bus daemons. Normally applications only use the org.freedesktop.DBus.RequestName() method to claim a well-known name on the message bus."/>
+
+    <annotation name="org.gtk.EggDBus.Name" value="Bus"/>
+
+    <annotation name="org.gtk.EggDBus.DeclareFlags" value="RequestNameFlags">
+      <annotation name="org.gtk.EggDBus.DocString.Summary" value="Flags used when requesting a name"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Flags used in the org.freedesktop.DBus.RequestName() method."/>
+
+      <!-- ################################################################################ -->
+
+      <annotation name="org.gtk.EggDBus.Flags.Member" value="AllowReplacement">
+        <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0x01"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="If an application A specifies this flag and succeeds in becoming the owner of the name, and another application B later calls org.freedesktop.DBus.RequestName() with the %RequestNameFlags.ReplaceExisting flag, then application A will lose ownership and receive a #org.freedesktop.DBus::NameLost signal, and application B will become the new owner. If %RequestNameFlags.AllowReplacement is not specified by application A, or %RequestNameFlags.ReplaceExisting is not specified by application B, then application B will not replace application A as the owner."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Flags.Member" value="ReplaceExisting">
+        <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0x02"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Try to replace the current owner if there is one. If this flag is not set the application will only become the owner of the name if there is no current owner. If this flag is set, the application will replace the current owner if the current owner specified %RequestNameFlags.AllowReplacement."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Flags.Member" value="DoNotQueue">
+        <annotation name="org.gtk.EggDBus.Flags.Member.Value" value="0x04"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Without this flag, if an application requests a name that is already owned, the application will be placed in a queue to own the name when the current owner gives it up. If this flag is given, the application will not be placed in the queue, the request for the name will simply fail. This flag also affects behavior when an application is replaced as name owner; by default the application moves back into the waiting queue, unless this flag was provided when the application became the name owner."/>
+      </annotation>
+    </annotation>
+
+    <annotation name="org.gtk.EggDBus.DeclareEnum" value="RequestNameReply">
+      <annotation name="org.gtk.EggDBus.DocString.Summary" value="Return values when requesting a name"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Return values for the org.freedesktop.DBus.RequestName() method"/>
+
+      <!-- ################################################################################ -->
+
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="PrimaryOwner">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="1"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The caller is now the primary owner of the name, replacing any previous owner. Either the name had no owner before, or the caller specified %RequestNameFlags.ReplaceExisting and the current owner specified %RequestNameFlags.AllowReplacement."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="InQueue">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="2"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The name already had an owner, %RequestNameFlags.DoNotQueue was not specified, and either the current owner did not specify %RequestNameFlags.AllowReplacement or the requesting application did not specify %RequestNameFlags.ReplaceExisting."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="Exists">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="3"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The name already has an owner, %RequestNameFlags.DoNotQueue was specified, and either %RequestNameFlags.AllowReplacement was not specified by the current owner, or %RequestNameFlags.ReplaceExisting was not specified by the requesting application."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="AlreadyOwned">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="4"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The application trying to request ownership of a name is already the owner of it"/>
+      </annotation>
+    </annotation>
+
+    <!-- ################################################################################ -->
+
+    <annotation name="org.gtk.EggDBus.DeclareEnum" value="ReleaseNameReply">
+      <annotation name="org.gtk.EggDBus.DocString.Summary" value="Return values for the releasing a name"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Return values for the org.freedesktop.DBus.ReleaseName() method."/>
+
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="Released">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="1"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The caller has released his claim on the given name. Either the caller was the primary owner of the name, and the name is now unused or taken by somebody waiting in the queue for the name, or the caller was waiting in the queue for the name and has now been removed from the queue."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="NonExistant">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="2"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The given name does not exist on this bus."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="NotOwner">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="3"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The caller was not the primary owner of this name, and was also not waiting in the queue to own this name."/>
+      </annotation>
+    </annotation>
+
+    <!-- ################################################################################ -->
+
+    <annotation name="org.gtk.EggDBus.DeclareEnum" value="StartServiceByNameReply">
+      <annotation name="org.gtk.EggDBus.DocString.Summary" value="Return values for starting a service"/>
+      <annotation name="org.gtk.EggDBus.DocString" value="Return values for the org.freedesktop.DBus.StartServiceByName() method."/>
+
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="Success">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="1"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="The service was successfully started."/>
+      </annotation>
+      <annotation name="org.gtk.EggDBus.Enum.Member" value="AlreadyRunning">
+        <annotation name="org.gtk.EggDBus.Enum.Member.Value" value="2"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="A connection already owns the given name."/>
+      </annotation>
+    </annotation>
+
+    <!-- ################################################################################ -->
+
+    <method name="Hello">
+      <annotation name="org.gtk.EggDBus.DocString" value="Before an application is able to send messages to other applications it must invoke this method on the message bus to obtain a unique name. If an application without a unique name tries to send a message to another application, or a message to the message bus itself that isn't the org.freedesktop.DBus.Hello() method, it will be disconnected from the bus. There is no corresponding <emphasis>disconnect</emphasis> request; if a client wishes to disconnect from the bus, it simply closes the socket (or other communication channel)."/>
+
+      <arg direction="out" type="s" name="assigned_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Unique name assigned to the connection."/>
+      </arg>
+    </method>
+
+    <method name="RequestName">
+      <annotation name="org.gtk.EggDBus.DocString" value="This method call should be invoked on the <literal>org.freedesktop.DBus</literal> name to request the message bus to assign the given name to the method caller. Each name maintains a queue of possible owners, where the head of the queue is the primary or current owner of the name. Each potential owner in the queue maintains the %RequestNameFlags.AllowReplacement and %RequestNameFlags.DoNotQueue settings from its latest org.freedesktop.DBus.RequestName() call. See the D-Bus specification for more details."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name to request."/>
+      </arg>
+      <arg direction="in" type="u" name="flags">
+        <annotation name="org.gtk.EggDBus.Type" value="RequestNameFlags"/>
+        <annotation name="org.gtk.EggDBus.FlagsType" value="RequestNameFlags"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Flags."/>
+      </arg>
+      <arg direction="out" type="u" name="value">
+        <annotation name="org.gtk.EggDBus.Type" value="RequestNameReply"/>
+        <annotation name="org.gtk.EggDBus.EnumType" value="RequestNameReply"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Return value."/>
+      </arg>
+    </method>
+
+    <method name="ReleaseName">
+      <annotation name="org.gtk.EggDBus.DocString" value="This method call should be invoked on the <literal>org.freedesktop.DBus</literal> name to request the message bus to release the method caller's claim to the given name. If the caller is the primary owner, a new primary owner will be selected from the queue if any other owners are waiting. If the caller is waiting in the queue for the name, the caller will removed from the queue and will not be made an owner of the name if it later becomes available. If there are no other owners in the queue for the name, it will be removed from the bus entirely."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name to release."/>
+      </arg>
+      <arg direction="out" type="u" name="value">
+        <annotation name="org.gtk.EggDBus.Type" value="ReleaseNameReply"/>
+        <annotation name="org.gtk.EggDBus.EnumType" value="ReleaseNameReply"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Return value."/>
+      </arg>
+    </method>
+
+    <method name="StartServiceByName">
+      <annotation name="org.gtk.EggDBus.DocString" value="Tries to launch the executable associated with @name. See the D-Bus specification for more details on service activation."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name of the service to start."/>
+      </arg>
+      <arg direction="in" type="u" name="flags">
+        <annotation name="org.gtk.EggDBus.DocString" value="Flags (currently not used)."/>
+      </arg>
+      <arg direction="out" type="u" name="value">
+        <annotation name="org.gtk.EggDBus.Type" value="StartServiceByNameReply"/>
+        <annotation name="org.gtk.EggDBus.EnumType" value="StartServiceByNameReply"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="Reply"/>
+      </arg>
+    </method>
+
+    <method name="UpdateActivationEnvironment">
+      <annotation name="org.gtk.EggDBus.DocString" value="Normally, session bus activated services inherit the environment of the bus daemon.  This method adds to or modifies that environment when activating services. Some bus instances, such as the standard system bus, may disable access to this method for some or all callers."/>
+
+      <arg direction="in" type="a{ss}" name="env_hash">
+        <annotation name="org.gtk.EggDBus.DocString" value="Environment to add or update."/>
+      </arg>
+    </method>
+
+    <method name="NameHasOwner">
+      <annotation name="org.gtk.EggDBus.DocString" value="Checks if the specified name exists (currently has an owner)."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name to check."/>
+      </arg>
+      <arg direction="out" type="b" name="has_owner">
+        <annotation name="org.gtk.EggDBus.DocString" value="%TRUE only if @name exists."/>
+      </arg>
+    </method>
+
+    <method name="ListNames">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns a list of all currently-owned names on the bus."/>
+
+      <arg direction="out" type="as" name="names">
+        <annotation name="org.gtk.EggDBus.DocString" value="Array of strings where each string is a bus name."/>
+      </arg>
+    </method>
+
+    <method name="ListActivatableNames">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns a list of all names that can be activated on the bus."/>
+
+      <arg direction="out" type="as" name="activatable_names">
+        <annotation name="org.gtk.EggDBus.DocString" value="Array of strings where each string is a bus name."/>
+      </arg>
+    </method>
+
+    <method name="AddMatch">
+      <annotation name="org.gtk.EggDBus.DocString" value="Adds a match rule to match messages going through the message bus. If the bus does not have enough resources the %org.freedesktop.DBus.Error.OOM error is returned. See the D-Bus specification for more information about match rules."/>
+
+      <arg direction="in" type="s" name="rule">
+        <annotation name="org.gtk.EggDBus.DocString" value="Match rule to add to the connection."/>
+      </arg>
+    </method>
+
+    <method name="RemoveMatch">
+      <annotation name="org.gtk.EggDBus.DocString" value="Removes the first rule that matches. If the rule is not found the %org.freedesktop.DBus.Error.MatchRuleNotFound  error is returned. See the D-Bus specification for more information about match rules."/>
+
+      <arg direction="in" type="s" name="rule">
+        <annotation name="org.gtk.EggDBus.DocString" value="Match rule to remove from the connection."/>
+      </arg>
+    </method>
+
+    <method name="GetNameOwner">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns the unique connection name of the primary owner of the name given. If the requested name doesn't have an owner, returns a %org.freedesktop.DBus.Error.NameHasNoOwner error."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name to get owner of."/>
+      </arg>
+      <arg direction="out" type="s" name="unique_name">
+        <annotation name="org.gtk.EggDBus.DocString" value="The unique name that owns @name."/>
+      </arg>
+    </method>
+
+    <method name="ListQueuedOwners">
+      <annotation name="org.gtk.EggDBus.DocString" value="Lists the names waiting in queue to own @name."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="A well-known name."/>
+      </arg>
+      <arg direction="out" type="as" name="queued_owners">
+        <annotation name="org.gtk.EggDBus.DocString" value="Array of unique names in queue to own @name."/>
+      </arg>
+    </method>
+
+    <method name="GetConnectionUnixUser">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns the UNIX user id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name of the connection to query."/>
+      </arg>
+      <arg direction="out" type="u" name="uid">
+        <annotation name="org.gtk.EggDBus.CType" value="uid_t"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="UNIX user id."/>
+      </arg>
+    </method>
+
+    <method name="GetConnectionUnixProcessID">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns the UNIX process id of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.Failed error is returned."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name of the connection to query."/>
+      </arg>
+      <arg direction="out" type="u" name="pid">
+        <annotation name="org.gtk.EggDBus.CType" value="pid_t"/>
+        <annotation name="org.gtk.EggDBus.DocString" value="UNIX process id."/>
+      </arg>
+    </method>
+
+    <method name="GetAdtAuditSessionData">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns the Solaris/ADT auditing data of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.AdtAuditDataUnknown error is returned."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name of the connection to query."/>
+      </arg>
+      <arg direction="out" type="ay" name="data">
+        <annotation name="org.gtk.EggDBus.DocString" value="An array of bytes (typically a string of undefined encoding)."/>
+      </arg>
+    </method>
+
+    <method name="GetConnectionSELinuxSecurityContext">
+      <annotation name="org.gtk.EggDBus.DocString" value="Returns the SELinux security context of the process connected to the server. If unable to determine it, a %org.freedesktop.DBus.Error.SELinuxSecurityContextUnknown error is returned."/>
+
+      <arg direction="in" type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name of the connection to query."/>
+      </arg>
+      <arg direction="out" type="ay" name="security_context">
+        <annotation name="org.gtk.EggDBus.DocString" value="An array of bytes (typically a string of undefined encoding)."/>
+      </arg>
+    </method>
+
+    <method name="ReloadConfig">
+      <annotation name="org.gtk.EggDBus.DocString" value="Asks the message bus to reload configuration files."/>
+    </method>
+
+    <method name="GetId">
+      <annotation name="org.gtk.EggDBus.DocString" value="Gets the unique ID of the bus. The unique ID here is shared among all addresses the bus daemon is listening on (TCP, UNIX domain socket, etc.). Each address the bus is listening on also has its own unique ID. The per-bus and per-address IDs are not related. For a desktop session bus, the bus ID can be used as a way to uniquely identify a user's session. See the D-Bus specification for more information about unique IDs."/>
+
+      <arg direction="out" type="s" name="unique_id">
+        <annotation name="org.gtk.EggDBus.DocString" value="Unique ID identifying the bus daemon"/>
+      </arg>
+    </method>
+
+    <signal name="NameOwnerChanged">
+      <annotation name="org.gtk.EggDBus.DocString" value="This signal indicates that the owner of a name has changed. It's also the signal to use to detect the appearance of new names on the bus."/>
+
+      <arg type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name with new owner."/>
+      </arg>
+      <arg type="s" name="old_owner">
+        <annotation name="org.gtk.EggDBus.DocString" value="Old owner or empty string if none."/>
+      </arg>
+      <arg type="s" name="new_owner">
+        <annotation name="org.gtk.EggDBus.DocString" value="New owner or empty string if none."/>
+      </arg>
+    </signal>
+
+    <signal name="NameLost">
+      <annotation name="org.gtk.EggDBus.DocString" value="This signal is sent to a specific application when it loses ownership of a name."/>
+
+      <arg type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name which was lost."/>
+      </arg>
+    </signal>
+
+    <signal name="NameAcquired">
+      <annotation name="org.gtk.EggDBus.DocString" value="This signal is sent to a specific application when it gains ownership of a name."/>
+
+      <arg type="s" name="name">
+        <annotation name="org.gtk.EggDBus.DocString" value="Name which was acquired."/>
+      </arg>
+    </signal>
+
+  </interface>
+</node>

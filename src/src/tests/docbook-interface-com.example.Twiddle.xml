@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-com.example.Twiddle">
+  <refmeta>
+    <refentrytitle role="top_of_page">com.example.Twiddle Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>com.example.Twiddle Interface</refname>
+    <refpurpose>Twiddle interface used for testing</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+<link linkend="eggdbus-method-com.example.Twiddle.BroadcastzNewz">BroadcastzNewz</link>          (IN  String          newz)
+<link linkend="eggdbus-method-com.example.Twiddle.GetMostPowerfulSubject">GetMostPowerfulSubject</link>  (OUT <link linkend="eggdbus-struct-Subject">Subject</link>         most_powerful_subject)
+<link linkend="eggdbus-method-com.example.Twiddle.GetAllSubjects">GetAllSubjects</link>          (OUT Array&lt;<link linkend="eggdbus-struct-Subject">Subject</link>&gt;  subject)
+<link linkend="eggdbus-method-com.example.Twiddle.RegisterInterface">RegisterInterface</link>       (IN  String          object_path,
+                         IN  Boolean         impl_frob,
+                         IN  Boolean         impl_tweak,
+                         IN  Boolean         impl_twiddle)
+<link linkend="eggdbus-method-com.example.Twiddle.UnregisterInterface">UnregisterInterface</link>     (IN  String          object_path,
+                         IN  Boolean         impl_frob,
+                         IN  Boolean         impl_tweak,
+                         IN  Boolean         impl_twiddle)
+<link linkend="eggdbus-method-com.example.Twiddle.UnregisterAllInterfaces">UnregisterAllInterfaces</link> (IN  String          object_path)
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="signal_proto" id="eggdbus-if-signals-com.example.Twiddle">
+    <title role="signal_proto.title">Signals</title>
+    <synopsis>
+<link linkend="eggdbus-signal-com.example.Twiddle::NewzNotifz">NewzNotifz</link> (String  newz)
+    </synopsis>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-description-com.example.Twiddle">
+    <title role="desc.title">Description</title>
+      <para>
+The #Twiddle interface wraps the D-Bus interface <literal>com.example.Twiddle</literal>. It is used in the EggDBus test suite.
+      </para>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-com.example.Twiddle">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.BroadcastzNewz">
+      <title>BroadcastzNewz ()</title>
+    <programlisting>
+BroadcastzNewz (IN  String  newz)
+    </programlisting>
+    <para>
+Broadcast newz to the world. This method will make the object emit the #Twiddle::NewzNotifz signal with <parameter>newz</parameter> as the newz to broadcast.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>newz</parameter></literal>:</term>
+    <listitem>
+      <para>
+The newz to broadcast
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.GetMostPowerfulSubject">
+      <title>GetMostPowerfulSubject ()</title>
+    <programlisting>
+GetMostPowerfulSubject (OUT <link linkend="eggdbus-struct-Subject">Subject</link>  most_powerful_subject)
+    </programlisting>
+    <para>
+Gets the most powerful subject
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT <link linkend="eggdbus-struct-Subject">Subject</link> <parameter>most_powerful_subject</parameter></literal>:</term>
+    <listitem>
+      <para>
+The most powerful subject
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.GetAllSubjects">
+      <title>GetAllSubjects ()</title>
+    <programlisting>
+GetAllSubjects (OUT Array&lt;<link linkend="eggdbus-struct-Subject">Subject</link>&gt;  subject)
+    </programlisting>
+    <para>
+Gets all known subjects
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>OUT Array&lt;<link linkend="eggdbus-struct-Subject">Subject</link>&gt; <parameter>subject</parameter></literal>:</term>
+    <listitem>
+      <para>
+An array of subjects
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.RegisterInterface">
+      <title>RegisterInterface ()</title>
+    <programlisting>
+RegisterInterface (IN  String   object_path,
+                   IN  Boolean  impl_frob,
+                   IN  Boolean  impl_tweak,
+                   IN  Boolean  impl_twiddle)
+    </programlisting>
+    <para>
+Register a new object (or an interface)
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>object_path</parameter></literal>:</term>
+    <listitem>
+      <para>
+The object path to register the object on
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_frob</parameter></literal>:</term>
+    <listitem>
+      <para>
+Whether the object should implement the #Frob interface
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_tweak</parameter></literal>:</term>
+    <listitem>
+      <para>
+Whether the object should implement the #Tweak interface
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_twiddle</parameter></literal>:</term>
+    <listitem>
+      <para>
+Whether the object should implement the #Twiddle interface
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.UnregisterInterface">
+      <title>UnregisterInterface ()</title>
+    <programlisting>
+UnregisterInterface (IN  String   object_path,
+                     IN  Boolean  impl_frob,
+                     IN  Boolean  impl_tweak,
+                     IN  Boolean  impl_twiddle)
+    </programlisting>
+    <para>
+Unregister an object (or an interface of an object)
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>object_path</parameter></literal>:</term>
+    <listitem>
+      <para>
+The object path for unregistering
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_frob</parameter></literal>:</term>
+    <listitem>
+      <para>
+Remove the #Frob interface if registered
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_tweak</parameter></literal>:</term>
+    <listitem>
+      <para>
+Remove the #Tweak interface if registered
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Boolean <parameter>impl_twiddle</parameter></literal>:</term>
+    <listitem>
+      <para>
+Remove the #Twiddle interface if registered
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-com.example.Twiddle.UnregisterAllInterfaces">
+      <title>UnregisterAllInterfaces ()</title>
+    <programlisting>
+UnregisterAllInterfaces (IN  String  object_path)
+    </programlisting>
+    <para>
+Unregister all interfaces for an object
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>object_path</parameter></literal>:</term>
+    <listitem>
+      <para>
+The object path for unregistering
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="signals" id="eggdbus-if-signal-details-com.example.Twiddle">
+    <title role="signals.title">Signal Details</title>
+    <refsect2 role="signal" id="eggdbus-signal-com.example.Twiddle::NewzNotifz">
+      <title>The "NewzNotifz" signal</title>
+    <programlisting>
+NewzNotifz (String  newz)
+    </programlisting>
+    <para>
+Emitted when newz are available
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>newz</parameter></literal>:</term>
+    <listitem>
+      <para>
+The newz being emitted
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+</refentry>

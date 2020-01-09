@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusMethodInvocation</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusInterfaceProxy.html" title="EggDBusInterfaceProxy">
+<link rel="next" href="eggdbus-eggdbuserror.html" title="EggDBusError">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusInterfaceProxy.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-eggdbuserror.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#EggDBusMethodInvocation.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#EggDBusMethodInvocation.description" class="shortcut">Description</a>
+                 | 
+                <a href="#EggDBusMethodInvocation.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusMethodInvocation">
+<a name="EggDBusMethodInvocation"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="EggDBusMethodInvocation.top_of_page"></a>EggDBusMethodInvocation</span></h2>
+<p>EggDBusMethodInvocation — Handling remote method calls</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="EggDBusMethodInvocation.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="EggDBusMethodInvocation.html#EggDBusMethodInvocation-struct" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a>;
+<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> * <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-new" title="egg_dbus_method_invocation_new ()">egg_dbus_method_invocation_new</a>
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *request_message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> source_tag);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-source-tag" title="egg_dbus_method_invocation_get_source_tag ()">egg_dbus_method_invocation_get_source_tag</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);
+<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-create-reply-message" title="egg_dbus_method_invocation_create_reply_message ()">egg_dbus_method_invocation_create_reply_message</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-caller" title="egg_dbus_method_invocation_get_caller ()">egg_dbus_method_invocation_get_caller</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);
+<a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-get-connection" title="egg_dbus_method_invocation_get_connection ()">egg_dbus_method_invocation_get_connection</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-add-destroy-notify" title="egg_dbus_method_invocation_add_destroy_notify ()">egg_dbus_method_invocation_add_destroy_notify</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> func);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error" title="egg_dbus_method_invocation_return_error ()">egg_dbus_method_invocation_return_error</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error-valist" title="egg_dbus_method_invocation_return_error_valist ()">egg_dbus_method_invocation_return_error_valist</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         va_list var_args);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error-literal" title="egg_dbus_method_invocation_return_error_literal ()">egg_dbus_method_invocation_return_error_literal</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-gerror" title="egg_dbus_method_invocation_return_gerror ()">egg_dbus_method_invocation_return_gerror</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error" title="egg_dbus_method_invocation_return_dbus_error ()">egg_dbus_method_invocation_return_dbus_error</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error-valist" title="egg_dbus_method_invocation_return_dbus_error_valist ()">egg_dbus_method_invocation_return_dbus_error_valist</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         va_list var_args);
+void                <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error-literal" title="egg_dbus_method_invocation_return_dbus_error_literal ()">egg_dbus_method_invocation_return_dbus_error_literal</a>
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="EggDBusMethodInvocation.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"
+>GObject</a>
+   +----EggDBusMethodInvocation
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="EggDBusMethodInvocation.description"></a><h2>Description</h2>
+<p>
+Instances of the <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a> class are used when handling D-Bus method calls. It
+provides a way to get information (such as the UNIX process identifier if applicable) about
+the remote end invoking the method. It also provides a mechanism to return errors.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="EggDBusMethodInvocation.details"></a><h2>Details</h2>
+<div class="refsect2" title="EggDBusMethodInvocation">
+<a name="EggDBusMethodInvocation-struct"></a><h3>EggDBusMethodInvocation</h3>
+<pre class="programlisting">typedef struct _EggDBusMethodInvocation EggDBusMethodInvocation;</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_new ()">
+<a name="egg-dbus-method-invocation-new"></a><h3>egg_dbus_method_invocation_new ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> * egg_dbus_method_invocation_new
+                                                        (<a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *request_message,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> source_tag);</pre>
+<p>
+Creates a new <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>. This method is only useful for
+language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>request_message</code></em> :</span></p></td>
+<td> The message encapsulating the method call request.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source_tag</code></em> :</span></p></td>
+<td> An user provided tag.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_get_source_tag ()">
+<a name="egg-dbus-method-invocation-get-source-tag"></a><h3>egg_dbus_method_invocation_get_source_tag ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a>            egg_dbus_method_invocation_get_source_tag
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);</pre>
+<p>
+Gets the user provided tag for <em class="parameter"><code>method_invocation</code></em>. This method is only useful for
+language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The user provided tag set when <em class="parameter"><code>method_invocation</code></em> was constructed.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_create_reply_message ()">
+<a name="egg-dbus-method-invocation-create-reply-message"></a><h3>egg_dbus_method_invocation_create_reply_message ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusMessage.html" title="EggDBusMessage">EggDBusMessage</a> *    egg_dbus_method_invocation_create_reply_message
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);</pre>
+<p>
+Creates a <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> in reply to the <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a> passed when
+<em class="parameter"><code>method_invocation</code></em> was created. This method is only useful for
+language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A new <a class="link" href="EggDBusMessage.html" title="EggDBusMessage"><span class="type">EggDBusMessage</span></a>. Free with <a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"
+><code class="function">g_object_unref()</code></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_get_caller ()">
+<a name="egg-dbus-method-invocation-get-caller"></a><h3>egg_dbus_method_invocation_get_caller ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *       egg_dbus_method_invocation_get_caller
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);</pre>
+<p>
+Gets the unique bus name of the caller of the method.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The unique bus name of the caller. Do not free, the returned string is owned by <em class="parameter"><code>method_invocation</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_get_connection ()">
+<a name="egg-dbus-method-invocation-get-connection"></a><h3>egg_dbus_method_invocation_get_connection ()</h3>
+<pre class="programlisting"><a class="link" href="EggDBusConnection.html" title="EggDBusConnection">EggDBusConnection</a> * egg_dbus_method_invocation_get_connection
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation);</pre>
+<p>
+Gets the <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a> that <em class="parameter"><code>method_invocation</code></em> is associated with.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A <a class="link" href="EggDBusConnection.html" title="EggDBusConnection"><span class="type">EggDBusConnection</span></a>. Do not free, the returned object is owned by <em class="parameter"><code>method_invocation</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_add_destroy_notify ()">
+<a name="egg-dbus-method-invocation-add-destroy-notify"></a><h3>egg_dbus_method_invocation_add_destroy_notify ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_add_destroy_notify
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> data,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"
+>GDestroyNotify</a> func);</pre>
+<p>
+Makes <em class="parameter"><code>method_invocation</code></em> call <em class="parameter"><code>func</code></em> with a a single parameter,
+<em class="parameter"><code>data</code></em>, upon finalization.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td> Data to free.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td> Free function.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_error ()">
+<a name="egg-dbus-method-invocation-return-error"></a><h3>egg_dbus_method_invocation_return_error ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_error
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);</pre>
+<p>
+Use this to return an error when handling a D-Bus method call. The error will be propagated
+to the remote caller.
+</p>
+<p>
+This completes the method invocation and you don't have to call the corresponding
+<code class="literal"><code class="function">_finish()</code></code> method in your D-Bus method call handler.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td> Error domain.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>code</code></em> :</span></p></td>
+<td> Error code.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> <code class="function">printf()</code> style format for human readable message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Arguments for <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_error_valist ()">
+<a name="egg-dbus-method-invocation-return-error-valist"></a><h3>egg_dbus_method_invocation_return_error_valist ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_error_valist
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         va_list var_args);</pre>
+<p>
+Like <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error" title="egg_dbus_method_invocation_return_error ()"><code class="function">egg_dbus_method_invocation_return_error()</code></a> but intended for language bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td> Error domain.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>code</code></em> :</span></p></td>
+<td> Error code.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> <code class="function">printf()</code> style format for human readable message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>var_args</code></em> :</span></p></td>
+<td> Arguments for <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_error_literal ()">
+<a name="egg-dbus-method-invocation-return-error-literal"></a><h3>egg_dbus_method_invocation_return_error_literal ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_error_literal
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a> domain,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> code,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);</pre>
+<p>
+Like <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error" title="egg_dbus_method_invocation_return_error ()"><code class="function">egg_dbus_method_invocation_return_error()</code></a> but without
+<code class="function">printf()</code>-style formatting.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td> Error domain.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>code</code></em> :</span></p></td>
+<td> Error code.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> Human readable error message.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_gerror ()">
+<a name="egg-dbus-method-invocation-return-gerror"></a><h3>egg_dbus_method_invocation_return_gerror ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_gerror
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error);</pre>
+<p>
+Like <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-error" title="egg_dbus_method_invocation_return_error ()"><code class="function">egg_dbus_method_invocation_return_error()</code></a> but takes a a <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> instead.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_dbus_error ()">
+<a name="egg-dbus-method-invocation-return-dbus-error"></a><h3>egg_dbus_method_invocation_return_dbus_error ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_dbus_error
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);</pre>
+<p>
+Use this to return a raw D-Bus error when handling a D-Bus method call. The error will
+be propagated to the remote caller.
+</p>
+<p>
+This completes the method invocation and you don't have to call the corresponding
+<code class="literal"><code class="function">_finish()</code></code> method in your D-Bus method call handler.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A D-Bus error name such as <code class="literal">org.freedesktop.DBus.Error.UnknownMethod</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> <code class="function">printf()</code> style format for human readable message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Arguments for <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_dbus_error_valist ()">
+<a name="egg-dbus-method-invocation-return-dbus-error-valist"></a><h3>egg_dbus_method_invocation_return_dbus_error_valist ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_dbus_error_valist
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         va_list var_args);</pre>
+<p>
+Like <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error" title="egg_dbus_method_invocation_return_dbus_error ()"><code class="function">egg_dbus_method_invocation_return_dbus_error()</code></a> but intended for langauge bindings.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A D-Bus error name such as <code class="literal">org.freedesktop.DBus.Error.UnknownMethod</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> <code class="function">printf()</code> style format for human readable message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>var_args</code></em> :</span></p></td>
+<td> Arguments for <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_method_invocation_return_dbus_error_literal ()">
+<a name="egg-dbus-method-invocation-return-dbus-error-literal"></a><h3>egg_dbus_method_invocation_return_dbus_error_literal ()</h3>
+<pre class="programlisting">void                egg_dbus_method_invocation_return_dbus_error_literal
+                                                        (<a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">EggDBusMethodInvocation</a> *method_invocation,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *message);</pre>
+<p>
+Like <a class="link" href="EggDBusMethodInvocation.html#egg-dbus-method-invocation-return-dbus-error" title="egg_dbus_method_invocation_return_dbus_error ()"><code class="function">egg_dbus_method_invocation_return_dbus_error()</code></a> but without
+<code class="function">printf()</code>-style formatting.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>method_invocation</code></em> :</span></p></td>
+<td> A <a class="link" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation"><span class="type">EggDBusMethodInvocation</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td> A D-Bus error name such as <code class="literal">org.freedesktop.DBus.Error.UnknownMethod</code>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> Human readable message to pass.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

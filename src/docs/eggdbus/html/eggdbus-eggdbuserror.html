@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EggDBusError</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="core.html" title="D-Bus Operations">
+<link rel="prev" href="EggDBusMethodInvocation.html" title="EggDBusMethodInvocation">
+<link rel="next" href="EggDBusBusNameTracker.html" title="EggDBusBusNameTracker">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="EggDBusMethodInvocation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="core.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="EggDBusBusNameTracker.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-eggdbuserror.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-eggdbuserror.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="EggDBusError">
+<a name="eggdbus-eggdbuserror"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="eggdbus-eggdbuserror.top_of_page"></a>EggDBusError</span></h2>
+<p>EggDBusError — Error helper functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="eggdbus-eggdbuserror.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR--CAPS" title="EGG_DBUS_ERROR">EGG_DBUS_ERROR</a>
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              <a class="link" href="eggdbus-eggdbuserror.html#egg-dbus-error-quark" title="egg_dbus_error_quark ()">egg_dbus_error_quark</a>                (void);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="eggdbus-eggdbuserror.html#egg-dbus-error-get-remote-exception" title="egg_dbus_error_get_remote_exception ()">egg_dbus_error_get_remote_exception</a> (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_name,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_message);
+enum                <a class="link" href="eggdbus-eggdbuserror.html#EggDBusError" title="enum EggDBusError">EggDBusError</a>;
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-eggdbuserror.description"></a><h2>Description</h2>
+<p>
+Contains error helper functions for reporting and checking errors.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="eggdbus-eggdbuserror.details"></a><h2>Details</h2>
+<div class="refsect2" title="EGG_DBUS_ERROR">
+<a name="EGG-DBUS-ERROR--CAPS"></a><h3>EGG_DBUS_ERROR</h3>
+<pre class="programlisting">#define EGG_DBUS_ERROR egg_dbus_error_quark()
+</pre>
+<p>
+Error domain for EggDBus. Errors in this domain will be from the
+<a class="link" href="eggdbus-eggdbuserror.html#EggDBusError" title="enum EggDBusError"><span class="type">EggDBusError</span></a> enumeration. See <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a> for information on error
+domains.</p>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_error_quark ()">
+<a name="egg-dbus-error-quark"></a><h3>egg_dbus_error_quark ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"
+>GQuark</a>              egg_dbus_error_quark                (void);</pre>
+</div>
+<hr>
+<div class="refsect2" title="egg_dbus_error_get_remote_exception ()">
+<a name="egg-dbus-error-get-remote-exception"></a><h3>egg_dbus_error_get_remote_exception ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            egg_dbus_error_get_remote_exception (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> *error,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_name,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **out_message);</pre>
+<p>
+Analyzes <em class="parameter"><code>error</code></em> and if the error domain is <a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR--CAPS" title="EGG_DBUS_ERROR"><span class="type">EGG_DBUS_ERROR</span></a> and
+error code is <a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-REMOTE-EXCEPTION--CAPS"><span class="type">EGG_DBUS_ERROR_REMOTE_EXCEPTION</span></a>, extracts the D-Bus
+error name (e.g. <code class="literal">com.example.Acme.Error.Failed</code>)
+in <em class="parameter"><code>out_name</code></em> and the D-Bus error message in <em class="parameter"><code>out_message</code></em> and
+returns <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a>.
+</p>
+<p>
+Note that this function will not warn if <em class="parameter"><code>error</code></em> isn't a
+<a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-REMOTE-EXCEPTION--CAPS"><span class="type">EGG_DBUS_ERROR_REMOTE_EXCEPTION</span></a> (it will just return <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a>) so it
+can be used to test if <em class="parameter"><code>error</code></em> is really a
+<a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-REMOTE-EXCEPTION--CAPS"><span class="type">EGG_DBUS_ERROR_REMOTE_EXCEPTION</span></a>.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> A <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_name</code></em> :</span></p></td>
+<td> Return location for D-Bus error name or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out_message</code></em> :</span></p></td>
+<td> Return location for D-Bus error message or <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL--CAPS"
+><code class="literal">NULL</code></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE--CAPS"
+><code class="literal">TRUE</code></a> if <em class="parameter"><code>out_name</code></em> and <em class="parameter"><code>out_message</code></em> is set (caller must
+free these using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>), <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE--CAPS"
+><code class="literal">FALSE</code></a> if error is not a
+<a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-REMOTE-EXCEPTION--CAPS"><span class="type">EGG_DBUS_ERROR_REMOTE_EXCEPTION</span></a>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum EggDBusError">
+<a name="EggDBusError"></a><h3>enum EggDBusError</h3>
+<pre class="programlisting">typedef enum
+{
+  EGG_DBUS_ERROR_FAILED,                           /*&lt; nick=org.gtk.EggDBus.Error.Failed &gt;*/
+  EGG_DBUS_ERROR_CANCELLED,                        /*&lt; nick=org.gtk.EggDBus.Error.Cancelled &gt;*/
+  EGG_DBUS_ERROR_REMOTE_EXCEPTION,                 /*&lt; nick=org.gtk.EggDBus.Error.RemoteException &gt;*/
+
+  /* Well-known errors in the org.freedesktop.DBus.Error namespace */
+  EGG_DBUS_ERROR_DBUS_FAILED,                      /*&lt; nick=org.freedesktop.DBus.Error.Failed &gt;*/
+  EGG_DBUS_ERROR_NO_MEMORY,                        /*&lt; nick=org.freedesktop.DBus.Error.NoMemory &gt;*/
+  EGG_DBUS_ERROR_SERVICE_UNKNOWN,                  /*&lt; nick=org.freedesktop.DBus.Error.ServiceUnknown &gt;*/
+  EGG_DBUS_ERROR_NAME_HAS_NO_OWNER,                /*&lt; nick=org.freedesktop.DBus.Error.NameHasNoOwner &gt;*/
+  EGG_DBUS_ERROR_NO_REPLY,                         /*&lt; nick=org.freedesktop.DBus.Error.NoReply &gt;*/
+  EGG_DBUS_ERROR_IO_ERROR,                         /*&lt; nick=org.freedesktop.DBus.Error.IOError &gt;*/
+  EGG_DBUS_ERROR_BAD_ADDRESS,                      /*&lt; nick=org.freedesktop.DBus.Error.BadAddress &gt;*/
+  EGG_DBUS_ERROR_NOT_SUPPORTED,                    /*&lt; nick=org.freedesktop.DBus.Error.NotSupported &gt;*/
+  EGG_DBUS_ERROR_LIMITS_EXCEEDED,                  /*&lt; nick=org.freedesktop.DBus.Error.LimitsExceeded &gt;*/
+  EGG_DBUS_ERROR_ACCESS_DENIED,                    /*&lt; nick=org.freedesktop.DBus.Error.AccessDenied &gt;*/
+  EGG_DBUS_ERROR_AUTH_FAILED,                      /*&lt; nick=org.freedesktop.DBus.Error.AuthFailed &gt;*/
+  EGG_DBUS_ERROR_NO_SERVER,                        /*&lt; nick=org.freedesktop.DBus.Error.NoServer &gt;*/
+  EGG_DBUS_ERROR_TIMEOUT,                          /*&lt; nick=org.freedesktop.DBus.Error.Timeout &gt;*/
+  EGG_DBUS_ERROR_NO_NETWORK,                       /*&lt; nick=org.freedesktop.DBus.Error.NoNetwork &gt;*/
+  EGG_DBUS_ERROR_ADDRESS_IN_USE,                   /*&lt; nick=org.freedesktop.DBus.Error.AddressInUse &gt;*/
+  EGG_DBUS_ERROR_DISCONNECTED,                     /*&lt; nick=org.freedesktop.DBus.Error.Disconnected &gt;*/
+  EGG_DBUS_ERROR_INVALID_ARGS,                     /*&lt; nick=org.freedesktop.DBus.Error.InvalidArgs &gt;*/
+  EGG_DBUS_ERROR_FILE_NOT_FOUND,                   /*&lt; nick=org.freedesktop.DBus.Error.FileNotFound &gt;*/
+  EGG_DBUS_ERROR_FILE_EXISTS,                      /*&lt; nick=org.freedesktop.DBus.Error.FileExists &gt;*/
+  EGG_DBUS_ERROR_UNKNOWN_METHOD,                   /*&lt; nick=org.freedesktop.DBus.Error.UnknownMethod &gt;*/
+  EGG_DBUS_ERROR_TIMED_OUT,                        /*&lt; nick=org.freedesktop.DBus.Error.TimedOut &gt;*/
+  EGG_DBUS_ERROR_MATCH_RULE_NOT_FOUND,             /*&lt; nick=org.freedesktop.DBus.Error.MatchRuleNotFound &gt;*/
+  EGG_DBUS_ERROR_MATCH_RULE_INVALID,               /*&lt; nick=org.freedesktop.DBus.Error.MatchRuleInvalid &gt;*/
+  EGG_DBUS_ERROR_SPAWN_EXEC_FAILED,                /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ExecFailed &gt;*/
+  EGG_DBUS_ERROR_SPAWN_FORK_FAILED,                /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ForkFailed &gt;*/
+  EGG_DBUS_ERROR_SPAWN_CHILD_EXITED,               /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ChildExited &gt;*/
+  EGG_DBUS_ERROR_SPAWN_CHILD_SIGNALED,             /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ChildSignaled &gt;*/
+  EGG_DBUS_ERROR_SPAWN_FAILED,                     /*&lt; nick=org.freedesktop.DBus.Error.Spawn.Failed &gt;*/
+  EGG_DBUS_ERROR_SPAWN_SETUP_FAILED,               /*&lt; nick=org.freedesktop.DBus.Error.Spawn.FailedToSetup &gt;*/
+  EGG_DBUS_ERROR_SPAWN_CONFIG_INVALID,             /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ConfigInvalid &gt;*/
+  EGG_DBUS_ERROR_SPAWN_SERVICE_INVALID,            /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ServiceNotValid &gt;*/
+  EGG_DBUS_ERROR_SPAWN_SERVICE_NOT_FOUND,          /*&lt; nick=org.freedesktop.DBus.Error.Spawn.ServiceNotFound &gt;*/
+  EGG_DBUS_ERROR_SPAWN_PERMISSIONS_INVALID,        /*&lt; nick=org.freedesktop.DBus.Error.Spawn.PermissionsInvalid &gt;*/
+  EGG_DBUS_ERROR_SPAWN_FILE_INVALID,               /*&lt; nick=org.freedesktop.DBus.Error.Spawn.FileInvalid &gt;*/
+  EGG_DBUS_ERROR_SPAWN_NO_MEMORY,                  /*&lt; nick=org.freedesktop.DBus.Error.Spawn.NoMemory &gt;*/
+  EGG_DBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN,          /*&lt; nick=org.freedesktop.DBus.Error.UnixProcessIdUnknown &gt;*/
+  EGG_DBUS_ERROR_INVALID_SIGNATURE,                /*&lt; nick=org.freedesktop.DBus.Error.InvalidSignature &gt;*/
+  EGG_DBUS_ERROR_INVALID_FILE_CONTENT,             /*&lt; nick=org.freedesktop.DBus.Error.InvalidFileContent &gt;*/
+  EGG_DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN, /*&lt; nick=org.freedesktop.DBus.Error.SELinuxSecurityContextUnknown &gt;*/
+  EGG_DBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN,           /*&lt; nick=org.freedesktop.DBus.Error.AdtAuditDataUnknown &gt;*/
+  EGG_DBUS_ERROR_OBJECT_PATH_IN_USE,               /*&lt; nick=org.freedesktop.DBus.Error.ObjectPathInUse &gt;*/
+} EggDBusError;
+</pre>
+<p>
+Error codes.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_FAILED</code></span></p></td>
+<td> The operation failed.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-CANCELLED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_CANCELLED</code></span></p></td>
+<td> The operation was cancelled.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-REMOTE-EXCEPTION--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_REMOTE_EXCEPTION</code></span></p></td>
+<td> A remote exception that couldn't be
+mapped to a proper <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+><span class="type">GError</span></a>. Use <a class="link" href="eggdbus-eggdbuserror.html#egg-dbus-error-get-remote-exception" title="egg_dbus_error_get_remote_exception ()"><code class="function">egg_dbus_error_get_remote_exception()</code></a>
+to extract the D-Bus error name.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-DBUS-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_DBUS_FAILED</code></span></p></td>
+<td>
+A generic error; "something went wrong" - see the error message for
+more.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NO-MEMORY--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NO_MEMORY</code></span></p></td>
+<td>
+There was not enough memory to complete an operation.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SERVICE-UNKNOWN--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SERVICE_UNKNOWN</code></span></p></td>
+<td>
+The bus doesn't know how to launch a service to supply the bus name
+you wanted.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NAME-HAS-NO-OWNER--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NAME_HAS_NO_OWNER</code></span></p></td>
+<td>
+The bus name you referenced doesn't exist (i.e. no application owns
+it).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NO-REPLY--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NO_REPLY</code></span></p></td>
+<td>
+No reply to a message expecting one, usually means a timeout occurred.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-IO-ERROR--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_IO_ERROR</code></span></p></td>
+<td>
+Something went wrong reading or writing to a socket, for example.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-BAD-ADDRESS--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_BAD_ADDRESS</code></span></p></td>
+<td>
+A D-Bus bus address was malformed.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NOT-SUPPORTED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NOT_SUPPORTED</code></span></p></td>
+<td>
+Requested operation isn't supported (like ENOSYS on UNIX).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-LIMITS-EXCEEDED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_LIMITS_EXCEEDED</code></span></p></td>
+<td>
+Some limited resource is exhausted.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-ACCESS-DENIED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_ACCESS_DENIED</code></span></p></td>
+<td>
+Security restrictions don't allow doing what you're trying to do.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-AUTH-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_AUTH_FAILED</code></span></p></td>
+<td>
+Authentication didn't work.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NO-SERVER--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NO_SERVER</code></span></p></td>
+<td>
+Unable to connect to server (probably caused by ECONNREFUSED on a
+socket).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-TIMEOUT--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_TIMEOUT</code></span></p></td>
+<td>
+Certain timeout errors, possibly ETIMEDOUT on a socket.  Note that
+<a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-NO-REPLY--CAPS"><span class="type">EGG_DBUS_ERROR_NO_REPLY</span></a> is used for message reply timeouts. Warning:
+this is confusingly-named given that <a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-TIMED-OUT--CAPS"><span class="type">EGG_DBUS_ERROR_TIMED_OUT</span></a> also
+exists. We can't fix it for compatibility reasons so just be
+careful.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-NO-NETWORK--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_NO_NETWORK</code></span></p></td>
+<td>
+No network access (probably ENETUNREACH on a socket).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-ADDRESS-IN-USE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_ADDRESS_IN_USE</code></span></p></td>
+<td>
+Can't bind a socket since its address is in use (i.e. EADDRINUSE).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-DISCONNECTED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_DISCONNECTED</code></span></p></td>
+<td>
+The connection is disconnected and you're trying to use it.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-INVALID-ARGS--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_INVALID_ARGS</code></span></p></td>
+<td>
+Invalid arguments passed to a method call.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-FILE-NOT-FOUND--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_FILE_NOT_FOUND</code></span></p></td>
+<td>
+Missing file.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-FILE-EXISTS--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_FILE_EXISTS</code></span></p></td>
+<td>
+Existing file and the operation you're using does not silently overwrite.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-UNKNOWN-METHOD--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_UNKNOWN_METHOD</code></span></p></td>
+<td>
+Method name you invoked isn't known by the object you invoked it on.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-TIMED-OUT--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_TIMED_OUT</code></span></p></td>
+<td>
+Certain timeout errors, e.g. while starting a service. Warning: this is
+confusingly-named given that <a class="link" href="eggdbus-eggdbuserror.html#EGG-DBUS-ERROR-TIMEOUT--CAPS"><span class="type">EGG_DBUS_ERROR_TIMEOUT</span></a> also exists. We
+can't fix it for compatibility reasons so just be careful.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-MATCH-RULE-NOT-FOUND--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_MATCH_RULE_NOT_FOUND</code></span></p></td>
+<td>
+Tried to remove or modify a match rule that didn't exist.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-MATCH-RULE-INVALID--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_MATCH_RULE_INVALID</code></span></p></td>
+<td>
+The match rule isn't syntactically valid.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-EXEC-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_EXEC_FAILED</code></span></p></td>
+<td>
+While starting a new process, the <code class="function">exec()</code> call failed.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-FORK-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_FORK_FAILED</code></span></p></td>
+<td>
+While starting a new process, the <code class="function">fork()</code> call failed.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-CHILD-EXITED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_CHILD_EXITED</code></span></p></td>
+<td>
+While starting a new process, the child exited with a status code.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-CHILD-SIGNALED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_CHILD_SIGNALED</code></span></p></td>
+<td>
+While starting a new process, the child exited on a signal.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_FAILED</code></span></p></td>
+<td>
+While starting a new process, something went wrong.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-SETUP-FAILED--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_SETUP_FAILED</code></span></p></td>
+<td>
+We failed to setup the environment correctly.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-CONFIG-INVALID--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_CONFIG_INVALID</code></span></p></td>
+<td>
+We failed to setup the config parser correctly.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-SERVICE-INVALID--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_SERVICE_INVALID</code></span></p></td>
+<td>
+Bus name was not valid.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-SERVICE-NOT-FOUND--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_SERVICE_NOT_FOUND</code></span></p></td>
+<td>
+Service file not found in system-services directory.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-PERMISSIONS-INVALID--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_PERMISSIONS_INVALID</code></span></p></td>
+<td>
+Permissions are incorrect on the setuid helper.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-FILE-INVALID--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_FILE_INVALID</code></span></p></td>
+<td>
+Service file invalid (Name, User or Exec missing).
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SPAWN-NO-MEMORY--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SPAWN_NO_MEMORY</code></span></p></td>
+<td>
+Tried to get a UNIX process ID and it wasn't available.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-UNIX-PROCESS-ID-UNKNOWN--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN</code></span></p></td>
+<td>
+Tried to get a UNIX process ID and it wasn't available.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-INVALID-SIGNATURE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_INVALID_SIGNATURE</code></span></p></td>
+<td>
+A type signature is not valid.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-INVALID-FILE-CONTENT--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_INVALID_FILE_CONTENT</code></span></p></td>
+<td>
+A file contains invalid syntax or is otherwise broken.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-SELINUX-SECURITY-CONTEXT-UNKNOWN--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN</code></span></p></td>
+<td>
+Asked for SELinux security context and it wasn't available.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-ADT-AUDIT-DATA-UNKNOWN--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN</code></span></p></td>
+<td>
+Asked for ADT audit data and it wasn't available.
+</td>
+</tr>
+<tr>
+<td><p><a name="EGG-DBUS-ERROR-OBJECT-PATH-IN-USE--CAPS"></a><span class="term"><code class="literal">EGG_DBUS_ERROR_OBJECT_PATH_IN_USE</code></span></p></td>
+<td>
+There's already an object with the requested object path.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="eggdbus-eggdbuserror.see-also"></a><h2>See Also</h2>
+#EggDBusConnection
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

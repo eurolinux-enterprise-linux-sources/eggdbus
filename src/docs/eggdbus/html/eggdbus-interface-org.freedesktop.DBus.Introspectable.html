@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.freedesktop.DBus.Introspectable Interface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="prev" href="eggdbus-interface-org.freedesktop.DBus.Properties.html" title="org.freedesktop.DBus.Properties Interface">
+<link rel="next" href="eggdbus-enummain-CreateFlags.html" title="CreateFlags Flag Enumeration">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="eggdbus-interface-org.freedesktop.DBus.Properties.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="eggdbus-enummain-CreateFlags.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#eggdbus-interface-org.freedesktop.DBus.Introspectable.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#eggdbus-interface-org.freedesktop.DBus.Introspectable.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="org.freedesktop.DBus.Introspectable Interface">
+<a name="eggdbus-interface-org.freedesktop.DBus.Introspectable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">org.freedesktop.DBus.Introspectable Interface</span></h2>
+<p>org.freedesktop.DBus.Introspectable Interface — Introspection interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis">
+<a class="link" href="eggdbus-interface-org.freedesktop.DBus.Introspectable.html#eggdbus-method-org.freedesktop.DBus.Introspectable.Introspect" title="Introspect ()">Introspect</a> (OUT String  xml_data)
+    </pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="eggdbus-if-description-org.freedesktop.DBus.Introspectable"></a><h2>Description</h2>
+<p>
+Introspection support.
+      </p>
+</div>
+<div class="refsect1" title="Method Details">
+<a name="eggdbus-if-method-details-org.freedesktop.DBus.Introspectable"></a><h2>Method Details</h2>
+<div class="refsect2" title="Introspect ()">
+<a name="eggdbus-method-org.freedesktop.DBus.Introspectable.Introspect"></a><h3>Introspect ()</h3>
+<pre class="programlisting">
+Introspect (OUT String  xml_data)
+    </pre>
+<p>
+Object instances may implement this method which returns an XML description of the object, including its interfaces (with signals, methods and properties) and objects below it in the object path tree. See the D-Bus specification for the exact format of D-Bus Introspection XML.
+    </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><code class="literal">OUT String <em class="parameter"><code>xml_data</code></em></code>:</span></p></td>
+<td><p>
+Valid D-Bus Introspection XML.
+      </p></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-structmain-Pair">
+  <refmeta>
+    <refentrytitle role="top_of_page">Pair Structure</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>Pair Structure</refname>
+    <refpurpose>Pair of integers</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="struct" id="eggdbus-struct-Pair">
+      <title>The Pair Structure</title>
+        <para>
+          <programlisting>
+{
+  Int32 first,
+  Int32 second
+}
+          </programlisting>
+          <para>
+The <link linkend="eggdbus-struct-Pair">Pair</link> type is used to group two integers together.
+          </para>
+          <variablelist role="struct">
+  <varlistentry>
+    <term><literal>Int32 <structfield>first</structfield></literal></term>
+    <listitem>
+      <para>
+The first element
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Int32 <structfield>second</structfield></literal></term>
+    <listitem>
+      <para>
+The second element
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

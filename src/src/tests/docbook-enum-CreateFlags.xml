@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-enummain-CreateFlags">
+  <refmeta>
+    <refentrytitle role="top_of_page">CreateFlags Flag Enumeration</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>CreateFlags Flag Enumeration</refname>
+    <refpurpose>Creation flags</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="enum" id="eggdbus-enum-CreateFlags">
+      <title>The CreateFlags Flags</title>
+        <para>
+          <programlisting>
+{
+  None           = 0x00000000,
+  UseFrobnicator = 0x00000001,
+  LogAttempt     = 0x00000002,
+  SomeOtherFlag  = 0x00000080,
+  YetAnotherFlag = 0x00000100
+}
+          </programlisting>
+          <para>
+Flags used for creating stuff.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-CreateFlags.None" role="constant">
+    <term><literal>None</literal></term>
+    <listitem>
+      <para>
+No flags set.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-CreateFlags.UseFrobnicator" role="constant">
+    <term><literal>UseFrobnicator</literal></term>
+    <listitem>
+      <para>
+When creating, use the frobnicator to do so
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-CreateFlags.LogAttempt" role="constant">
+    <term><literal>LogAttempt</literal></term>
+    <listitem>
+      <para>
+Log any create attemps to the system log
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-CreateFlags.SomeOtherFlag" role="constant">
+    <term><literal>SomeOtherFlag</literal></term>
+    <listitem>
+      <para>
+FIXME: not documented.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-CreateFlags.YetAnotherFlag" role="constant">
+    <term><literal>YetAnotherFlag</literal></term>
+    <listitem>
+      <para>
+This should have value 0x100 == 256
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

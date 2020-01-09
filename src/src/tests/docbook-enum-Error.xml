@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-enummain-Error">
+  <refmeta>
+    <refentrytitle role="top_of_page">com.example.Error.* Error Domain</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>com.example.Error.* Error Domain</refname>
+    <refpurpose>Errors</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="enum" id="eggdbus-errordomain-com.example.Error.">      <title>The com.example.Error.* Error Domain</title>
+        <para>
+          <programlisting>
+{
+  com.example.Error.Failed,
+  com.example.Error.FluxCapacitorFailure,
+  com.example.Error.WouldDestruct,
+  com.example.Error.WouldBlock
+}
+          </programlisting>
+          <para>
+An example of an error enumeration.
+          </para>
+          <variablelist role="constant">
+  <varlistentry id="eggdbus-constant-Error.com.example.Error.Failed" role="constant">
+    <term><literal>com.example.Error.Failed</literal></term>
+    <listitem>
+      <para>
+Something went wrong
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Error.com.example.Error.FluxCapacitorFailure" role="constant">
+    <term><literal>com.example.Error.FluxCapacitorFailure</literal></term>
+    <listitem>
+      <para>
+The Flux Capacitor failed
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Error.com.example.Error.WouldDestruct" role="constant">
+    <term><literal>com.example.Error.WouldDestruct</literal></term>
+    <listitem>
+      <para>
+Operation would destruct the TwiddleFrobber
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry id="eggdbus-constant-Error.com.example.Error.WouldBlock" role="constant">
+    <term><literal>com.example.Error.WouldBlock</literal></term>
+    <listitem>
+      <para>
+This should be value 101
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

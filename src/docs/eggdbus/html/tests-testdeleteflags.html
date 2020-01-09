@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TestDeleteFlags</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="EggDBus Reference Manual">
+<link rel="up" href="example.html" title="Example of Generated Code">
+<link rel="prev" href="tests-testcreateflags.html" title="TestCreateFlags">
+<link rel="next" href="tests-testotherflags.html" title="TestOtherFlags">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="reference" href="ref-overview.html" title="EggDBus Overview">
+<link rel="chapter" href="ref-overview-intro.html" title="Introduction">
+<link rel="chapter" href="ref-overview-concepts.html" title="Mapping D-Bus to GObject">
+<link rel="chapter" href="ref-overview-compiling.html" title="Compiling EggDBus applications">
+<link rel="reference" href="ref-api.html" title="API Reference">
+<link rel="chapter" href="datatypes.html" title="Types and Collections">
+<link rel="chapter" href="core.html" title="D-Bus Operations">
+<link rel="chapter" href="stdinterfaces.html" title="Well-known D-Bus Interfaces">
+<link rel="chapter" href="example.html" title="Example of Generated Code">
+<link rel="chapter" href="example-dbus.html" title="Example of Generated D-Bus docs">
+<link rel="reference" href="ref-programs.html" title="Tools Reference">
+<link rel="reference" href="ref-tutorial.html" title="Tutorial">
+<link rel="chapter" href="ref-tutorial-using.html" title="Using a D-Bus service">
+<link rel="chapter" href="ref-tutorial-providing.html" title="Writing a D-Bus service">
+<link rel="chapter" href="eggdbus-hierarchy.html" title="Object Hierarchy">
+<link rel="index" href="ix01.html" title="Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="tests-testcreateflags.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="example.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">EggDBus Reference Manual</th>
+<td><a accesskey="n" href="tests-testotherflags.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#tests-testdeleteflags.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#tests-testdeleteflags.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="TestDeleteFlags">
+<a name="tests-testdeleteflags"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="tests-testdeleteflags.top_of_page"></a>TestDeleteFlags</span></h2>
+<p>TestDeleteFlags — Deletion flags</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="tests-testdeleteflags.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+<a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               <a class="link" href="tests-testdeleteflags.html#test-delete-flags-get-type" title="test_delete_flags_get_type ()">test_delete_flags_get_type</a>          (void);
+#define             <a class="link" href="tests-testdeleteflags.html#TEST-TYPE-DELETE-FLAGS--CAPS" title="TEST_TYPE_DELETE_FLAGS">TEST_TYPE_DELETE_FLAGS</a>
+enum                <a class="link" href="tests-testdeleteflags.html#TestDeleteFlags" title="enum TestDeleteFlags">TestDeleteFlags</a>;
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="tests-testdeleteflags.description"></a><h2>Description</h2>
+<p>
+Flags used for deleting stuff.</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="tests-testdeleteflags.details"></a><h2>Details</h2>
+<div class="refsect2" title="test_delete_flags_get_type ()">
+<a name="test-delete-flags-get-type"></a><h3>test_delete_flags_get_type ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"
+>GType</a>               test_delete_flags_get_type          (void);</pre>
+</div>
+<hr>
+<div class="refsect2" title="TEST_TYPE_DELETE_FLAGS">
+<a name="TEST-TYPE-DELETE-FLAGS--CAPS"></a><h3>TEST_TYPE_DELETE_FLAGS</h3>
+<pre class="programlisting">#define TEST_TYPE_DELETE_FLAGS (test_delete_flags_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2" title="enum TestDeleteFlags">
+<a name="TestDeleteFlags"></a><h3>enum TestDeleteFlags</h3>
+<pre class="programlisting">typedef enum
+{
+  TEST_DELETE_FLAGS_NO_FLAGS_SET = 0x0000,
+  TEST_DELETE_FLAGS_USE_ORBITAL_LASER = 0x0001,
+  TEST_DELETE_FLAGS_MEDIA_COVERAGE = 0x0002,
+  TEST_DELETE_FLAGS_AUDIBLE = 0x0004,
+  TEST_DELETE_FLAGS_VISIBLE = 0x0008,
+} TestDeleteFlags;
+</pre>
+<p>
+Flags used for deleting stuff.</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="TEST-DELETE-FLAGS-NO-FLAGS-SET--CAPS"></a><span class="term"><code class="literal">TEST_DELETE_FLAGS_NO_FLAGS_SET</code></span></p></td>
+<td> No flags explicitly set
+</td>
+</tr>
+<tr>
+<td><p><a name="TEST-DELETE-FLAGS-USE-ORBITAL-LASER--CAPS"></a><span class="term"><code class="literal">TEST_DELETE_FLAGS_USE_ORBITAL_LASER</code></span></p></td>
+<td> Use the Orbital Laser for deletion
+</td>
+</tr>
+<tr>
+<td><p><a name="TEST-DELETE-FLAGS-MEDIA-COVERAGE--CAPS"></a><span class="term"><code class="literal">TEST_DELETE_FLAGS_MEDIA_COVERAGE</code></span></p></td>
+<td> Call the media before deletion
+</td>
+</tr>
+<tr>
+<td><p><a name="TEST-DELETE-FLAGS-AUDIBLE--CAPS"></a><span class="term"><code class="literal">TEST_DELETE_FLAGS_AUDIBLE</code></span></p></td>
+<td> Delete should be audible
+</td>
+</tr>
+<tr>
+<td><p><a name="TEST-DELETE-FLAGS-VISIBLE--CAPS"></a><span class="term"><code class="literal">TEST_DELETE_FLAGS_VISIBLE</code></span></p></td>
+<td> Deletion should be visible
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

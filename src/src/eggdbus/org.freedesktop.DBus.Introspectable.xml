@@ -1,0 +1,19 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/">
+
+  <interface name="org.freedesktop.DBus.Introspectable">
+    <annotation name="org.gtk.EggDBus.DocString" value="Introspection support."/>
+    <annotation name="org.gtk.EggDBus.DocString.Summary" value="Introspection interface"/>
+
+    <method name="Introspect">
+      <annotation name="org.gtk.EggDBus.DocString" value="Object instances may implement this method which returns an XML description of the object, including its interfaces (with signals, methods and properties) and objects below it in the object path tree. See the D-Bus specification for the exact format of D-Bus Introspection XML."/>
+
+      <arg direction="out" type="s" name="xml_data">
+        <annotation name="org.gtk.EggDBus.DocString" value="Valid D-Bus Introspection XML."/>
+      </arg>
+    </method>
+
+  </interface>
+</node>
+

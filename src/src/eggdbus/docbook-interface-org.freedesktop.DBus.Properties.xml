@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-interface-org.freedesktop.DBus.Properties">
+  <refmeta>
+    <refentrytitle role="top_of_page">org.freedesktop.DBus.Properties Interface</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>org.freedesktop.DBus.Properties Interface</refname>
+    <refpurpose>Properties interface</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv role="synopsis">
+    <title role="synopsis.title">Methods</title>
+    <synopsis>
+<link linkend="eggdbus-method-org.freedesktop.DBus.Properties.Get">Get</link>    (IN  String                interface_name,
+        IN  String                property_name,
+        OUT Variant               value)
+<link linkend="eggdbus-method-org.freedesktop.DBus.Properties.GetAll">GetAll</link> (IN  String                interface_name,
+        OUT Dict&lt;String,Variant&gt;  properties)
+<link linkend="eggdbus-method-org.freedesktop.DBus.Properties.Set">Set</link>    (IN  String                interface_name,
+        IN  String                property_name,
+        IN  Variant               value)
+    </synopsis>
+  </refsynopsisdiv>
+  <refsect1 role="signal_proto" id="eggdbus-if-signals-org.freedesktop.DBus.Properties">
+    <title role="signal_proto.title">Signals</title>
+    <synopsis>
+<link linkend="eggdbus-signal-org.freedesktop.DBus.Properties::EggDBusChanged">EggDBusChanged</link> (String                interface_name,
+                Dict&lt;String,Variant&gt;  changed_properties)
+    </synopsis>
+  </refsect1>
+  <refsect1 role="desc" id="eggdbus-if-description-org.freedesktop.DBus.Properties">
+    <title role="desc.title">Description</title>
+      <para>
+Many native APIs will have a concept of object <emphasis>properties</emphasis> or <emphasis>attributes</emphasis>. These can be exposed via the <link linkend="eggdbus-interface-org.freedesktop.DBus.Properties">org.freedesktop.DBus.Properties</link> interface. The available properties and whether they are writable can be determined by using the <link linkend="eggdbus-interface-org.freedesktop.DBus.Introspectable">org.freedesktop.DBus.Introspectable</link> interface.
+      </para>
+  </refsect1>
+  <refsect1 role="details" id="eggdbus-if-method-details-org.freedesktop.DBus.Properties">
+    <title role="details.title">Method Details</title>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Properties.Get">
+      <title>Get ()</title>
+    <programlisting>
+Get (IN  String   interface_name,
+     IN  String   property_name,
+     OUT Variant  value)
+    </programlisting>
+    <para>
+Gets the value of the property with name <parameter>property_name</parameter> on the interface with name <parameter>interface_name</parameter>.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>interface_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the D-Bus interface.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  String <parameter>property_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the property.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Variant <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+The value of the property.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Properties.GetAll">
+      <title>GetAll ()</title>
+    <programlisting>
+GetAll (IN  String                interface_name,
+        OUT Dict&lt;String,Variant&gt;  properties)
+    </programlisting>
+    <para>
+Gets all properties on the interface with the name <parameter>interface_name</parameter>.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>interface_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the D-Bus interface.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>OUT Dict&lt;String,Variant&gt; <parameter>properties</parameter></literal>:</term>
+    <listitem>
+      <para>
+A dictionary containing all the properties.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+    <refsect2 role="function" id="eggdbus-method-org.freedesktop.DBus.Properties.Set">
+      <title>Set ()</title>
+    <programlisting>
+Set (IN  String   interface_name,
+     IN  String   property_name,
+     IN  Variant  value)
+    </programlisting>
+    <para>
+Sets the value of the property with name <parameter>property_name</parameter> on the interface with name <parameter>interface_name</parameter> to <parameter>value</parameter>.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>IN  String <parameter>interface_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the D-Bus interface.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  String <parameter>property_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the property.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>IN  Variant <parameter>value</parameter></literal>:</term>
+    <listitem>
+      <para>
+The value to set.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+  <refsect1 role="signals" id="eggdbus-if-signal-details-org.freedesktop.DBus.Properties">
+    <title role="signals.title">Signal Details</title>
+    <refsect2 role="signal" id="eggdbus-signal-org.freedesktop.DBus.Properties::EggDBusChanged">
+      <title>The "EggDBusChanged" signal</title>
+    <programlisting>
+EggDBusChanged (String                interface_name,
+                Dict&lt;String,Variant&gt;  changed_properties)
+    </programlisting>
+    <para>
+Emitted when one or more properties change on an interface. Note: this signal is proprietary to EggDBus; no other D-Bus implementation will emit it.
+    </para>
+<variablelist role="params">
+  <varlistentry>
+    <term><literal>String <parameter>interface_name</parameter></literal>:</term>
+    <listitem>
+      <para>
+The name of the D-Bus interface.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal>Dict&lt;String,Variant&gt; <parameter>changed_properties</parameter></literal>:</term>
+    <listitem>
+      <para>
+A dictionary containing the changed properties.
+      </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+    </refsect2>
+  </refsect1>
+</refentry>

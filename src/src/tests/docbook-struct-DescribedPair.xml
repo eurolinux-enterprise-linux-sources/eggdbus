@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2 //EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="eggdbus-structmain-DescribedPair">
+  <refmeta>
+    <refentrytitle role="top_of_page">DescribedPair Structure</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>DescribedPair Structure</refname>
+    <refpurpose>Described pair</refpurpose>
+  </refnamediv>
+  <refsect1>
+    <refsect2 role="struct" id="eggdbus-struct-DescribedPair">
+      <title>The DescribedPair Structure</title>
+        <para>
+          <programlisting>
+{
+  String desc,
+  <link linkend="eggdbus-struct-Pair">Pair</link>   pair
+}
+          </programlisting>
+          <para>
+Test type for wrapping (s(ii)).
+          </para>
+          <variablelist role="struct">
+  <varlistentry>
+    <term><literal>String <structfield>desc</structfield></literal></term>
+    <listitem>
+      <para>
+A description of the described pair
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><literal><link linkend="eggdbus-struct-Pair">Pair</link> <structfield>pair</structfield></literal></term>
+    <listitem>
+      <para>
+The pair being described
+      </para>
+    </listitem>
+  </varlistentry>
+          </variablelist>
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>
